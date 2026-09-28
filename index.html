@@ -1,0 +1,1699 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Old Testament &mdash; 1 Samuel</title>
+<meta name="description" content="Study guide for 1 Samuel: Samuel, the last judge; Saul, the first king; and David. Notes, flashcards, matching, quizzes and a practice quiz, built from the class notes.">
+<meta name="theme-color" content="#f3f3ea">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="1 Samuel">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Old Testament &mdash; 1 Samuel">
+<meta property="og:url" content="https://daniel-projectt.github.io/old-testament/">
+<meta property="og:title" content="Old Testament &mdash; 1 Samuel">
+<meta property="og:description" content="Samuel, Saul and David: notes, flashcards, match, quizzes and a practice quiz, from the class notes on 1 Samuel.">
+<meta property="og:image" content="https://daniel-projectt.github.io/old-testament/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+  --bg:#f5f1e8;
+  --surface:#fffdf7;
+  --surface-2:#faf6ec;
+  --ink:#1d1b17;
+  --ink-soft:#4b463d;
+  --muted:#8c8475;
+  --line:#e2dac8;
+  --line-strong:#cabfa8;
+  --gold:#9a7a44;
+  --gold-soft:#c6a469;
+  --ok:#3c6a51;
+  --ok-bg:#e8f0ea;
+  --bad:#9c3a2d;
+  --bad-bg:#f8e7e4;
+  --shadow:0 1px 2px rgba(29,27,23,.05), 0 10px 28px rgba(29,27,23,.05);
+  --serif:"Palatino Linotype","Book Antiqua",Palatino,Cambria,"Times New Roman",serif;
+  --greek:"Palatino Linotype",Cambria,"Times New Roman","Gentium Plus",serif;
+  --sans:Optima,Candara,"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--serif);
+  font-size:17px;line-height:1.6;
+  color:var(--ink);
+  background-color:var(--bg);
+  background-image:radial-gradient(900px 520px at 50% -8%,#fffdf7 0%,rgba(255,253,247,0) 72%);
+  background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+.gk{font-family:var(--greek)}
+
+/* ---------- engraved side rails ---------- */
+/* Slim by default (phones): a ruled margin with one diamond.
+   Wider screens grow it into the flourish from the masthead, turned on its side. */
+.rail{position:fixed;top:0;bottom:0;width:22px;display:none;flex-direction:column;align-items:center;justify-content:center;color:var(--gold-soft);pointer-events:none;z-index:0}
+.rail.left{left:0}
+.rail.right{right:0;transform:scaleX(-1)}
+.rail .stem{flex:1 1 auto;width:1px;min-height:24px;background:linear-gradient(to bottom,transparent,currentColor 20%,currentColor 80%,transparent);opacity:.42}
+.rail .bead{flex:0 0 auto;width:6px;height:6px;background:currentColor;transform:rotate(45deg);opacity:.7;margin:10px 0}
+.rail .vine{display:none;flex:0 1 auto;width:34px;height:250px;min-height:120px;opacity:.7}
+.rail .bead.bot{display:none}
+@media (min-height:520px){ .rail{display:flex} }
+@media (min-width:1180px) and (min-height:560px){
+  .rail{width:62px}
+  .rail .vine,.rail .bead.bot{display:block}
+  .rail .vine{margin:0}
+  .rail .vine{flex:0 1 auto}
+}
+@media (min-width:1380px){ .rail{width:84px} .rail .vine{width:46px;height:330px} }
+@media (min-width:1600px){ .rail{width:104px} .rail .vine{width:56px;height:410px} }
+
+/* ---------- masthead ---------- */
+header{text-align:center;padding-block:44px 4px}
+.eyebrow{font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin:0 0 16px}
+h1{font-weight:400;font-size:clamp(32px,6.2vw,54px);line-height:1.08;margin:0;letter-spacing:.005em}
+.sub{margin:12px 0 0;color:var(--muted);font-style:italic;font-size:16px}
+.orn{color:var(--gold-soft);display:block;margin:16px auto 0;width:min(320px,82%);height:auto}
+.h2{font-weight:400;font-size:23px;text-align:center;margin:36px 0 6px;letter-spacing:.01em}
+.h2 + .lead{margin-top:0}
+.lead{text-align:center;font-style:italic;color:var(--muted);font-size:15px;max-width:640px;margin:0 auto 18px;line-height:1.55}
+.divider{display:flex;align-items:center;gap:12px;justify-content:center;color:var(--gold-soft);margin:6px auto 18px;max-width:220px}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:currentColor;opacity:.6}
+.divider span{font-size:8px}
+
+/* ---------- topics + modes ---------- */
+.topics{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;margin:26px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:5px 0}
+.topic-btn{font-family:var(--sans);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;padding:13px 18px;background:none;border:0;color:var(--muted);cursor:pointer;border-radius:2px;transition:color .18s,box-shadow .18s;min-height:44px}
+.topic-btn:hover{color:var(--ink)}
+.topic-btn[aria-selected="true"]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--gold)}
+.intro{text-align:center;font-style:italic;color:var(--muted);margin:24px auto 0;max-width:640px;font-size:15.5px;line-height:1.55}
+.modes{display:flex;justify-content:center;margin:18px 0 22px}
+.hint{text-align:center;font-family:var(--sans);font-size:11px;letter-spacing:.08em;color:var(--muted);margin:-6px 0 18px;line-height:1.6}
+.topic[hidden],.panel[hidden]{display:none}
+
+/* ---------- generic controls ---------- */
+.toolbar{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;justify-content:center;margin:0 0 22px}
+.toolbar.tight{margin:14px 0 0}
+.btn{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:11px 17px;min-height:42px;background:var(--surface);border:1px solid var(--line-strong);border-radius:2px;color:var(--ink-soft);cursor:pointer;transition:.18s}
+.btn:hover{border-color:var(--gold);color:var(--gold)}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:#f7f3ea}
+.btn.primary:hover{background:var(--gold);border-color:var(--gold);color:#fffdf7}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--line-strong);border-radius:2px;overflow:hidden;background:var(--surface)}
+.seg button{font-family:var(--sans);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:10px 14px;min-height:40px;background:none;border:0;border-right:1px solid var(--line);color:var(--muted);cursor:pointer;transition:.18s}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--surface-2);color:var(--gold);box-shadow:inset 0 -2px 0 var(--gold)}
+.seg button:hover{color:var(--ink)}
+.label{font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+button:focus-visible,.tile:focus-visible,.answer:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.spk{background:none;border:0;color:var(--line-strong);cursor:pointer;padding:6px;line-height:0;border-radius:50%;transition:.18s;vertical-align:middle}
+.spk:hover{color:var(--gold);background:var(--surface-2)}
+
+/* ---------- engraved bits ---------- */
+.engraved{color:#fffdf5;-webkit-text-stroke:.6px rgba(150,118,64,.7);text-shadow:-1px -1px 0 #fff,2px 3px 5px rgba(96,78,48,.28)}
+.card-corners{position:relative}
+.card-corners .c{position:absolute;width:42px;height:42px;color:var(--gold-soft);opacity:.85;pointer-events:none}
+.c.tl{top:6px;left:6px}.c.tr{top:6px;right:6px;transform:scaleX(-1)}.c.bl{bottom:6px;left:6px;transform:scaleY(-1)}.c.br{bottom:6px;right:6px;transform:scale(-1)}
+
+/* ---------- review grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(184px,1fr));gap:14px}
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px 14px 16px;text-align:center;box-shadow:var(--shadow)}
+.card.masked{cursor:pointer}
+.card .num{position:absolute;top:9px;left:12px;font-family:var(--sans);font-size:10px;letter-spacing:.12em;color:var(--muted)}
+.card .spk{position:absolute;top:5px;right:6px}
+.glyphs{font-family:var(--greek);font-size:46px;line-height:1.15;letter-spacing:.04em}
+.glyphs .lo,.lo{color:var(--gold)}
+.name{font-family:var(--sans);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;margin-top:10px}
+.tr{font-family:var(--sans);font-size:10.5px;letter-spacing:.1em;color:var(--muted);margin-top:3px}
+.sound{font-style:italic;font-size:14.5px;color:var(--ink-soft);margin-top:7px;line-height:1.4}
+.veil{filter:blur(9px);transition:filter .25s;user-select:none}
+.veil.shown{filter:none}
+.note{text-align:center;font-style:italic;color:var(--muted);font-size:14.5px;margin:22px auto 0;max-width:640px;line-height:1.55}
+
+/* ---------- flashcards ---------- */
+.flashWrap{max-width:470px;margin:0 auto}
+.flash{perspective:1400px;height:350px;cursor:pointer}
+.flashInner{position:relative;width:100%;height:100%;transition:transform .55s cubic-bezier(.4,.1,.2,1);transform-style:preserve-3d}
+.flash.flipped .flashInner{transform:rotateY(180deg)}
+.flash.noanim .flashInner{transition:none}   /* snap back to the front, so the next card's back never shows mid-turn */
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-radius:4px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 34px;overflow:auto;text-align:center}
+.face.back{transform:rotateY(180deg);background:var(--surface-2)}
+.face .big{font-family:var(--greek);font-size:clamp(66px,15vw,104px);line-height:1;letter-spacing:.03em}
+.face .mid{font-family:var(--sans);font-size:clamp(22px,5.5vw,34px);letter-spacing:.14em;text-transform:uppercase}
+.face .hint{font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:16px 0 0}
+.face .bname{font-family:var(--sans);font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;margin-top:12px}
+.face .btr{font-family:var(--sans);font-size:10.5px;letter-spacing:.1em;color:var(--muted);margin-top:5px}
+.face .bsound{font-style:italic;font-size:15px;margin-top:9px;color:var(--ink-soft);line-height:1.45}
+.face .forms{font-family:var(--greek);font-size:21px;margin-top:10px;color:var(--gold);line-height:1.4}
+.progress{height:2px;background:var(--line);margin:18px 0 10px;border-radius:2px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--gold);transition:width .3s}
+.counter{text-align:center;font-family:var(--sans);font-size:10.5px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin:0}
+
+/* ---------- match ---------- */
+.matchGrid{display:grid;grid-template-columns:1fr 1fr;gap:20px 26px;align-items:start}
+.col h3{font-family:var(--sans);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:400;margin:0 0 12px;text-align:center}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(66px,1fr));gap:9px}
+.tile{aspect-ratio:1;display:grid;place-items:center;font-family:var(--greek);font-size:31px;background:var(--surface);border:1px solid var(--line);border-radius:3px;cursor:pointer;color:var(--ink);transition:.16s;box-shadow:var(--shadow)}
+.tile:hover{border-color:var(--gold-soft)}
+.tiles.wide{grid-template-columns:repeat(auto-fill,minmax(126px,1fr))}
+.tiles.wide .tile{aspect-ratio:auto;min-height:58px;padding:10px 8px;font-family:var(--sans);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;text-align:center;line-height:1.35}
+.tiles.wide.sound .tile{font-family:var(--serif);font-size:14px;letter-spacing:0;text-transform:none;font-style:italic}
+.tile.sel{border-color:var(--gold);box-shadow:0 0 0 2px rgba(154,122,68,.22)}
+.tile.done{opacity:.3;pointer-events:none;border-style:dashed;color:var(--ok);border-color:var(--ok)}
+.tile.bad{animation:shake .36s;border-color:var(--bad);color:var(--bad);background:var(--bad-bg)}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-5px)}40%{transform:translateX(5px)}60%{transform:translateX(-3px)}80%{transform:translateX(3px)}}
+.scoreline{text-align:center;font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}
+.scoreline b{color:var(--ink);font-weight:400}
+.banner{text-align:center;background:var(--ok-bg);border:1px solid #cbdcd0;color:var(--ok);border-radius:3px;padding:14px;margin:0 0 20px;font-style:italic}
+
+/* ---------- quiz / practice ---------- */
+.quizWrap{max-width:680px;margin:0 auto}
+.dots{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:24px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--line-strong);transition:.2s}
+.dots i.on{background:var(--gold);transform:scale(1.35)}
+.dots i.ok{background:var(--ok)}
+.dots i.no{background:var(--bad)}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:4px;box-shadow:var(--shadow);padding:34px 30px 30px}
+.qnum{font-family:var(--sans);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);text-align:center}
+.qtext{text-align:center;font-size:20px;margin:12px auto 0;line-height:1.45;max-width:520px}
+.qglyph{font-family:var(--greek);text-align:center;font-size:82px;line-height:1.15;margin:12px 0 0;letter-spacing:.04em}
+.qglyph.word{font-size:58px}
+.qglyph.ink{color:var(--ink)}
+.meaning{text-align:center;font-style:italic;color:var(--muted);margin:4px 0 16px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:24px}
+.opt{position:relative;font-family:var(--serif);font-size:16.5px;background:var(--surface-2);border:1px solid var(--line);border-radius:3px;padding:16px 14px 14px;min-height:54px;cursor:pointer;color:var(--ink);transition:.16s;text-align:center;line-height:1.35}
+.opt:hover:not(:disabled){border-color:var(--gold-soft);background:#fff}
+.opt.glyph{font-family:var(--greek);font-size:36px;line-height:1.25;padding:14px 10px}
+.opt .k{position:absolute;top:6px;left:9px;font-family:var(--sans);font-size:9.5px;letter-spacing:.1em;color:var(--muted);font-style:normal}
+.opt.correct{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.opt.wrong{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.opt:disabled{cursor:default}
+.feedback{text-align:center;margin-top:20px;font-style:italic;color:var(--ink-soft);min-height:26px;line-height:1.5}
+.qfoot{display:flex;justify-content:center;margin-top:16px}
+.answer{display:block;width:100%;font-family:var(--greek);font-size:24px;padding:12px 14px;border:1px solid var(--line-strong);border-radius:3px;background:#fff;text-align:center;color:var(--ink)}
+.answer::placeholder{font-family:var(--serif);font-style:italic;font-size:16px;color:#b5ad9c}
+.answer.ok{border-color:var(--ok);background:var(--ok-bg)}
+.answer.bad{border-color:var(--bad);background:var(--bad-bg)}
+.keys{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.keys .ins{font-family:var(--greek);font-size:18px;text-transform:none;letter-spacing:0;padding:8px 16px}
+.rh{margin-top:16px;text-align:left;background:var(--surface-2);border:1px solid var(--line);border-radius:3px;padding:12px 16px}
+.rh ul{margin:6px 0 0;padding-left:18px;font-size:14.5px;color:var(--ink-soft)}
+.rh li{margin:4px 0;line-height:1.45}
+.result{text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:4px;box-shadow:var(--shadow);padding:40px 26px 34px}
+.result .big{font-size:60px;line-height:1;color:var(--gold)}
+.result .rsub{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+.result .verdict{font-style:italic;color:var(--ink-soft);margin-top:14px}
+.misslist{margin:26px auto 0;max-width:470px;text-align:left;border-top:1px solid var(--line)}
+.misslist > div{display:flex;gap:14px;align-items:baseline;padding:10px 2px;border-bottom:1px solid var(--line)}
+.misslist .g{font-family:var(--greek);font-size:24px;min-width:74px;letter-spacing:.03em}
+.misslist .t{font-size:14.5px;color:var(--ink-soft);font-style:italic;line-height:1.45}
+.misslist .t b{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:400;color:var(--ink);display:block;font-style:normal}
+
+/* ---------- tables, rule cards, chips ---------- */
+.tblwrap{overflow-x:auto;margin:0 -4px;padding:0 4px}
+.tbl{width:100%;min-width:560px;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
+.tbl th{font-family:var(--sans);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:400;padding:12px 12px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+.tbl td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:15.5px;line-height:1.5}
+.tbl tr:last-child td{border-bottom:0}
+.tbl .gk{font-size:27px;line-height:1.2;white-space:nowrap}
+.tbl .gk.sm{font-size:21px}
+.tbl .gk.forms{white-space:normal;line-height:1.5}
+.tbl .gk.forms i{font-style:normal;display:inline-block;min-width:1.9em}
+.tbl .it{font-style:italic;color:var(--ink-soft)}
+.tbl .mn{font-size:14.5px;color:var(--ink-soft);max-width:300px}
+.tbl .kw{font-family:var(--sans);font-size:12px;letter-spacing:.06em;color:var(--gold)}
+.tbl .cs{font-family:var(--sans);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+.rule{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:18px 20px;box-shadow:var(--shadow)}
+.rule h4{font-family:var(--sans);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 8px;font-weight:400}
+.rule p{margin:0;font-size:15px;line-height:1.5}
+.rule .ex{font-style:italic;color:var(--muted);font-size:14.5px;margin-top:6px;line-height:1.55}
+.rule .ex .gk{font-style:normal;color:var(--ink);font-size:17px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chip{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:8px 13px;font-size:14.5px;color:var(--ink-soft);box-shadow:var(--shadow)}
+.chip .gk{font-size:21px;color:var(--ink);margin-right:8px}
+.chip .tl{font-family:var(--sans);letter-spacing:.06em;color:var(--gold);margin-right:6px}
+.chip .gk .lo{color:var(--gold)}
+
+/* ---------- vocabulary ---------- */
+.tbl .rk{font-family:var(--sans);font-size:10.5px;letter-spacing:.12em;color:var(--muted);width:1%;padding-top:17px}
+.tbl.vocab .kw,.tbl.vocab .it,.tbl.vocab .mn{padding-top:16px}
+#vListSeg button{min-width:42px}
+.tbl tr.masked{cursor:pointer}
+.face .big.vword{font-size:clamp(42px,10.5vw,66px);line-height:1.15}
+.face .mid.vmean{font-size:clamp(19px,4.6vw,27px);line-height:1.35}
+.face .bname.vgloss{font-size:14px;line-height:1.5}
+.tiles.words,.tiles.glosses,.tiles.translits{grid-template-columns:repeat(auto-fill,minmax(128px,1fr))}
+.tiles.words .tile,.tiles.glosses .tile,.tiles.translits .tile{aspect-ratio:auto;min-height:60px;padding:10px 8px;text-align:center;line-height:1.3}
+.tiles.words .tile{font-family:var(--greek);font-size:23px}
+.tiles.glosses .tile{font-family:var(--serif);font-size:14.5px;font-style:italic}
+.tiles.translits .tile{font-family:var(--sans);font-size:14px;letter-spacing:.06em}
+
+footer{text-align:center;padding:46px 20px 56px;color:var(--muted);font-size:13px;font-style:italic}
+footer .keys{font-family:var(--sans);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-style:normal;margin-top:12px;color:var(--muted);display:block}
+kbd{font-family:var(--sans);font-size:10px;border:1px solid var(--line-strong);border-bottom-width:2px;border-radius:3px;padding:1px 5px;background:var(--surface);color:var(--ink-soft)}
+
+/* below this width the page fills the screen, so make room for the rails */
+@media (max-width:1100px){ .wrap{padding:0 34px} }
+@media (max-width:640px){
+  body{font-size:16px}
+  .matchGrid{grid-template-columns:1fr;gap:26px}
+  .opts{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(146px,1fr))}
+  .flash{height:330px}
+  .qcard{padding:30px 18px 24px}
+  .card-corners .c{width:32px;height:32px}
+  .topic-btn{padding:12px 12px;font-size:11px}
+}
+@media print{
+  body{background:#fff;background-image:none}
+  .topics,.modes,.toolbar,.spk,footer,.orn,.hint,.intro,.rail{display:none!important}
+  .wrap{padding:0}
+  .card{break-inside:avoid;box-shadow:none}
+  .grid{grid-template-columns:repeat(4,1fr);gap:8px}
+  .veil{filter:none!important}
+  header{padding-block:0 10px}
+}
+/* ============================================================ Old Testament
+   The Greek study sheet's parchment base, with a hint of green: the accent is
+   a sage, the gold stays in the ornaments. Nothing else about the base changes. */
+:root{
+  --gold:#557a55;        /* sage — accent text, rules, the tags       */
+  --gold-soft:#b3c9a7;   /* pale sage — borders and hairlines         */
+  --rose-wash:#eef4e7;   /* green wash — behind "the point"          */
+  --rose-deep:#3d5c3e;   /* for the few places that need more weight  */
+}
+
+/* ================= additions for the marketing study guide (on top of the Greek base) ================= */
+.emblem{display:block;width:66px;height:66px;margin:0 auto 14px;color:var(--gold-soft)}
+.topic-btn{padding:13px 13px}
+.ask{text-align:center;font-style:italic;color:var(--muted);font-size:14.5px;margin:14px auto 0;max-width:620px;line-height:1.5}
+.knowline{text-align:center;margin:0 0 12px}
+.know{display:inline-block;font-family:var(--sans);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-soft);border-radius:2px;padding:3px 9px;background:var(--surface)}
+.src{display:block;font-family:var(--sans);font-size:10.5px;letter-spacing:.1em;color:var(--muted);margin-top:4px}
+
+/* tables */
+.tbl td.head{font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);white-space:nowrap;vertical-align:top}
+.tbl td ul{margin:0;padding-left:16px}
+.tbl td li{margin:3px 0}
+.tbl .sm{font-size:14px}
+.tbl.n0{min-width:0}
+.tbl td.num{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+
+/* 2 x 2 grids (buying behavior, value propositions) */
+.matrix{display:grid;grid-template-columns:26px 1fr 1fr;gap:10px;margin:16px 0 4px;align-items:stretch}
+.mx-h{font-family:var(--sans);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-align:center;padding-bottom:2px;align-self:end}
+.mx-v{font-family:var(--sans);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;align-self:center;justify-self:center}
+.mx-c{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:14px 16px;font-size:14.5px;line-height:1.5;box-shadow:var(--shadow)}
+.mx-c h4{font-family:var(--serif);font-weight:400;font-size:19px;margin:0 0 6px}
+.mx-c i{display:block;color:var(--muted);margin-top:6px}
+.mx-c .lab{display:none}
+@media (max-width:640px){ .matrix{grid-template-columns:1fr} .mx-h,.mx-v,.mx-corner{display:none} .mx-c .lab{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 6px} }
+.vp{display:grid;grid-template-columns:26px repeat(3,1fr);gap:8px;margin:14px 0 6px}
+.vp .mx-h{align-self:end}
+.vp .cell{border:1px solid var(--line);border-radius:3px;padding:12px 10px;text-align:center;font-family:var(--serif);font-size:15px;line-height:1.35;background:var(--surface)}
+.vp .cell.win{background:var(--ok-bg);border-color:#cbdcd0;color:var(--ok)}
+.vp .cell.lose{background:var(--bad-bg);border-color:#e8c9c4;color:var(--bad)}
+.vp .cell.meh{background:var(--surface-2);color:var(--muted)}
+.vp .cell small{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;margin-top:4px;opacity:.8}
+@media (max-width:640px){ .vp{grid-template-columns:repeat(3,1fr)} .vp .mx-v,.vp .mx-corner{display:none} }
+
+/* steps / flows */
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:12px 0}
+.flow .step{flex:1 1 220px;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:10px 12px;font-size:14px;line-height:1.4;box-shadow:var(--shadow);position:relative}
+.flow .step > b:first-child{display:block;font-family:var(--sans);font-weight:400;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+@media (max-width:640px){ .flow .step{flex-basis:100%} }
+.levels{display:grid;gap:8px;margin:12px 0}
+.levels .lv{display:grid;grid-template-columns:150px 1fr;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:12px 14px;box-shadow:var(--shadow);font-size:14.5px;line-height:1.5}
+.levels .lv > b:first-child{font-family:var(--serif);font-weight:400;font-size:17px}
+@media (max-width:640px){ .levels .lv{grid-template-columns:1fr;gap:4px} }
+
+/* notes */
+.secnav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:0 0 22px}
+.secnav a{font-family:var(--sans);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:7px 11px;border:1px solid var(--line);border-radius:2px;background:var(--surface)}
+.secnav a:hover{color:var(--gold);border-color:var(--gold-soft)}
+.note-sec{max-width:760px;margin:0 auto 34px}
+.note-sec h2{font-family:var(--serif);font-weight:400;font-size:24px;text-align:center;margin:0 0 4px}
+.note-sec h3{font-family:var(--sans);font-weight:400;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:22px 0 8px}
+.note-sec p{margin:0 0 8px;font-size:15.5px;line-height:1.6}
+.note-sec ul,.note-sec ol{margin:4px 0 10px;padding-left:20px;font-size:15px;line-height:1.55;color:var(--ink)}
+.note-sec li{margin:4px 0}
+.note-sec .chips{margin:8px 0 12px}
+.quote{margin:12px 0;padding:12px 16px;border-left:2px solid var(--gold-soft);background:var(--surface);font-size:14.5px;line-height:1.55;color:var(--ink-soft);font-style:italic}
+.quote small{display:block;font-family:var(--sans);font-size:10.5px;letter-spacing:.08em;color:var(--muted);font-style:normal;margin-top:5px}
+.boxrow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+.boxrow.four{grid-template-columns:repeat(4,1fr)}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:14px 16px;box-shadow:var(--shadow)}
+.box h4{font-family:var(--sans);font-weight:400;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 8px}
+.box ul{margin:0;padding-left:18px;font-size:14.5px}
+.box p{margin:0 0 8px;font-size:14.5px;line-height:1.5}
+.point{border-left:3px solid var(--gold-soft);background:var(--rose-wash);padding:13px 18px 13px 20px;margin:0 0 20px;border-radius:0 3px 3px 0}
+.point > b{font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px}
+.point p{margin:0;font-size:15.5px;line-height:1.65}
+.point p.able{margin-top:8px;font-size:14.5px;color:var(--ink-soft)}
+.point p.able b{font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-right:6px}
+.exam-tip{background:var(--surface-2);border:1px solid var(--line);border-radius:3px;padding:12px 16px;margin:14px 0;font-size:14.5px;line-height:1.55}
+.exam-tip b{font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:14px 16px;margin:12px 0;box-shadow:var(--shadow);font-size:14.5px;line-height:1.55}
+.case b.t{font-family:var(--serif);font-weight:400;font-size:17px;display:block;margin-bottom:4px}
+@media (max-width:900px){ .boxrow.four{grid-template-columns:1fr 1fr} }
+@media (max-width:640px){ .boxrow,.boxrow.four{grid-template-columns:1fr} }
+
+/* quiz extras */
+.opt.tf{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.opts.two{grid-template-columns:1fr 1fr}
+.qtag{display:inline-block;font-family:var(--sans);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-soft);border-radius:2px;padding:2px 7px;margin:0 2px 8px}
+.qtag.sec{font-family:var(--serif);font-size:13px;letter-spacing:0;text-transform:none;color:var(--ink-soft);border-color:var(--line-strong);font-style:italic}
+.secch{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.qtag.tier{font-family:var(--sans);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-style:normal}
+.qtag.tier.t2{color:var(--ink);border-color:var(--gold);background:var(--surface-2)}
+.qtag.tier.t1{color:var(--muted);border-color:var(--line-strong)}
+.qtag.tier.t0{color:var(--ink);border-style:dashed;border-color:var(--gold)}
+.tsub{display:block;font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--muted);margin-top:2px;line-height:1.45}
+.setnote{max-width:560px;margin:18px auto 0;font-size:14px;line-height:1.55;color:var(--muted);font-style:italic;text-align:center}
+.fifty{margin:22px auto 0;max-width:560px;text-align:center}
+.fifty .btn{font-size:12px;padding:12px 26px}
+.fifty p{max-width:520px;margin:12px auto 0;font-size:14px;line-height:1.55;color:var(--muted);font-style:italic}
+.orline{margin:26px auto 4px;font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:center}
+.setup{max-width:600px;margin:0 auto;text-align:center}
+.setup .row{margin:12px 0}
+.misslist .g{font-family:var(--serif);font-size:15px;min-width:0;flex:1;letter-spacing:0}
+.misslist > div{flex-direction:column;gap:4px}
+.misslist .t{font-style:normal}
+.misslist .t b{display:inline;font-family:inherit;font-size:inherit;letter-spacing:0;text-transform:none;font-weight:600;color:var(--ink)}
+
+/* text tiles for Match */
+.tiles.text{grid-template-columns:1fr;gap:8px}
+.tiles.text .tile{aspect-ratio:auto;display:block;min-height:48px;padding:11px 14px;font-family:var(--serif);font-size:15px;line-height:1.4;text-align:left}
+.tiles.text.names .tile{font-size:16.5px}
+.flash{height:420px}
+.face .bsound{font-size:15px;line-height:1.55}
+@media (max-width:640px){ .flash{height:440px} }
+
+/* subsections inside a study-guide section */
+.note-sec h3.sub{font-family:var(--serif);font-weight:400;font-style:italic;font-size:20px;letter-spacing:0;text-transform:none;color:var(--ink);margin:30px 0 10px;padding-top:16px;border-top:1px solid var(--line)}
+.note-sec .divider + h3.sub{margin-top:0;padding-top:0;border-top:0}
+
+/* guide: the handout */
+.handout{max-width:760px;margin:0 auto 18px;background:var(--surface);border:1px solid var(--line);border-radius:4px;box-shadow:var(--shadow);padding:34px 40px 26px;text-align:center}
+.handout .hcourse{font-family:var(--sans);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.handout h2{font-family:var(--serif);font-weight:400;font-size:27px;margin:10px 0 2px}
+.handout .hscope{font-style:italic;color:var(--muted);margin:0 0 16px;font-size:15px}
+.handout .hrules{text-align:left;margin:0 auto;padding-left:20px;max-width:600px;font-size:15px;line-height:1.55}
+.handout .hrules li{margin:5px 0}
+.gsub{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.gsub .btn{padding:6px 10px;min-height:30px;font-size:9.5px;letter-spacing:.12em}
+@media (max-width:640px){ .handout{padding:24px 20px 20px} }
+.gprog{max-width:820px;margin:0 auto 22px;text-align:center}
+.gprog .count{font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.gprog .bar{height:3px;background:var(--line);margin:8px auto 0;max-width:420px;overflow:hidden;border-radius:2px}
+.gprog .bar i{display:block;height:100%;background:var(--gold);transition:width .3s}
+.gsec{max-width:820px;margin:0 auto 26px}
+.gsec h2{font-family:var(--serif);font-weight:400;font-size:22px;text-align:center;margin:0 0 4px}
+.gsec .obj{margin:0 0 14px;padding-left:20px;font-size:14.5px;line-height:1.5;color:var(--ink-soft)}
+.gsec .obj li{margin:3px 0}
+.gitem{display:grid;grid-template-columns:auto 1fr auto;gap:12px 16px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:14px 16px;margin:0 0 8px;box-shadow:var(--shadow)}
+.gitem input{margin-top:5px;width:17px;height:17px;accent-color:var(--gold);cursor:pointer}
+.gitem .gt{font-family:var(--serif);font-size:18px;line-height:1.3}
+.gitem .gt .nb{font-family:var(--sans);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-soft);border-radius:2px;padding:1px 6px;margin-left:8px;vertical-align:middle}
+.gitem .gs{font-size:14.5px;color:var(--ink-soft);margin-top:6px;line-height:1.5}
+.gitem.ok{background:var(--surface-2)}
+.gitem.ok .gt{color:var(--muted)}
+.gitem .btn{white-space:nowrap}
+.flashhit{outline:2px solid var(--gold);outline-offset:3px;transition:outline-color 1.2s}
+@media (max-width:640px){ .gtop{grid-template-columns:1fr} .gitem{grid-template-columns:auto 1fr} .gitem .btn{grid-column:2;justify-self:start} }
+
+@media print{
+  .secnav,.gitem .btn,.gitem input,.gprog .bar,.emblem{display:none!important}
+  .gitem{grid-template-columns:1fr;box-shadow:none;break-inside:avoid;padding:8px 10px}
+  .gitem.ok{background:none}
+}
+
+/* ---- green highlighting, the point of this page's colour ---- */
+mark,.hl{background:var(--rose-wash);color:inherit;padding:.08em .28em;border-radius:2px;box-shadow:0 0 0 1px rgba(85,122,85,.16)}
+.exam-tip{background:var(--rose-wash);border-color:var(--gold-soft)}
+.case{border-color:var(--gold-soft)}
+.quote{background:var(--rose-wash)}
+.gitem.ok{background:var(--rose-wash)}
+
+/* the gold stays on the ornaments, so the green reads as a hint, not a theme */
+.orn,.rail{color:#c6a469}
+header .eyebrow{color:#9a7a44}
+
+/* when an option bar wraps on a phone, every row fills the width */
+.seg{justify-content:center}
+.seg button{flex:1 1 auto;border-bottom:1px solid var(--line);margin-bottom:-1px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute;width:0;height:0" aria-hidden="true" focusable="false">
+  <symbol id="flourish" viewBox="0 0 320 44">
+    <g id="flh" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+      <path d="M160 22 C132 22 110 6 80 14 C60 19 48 30 30 24"/>
+      <path d="M30 24 c-7-3-14 2-12 8 c2 5 9 5 10 0 c0.6-3-2-5-4.5-4"/>
+      <path d="M158 30 C130 34 114 24 88 28 C74 30 66 37 54 36" stroke-width=".8" opacity=".75"/>
+      <path d="M54 36 c-5-1-9 3-7 7 c2 3 6 2 6-1" stroke-width=".8" opacity=".75"/>
+      <path d="M104 15 c3-10 12-15 22-13 c-4 7-12 12-22 13z" fill="currentColor" stroke="none" opacity=".9"/>
+      <path d="M130 19 c3 8 11 13 20 11 c-3-6-10-11-20-11z" fill="currentColor" stroke="none" opacity=".75"/>
+      <path d="M70 18 c2-7 9-10 15-8 c-3 5-8 8-15 8z" fill="currentColor" stroke="none" opacity=".7"/>
+    </g>
+    <use href="#flh" transform="matrix(-1 0 0 1 320 0)"/>
+    <path d="M160 16 l6 6-6 6-6-6z" fill="currentColor"/>
+  </symbol>
+  <symbol id="corner" viewBox="0 0 60 60">
+    <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+      <path d="M4 58 V26 C4 12 12 4 26 4 H58"/>
+      <path d="M12 52 V30 C12 20 20 12 30 12 H52" stroke-width=".7" opacity=".7"/>
+      <path d="M26 4 c-9 4-12 15-3 19 c6 3 11-3 8-7 c-2-3-7-1-5 2"/>
+    </g>
+    <path d="M28 20 c6-3 12-1 14 6 c-6 1-11-1-14-6z" fill="currentColor" opacity=".8"/>
+    <path d="M8 8 l4 4-4 4-4-4z" fill="currentColor"/>
+  </symbol>
+  <!-- masthead seal: an olive sprig, for the anointing oil of 1 Samuel -->
+  <symbol id="emblem" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="59" fill="none" stroke="currentColor" stroke-width=".5" opacity=".35"/>
+    <circle cx="60" cy="60" r="56.5" fill="none" stroke="currentColor" stroke-width=".9" opacity=".55"/>
+    <circle cx="60" cy="60" r="46" fill="none" stroke="currentColor" stroke-width=".7" opacity=".5"/>
+    <path d="M34 90 Q54 54 88 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <ellipse cx="50.7" cy="72.6" rx="8" ry="3" transform="rotate(-17 50.7 72.6)" fill="currentColor" opacity=".8"/>
+    <ellipse cx="43.1" cy="67.3" rx="8" ry="3" transform="rotate(-93 43.1 67.3)" fill="currentColor" opacity=".8"/>
+    <ellipse cx="60.6" cy="60.8" rx="8" ry="3" transform="rotate(-11 60.6 60.8)" fill="currentColor" opacity=".8"/>
+    <ellipse cx="53.6" cy="54.7" rx="8" ry="3" transform="rotate(-87 53.6 54.7)" fill="currentColor" opacity=".8"/>
+    <ellipse cx="71.6" cy="50.0" rx="8" ry="3" transform="rotate(-6 71.6 50.0)" fill="currentColor" opacity=".8"/>
+    <ellipse cx="65.3" cy="43.3" rx="8" ry="3" transform="rotate(-82 65.3 43.3)" fill="currentColor" opacity=".8"/>
+    <ellipse cx="82.5" cy="41.3" rx="8" ry="3" transform="rotate(-0 82.5 41.3)" fill="currentColor" opacity=".8"/>
+    <ellipse cx="76.7" cy="34.1" rx="8" ry="3" transform="rotate(-76 76.7 34.1)" fill="currentColor" opacity=".8"/>
+    <ellipse cx="93.0" cy="28.7" rx="7" ry="2.8" transform="rotate(-33 93.0 28.7)" fill="currentColor" opacity=".8"/>
+    <circle cx="52.2" cy="71.5" r="3" fill="currentColor"/>
+    <circle cx="55.0" cy="52.9" r="3" fill="currentColor"/>
+    <circle cx="72.7" cy="49.7" r="3" fill="currentColor"/>
+    <g stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity=".6"><path d="M60 1v7M60 112v7M1 60h7M112 60h7"/></g>
+  </symbol>
+</svg>
+
+<div class="rail left" aria-hidden="true">
+  <span class="stem"></span>
+  <span class="bead top"></span>
+  <svg class="vine" viewBox="0 0 44 320" aria-hidden="true"><g transform="translate(44,0) rotate(90)"><use href="#flourish" width="320" height="44"/></g></svg>
+  <span class="bead bot"></span>
+  <span class="stem"></span>
+</div>
+<div class="rail right" aria-hidden="true">
+  <span class="stem"></span>
+  <span class="bead top"></span>
+  <svg class="vine" viewBox="0 0 44 320" aria-hidden="true"><g transform="translate(44,0) rotate(90)"><use href="#flourish" width="320" height="44"/></g></svg>
+  <span class="bead bot"></span>
+  <span class="stem"></span>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <svg class="emblem" viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg>
+    <p class="eyebrow">Study Guide</p>
+    <h1>Old Testament</h1>
+    <p class="sub">1 Samuel &middot; Samuel, the last judge &middot; Saul, the first king &middot; David, the king after God&rsquo;s heart</p>
+    <svg class="orn" viewBox="0 0 320 44" aria-hidden="true"><use href="#flourish"/></svg>
+  </header>
+
+  <nav class="topics" role="tablist" aria-label="Parts of the chapter">
+    <button class="topic-btn" role="tab" data-topic="guide" aria-selected="true">Guide</button>
+    <button class="topic-btn" role="tab" data-topic="s1" aria-selected="false">Samuel</button>
+    <button class="topic-btn" role="tab" data-topic="s2" aria-selected="false">Saul</button>
+    <button class="topic-btn" role="tab" data-topic="s3" aria-selected="false">David &amp; Saul</button>
+    <button class="topic-btn" role="tab" data-topic="exam" aria-selected="false">Practice Quiz</button>
+  </nav>
+
+  <main>
+
+    <!-- ================= GUIDE ================= -->
+    <section class="topic" id="topic-guide">
+      <p class="intro">The chapter in three parts, the way your notes lay it out. Check an item off once you can tell it without looking; <b>Study it</b> jumps to the notes, the small buttons to each subsection. <mark>Green</mark> marks what is most likely to be asked.</p>
+      <div class="modes"><div class="seg" data-modes="guide">
+        <button type="button" data-mode="overview" aria-pressed="true">The review list</button>
+      </div></div>
+      <div class="panel" data-panel="guide/overview"><div id="guideRoot"></div></div>
+    </section>
+
+    <!-- ================= SAMUEL ================= -->
+    <section class="topic" id="topic-s1" hidden>
+      <p class="intro">1 Samuel 1&ndash;7: the dates, Hannah and the birth of Samuel, Eli&rsquo;s corrupt sons and God&rsquo;s call in the night, the ark lost to the Philistines and Dagon falling before it, and the revival at Mizpah.</p>
+      <div class="modes"><div class="seg" data-modes="s1">
+        <button type="button" data-mode="notes" aria-pressed="true">Notes</button>
+        <button type="button" data-mode="cards" aria-pressed="false">Flashcards</button>
+        <button type="button" data-mode="match" aria-pressed="false">Match</button>
+        <button type="button" data-mode="quiz" aria-pressed="false">Quiz</button>
+      </div></div>
+      <div class="panel" data-panel="s1/notes"><div id="s1Notes"></div></div>
+      <div class="panel" data-panel="s1/cards" hidden>
+        <p class="hint">Front: the name or the question. Back: the answer and where it sits in the notes. Space flips, arrows move.</p>
+        <div class="toolbar"><span class="label">Deck</span><div class="seg" data-decks="s1"></div><button class="btn" type="button" data-shuffle="s1">Shuffle deck</button></div>
+        <div id="s1Cards"></div>
+      </div>
+      <div class="panel" data-panel="s1/match" hidden><p class="hint">Tap a name, then the line that goes with it.</p><div id="s1Match"></div></div>
+      <div class="panel" data-panel="s1/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s1Quiz"></div></div>
+    </section>
+
+    <!-- ================= SAUL ================= -->
+    <section class="topic" id="topic-s2" hidden>
+      <p class="intro">1 Samuel 8&ndash;15: why Israel asked for a king it did not need, Saul&rsquo;s small kingdom and its enemies, the lost donkeys and the three namings, and the two acts of disobedience that cost him the throne.</p>
+      <div class="modes"><div class="seg" data-modes="s2">
+        <button type="button" data-mode="notes" aria-pressed="true">Notes</button>
+        <button type="button" data-mode="cards" aria-pressed="false">Flashcards</button>
+        <button type="button" data-mode="match" aria-pressed="false">Match</button>
+        <button type="button" data-mode="quiz" aria-pressed="false">Quiz</button>
+      </div></div>
+      <div class="panel" data-panel="s2/notes"><div id="s2Notes"></div></div>
+      <div class="panel" data-panel="s2/cards" hidden>
+        <p class="hint">Front: the name or the question. Back: the answer and where it sits in the notes. Space flips, arrows move.</p>
+        <div class="toolbar"><span class="label">Deck</span><div class="seg" data-decks="s2"></div><button class="btn" type="button" data-shuffle="s2">Shuffle deck</button></div>
+        <div id="s2Cards"></div>
+      </div>
+      <div class="panel" data-panel="s2/match" hidden><p class="hint">Tap a name, then the line that goes with it.</p><div id="s2Match"></div></div>
+      <div class="panel" data-panel="s2/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s2Quiz"></div></div>
+    </section>
+
+    <!-- ================= DAVID AND SAUL ================= -->
+    <section class="topic" id="topic-s3" hidden>
+      <p class="intro">1 Samuel 16&ndash;31: David anointed at Bethlehem, the Spirit leaving Saul, Goliath and the dig at Gath, Saul&rsquo;s jealousy and Jonathan&rsquo;s loyalty, the medium, and Saul&rsquo;s death.</p>
+      <div class="modes"><div class="seg" data-modes="s3">
+        <button type="button" data-mode="notes" aria-pressed="true">Notes</button>
+        <button type="button" data-mode="cards" aria-pressed="false">Flashcards</button>
+        <button type="button" data-mode="match" aria-pressed="false">Match</button>
+        <button type="button" data-mode="quiz" aria-pressed="false">Quiz</button>
+      </div></div>
+      <div class="panel" data-panel="s3/notes"><div id="s3Notes"></div></div>
+      <div class="panel" data-panel="s3/cards" hidden>
+        <p class="hint">Front: the name or the question. Back: the answer and where it sits in the notes. Space flips, arrows move.</p>
+        <div class="toolbar"><span class="label">Deck</span><div class="seg" data-decks="s3"></div><button class="btn" type="button" data-shuffle="s3">Shuffle deck</button></div>
+        <div id="s3Cards"></div>
+      </div>
+      <div class="panel" data-panel="s3/match" hidden><p class="hint">Tap a name, then the line that goes with it.</p><div id="s3Match"></div></div>
+      <div class="panel" data-panel="s3/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s3Quiz"></div></div>
+    </section>
+
+    <!-- ================= PRACTICE EXAM ================= -->
+    <section class="topic" id="topic-exam" hidden>
+      <p class="intro">Questions from all three parts of the chapter &mdash; names, places, numbers, the order of events, and application questions that describe a scene and ask which one it is. Reshuffled each run, with the reason behind every answer.</p>
+      <div class="modes"><div class="seg" data-modes="exam">
+        <button type="button" data-mode="mock" aria-pressed="true">Practice quiz</button>
+      </div></div>
+      <div class="panel" data-panel="exam/mock"><div id="mockExam"></div></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Built from your Old Testament class notes on 1 Samuel. &ldquo;Man looks on the outward appearance, but the Lord looks on the heart&rdquo; &mdash; 1 Samuel 16:7.</p>
+    <span class="keys">Flashcards <kbd>&larr;</kbd> <kbd>&rarr;</kbd> <kbd>Space</kbd> &nbsp;&middot;&nbsp; Quizzes <kbd>1</kbd>&ndash;<kbd>4</kbd> <kbd>Enter</kbd></span>
+  </footer>
+
+</div>
+<script>
+(function(){
+"use strict";
+/* ================================================================ the course
+   Built from her Old Testament class notes on 1 Samuel: Samuel (chs. 1–7),
+   Saul (chs. 8–15), and David and Saul (chs. 16–31). The quiz is on this
+   chapter, so everything here stays inside the notes.                         */
+var COURSE = {
+ code:"Old Testament Literature", term:"Cedarville University",
+ exam:"1 Samuel &mdash; Samuel, Saul and David",
+ scope:"Your class notes on the chapter: the last judge, the first king, and the shepherd God chose instead. The quiz is on this chapter.",
+ rules:[
+  "<b>1 Samuel 1&ndash;7</b> is Samuel, <b>8&ndash;15</b> is Saul, <b>16&ndash;31</b> is the new king, David.",
+  "<b>1 Samuel 15</b> raises the important questions &mdash; Saul, the Amalekites, and why obedience is better than sacrifice.",
+  "Know the <b>dates and numbers</b>: 1070&ndash;970 BC, Samuel 20 years, Saul 40, David king near 1010; 30,000 dead at the ark&rsquo;s capture; Goliath nine feet tall.",
+  "Know <b>who fought whom</b>: the Philistines were the main threat; Saul also fought the Ammonites, Amalekites, Edomites and the kings of Zobah."],
+ about:"Each heading below is a part of the chapter as your notes lay it out. The notes, flashcards, quizzes and practice exam all stay inside them. Green marks the lines most likely to be asked."
+};
+
+/* One item per part of the chapter. "a" is the note section; "subs" are the
+   subsections inside it.                                                       */
+var GUIDE = {sections:[
+ {h:"Samuel · 1 Samuel 1–7", tp:"s1", items:[
+  {id:"g1-setting", t:"The time and the man", a:"s1-setting",
+   short:"1070–970 BC, accurate within about ten years. Samuel leads 20 years, Saul 40, and David is king near 1010. Samuel is the last great judge — prophet, priest and judge — who crowns the first king.",
+   subs:[["Dates", "s1-dates"], ["Prophet, priest, judge", "s1-offices"]]},
+  {id:"g1-birth", t:"Hannah and Samuel’s birth", a:"s1-birth",
+   short:"An unusual birth like Isaac, Moses and Samson. Hannah prays at Shiloh while the other wife taunts her; Eli thinks she is drunk, then blesses her; she gives the child to God.",
+   subs:[["Hannah’s prayer", "s1-birth"]]},
+  {id:"g1-call", t:"Eli’s sons and God’s call", a:"s1-call",
+   short:"Eli’s sons take meat from the sacrifices and sleep with women. God calls Samuel three times; Samuel thinks it is Eli; the message is judgment on Eli and his sons.",
+   subs:[["The call", "s1-call"]]},
+  {id:"g1-ark", t:"The ark lost and returned; Mizpah", a:"s1-ark",
+   short:"Israel loses to the Philistines: 30,000 dead, Eli’s sons killed, the ark taken; Eli falls and breaks his neck. Dagon falls before the ark; plague of mice and tumors. Twenty years later, revival at Mizpah.",
+   subs:[["The battle", "s1-battle"], ["Dagon", "s1-dagon"], ["Mizpah", "s1-mizpah"]]}]},
+
+ {h:"Saul · 1 Samuel 8–15", tp:"s2", items:[
+  {id:"g2-king", t:"Israel asks for a king", a:"s2-king",
+   short:"Samuel’s sons take bribes. Israel wants a king like the nations — a king it did not need, since Samuel only had to pray. The theocracy ends; Samuel warns of drafts, a court and taxes.",
+   subs:[["Why a king", "s2-why"], ["Samuel’s warning", "s2-warning"]]},
+  {id:"g2-land", t:"Saul’s kingdom and enemies", a:"s2-land",
+   short:"The Philistines were the main threat — five cities on the coastal plain, plus Beth Shean. Saul also fought Ammonites, Amalekites, Edomites and the kings of Zobah. A small kingdom; capital at Gibeah.",
+   subs:[["Enemies", "s2-enemies"], ["Gibeah", "s2-gibeah"]]},
+  {id:"g2-chosen", t:"Saul chosen: the donkeys and three namings", a:"s2-chosen",
+   short:"Tall and impressive but unassuming. Kish’s lost donkeys bring him to Samuel. Named king three times: privately anointed with oil, publicly chosen at Mizpah (hiding), confirmed after beating the Ammonites, crowned at Gilgal.",
+   subs:[["The donkeys", "s2-donkeys"], ["Three times", "s2-three"]]},
+  {id:"g2-fall", t:"Saul’s disobedience (1 Samuel 13–15)", a:"s2-fall",
+   short:"He offers the sacrifice himself when Samuel is late — so none of his sons will rule. He spares King Agag and the best animals of the Amalekites. Obedience is better than sacrifice; God rejects him.",
+   subs:[["The sacrifice", "s2-sacrifice"], ["The Amalekites", "s2-amalek"]]}]},
+
+ {h:"David and Saul · 1 Samuel 16–31", tp:"s3", items:[
+  {id:"g3-anoint", t:"David anointed; the Spirit leaves Saul", a:"s3-anoint",
+   short:"Samuel goes to Jesse in Bethlehem. Eliab impresses, but the Lord looks at the heart. The youngest, David, is anointed; God’s Spirit rushes on him and leaves Saul, replaced by an evil spirit (16:14).",
+   subs:[["At Bethlehem", "s3-bethlehem"], ["The evil spirit — six notes", "s3-spirit"]]},
+  {id:"g3-goliath", t:"David and Goliath", a:"s3-goliath",
+   short:"Goliath is nine feet tall, his spear like a weaver’s rod. David comes with a staff, a sling and five smooth stones; the issue is the power of Israel’s God. The first stone kills him. Archaeology at Gath (Aren Maeir).",
+   subs:[["The fight", "s3-fight"], ["Archaeology at Gath", "s3-gath"]]},
+  {id:"g3-flight", t:"Saul’s jealousy and David in flight", a:"s3-flight",
+   short:"Saul throws a spear at David, sets a deadly bride-price, sends men at night. Jonathan’s loyalty. David flees to Gath and acts mad, leads outcasts, twice spares Saul, and serves Achish of Gath.",
+   subs:[["Saul’s attempts", "s3-attempts"], ["Jonathan", "s3-jonathan"], ["The outlaw years", "s3-outlaw"]]},
+  {id:"g3-end", t:"The medium, the Amalekites and Saul’s death", a:"s3-end",
+   short:"Samuel dead and God silent, Saul consults a medium, and Samuel appears. David is kept out of the battle and defeats the Amalekites. Jonathan dies; Saul falls on his own sword. One day: the war, the king and his heirs.",
+   subs:[["The medium", "s3-medium"], ["The last battle", "s3-death"], ["Saul, summed up", "s3-verdict"]]}]}
+]};
+
+/* ================================================================ Samuel, 1 Samuel 1–7
+   From her class notes. Where the notes misspell a name (Holiath, Ssaul) the
+   right spelling is used; nothing is added that the notes do not say, except a
+   few names straight from 1 Samuel, marked as such.                            */
+var CH = {};
+CH.s1 = {n:1, title:"Samuel", short:"Samuel", ref:"1 Samuel 1–7",
+ notes:[
+  {id:"s1-setting", h:"The time and the man", body:
+   '<div class="point"><b>The point</b><p>1 Samuel covers the move from judges to kings, and it is <mark>more historically precise than the books before it — within about ten years</mark>. Samuel stands on the hinge: <mark>the last judge, who crowns the first king</mark>.</p><p class="able"><b>Be able to</b> give the dates, the three lengths of rule, and Samuel’s three offices.</p></div>'+
+   '<h3 class="sub" id="s1-dates">The dates</h3>'+
+   '<div class="tblwrap"><table class="tbl n0"><tbody>'+
+   '<tr><td class="head">The book</td><td class="sm">Covers <mark><b>1070–970 BC</b></mark>, accurate within about ten years.</td></tr>'+
+   '<tr><td class="head">Samuel</td><td class="sm">Leads Israel for <mark><b>20 years</b></mark>.</td></tr>'+
+   '<tr><td class="head">Saul</td><td class="sm">Reigns for <mark><b>40 years</b></mark>.</td></tr>'+
+   '<tr><td class="head">David</td><td class="sm">Becomes king <mark><b>near 1010 BC</b></mark>.</td></tr>'+
+   '</tbody></table></div>'+
+   '<h3 class="sub" id="s1-offices">Prophet, priest and judge</h3>'+
+   '<ul><li>Samuel is the <mark><b>last great judge</b> and a prophet</mark>: the last judge, and the man who crowns the first king.</li>'+
+   '<li>He holds all three offices — <mark><b>prophet, priest and judge</b></mark>.</li>'+
+   '<li>His <b>flexibility, piety and zeal</b> make him one of the best leaders Israel ever had.</li>'+
+   '<li>He is the <b>ideal judge</b> — and he <b>does not want</b> the people to crown a king. Israel wants a totally different kind of leader.</li></ul>'+
+   '<div class="exam-tip"><b>How the book divides</b>Chapters <b>1–7</b> are Samuel, <b>8–15</b> are Saul, and <b>16–31</b> are the new king, David.</div>'},
+
+  {id:"s1-birth", h:"Hannah and Samuel’s birth", body:
+   '<div class="point"><b>The point</b><p>Samuel’s birth is <mark>unusual, like the births of Isaac, Moses and Samson</mark> — a sign that God is raising up someone for a purpose.</p><p class="able"><b>Be able to</b> tell the story of Hannah’s prayer, and name the three others with unusual births.</p></div>'+
+   '<ul><li>His mother, <mark><b>Hannah</b>, prays at <b>Shiloh</b></mark>. Her husband’s other wife taunted her for having no children (1 Samuel names her Peninnah).</li>'+
+   '<li>Hannah <mark><b>promises to give the child to God</b></mark>.</li>'+
+   '<li>The priest <mark><b>Eli thinks she is drunk</b></mark> — but later he <b>blesses</b> her.</li>'+
+   '<li>After the child is born, she <b>takes Samuel to Shiloh</b>, where he works alongside Eli.</li></ul>'+
+   '<div class="exam-tip"><b>Unusual births</b><mark>Isaac, Moses, Samson</mark> — and Samuel.</div>'},
+
+  {id:"s1-call", h:"Eli’s sons and God’s call", body:
+   '<div class="point"><b>The point</b><p>The priesthood at Shiloh has gone rotten, and God speaks to a boy instead of to the priest. <mark>The first message Samuel hears is judgment on Eli’s house.</mark></p><p class="able"><b>Be able to</b> say what Eli’s sons did, how God called Samuel, and what the message was.</p></div>'+
+   '<ul><li><mark><b>Eli’s sons are corrupt</b></mark>: they <b>take meat from the sacrifices</b> and <b>sleep with women</b>.</li>'+
+   '<li><mark><b>Yahweh calls Samuel’s name three times.</b></mark> Each time Samuel thinks it is <b>Eli</b> calling, and runs to him — he obeys Eli.</li>'+
+   '<li>Then he hears a <b>horrible promise</b>: <mark>Eli and his sons will be judged</mark>.</li></ul>'},
+
+  {id:"s1-ark", h:"The ark lost and returned; Mizpah", body:
+   '<div class="point"><b>The point</b><p>The judgment comes true in one battle. <mark>Israel loses to the Philistines, and loses the ark</mark> — yet the ark humbles the Philistines’ god in his own temple. Twenty years later Samuel calls Israel back to God.</p><p class="able"><b>Be able to</b> give the numbers, what happened to Eli, what the ark did to Dagon, and what happened at Mizpah.</p></div>'+
+   '<h3 class="sub" id="s1-battle">The battle</h3>'+
+   '<ul><li>Israel loses a battle to the <mark><b>Philistines</b></mark>.</li>'+
+   '<li><mark><b>30,000 casualties</b></mark>, including <b>Eli’s sons</b>.</li>'+
+   '<li>Israel loses the <mark><b>ark of the covenant</b> — the symbol of God’s presence</mark>.</li>'+
+   '<li>At the news, <mark><b>Eli falls over, breaks his neck and dies</b></mark>.</li></ul>'+
+   '<h3 class="sub" id="s1-dagon">Dagon</h3>'+
+   '<ul><li>The Philistines store the ark in <mark><b>Dagon’s temple</b></mark>.</li>'+
+   '<li>Dagon is found <b>bowing down</b> before the ark. The next day his <b>hands are severed</b>.</li>'+
+   '<li>God sends a <mark><b>plague</b> on every town where the Philistines keep the ark — <b>mice and tumors</b></mark> (your notes: hemorrhoids).</li></ul>'+
+   '<h3 class="sub" id="s1-mizpah">Mizpah, twenty years later</h3>'+
+   '<ul><li><mark><b>Twenty years later</b>, Samuel rallies Israel</mark>: destroy your idols and serve God.</li>'+
+   '<li>He <b>prays for the people</b> and <b>offers sacrifices at Mizpah</b>.</li></ul>'+
+   '<div class="exam-tip"><b>Keep the two Mizpahs straight</b>Mizpah is where Samuel leads the revival (ch. 7) — and later where he calls Israel together to choose Saul publicly (ch. 10).</div>'}
+ ],
+ decks:[
+  {id:"terms", label:"People, places & terms", cards:[
+   ["1070–970 BC","The years 1 Samuel covers — accurate within about ten years","g1-setting"],
+   ["Samuel’s years as leader","20 years","g1-setting"],
+   ["Saul’s reign","40 years","g1-setting"],
+   ["When David becomes king","Near 1010 BC","g1-setting"],
+   ["Samuel’s three offices","Prophet, priest and judge","g1-setting"],
+   ["Last judge","Samuel — who crowns Israel’s first king","g1-setting"],
+   ["What made Samuel one of the best","His flexibility, piety and zeal","g1-setting"],
+   ["Hannah","Samuel’s mother, who prayed for a child at Shiloh and gave him to God","g1-birth"],
+   ["Shiloh","Where Hannah prayed, and where Samuel served alongside Eli","g1-birth"],
+   ["Eli","The priest at Shiloh who thought Hannah was drunk, then blessed her","g1-birth"],
+   ["Unusual births like Samuel’s","Isaac, Moses and Samson","g1-birth"],
+   ["Eli’s sons’ sins","Taking meat from the sacrifices and sleeping with women","g1-call"],
+   ["How many times God called Samuel","Three — each time he thought it was Eli","g1-call"],
+   ["The message Samuel heard","Eli and his sons would be judged","g1-call"],
+   ["Ark of the covenant","The symbol of God’s presence, lost to the Philistines","g1-ark"],
+   ["Israel’s losses in the battle","30,000, including Eli’s sons","g1-ark"],
+   ["How Eli died","He fell over, broke his neck and died","g1-ark"],
+   ["Dagon","The Philistine god whose statue bowed before the ark and lost its hands","g1-ark"],
+   ["The plague on the Philistines","Mice and tumors, in each town that kept the ark","g1-ark"],
+   ["Mizpah (chapter 7)","Where Samuel prayed and sacrificed after twenty years, calling Israel back to God","g1-ark"]]},
+  {id:"order", label:"In order", cards:[
+   ["1 · Hannah","Prays at Shiloh and promises her child to God","g1-birth"],
+   ["2 · Samuel at Shiloh","Hannah takes him to serve alongside Eli","g1-birth"],
+   ["3 · God’s call","Three calls in the night; judgment on Eli’s house","g1-call"],
+   ["4 · The lost battle","30,000 dead, Eli’s sons killed, the ark taken","g1-ark"],
+   ["5 · Eli’s death","He falls and breaks his neck at the news","g1-ark"],
+   ["6 · Dagon’s temple","The idol falls before the ark, then loses its hands","g1-ark"],
+   ["7 · The plague","Mice and tumors in each Philistine town","g1-ark"],
+   ["8 · Mizpah","Twenty years later: destroy the idols, prayer and sacrifice","g1-ark"],
+   ["How 1 Samuel divides","1–7 Samuel · 8–15 Saul · 16–31 David","g1-setting"]]}
+ ]
+};
+
+var QB = [
+ {tp:"s1",sec:"g1-setting",t:"mc",q:"What years does 1 Samuel cover?",a:"1070–970 BC",w:["1446–1406 BC","931–722 BC","586–516 BC"],e:"1070–970 BC, accurate within about ten years."},
+ {tp:"s1",sec:"g1-setting",t:"mc",q:"How long did Samuel lead Israel?",a:"20 years",w:["40 years","7 years","30 years"],e:"Samuel 20 years; Saul 40."},
+ {tp:"s1",sec:"g1-setting",t:"mc",q:"How long did Saul reign?",a:"40 years",w:["20 years","12 years","7 years"],e:"Forty years, by the notes."},
+ {tp:"s1",sec:"g1-setting",t:"mc",q:"About when does David become king?",a:"Near 1010 BC",w:["Near 1070 BC","Near 970 BC","Near 931 BC"],e:"Near 1010 BC — while Saul’s forty years are running out."},
+ {tp:"s1",sec:"g1-setting",t:"mc",q:"Which three offices did Samuel hold?",a:"Prophet, priest and judge",w:["Prophet, priest and king","Judge, king and scribe","Priest, king and general"],e:"Prophet, priest and judge — never king; he crowns the first king."},
+ {tp:"s1",sec:"g1-setting",t:"mc",q:"Samuel is described as:",a:"the last judge, who crowns the first king",w:["the first king, anointed by the last judge","the first judge after Joshua","the last king of the united kingdom"],e:"The last great judge and prophet."},
+ {tp:"s1",sec:"g1-setting",t:"mc",q:"Which qualities make Samuel one of Israel’s best leaders?",a:"Flexibility, piety and zeal",w:["Height, strength and courage","Wealth, wisdom and wit","Patience, silence and humility"],e:"Flexibility, piety and zeal."},
+ {tp:"s1",sec:"g1-setting",t:"tf",q:"Samuel was eager for Israel to have a king.",a:false,e:"False — he did not want the people to crown a king."},
+ {tp:"s1",sec:"g1-birth",t:"mc",q:"Samuel’s unusual birth is compared with those of:",a:"Isaac, Moses and Samson",w:["Abraham, Jacob and Joseph","David, Solomon and Saul","Noah, Enoch and Seth"],e:"Isaac, Moses and Samson."},
+ {tp:"s1",sec:"g1-birth",t:"mc",q:"Where did Hannah pray for a child?",a:"Shiloh",w:["Mizpah","Bethlehem","Gilgal"],e:"At Shiloh, where Eli was priest."},
+ {tp:"s1",sec:"g1-birth",t:"mc",q:"When Eli first saw Hannah praying, he thought she was:",a:"drunk",w:["a prophetess","ill","a foreigner"],e:"He thought she was drunk, then blessed her."},
+ {tp:"s1",sec:"g1-birth",t:"mc",q:"What did Hannah promise God?",a:"To give the child to God",w:["To build an altar at Shiloh","To name the child after Eli","To make a pilgrimage every year"],e:"She gave Samuel to God and took him to Shiloh."},
+ {tp:"s1",sec:"g1-birth",t:"mc",q:"Who taunted Hannah about having no children?",a:"Her husband’s other wife",w:["Eli’s sons","Her own mother","The priest Eli"],e:"The other wife — Peninnah in 1 Samuel 1."},
+ {tp:"s1",sec:"g1-birth",ap:true,t:"mc",q:"A woman long without children prays, and the child becomes a leader of God’s people. Whose story does Samuel’s birth echo?",a:"Isaac’s",w:["Saul’s","Goliath’s","Jonathan’s"],e:"Like Isaac, Moses and Samson, Samuel’s birth is unusual."},
+ {tp:"s1",sec:"g1-birth",t:"tf",q:"After the child was born, Hannah took Samuel to Shiloh to work alongside Eli.",a:true,e:"True — she kept her promise to give him to God."},
+ {tp:"s1",sec:"g1-call",t:"mc",q:"What were Eli’s sons doing wrong?",a:"Taking meat from the sacrifices and sleeping with women",w:["Worshiping Dagon at Shiloh","Refusing to fight the Philistines","Taking bribes as judges"],e:"Bribe-taking was Samuel’s sons, later."},
+ {tp:"s1",sec:"g1-call",t:"mc",q:"How many times did God call Samuel’s name?",a:"Three",w:["Once","Twice","Seven"],e:"Three times; each time Samuel thought it was Eli."},
+ {tp:"s1",sec:"g1-call",t:"mc",q:"Who did Samuel think was calling him?",a:"Eli",w:["His mother Hannah","One of Eli’s sons","An angel"],e:"He ran to Eli each time."},
+ {tp:"s1",sec:"g1-call",t:"mc",q:"What message did Samuel receive?",a:"Eli and his sons would be judged",w:["Israel would receive a king","The ark would be returned","Hannah would have more children"],e:"A horrible promise of judgment on Eli’s house."},
+ {tp:"s1",sec:"g1-call",ap:true,t:"mc",q:"Two priests abuse their office by taking the best of the offerings for themselves. Whose sons are these?",a:"Eli’s",w:["Samuel’s","Saul’s","Jesse’s"],e:"Eli’s sons at Shiloh."},
+ {tp:"s1",sec:"g1-call",t:"tf",q:"The first message God gave Samuel was a promise of blessing on Eli’s family.",a:false,e:"False — it was judgment on Eli and his sons."},
+ {tp:"s1",sec:"g1-ark",t:"mc",q:"To whom did Israel lose the battle in which the ark was taken?",a:"The Philistines",w:["The Ammonites","The Amalekites","The Edomites"],e:"The Philistines — the main threat all through these chapters."},
+ {tp:"s1",sec:"g1-ark",t:"mc",q:"How many Israelite casualties were there in that battle?",a:"30,000",w:["3,000","300","100,000"],e:"30,000, including Eli’s sons."},
+ {tp:"s1",sec:"g1-ark",t:"mc",q:"The ark of the covenant was the symbol of:",a:"God’s presence",w:["the king’s authority","the priests’ wealth","Israel’s army"],e:"The symbol of God’s presence."},
+ {tp:"s1",sec:"g1-ark",t:"mc",q:"How did Eli die?",a:"He fell over and broke his neck",w:["He was killed in the battle","He was struck by the plague","He died of grief at Mizpah"],e:"At the news of the ark’s capture."},
+ {tp:"s1",sec:"g1-ark",t:"mc",q:"Where did the Philistines keep the ark?",a:"In Dagon’s temple",w:["In the temple at Shiloh","In the palace at Gath","At Mizpah"],e:"Dagon bowed down before it."},
+ {tp:"s1",sec:"g1-ark",t:"mc",q:"What happened to Dagon’s statue on the second day?",a:"Its hands were severed",w:["It was burned","It turned toward Israel","It vanished from the temple"],e:"First it bowed; the next day its hands were cut off."},
+ {tp:"s1",sec:"g1-ark",t:"mc",q:"What plague did God send on the Philistine towns that kept the ark?",a:"Mice and tumors",w:["Frogs and flies","Locusts and hail","Boils and darkness"],e:"Mice and tumors (hemorrhoids in the notes)."},
+ {tp:"s1",sec:"g1-ark",t:"mc",q:"Where did Samuel pray and offer sacrifices when he rallied Israel?",a:"Mizpah",w:["Shiloh","Gilgal","Bethlehem"],e:"Twenty years later, at Mizpah."},
+ {tp:"s1",sec:"g1-ark",t:"mc",q:"How long after the ark was lost did Samuel rally Israel?",a:"Twenty years",w:["Forty years","Seven years","Three days"],e:"Twenty years later — destroy the idols and serve God."},
+ {tp:"s1",sec:"g1-ark",ap:true,t:"mc",q:"A statue of a foreign god is found face down before a sacred object, and later broken. Which story is this?",a:"Dagon and the ark",w:["Goliath and David","Saul and the medium","Agag and Samuel"],e:"Dagon bowed before the ark and then lost its hands."},
+ {tp:"s1",sec:"g1-ark",t:"tf",q:"Eli’s sons were among the Israelites killed when the ark was taken.",a:true,e:"True — part of the 30,000 casualties."},
+ {tp:"s1",sec:"g1-setting",ap:true,t:"mc",q:"A leader serves as God’s spokesman, offers sacrifices, and settles Israel’s disputes. Which of Samuel’s roles are these?",a:"Prophet, priest and judge",w:["King, general and scribe","Prophet, king and judge","Priest, king and shepherd"],e:"Samuel held all three offices — but never king."},
+ {tp:"s1",sec:"g1-call",ap:true,t:"mc",q:"A boy hears his name at night and runs to the old priest three times before he understands who is calling. Who is the boy?",a:"Samuel",w:["David","Jonathan","Saul"],e:"Yahweh called Samuel three times; he thought it was Eli."}
+];
+
+/* ================================================================ Saul, 1 Samuel 8–15 */
+CH.s2 = {n:2, title:"Saul", short:"Saul", ref:"1 Samuel 8–15",
+ notes:[
+  {id:"s2-king", h:"Israel asks for a king", body:
+   '<div class="point"><b>The point</b><p>Israel asks for <mark>a king it did not need</mark>: Samuel only had to pray and God would deliver. By asking, <mark>Israel stops being a theocracy — ruled by God alone — and chooses to serve a human master</mark>.</p><p class="able"><b>Be able to</b> give the reasons Israel wanted a king, what a theocracy is, and what Samuel warned a king would do.</p></div>'+
+   '<h3 class="sub" id="s2-why">Why a king</h3>'+
+   '<ul><li>Samuel appoints his <b>sons</b> as judges, but <mark>they accept <b>bribes</b> and make justice impossible</mark> — a discouragement to the people.</li>'+
+   '<li>Israel wants to <mark>copy the successful pattern of the nations</mark>: an economic and military leader, a king who defeats enemies.</li>'+
+   '<li>They were <b>asking for a king they did not need</b> — Samuel only had to pray, and God would deliver.</li>'+
+   '<li><mark><b>Theocracy</b> = ruled by God alone.</mark> With a king, Israel no longer operates as a theocracy; it will serve a human master.</li></ul>'+
+   '<h3 class="sub" id="s2-warning">Samuel’s warning</h3>'+
+   '<p>Samuel is discouraged, and tells the people what a king will do:</p>'+
+   '<ol><li><mark>Draft Israel’s <b>sons and daughters</b></mark>.</li><li>Take their <b>young people into his court</b>.</li><li><mark><b>Tax</b> the nation</mark>.</li></ol>'},
+
+  {id:"s2-land", h:"Saul’s kingdom and enemies", body:
+   '<div class="point"><b>The point</b><p>Saul’s kingdom was <mark>small, and the Philistines were the main threat</mark> throughout his rise. Know the map of enemies and the small palace at Gibeah.</p><p class="able"><b>Be able to</b> name Saul’s enemies, where the Philistines were, what land Saul held, and where his capital was.</p></div>'+
+   '<h3 class="sub" id="s2-enemies">Enemies</h3>'+
+   '<ul><li>During Saul’s rise, <mark>the <b>Philistines</b> were the main threat</mark>.</li>'+
+   '<li>Saul also fought the <mark><b>Ammonites</b>, <b>Amalekites</b>, <b>Edomites</b>, and the <b>kings of Zobah</b></mark>.</li>'+
+   '<li>The Philistines held <mark><b>five cities</b> on the southern coastal plain</mark>, and other cities such as <b>Beth Shean</b>.</li>'+
+   '<li><b>Canaanite cities</b> were still sprinkled through the land — <b>Jerusalem</b> and <b>Gibeon</b>.</li></ul>'+
+   '<p><b>Saul’s kingdom was not large</b>: just the <mark>central and northern hill country, Galilee, and parts of the Transjordan</mark>.</p>'+
+   '<h3 class="sub" id="s2-gibeah">Gibeah</h3>'+
+   '<ul><li>Saul’s palace was at <mark><b>Gibeah</b>, the capital of Benjamite territory</mark>.</li>'+
+   '<li>A <b>small enclosure with a tower</b>, 11th century BC, a few miles <b>north of Jerusalem</b>, at <mark><b>Tell el-Ful</b></mark>.</li></ul>'},
+
+  {id:"s2-chosen", h:"Saul chosen: the donkeys and three namings", body:
+   '<div class="point"><b>The point</b><p>God leads an unlikely man to Samuel through lost donkeys. Saul looks the part — <mark>tall and physically impressive</mark> — but is <mark>unassuming, from the smallest tribe</mark>, and is named king <mark>three times: once privately, twice publicly</mark>.</p><p class="able"><b>Be able to</b> tell the donkey story, and give the three namings in order with where each happened.</p></div>'+
+   '<h3 class="sub" id="s2-donkeys">The lost donkeys</h3>'+
+   '<ul><li>Saul’s father <mark><b>Kish</b> loses his donkeys</mark>; Saul and a servant search and cannot find them, so they consult <b>Samuel</b>.</li>'+
+   '<li>The Lord tells Samuel <b>the day before</b>, and again when Saul approaches: <i>this is the king</i>.</li>'+
+   '<li>Samuel, the ideal prophet, <b>reveals the donkeys are found</b> and says Saul will satisfy Israel’s desire for a king.</li>'+
+   '<li>Saul answers that he is from an <mark>insignificant family in Israel’s smallest tribe — <b>Benjamin</b></mark>.</li></ul>'+
+   '<h3 class="sub" id="s2-three">Named king three times</h3>'+
+   '<div class="tblwrap"><table class="tbl n0"><tbody>'+
+   '<tr><td class="head">1 · Private</td><td class="sm">Samuel <mark><b>pours oil on Saul’s head</b></mark>. Afterwards Saul <b>prophesies</b>.</td></tr>'+
+   '<tr><td class="head">2 · Public</td><td class="sm">Samuel calls Israel together at <mark><b>Mizpah</b></mark>; the king is found by <b>process of elimination</b> — and Saul, shy, <mark><b>hides</b></mark>. Samuel gives him a copy of <b>God’s rules</b> for the king and dismisses the people.</td></tr>'+
+   '<tr><td class="head">3 · Confirmed</td><td class="sm">His first <b>victory</b>, over the <mark><b>Ammonites</b></mark>, who had surrounded an Israelite town that called for help. Then Israel declares him king in a ceremony at <mark><b>Gilgal</b></mark>.</td></tr>'+
+   '</tbody></table></div>'},
+
+  {id:"s2-fall", h:"Saul’s disobedience (1 Samuel 13–15)", body:
+   '<div class="point"><b>The point</b><p>Two acts of disobedience undo Saul. <mark>He offers the sacrifice himself when Samuel is late</mark>, and <mark>he spares what God said to destroy</mark>. The lesson of chapter 15: <mark>the Lord desires obedience more than sacrifice</mark>.</p><p class="able"><b>Be able to</b> explain both failures, their consequences, and why 1 Samuel 15 matters.</p></div>'+
+   '<h3 class="sub" id="s2-sacrifice">The sacrifice</h3>'+
+   '<ul><li>Saul fights the Philistines. His son <mark><b>Jonathan</b> attacks the Philistines</mark> before Israel’s army can withstand a counterattack; Israel is afraid and hides.</li>'+
+   '<li><mark>Saul <b>offers the sacrifice himself</b> in place of Samuel, because Samuel was late.</mark></li>'+
+   '<li>Consequence: <mark><b>none of Saul’s sons will rule Israel</b></mark>.</li>'+
+   '<li>Saul keeps ruling, and has victory over Philistia.</li></ul>'+
+   '<h3 class="sub" id="s2-amalek">The Amalekites (1 Samuel 15)</h3>'+
+   '<ul><li>Israel defeats the <mark><b>Amalekites</b></mark>. God had said all the people and animals must be killed.</li>'+
+   '<li>Saul <mark>spares <b>King Agag</b> and keeps the <b>best animals</b></mark>.</li>'+
+   '<li>He tells Samuel the animals are <b>for the sacrifices</b>. Samuel: <mark>the Lord desires <b>obedience more than sacrifices</b></mark>.</li>'+
+   '<li><mark><b>God has rejected Saul as king.</b></mark></li>'+
+   '<li>Both Saul and Moses failed in honoring and worshiping Yahweh — but <mark>Saul has no intention of following Moses’ example; <b>power is his god</b></mark>.</li></ul>'+
+   '<div class="exam-tip"><b>1 Samuel 15</b>Your notes flag it: this chapter raises the <b>important questions</b>. Chapters 16–31 turn to the new king.</div>'}
+ ],
+ decks:[
+  {id:"terms", label:"People, places & terms", cards:[
+   ["Why Israel wanted a king","Samuel’s sons took bribes, and Israel wanted to copy the nations’ successful economic and military kings","g2-king"],
+   ["Samuel’s sons","Appointed as judges; they took bribes and made justice impossible","g2-king"],
+   ["Theocracy","A nation ruled by God alone — what Israel gave up by asking for a king","g2-king"],
+   ["A king they did not need","Samuel only had to pray, and God would deliver","g2-king"],
+   ["Samuel’s warning about a king","He will draft your sons and daughters, take young people into his court, and tax the nation","g2-king"],
+   ["Saul’s main enemy","The Philistines","g2-land"],
+   ["Saul’s other enemies","Ammonites, Amalekites, Edomites and the kings of Zobah","g2-land"],
+   ["The Philistine cities","Five cities on the southern coastal plain, and others such as Beth Shean","g2-land"],
+   ["Canaanite cities still in the land","Jerusalem and Gibeon","g2-land"],
+   ["Saul’s kingdom","Central and northern hill country, Galilee, and parts of the Transjordan","g2-land"],
+   ["Gibeah","Saul’s capital in Benjamite territory — a small enclosure with a tower","g2-land"],
+   ["Tell el-Ful","The site of Saul’s palace at Gibeah, a few miles north of Jerusalem","g2-land"],
+   ["Kish","Saul’s father, whose lost donkeys led Saul to Samuel","g2-chosen"],
+   ["Benjamin","Saul’s tribe — the smallest in Israel","g2-chosen"],
+   ["Saul’s private anointing","Samuel poured oil on his head; afterwards Saul prophesied","g2-chosen"],
+   ["Mizpah (chapter 10)","Where Saul was chosen publicly by elimination — and hid","g2-chosen"],
+   ["Saul’s first victory","Over the Ammonites, who surrounded an Israelite town","g2-chosen"],
+   ["Gilgal","Where Israel declared Saul king in a ceremony","g2-chosen"],
+   ["Saul’s first great sin","Offering the sacrifice himself because Samuel was late","g2-fall"],
+   ["Its consequence","None of Saul’s sons would rule Israel","g2-fall"],
+   ["Agag","The Amalekite king Saul spared against God’s command","g2-fall"],
+   ["Saul’s excuse for the animals","They were for the sacrifices","g2-fall"],
+   ["Samuel’s answer (1 Samuel 15)","The Lord desires obedience more than sacrifices","g2-fall"],
+   ["Saul’s real god, by the notes","Power","g2-fall"]]},
+  {id:"order", label:"In order", cards:[
+   ["1 · The request","Samuel’s sons take bribes; Israel asks for a king","g2-king"],
+   ["2 · The warning","Drafts, a court and taxes","g2-king"],
+   ["3 · The donkeys","Kish’s donkeys bring Saul to Samuel","g2-chosen"],
+   ["4 · Anointed","Oil on his head, in private; he prophesies","g2-chosen"],
+   ["5 · Chosen at Mizpah","By elimination — and found hiding","g2-chosen"],
+   ["6 · The Ammonites","His first victory confirms him; crowned at Gilgal","g2-chosen"],
+   ["7 · The sacrifice","Samuel is late; Saul offers it himself","g2-fall"],
+   ["8 · The Amalekites","Agag and the best animals spared; Saul rejected","g2-fall"],
+   ["How many times Saul was named king","Three: once privately, twice publicly","g2-chosen"]]}
+ ]
+};
+
+QB = QB.concat([
+ {tp:"s2",sec:"g2-king",t:"mc",q:"What did Samuel’s sons do as judges?",a:"They accepted bribes",w:["They took meat from the sacrifices","They worshiped Dagon","They refused to fight"],e:"They made justice impossible — one reason Israel asked for a king."},
+ {tp:"s2",sec:"g2-king",t:"mc",q:"A theocracy is a nation:",a:"ruled by God alone",w:["ruled by priests and kings together","ruled by the elders of each tribe","ruled by a prophet for life"],e:"With a king, Israel no longer operates as a theocracy."},
+ {tp:"s2",sec:"g2-king",t:"mc",q:"Why, by the notes, did Israel not need a king?",a:"Samuel only had to pray and God would deliver",w:["The Philistines had already been defeated","Israel had no enemies at the time","The ark would fight for them"],e:"They asked for a king they did not need."},
+ {tp:"s2",sec:"g2-king",t:"mc",q:"Which is NOT something Samuel warned a king would do?",a:"Build a temple in Jerusalem",w:["Draft Israel’s sons and daughters","Take young people into his court","Tax the nation"],e:"Drafts, the court and taxes."},
+ {tp:"s2",sec:"g2-king",t:"mc",q:"What pattern did Israel want to copy?",a:"The nations’ successful economic and military kings",w:["Egypt’s priest-kings","The judges before Samuel","The patriarchs’ family rule"],e:"A king to lead them and defeat their enemies."},
+ {tp:"s2",sec:"g2-king",t:"tf",q:"By asking for a king, Israel chose to serve a human master.",a:true,e:"True — it stopped operating as a theocracy."},
+ {tp:"s2",sec:"g2-land",t:"mc",q:"Who was the main threat during Saul’s rise?",a:"The Philistines",w:["The Ammonites","The Edomites","The Egyptians"],e:"The Philistines, with five cities on the coastal plain."},
+ {tp:"s2",sec:"g2-land",t:"mc",q:"Which list gives Saul’s other enemies?",a:"Ammonites, Amalekites, Edomites and the kings of Zobah",w:["Egyptians, Assyrians, Babylonians and Persians","Moabites, Hittites, Jebusites and Amorites","Midianites, Arameans, Greeks and Romans"],e:"Ammonites, Amalekites, Edomites, and the kings of Zobah."},
+ {tp:"s2",sec:"g2-land",t:"mc",q:"How many Philistine cities were on the coastal plain?",a:"Five",w:["Three","Seven","Twelve"],e:"Five, plus other cities such as Beth Shean."},
+ {tp:"s2",sec:"g2-land",t:"mc",q:"Which were Canaanite cities still in the land?",a:"Jerusalem and Gibeon",w:["Gath and Ekron","Shiloh and Mizpah","Bethlehem and Hebron"],e:"Canaanite cities were still sprinkled through the land."},
+ {tp:"s2",sec:"g2-land",t:"mc",q:"Where was Saul’s palace?",a:"Gibeah",w:["Jerusalem","Shiloh","Hebron"],e:"Gibeah, the capital of Benjamite territory, at Tell el-Ful."},
+ {tp:"s2",sec:"g2-land",t:"mc",q:"Saul’s palace at Gibeah is identified with which site?",a:"Tell el-Ful",w:["Tell es-Safi","Beth Shean","Tel Dan"],e:"A few miles north of Jerusalem; Tell es-Safi is Gath."},
+ {tp:"s2",sec:"g2-land",t:"mc",q:"What did Saul’s palace look like?",a:"A small enclosure with a tower",w:["A great walled city","A tent like the tabernacle","A temple with cedar pillars"],e:"11th century BC, small — his kingdom was not large."},
+ {tp:"s2",sec:"g2-land",t:"tf",q:"Saul ruled a large empire from Egypt to the Euphrates.",a:false,e:"False — just the central and northern hill country, Galilee and parts of the Transjordan."},
+ {tp:"s2",sec:"g2-chosen",t:"mc",q:"What brought Saul to Samuel?",a:"His father’s lost donkeys",w:["A war with the Ammonites","A dream from God","A summons to Mizpah"],e:"Kish lost his donkeys; Saul went looking and consulted Samuel."},
+ {tp:"s2",sec:"g2-chosen",t:"mc",q:"Who was Saul’s father?",a:"Kish",w:["Jesse","Eli","Elkanah"],e:"Kish, of the tribe of Benjamin."},
+ {tp:"s2",sec:"g2-chosen",t:"mc",q:"Saul’s tribe was:",a:"Benjamin, the smallest",w:["Judah, the largest","Levi, the priests","Ephraim, the northern leaders"],e:"He said his family was insignificant, in Israel’s smallest tribe."},
+ {tp:"s2",sec:"g2-chosen",t:"mc",q:"How many times was Saul named king?",a:"Three — once privately, twice publicly",w:["Once, at Gilgal","Twice — once privately, once publicly","Four times, once in each region"],e:"Anointed privately; chosen at Mizpah; confirmed after the Ammonite victory and crowned at Gilgal."},
+ {tp:"s2",sec:"g2-chosen",t:"mc",q:"What did Saul do when he was chosen at Mizpah?",a:"He hid",w:["He gave a speech","He offered a sacrifice","He led the army out"],e:"He was shy — tall and impressive, but unassuming."},
+ {tp:"s2",sec:"g2-chosen",t:"mc",q:"Saul’s first victory, which confirmed him as king, was over the:",a:"Ammonites",w:["Philistines","Amalekites","Edomites"],e:"They surrounded an Israelite town that called for help."},
+ {tp:"s2",sec:"g2-chosen",t:"mc",q:"Where was Saul declared king in a ceremony?",a:"Gilgal",w:["Mizpah","Shiloh","Gibeah"],e:"Gilgal, after the Ammonite victory."},
+ {tp:"s2",sec:"g2-chosen",ap:true,t:"mc",q:"A prophet privately pours oil on a young man’s head, and the young man then prophesies. Which naming of Saul is this?",a:"The first, private anointing",w:["The public choosing at Mizpah","The ceremony at Gilgal","The victory over the Ammonites"],e:"Once private, twice public."},
+ {tp:"s2",sec:"g2-chosen",t:"tf",q:"Saul was physically impressive but unassuming about becoming king.",a:true,e:"True — tall and impressive, yet he hid when chosen."},
+ {tp:"s2",sec:"g2-fall",t:"mc",q:"Why did Saul offer the sacrifice himself?",a:"Samuel was late",w:["The priests had fled","God told him to","Jonathan asked him to"],e:"He took Samuel’s place — and lost his dynasty."},
+ {tp:"s2",sec:"g2-fall",t:"mc",q:"What was the consequence of Saul’s sacrifice?",a:"None of his sons would rule Israel",w:["He died the next day","The ark was taken","Samuel left Israel"],e:"He kept ruling, but his line would not."},
+ {tp:"s2",sec:"g2-fall",t:"mc",q:"Which Amalekite king did Saul spare?",a:"Agag",w:["Achish","Goliath","Kish"],e:"Agag — against God’s command to destroy everything."},
+ {tp:"s2",sec:"g2-fall",t:"mc",q:"Saul said he kept the best animals:",a:"for the sacrifices",w:["to feed his army","as a gift for Samuel","to trade with the Philistines"],e:"Samuel: the Lord desires obedience more than sacrifices."},
+ {tp:"s2",sec:"g2-fall",t:"mc",q:"What does the Lord desire more than sacrifice?",a:"Obedience",w:["Victory","Wealth","Silence"],e:"1 Samuel 15 — Samuel’s answer to Saul’s excuse about the animals."},
+ {tp:"s2",sec:"g2-fall",t:"mc",q:"Which son of Saul attacked the Philistines before the army was ready?",a:"Jonathan",w:["Eliab","Agag","Abner"],e:"Israel became afraid and hid."},
+ {tp:"s2",sec:"g2-fall",t:"mc",q:"By the notes, what was Saul’s real god?",a:"Power",w:["Dagon","Wealth","His family"],e:"Unlike Moses, he had no intention of repenting — power was his god."},
+ {tp:"s2",sec:"g2-fall",ap:true,t:"mc",q:"A leader is told to destroy everything, keeps the best for a religious offering, and is told God wants obedience instead. Which chapter is this?",a:"1 Samuel 15",w:["1 Samuel 3","1 Samuel 17","1 Samuel 28"],e:"The Amalekites and Agag."},
+ {tp:"s2",sec:"g2-fall",t:"tf",q:"After the Amalekite battle, God rejected Saul as king.",a:true,e:"True — because he disobeyed."},
+ {tp:"s2",sec:"g2-king",ap:true,t:"mc",q:"A people with a praying prophet demand a ruler so they can be like their neighbors. What are they giving up, by the notes?",a:"A theocracy — rule by God alone",w:["A democracy — rule by the people","A monarchy — rule by one family","An empire — rule over many nations"],e:"With a king, Israel serves a human master."},
+ {tp:"s2",sec:"g2-land",ap:true,t:"mc",q:"An archaeologist digs a small 11th-century enclosure with a tower a few miles north of Jerusalem. Whose palace is it thought to be?",a:"Saul’s, at Gibeah",w:["David’s, in Jerusalem","Goliath’s, at Gath","Eli’s, at Shiloh"],e:"Tell el-Ful, the site of Gibeah."},
+ {tp:"s2",sec:"g2-chosen",ap:true,t:"mc",q:"A tall young man searching for lost animals meets a prophet who tells him the animals are found and that Israel’s desire is for him. Who is he?",a:"Saul",w:["David","Jonathan","Eliab"],e:"Kish’s donkeys brought Saul to Samuel."}
+]);
+
+/* ================================================================ David and Saul, 1 Samuel 16–31 */
+CH.s3 = {n:3, title:"David and Saul", short:"David", ref:"1 Samuel 16–31",
+ notes:[
+  {id:"s3-anoint", h:"David anointed; the Spirit leaves Saul", body:
+   '<div class="point"><b>The point</b><p>God chooses the least likely son: <mark>man looks at the outward appearance, but the Lord looks at the heart</mark>. When David is anointed, <mark>God’s Spirit rushes on David and leaves Saul</mark> — the change of leadership in one verse.</p><p class="able"><b>Be able to</b> tell the anointing at Bethlehem, and give the notes on the “evil spirit” of 16:14.</p></div>'+
+   '<h3 class="sub" id="s3-bethlehem">At Bethlehem</h3>'+
+   '<ul><li>Samuel travels to <mark><b>Bethlehem</b>, to <b>Jesse</b> and his sons</mark>. They pass before him.</li>'+
+   '<li>The oldest, <mark><b>Eliab</b>, impresses</mark> — but <mark>men look at outward appearances; the Lord looks at the heart</mark>.</li>'+
+   '<li>The <mark>youngest son, <b>David</b>, was watching the sheep</mark>. When the prophet anoints him, <b>God’s Spirit rushes</b> on him.</li>'+
+   '<li><mark><b>God’s Spirit leaves Saul</b>, replaced by an <b>evil spirit</b> (1 Samuel 16:14)</mark> — showing the change in leadership.</li></ul>'+
+   '<h3 class="sub" id="s3-spirit">The “evil spirit” — six notes</h3>'+
+   '<ol><li><mark>God <b>punishes sin</b>.</mark></li>'+
+   '<li>The point is to note the <mark><b>change in leadership</b></mark>.</li>'+
+   '<li>It was <mark><b>not a demon</b></mark>: Saul’s servants speak of it <b>without fear</b>, and <b>music soothes</b> it — perhaps something like manic depression.</li>'+
+   '<li>The <mark>Hebrew word for “evil” is the common word for <b>bad</b></mark>; it lacks the force of the English word.</li>'+
+   '<li>The author wants readers to know that <mark><b>God rules history</b></mark>.</li>'+
+   '<li>The text <b>does not say Saul was damned</b> for his sin. (Your notes wrote “Samuel” here; the point is about Saul.)</li></ol>'+
+   '<p>David enters <mark>Saul’s court as a <b>musician</b></mark>. He cannot be king until Saul dies.</p>'},
+
+  {id:"s3-goliath", h:"David and Goliath", body:
+   '<div class="point"><b>The point</b><p>A shepherd against a giant — but <mark>the issue is the power of Israel’s God</mark>. Goliath curses David by his gods; David says <mark>Yahweh will give the victory</mark>.</p><p class="able"><b>Be able to</b> give the details of the fight, and what the dig at Gath found and why it matters.</p></div>'+
+   '<h3 class="sub" id="s3-fight">The fight</h3>'+
+   '<ul><li><mark><b>Goliath</b> is <b>nine feet tall</b>; his spear looks like a <b>weaver’s rod</b></mark>.</li>'+
+   '<li><b>Family obligations</b> keep David out of Israel’s army; his <mark>father sends him to see how his brothers are doing</mark>.</li>'+
+   '<li>David has a <mark><b>shepherd’s staff, a sling, and five smooth stones</b></mark>.</li>'+
+   '<li>The giant <b>curses David by his gods</b>; David says <b>Yahweh</b> will give the victory. <mark>The power of Israel’s God is the issue.</mark></li>'+
+   '<li>The <mark><b>first stone</b> strikes Goliath in the <b>forehead</b> and kills him</mark>; David <b>cuts off his head</b> with a sword.</li></ul>'+
+   '<h3 class="sub" id="s3-gath">Archaeology at Gath</h3>'+
+   '<ul><li><mark><b>Aren Maeir</b></mark> excavated at <mark><b>Tell es-Safi</b> — biblical <b>Gath</b>, Goliath’s city</mark>.</li>'+
+   '<li>He found an inscription with an <b>Indo-European, Goliath-like name</b>, from the <b>late tenth century</b> — roughly <mark><b>50 years after</b> David’s fight with Goliath</mark>.</li>'+
+   '<li>Why it matters: it <mark>affirms the historicity</mark> of the account and the existence of <b>tenth-century artifacts</b> in the Syro-Palestinian archaeological debate.</li></ul>'},
+
+  {id:"s3-flight", h:"Saul’s jealousy and David in flight", body:
+   '<div class="point"><b>The point</b><p>Saul hears the songs about David and <mark>becomes jealous</mark>, and spends the rest of his reign trying to kill him. David <mark>refuses twice to kill Saul</mark>, and <mark>Jonathan stays loyal to David</mark>.</p><p class="able"><b>Be able to</b> list Saul’s attempts on David, Jonathan’s part, and the stages of David’s outlaw years.</p></div>'+
+   '<h3 class="sub" id="s3-attempts">Saul’s attempts on David</h3>'+
+   '<ol><li>He tries to kill David <mark><b>twice with a spear</b> while David plays the harp</mark>.</li>'+
+   '<li>He <mark>offers his <b>daughter</b> in marriage, but the price is <b>a hundred Philistines</b></mark> — hoping David will die. The plan fails.</li>'+
+   '<li>Another <b>spear</b>; then he <mark>sends men to kill David <b>while he sleeps</b></mark> — David escapes with his <b>wife’s</b> help (Michal, in 1 Samuel 19).</li></ol>'+
+   '<h3 class="sub" id="s3-jonathan">Jonathan</h3>'+
+   '<ul><li><mark><b>Jonathan supports David</b></mark>. Saul throws a spear at Jonathan; Jonathan tells David to <b>flee</b>.</li>'+
+   '<li>Jonathan’s <mark><b>courage, humility and loyalty</b></mark>.</li></ul>'+
+   '<h3 class="sub" id="s3-outlaw">The outlaw years</h3>'+
+   '<ul><li>David lives like an <b>outlaw</b>. He flees to <mark><b>Gath</b>, Goliath’s hometown, and <b>acts like a madman</b></mark>.</li>'+
+   '<li>Saul chases him and nearly catches him. David gathers a <b>small army of outcasts</b>.</li>'+
+   '<li>Saul <mark><b>murders those who help David</b>, even priests</mark>.</li>'+
+   '<li><mark><b>Twice</b> David could kill Saul, and <b>refuses</b></mark>.</li>'+
+   '<li>David becomes an <b>ally of the Philistines</b> and serves <mark><b>Achish, king of Gath</b></mark>.</li></ul>'},
+
+  {id:"s3-end", h:"The medium, the Amalekites and Saul’s death", body:
+   '<div class="point"><b>The point</b><p>Samuel is dead and God’s Spirit has left Saul, so <mark>Saul turns to a medium</mark>. <mark>In one day Israel loses the war, its king and his heirs.</mark></p><p class="able"><b>Be able to</b> tell the medium episode, how David was kept out of the battle, and how Saul and Jonathan died — and sum up Saul.</p></div>'+
+   '<h3 class="sub" id="s3-medium">The medium (1 Samuel 28)</h3>'+
+   '<ul><li>Israel and Philistia are at war; David, serving Achish, will have to fight.</li>'+
+   '<li>Saul is desperate: <b>Samuel has died</b>, God’s Spirit has left him, and he has no way to fight.</li>'+
+   '<li>He <mark>seeks help from a <b>medium</b></mark> (at Endor, in 1 Samuel 28), who brings Samuel back — and <mark>she is <b>surprised</b> when Samuel actually appears</mark>.</li>'+
+   '<li>Samuel’s reply <b>drains Saul’s strength</b>: <mark>David is the chosen king, and Saul and his sons will die</mark>.</li>'+
+   '<li>Saul does not act the coward — he <b>fights</b>; but he <b>does not obey God</b>.</li></ul>'+
+   '<h3 class="sub" id="s3-death">The last battle</h3>'+
+   '<ul><li>The <mark>Philistine officers <b>do not allow David to fight</b></mark>.</li>'+
+   '<li>While David is away, the <mark><b>Amalekites</b> raid his camp</mark> and kidnap <b>all the wives and children</b> (at Ziklag). <mark>God says pursue</mark> — and David <b>annihilates</b> the Amalekites.</li>'+
+   '<li>The Philistines <b>crush Israel</b>. <mark><b>Jonathan dies</b></mark>; <b>archers wound Saul</b>; he asks his <b>armor-bearer</b> to kill him, then <mark><b>falls on his own sword</b></mark>.</li>'+
+   '<li><mark>In one day, Israel loses the war, the king, and his heirs.</mark></li></ul>'+
+   '<h3 class="sub" id="s3-verdict">Saul, summed up</h3>'+
+   '<p><mark>Saul helps establish Israel as a nation, but disobeys God</mark> — and the disobedience brings consequences for <b>himself, his family and the nation</b>. He is <b>jealous, vengeful and petty</b>; <b>inconsistent</b> and <b>regrettable</b>.</p>'}
+ ],
+ decks:[
+  {id:"terms", label:"People, places & terms", cards:[
+   ["Jesse","David’s father, in Bethlehem","g3-anoint"],
+   ["Eliab","Jesse’s oldest son, who impressed Samuel","g3-anoint"],
+   ["The Lord looks at…","The heart — men look at the outward appearance","g3-anoint"],
+   ["Where David was when Samuel came","Watching the sheep — the youngest son","g3-anoint"],
+   ["1 Samuel 16:14","God’s Spirit leaves Saul and an evil spirit comes — the change in leadership","g3-anoint"],
+   ["Why the evil spirit was not a demon","Saul’s servants speak of it without fear, and music soothes it","g3-anoint"],
+   ["The Hebrew word for evil","The common word for bad — without the force of the English","g3-anoint"],
+   ["How David entered Saul’s court","As a musician","g3-anoint"],
+   ["Goliath","The Philistine giant — nine feet tall, spear like a weaver’s rod","g3-goliath"],
+   ["What David took to fight","A shepherd’s staff, a sling and five smooth stones","g3-goliath"],
+   ["The real issue at the fight","The power of Israel’s God","g3-goliath"],
+   ["Where the stone hit Goliath","His forehead — the first stone killed him","g3-goliath"],
+   ["Aren Maeir","The archaeologist who excavated Gath at Tell es-Safi","g3-goliath"],
+   ["Tell es-Safi","Biblical Gath, Goliath’s city","g3-goliath"],
+   ["The Gath inscription","A Goliath-like name from the late tenth century, about 50 years after the fight","g3-goliath"],
+   ["The bride-price Saul set","A hundred Philistines — hoping David would die","g3-flight"],
+   ["Jonathan","Saul’s son, who supported David — courage, humility and loyalty","g3-flight"],
+   ["Where David fled and acted mad","Gath, Goliath’s hometown","g3-flight"],
+   ["Achish","The king of Gath whom David served","g3-flight"],
+   ["How many times David spared Saul","Twice","g3-flight"],
+   ["The medium","The woman Saul consulted; surprised when Samuel actually appeared","g3-end"],
+   ["Samuel’s message to Saul from the grave","David is chosen king; Saul and his sons will die","g3-end"],
+   ["The Amalekite raid","They took all the wives and children from David’s camp; he pursued and destroyed them","g3-end"],
+   ["How Saul died","Wounded by archers, he fell on his own sword","g3-end"],
+   ["What Israel lost in one day","The war, the king, and his heirs","g3-end"]]},
+  {id:"order", label:"In order", cards:[
+   ["1 · Bethlehem","Samuel anoints David; the Spirit rushes on him","g3-anoint"],
+   ["2 · The court","David plays for Saul, soothing the evil spirit","g3-anoint"],
+   ["3 · Goliath","Staff, sling, five stones — the first stone kills him","g3-goliath"],
+   ["4 · Jealousy","Spears while he plays; the deadly bride-price","g3-flight"],
+   ["5 · Escape","Men sent at night; his wife helps him flee","g3-flight"],
+   ["6 · Jonathan","Saul’s spear at his own son; ‘flee’","g3-flight"],
+   ["7 · The outlaw","Gath, madness, outcasts, twice sparing Saul, serving Achish","g3-flight"],
+   ["8 · The medium","Samuel appears: Saul and his sons will die","g3-end"],
+   ["9 · The Amalekites","They raid David’s camp; he destroys them","g3-end"],
+   ["10 · Saul’s death","Jonathan dies; Saul falls on his own sword","g3-end"],
+   ["Saul, in five words","Jealous, vengeful, petty, inconsistent, regrettable","g3-end"]]}
+ ]
+};
+
+QB = QB.concat([
+ {tp:"s3",sec:"g3-anoint",t:"mc",q:"Where did Samuel go to anoint the new king?",a:"Bethlehem",w:["Gibeah","Shiloh","Gilgal"],e:"To Jesse and his sons."},
+ {tp:"s3",sec:"g3-anoint",t:"mc",q:"Which of Jesse’s sons first impressed Samuel?",a:"Eliab, the oldest",w:["David, the youngest","Jonathan, the bravest","Kish, the tallest"],e:"But the Lord looks at the heart."},
+ {tp:"s3",sec:"g3-anoint",t:"mc",q:"Men look at the outward appearance, but the Lord looks at:",a:"the heart",w:["the family","the strength","the tribe"],e:"1 Samuel 16, when Eliab impressed Samuel and David was chosen."},
+ {tp:"s3",sec:"g3-anoint",t:"mc",q:"What happened to Saul when David was anointed?",a:"God’s Spirit left him, replaced by an evil spirit",w:["He was struck blind","He died in battle","He anointed David himself"],e:"1 Samuel 16:14 — the change in leadership."},
+ {tp:"s3",sec:"g3-anoint",t:"mc",q:"Why do the notes say the evil spirit was not a demon?",a:"Saul’s servants speak of it without fear, and music soothes it",w:["Samuel drove it out of Saul with prayer and fasting","It spoke only when David was away from the court","The priests at Nob said it came from the Philistines"],e:"Perhaps something like manic depression."},
+ {tp:"s3",sec:"g3-anoint",t:"mc",q:"The Hebrew word translated “evil” in 16:14 is:",a:"the common word for bad",w:["the word for demon","the word for Satan","a word used only here"],e:"It lacks the force of the English word."},
+ {tp:"s3",sec:"g3-anoint",t:"mc",q:"According to the notes, what does the author want readers to know from 16:14?",a:"God rules history",w:["Saul was possessed","David was a prophet","Music heals every illness"],e:"God punishes sin, and God rules history."},
+ {tp:"s3",sec:"g3-anoint",t:"mc",q:"How did David first enter Saul’s court?",a:"As a musician",w:["As a soldier","As a priest","As Saul’s son-in-law"],e:"He played the harp; he could not be king until Saul died."},
+ {tp:"s3",sec:"g3-anoint",t:"tf",q:"The text says Saul was damned for his sin.",a:false,e:"False — it does not say so."},
+ {tp:"s3",sec:"g3-goliath",t:"mc",q:"How tall was Goliath?",a:"Nine feet",w:["Seven feet","Twelve feet","Six feet"],e:"Nine feet; his spear like a weaver’s rod."},
+ {tp:"s3",sec:"g3-goliath",t:"mc",q:"Goliath’s spear looked like:",a:"a weaver’s rod",w:["a ship’s mast","a cedar beam","a shepherd’s staff"],e:"A weaver’s rod — and Goliath stood nine feet tall."},
+ {tp:"s3",sec:"g3-goliath",t:"mc",q:"What did David take to fight Goliath?",a:"A staff, a sling and five smooth stones",w:["Saul’s armor and sword","A spear and a shield","A bow and three arrows"],e:"A shepherd’s staff, a sling, five smooth stones."},
+ {tp:"s3",sec:"g3-goliath",t:"mc",q:"Why was David at the battle at all?",a:"His father sent him to check on his brothers",w:["He was a soldier in Saul’s army","Samuel sent him to fight","He was Saul’s armor-bearer"],e:"Family obligations kept him out of the army."},
+ {tp:"s3",sec:"g3-goliath",t:"mc",q:"According to the notes, what was the real issue in the fight?",a:"The power of Israel’s God",w:["The size of the armies","Who owned the valley","Saul’s right to be king"],e:"Goliath cursed by his gods; David said Yahweh would give the victory."},
+ {tp:"s3",sec:"g3-goliath",t:"mc",q:"Tell es-Safi is the site of biblical:",a:"Gath",w:["Gibeah","Shiloh","Mizpah"],e:"Goliath’s city, excavated by Aren Maeir."},
+ {tp:"s3",sec:"g3-goliath",t:"mc",q:"Who excavated Gath and found the Goliath-like inscription?",a:"Aren Maeir",w:["Kathleen Kenyon","William Albright","Yigael Yadin"],e:"At Tell es-Safi, biblical Gath."},
+ {tp:"s3",sec:"g3-goliath",t:"mc",q:"The Gath inscription dates to about how long after David’s fight?",a:"About 50 years",w:["About 500 years","About 5 years","About 200 years"],e:"Late tenth century, roughly 50 years after the fight."},
+ {tp:"s3",sec:"g3-goliath",t:"mc",q:"Why does the Gath find matter, by the notes?",a:"It affirms the historicity of the account and of tenth-century artifacts",w:["It proves Goliath was nine feet tall","It shows the Philistines were Greek","It locates the ark of the covenant"],e:"It weighs in on the Syro-Palestinian archaeological debate."},
+ {tp:"s3",sec:"g3-goliath",ap:true,t:"mc",q:"A giant curses his opponent by his gods; the boy answers that the Lord will give the victory, and wins with one stone. What is the point of the story, by the notes?",a:"The power of Israel’s God",w:["David’s skill with a sling","Saul’s weakness as a general","The Philistines’ size"],e:"The issue is whose God has power."},
+ {tp:"s3",sec:"g3-goliath",t:"tf",q:"David killed Goliath with the first stone, then cut off his head with a sword.",a:true,e:"True — the stone struck his forehead."},
+ {tp:"s3",sec:"g3-flight",t:"mc",q:"What did Saul do while David played the harp?",a:"Threw a spear at him",w:["Fell asleep","Wrote a psalm","Offered a sacrifice"],e:"Twice with a spear while he played."},
+ {tp:"s3",sec:"g3-flight",t:"mc",q:"What bride-price did Saul demand for his daughter?",a:"A hundred Philistines",w:["A hundred sheep","A thousand silver pieces","Goliath’s sword"],e:"He hoped David would be killed; the plan failed."},
+ {tp:"s3",sec:"g3-flight",t:"mc",q:"How did David escape the men sent to kill him while he slept?",a:"With his wife’s help",w:["Jonathan hid him","Samuel warned him","He was away at Gath"],e:"His wife helped him flee."},
+ {tp:"s3",sec:"g3-flight",t:"mc",q:"Which qualities do the notes give Jonathan?",a:"Courage, humility and loyalty",w:["Jealousy, pride and fear","Strength, beauty and wealth","Wisdom, silence and patience"],e:"He supported David even when Saul threw a spear at him."},
+ {tp:"s3",sec:"g3-flight",t:"mc",q:"Where did David flee and act like a madman?",a:"Gath, Goliath’s hometown",w:["Bethlehem, his hometown","Gibeah, Saul’s capital","Mizpah"],e:"He acted mad to survive."},
+ {tp:"s3",sec:"g3-flight",t:"mc",q:"How many times did David have the chance to kill Saul and refuse?",a:"Twice",w:["Once","Three times","Never"],e:"Twice he spared the Lord’s anointed."},
+ {tp:"s3",sec:"g3-flight",t:"mc",q:"Which king did David serve as an ally of the Philistines?",a:"Achish, king of Gath",w:["Agag, king of Amalek","Kish of Benjamin","The king of Zobah"],e:"Achish of Gath, Goliath’s hometown."},
+ {tp:"s3",sec:"g3-flight",t:"mc",q:"Whom did Saul murder for helping David?",a:"Supporters of David, even priests",w:["Only Philistines","His own brothers","Samuel’s sons"],e:"Even priests who had helped him."},
+ {tp:"s3",sec:"g3-flight",ap:true,t:"mc",q:"A king’s son defends his father’s rival and tells him to run, after the king throws a spear at the son. Who is this?",a:"Jonathan",w:["Eliab","Achish","Agag"],e:"Jonathan’s courage, humility and loyalty."},
+ {tp:"s3",sec:"g3-flight",t:"tf",q:"Saul’s jealousy began when he heard the music and songs about David.",a:true,e:"True — he became jealous and tried to kill him."},
+ {tp:"s3",sec:"g3-end",t:"mc",q:"Why did Saul go to a medium?",a:"Samuel had died and God’s Spirit had left him",w:["Jonathan asked him to","David had fled to Egypt","The priests told him to"],e:"He was desperate before the Philistine battle."},
+ {tp:"s3",sec:"g3-end",t:"mc",q:"How did the medium react when Samuel appeared?",a:"She was surprised",w:["She fainted and died","She ordered him to leave","She expected it"],e:"She was surprised when Samuel actually came."},
+ {tp:"s3",sec:"g3-end",t:"mc",q:"What did Samuel tell Saul from the grave?",a:"David is chosen king, and Saul and his sons will die",w:["Saul will defeat the Philistines","Jonathan will be king","Saul will be forgiven"],e:"His reply drained Saul’s strength."},
+ {tp:"s3",sec:"g3-end",t:"mc",q:"Why did David not fight in Saul’s last battle?",a:"The Philistine officers did not allow him",w:["He was sick","Saul captured him","He refused to fight Israel"],e:"They did not trust him."},
+ {tp:"s3",sec:"g3-end",t:"mc",q:"Who raided David’s camp and kidnapped the wives and children?",a:"The Amalekites",w:["The Philistines","Saul’s army","The Ammonites"],e:"God said pursue; David annihilated them."},
+ {tp:"s3",sec:"g3-end",t:"mc",q:"How did Saul die?",a:"He fell on his own sword",w:["Goliath’s brother killed him","He was killed by David","He died of a fever"],e:"Archers wounded him; his armor-bearer would not kill him."},
+ {tp:"s3",sec:"g3-end",t:"mc",q:"What did Israel lose in one day?",a:"The war, the king and his heirs",w:["The ark and the tabernacle","Jerusalem and Gibeon","Samuel and Eli"],e:"Jonathan and Saul both died."},
+ {tp:"s3",sec:"g3-end",t:"mc",q:"Which words do the notes use for Saul?",a:"Jealous, vengeful, petty, inconsistent, regrettable",w:["Faithful, humble, wise, patient, brave","Cruel, cowardly, lazy, foolish, weak","Honest, generous, loyal, calm, just"],e:"He helped establish the nation but disobeyed God."},
+ {tp:"s3",sec:"g3-end",ap:true,t:"mc",q:"A king with no word from God seeks out someone who calls up the dead. Which chapter is this?",a:"1 Samuel 28",w:["1 Samuel 15","1 Samuel 17","1 Samuel 3"],e:"Saul and the medium."},
+ {tp:"s3",sec:"g3-end",t:"tf",q:"Saul was a coward who refused to fight the Philistines at the end.",a:false,e:"False — he did not act the coward; he fought, but he did not obey God."},
+ {tp:"s3",sec:"g3-anoint",ap:true,t:"mc",q:"A prophet passes over seven impressive older brothers and anoints the youngest, who was out with the sheep. What is the lesson, by the notes?",a:"Men look at the outward appearance; the Lord looks at the heart",w:["The oldest son always inherits the blessing","A king must come from the tribe of Benjamin","God chooses whoever is strongest in battle"],e:"1 Samuel 16 — Eliab impressed, but God chose David."},
+ {tp:"s3",sec:"g3-flight",ap:true,t:"mc",q:"A fugitive twice finds his pursuer helpless and refuses to kill him. Who is the fugitive?",a:"David",w:["Jonathan","Achish","Samuel"],e:"David spared Saul twice."},
+ {tp:"s3",sec:"g3-end",ap:true,t:"mc",q:"Raiders carry off every wife and child from a camp while its men are away; God says pursue, and the raiders are destroyed. Who were the raiders?",a:"The Amalekites",w:["The Philistines","The Ammonites","The Edomites"],e:"David annihilated them after they raided his camp."},
+ {tp:"s3",sec:"g3-end",ap:true,t:"mc",q:"A wounded king asks his armor-bearer to kill him, then falls on his own sword. On that same day, what else does Israel lose?",a:"The war and the king’s heirs",w:["The ark of the covenant","The city of Jerusalem","The prophet Samuel"],e:"In one day: the war, the king, and his heirs."}
+]);
+
+/* ================================================================ helpers */
+function $(s,r){ return (r||document).querySelector(s); }
+function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
+function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+function pick(a,n){ return shuffle(a).slice(0,n); }
+function uniqBy(arr, fn){ var seen={}, out=[]; arr.forEach(function(x){ var k=fn(x); if(!seen[k]){ seen[k]=1; out.push(x); } }); return out; }
+function strip(s){ return String(s).replace(/<[^>]+>/g,""); }
+var store = {
+  get:function(k){ try{ return localStorage.getItem("ot."+k); }catch(e){ return null; } },
+  set:function(k,v){ try{ localStorage.setItem("ot."+k, v); }catch(e){} }
+};
+var CORNERS = ['tl','tr','bl','br'].map(function(c){ return '<svg class="c '+c+'" aria-hidden="true"><use href="#corner"/></svg>'; }).join('');
+var CHAPTERS = ["s1","s2","s3"];
+var TOPIC_NAMES = {};
+CHAPTERS.forEach(function(tp){ TOPIC_NAMES[tp] = CH[tp].title+" · "+CH[tp].ref; });
+/* Every question and card carries the id of the study-guide section it belongs to */
+var SEC_TITLES = {}, SEC_CHAPTER = {};
+GUIDE.sections.forEach(function(s){ s.items.forEach(function(it){ SEC_TITLES[it.id] = it.t; SEC_CHAPTER[it.id] = s.tp; }); });
+
+/* ---- verdicts by grade: warm, plain, never a joke at the reader's expense ---- */
+var VERDICTS = [
+  {min:100, a:"Nothing left to fix here. Try the full set of chapter quizzes next.",
+   t:["Flawless.","Perfect \u2014 every one.","Word-perfect.","Nothing to correct."]},
+  {min:85,  a:"Strong. The misses below are the whole job now.",
+   t:["Strong.","Very well done.","Nearly perfect.","Excellent work."]},
+  {min:70,  a:"A solid base, with a few real gaps. Work the misses, then take it again.",
+   t:["Good work.","A solid pass.","Coming along nicely.","Well on your way."]},
+  {min:50,  a:"About half. A pass through the notes and flashcards for this chapter before testing again will lift this quickly.",
+   t:["Halfway there.","A fair start.","Keep going.","Room to grow."]},
+  {min:0,   a:"It is easier to test once the material is in place \u2014 start with the notes and flashcards, then come back.",
+   t:["A first pass.","Early days.","Not yet \u2014 and that\u2019s all right.","Begin with the notes."]}
+];
+function verdictFor(p){
+  for(var i=0;i<VERDICTS.length;i++){ if(p >= VERDICTS[i].min){ var v = VERDICTS[i]; return {t:pick(v.t,1)[0], a:v.a}; } }
+  var last = VERDICTS[VERDICTS.length-1]; return {t:last.t[0], a:last.a};
+}
+
+/* ================================================================ question building */
+/* Pair sets (term, meaning) per chapter, from every deck not marked match:false.
+   Used for Match and for generated identification questions.                    */
+var PAIRSETS = {};
+CHAPTERS.forEach(function(tp){
+  var pairs = [];
+  CH[tp].decks.forEach(function(d){ if(d.match === false) return; d.cards.forEach(function(c){ pairs.push([c[0], c[1], c[2]]); }); });
+  pairs = uniqBy(uniqBy(pairs, function(p){ return p[1]; }), function(p){ return p[0]; });
+  PAIRSETS[tp] = {left:"Term", right:"Meaning", pairs:pairs};
+});
+
+function fromBank(b, i){
+  var q = {key:b.tp+":"+i, tp:b.tp, sec:b.sec, ap:!!b.ap, kind:b.t, text:b.q, explain:b.e};
+  if(b.t === "tf"){
+    q.opts = [{html:"True", ok:b.a === true, cls:"tf"}, {html:"False", ok:b.a === false, cls:"tf"}];
+    q.miss = strip(b.q) + " — <b>" + (b.a ? "True" : "False") + "</b>";
+  } else {
+    q.opts = shuffle([{html:b.a, ok:true}].concat(b.w.map(function(w){ return {html:w, ok:false}; })));
+    q.miss = strip(b.q) + " — <b>" + b.a + "</b>";
+  }
+  return q;
+}
+/* Identification questions generated from a pair set; wrong answers redrawn each time */
+function fromPair(tp, idx, reverse){
+  var set = PAIRSETS[tp], p = set.pairs[idx];
+  var others = pick(set.pairs.filter(function(o, j){ return j !== idx; }), 3);
+  var q = {key:tp+":p"+idx+(reverse?"r":""), tp:tp, sec:p[2], ap:false, kind:"id"};
+  if(reverse){
+    q.text = "Which meaning fits <b>" + p[0] + "</b>?";
+    q.opts = shuffle([{html:p[1], ok:true}].concat(others.map(function(o){ return {html:o[1], ok:false}; })));
+  } else {
+    q.text = "“" + p[1] + "” — which term?";
+    q.opts = shuffle([{html:p[0], ok:true}].concat(others.map(function(o){ return {html:o[0], ok:false}; })));
+  }
+  q.explain = "<b>" + p[0] + "</b>: " + p[1] + ".";
+  q.miss = p[0] + " — <b>" + p[1] + "</b>";
+  return q;
+}
+/* A question marked off:true never enters a quiz (none is, now that the page holds only the study guide) */
+function bankFor(tp){ var out = []; QB.forEach(function(b, i){ if(b.off) return; if(!tp || b.tp === tp) out.push({b:b, i:i}); }); return out; }
+
+/* Two questions "are the same" when the thing being asked and the right answer
+   are mostly the same words — a written question and the identification question
+   generated from the matching flashcard, for instance. One quiz never shows both. */
+var STOPWORDS = {};
+"the a an of to in is are was were for on by with which that this these those it its as and or not be what who whom whose how why when where does do did can may might one more most than then from at into".split(" ").forEach(function(w){ STOPWORDS[w] = 1; });
+function meaningOf(q){
+  var right = "";
+  (q.opts || []).forEach(function(o){ if(o.ok) right = o.html; });
+  if(q.kind === "tf") right = "";            /* true/false: the statement is the meaning */
+  var words = strip(q.text + " " + right).toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/);
+  var set = {}, n = 0;
+  words.forEach(function(w){ if(w.length > 2 && !STOPWORDS[w] && !set[w]){ set[w] = 1; n++; } });
+  return {set:set, n:n};
+}
+function sameThing(a, b){
+  if(!a.n || !b.n) return false;
+  var shared = 0;
+  Object.keys(a.set).forEach(function(w){ if(b.set[w]) shared++; });
+  return shared / (a.n + b.n - shared) >= 0.6;
+}
+/* Draw up to n questions from pool, never two that ask the same thing.
+   Pool order decides which of a pair survives — written questions come first.  */
+function drawDistinct(pool, n){
+  var out = [], seen = [];
+  for(var i = 0; i < pool.length && out.length < n; i++){
+    var mean = meaningOf(pool[i]), dup = false;
+    for(var j = 0; j < seen.length && !dup; j++) dup = sameThing(mean, seen[j]);
+    if(!dup){ out.push(pool[i]); seen.push(mean); }
+  }
+  return out;
+}
+
+/* A chapter quiz: mostly written questions, about a third identification */
+function topicQuestions(tp, keys, n){
+  n = n || 10;
+  if(keys && keys.length) return shuffle(questionsByKeys(keys)).slice(0, n);
+  var bank = shuffle(bankFor(tp).map(function(x){ return fromBank(x.b, x.i); }));
+  var gen = shuffle(PAIRSETS[tp].pairs.map(function(p, i){ return fromPair(tp, i, Math.random() < 0.5); }));
+  var nGen = Math.min(gen.length, Math.floor(n/3));
+  /* written questions lead, so a written one always outranks the card it echoes */
+  var out = drawDistinct(bank.concat(gen), n - nGen).concat(drawDistinct(gen, nGen));
+  out = drawDistinct(out, n);
+  if(out.length < n) out = drawDistinct(out.concat(bank, gen), n);
+  return shuffle(out);
+}
+/* Rebuild exact questions from their keys ("tp:i" bank, "tp:pN" / "tp:pNr" pairs); anything malformed is dropped */
+function questionsByKeys(keys){
+  return uniqBy(keys, function(k){ return k; }).map(function(k){
+    var m = /^([a-z0-9]+):p(\d+)(r?)$/.exec(k);
+    if(m){
+      var set = PAIRSETS[m[1]], i = parseInt(m[2],10);
+      return (set && i < set.pairs.length) ? fromPair(m[1], i, m[3] === "r") : null;
+    }
+    var b = /^([a-z0-9]+):(\d+)$/.exec(k);
+    if(!b) return null;
+    var j = parseInt(b[2],10);
+    return (QB[j] && QB[j].tp === b[1]) ? fromBank(QB[j], j) : null;
+  }).filter(Boolean);
+}
+/* The practice exam: every chapter, reshuffled.
+   types  — all / mc / tf / ap
+                                                                              */
+function mockQuestions(cfg){
+  var tps = cfg.topics && cfg.topics.length ? cfg.topics : CHAPTERS.slice();
+  var n = cfg.n || 25;
+  var pool = [];
+  QB.forEach(function(b, i){
+    if(b.off || tps.indexOf(b.tp) < 0) return;
+    if(cfg.types === "mc" && b.t !== "mc") return;
+    if(cfg.types === "tf" && b.t !== "tf") return;
+    if(cfg.types === "ap" && !b.ap) return;
+    pool.push(fromBank(b, i));
+  });
+  if(cfg.types === "all" || cfg.types === "mc" || !cfg.types){
+    tps.forEach(function(tp){
+      pick(PAIRSETS[tp].pairs.map(function(p, i){ return i; }), 3).forEach(function(i){
+        pool.push(fromPair(tp, i, Math.random() < 0.5));
+      });
+    });
+  }
+  /* spread across chapters, and never two questions asking the same thing */
+  var byTp = {}; tps.forEach(function(t){ byTp[t] = shuffle(pool.filter(function(q){ return q.tp === t; })); });
+  var out = [], seen = [], k = 0;
+  while(out.length < n){
+    var t = tps[k % tps.length], list = byTp[t];
+    if(list.length){
+      var q = list.shift(), mean = meaningOf(q), dup = false;
+      for(var j = 0; j < seen.length && !dup; j++) dup = sameThing(mean, seen[j]);
+      if(!dup){ out.push(q); seen.push(mean); }
+    }
+    if(tps.every(function(x){ return !byTp[x].length; })) break;
+    k++;
+  }
+  return shuffle(out);
+}
+
+/* The 50 for the exam. The parts of the chapter are the key, so every one of their
+   sections is represented — at least two questions each, then the rest spread
+   round-robin across the sections so nothing is skipped.                       */
+function finalFifty(n){
+  n = n || 50;
+  var secs = [], bySec = {};
+  GUIDE.sections.forEach(function(s){ s.items.forEach(function(it){ secs.push(it.id); bySec[it.id] = []; }); });
+  QB.forEach(function(b, i){ if(!b.off && bySec[b.sec]) bySec[b.sec].push(fromBank(b, i)); });
+  secs.forEach(function(id){
+    bySec[id] = shuffle(bySec[id]);
+  });
+  var out = [], seen = [];
+  function take(id){
+    var list = bySec[id];
+    while(list.length){
+      var q = list.shift(), mean = meaningOf(q), dup = false;
+      for(var j = 0; j < seen.length && !dup; j++) dup = sameThing(mean, seen[j]);
+      if(!dup){ out.push(q); seen.push(mean); return true; }
+    }
+    return false;
+  }
+  var per = Math.floor(n / secs.length);
+  for(var r = 0; r < per; r++) secs.forEach(function(id){ if(out.length < n) take(id); });
+  var k = 0;
+  while(out.length < n && k < secs.length * 8){ if(out.length < n) take(secs[k % secs.length]); k++; }
+  return shuffle(out);
+}
+
+/* ================================================================ decks and match */
+function deckFor(tp, id){
+  var d = CH[tp].decks.filter(function(x){ return x.id === id; })[0] || CH[tp].decks[0];
+  return shuffle(d.cards).map(function(c){
+    return {front:'<div class="mid" style="font-family:var(--serif);letter-spacing:.01em;text-transform:none;font-size:clamp(19px,4.2vw,26px);line-height:1.35">'+c[0]+'</div>',
+            back:'<div class="bname">'+c[0]+'</div><div class="bsound" style="margin-top:12px">'+c[1]+'</div>'+(SEC_TITLES[c[2]] ? '<div class="btr" style="margin-top:12px">In the notes · '+SEC_TITLES[c[2]]+'</div>' : '')};
+  });
+}
+function matchRound(tp, n){
+  var set = PAIRSETS[tp];
+  var items = set.pairs.map(function(p, i){ return {id:tp+i, left:p[0], right:p[1]}; });
+  return {leftTitle:set.left, rightTitle:set.right, items:pick(items, Math.min(n || 6, items.length))};
+}
+
+/* ---- the pure parts can be tested outside a browser ---- */
+if(typeof window === "undefined"){
+  module.exports = {CH:CH, COURSE:COURSE, GUIDE:GUIDE,
+    QB:QB, PAIRSETS:PAIRSETS, VERDICTS:VERDICTS, CHAPTERS:CHAPTERS, TOPIC_NAMES:TOPIC_NAMES, SEC_TITLES:SEC_TITLES, SEC_CHAPTER:SEC_CHAPTER,
+    finalFifty:finalFifty, meaningOf:meaningOf, sameThing:sameThing,
+    fromBank:fromBank, fromPair:fromPair, topicQuestions:topicQuestions, mockQuestions:mockQuestions, questionsByKeys:questionsByKeys,
+    deckFor:deckFor, matchRound:matchRound, verdictFor:verdictFor};
+  return;
+}
+
+/* ================================================================ flashcards */
+function makeCards(root){
+  root.innerHTML =
+    '<div class="flashWrap"><div class="flash"><div class="flashInner">'+
+      '<div class="face front card-corners">'+CORNERS+'<div class="fc"></div></div>'+
+      '<div class="face back card-corners">'+CORNERS+'<div class="fc"></div></div>'+
+    '</div></div>'+
+    '<div class="progress"><i style="width:0"></i></div><p class="counter"></p>'+
+    '<div class="toolbar tight"><button class="btn prev" type="button">&lsaquo; Prev</button><button class="btn primary flip" type="button">Flip</button><button class="btn next" type="button">Next &rsaquo;</button></div></div>';
+  var deck = [], idx = 0;
+  var flash = $(".flash", root), fF = $(".face.front .fc", root), fB = $(".face.back .fc", root), bar = $(".progress i", root), counter = $(".counter", root);
+  function render(){
+    if(!deck.length) return;
+    var d = deck[idx];
+    fF.innerHTML = d.front; fB.innerHTML = d.back;
+    counter.textContent = (idx+1) + " of " + deck.length;
+    bar.style.width = ((idx+1) / deck.length * 100) + "%";
+  }
+  /* snap to the front without animating, so the next card's back never shows mid-turn */
+  function unflip(){
+    if(!flash.classList.contains("flipped")) return;
+    flash.classList.add("noanim"); flash.classList.remove("flipped");
+    void flash.offsetWidth; flash.classList.remove("noanim");
+  }
+  function go(step){ unflip(); idx = (idx + step + deck.length) % deck.length; render(); }
+  function flip(){ flash.classList.toggle("flipped"); }
+  flash.addEventListener("click", flip);
+  $(".flip", root).addEventListener("click", flip);
+  $(".next", root).addEventListener("click", function(){ go(1); });
+  $(".prev", root).addEventListener("click", function(){ go(-1); });
+  return {
+    load:function(d){ deck = d; idx = 0; unflip(); render(); },
+    keys:function(e){
+      if(e.key === "ArrowRight"){ go(1); return true; }
+      if(e.key === "ArrowLeft"){ go(-1); return true; }
+      if(e.key === " " || e.key === "Spacebar"){ flip(); return true; }
+      return false;
+    }
+  };
+}
+
+/* ================================================================ match */
+function makeMatch(root, getRound){
+  var items = [], sel = null, miss = 0, done = 0, started = false;
+  function round(){
+    var r = getRound();
+    items = r.items; sel = null; miss = 0; done = 0; started = true;
+    root.innerHTML = '<div class="toolbar"><button class="btn primary" type="button">New round</button></div>'+
+      '<p class="scoreline"></p><div class="mbanner"></div>'+
+      '<div class="matchGrid"><div class="col"><h3>'+r.leftTitle+'</h3><div class="tiles text names L"></div></div>'+
+      '<div class="col"><h3>'+r.rightTitle+'</h3><div class="tiles text R"></div></div></div>';
+    $(".toolbar .btn", root).addEventListener("click", round);
+    shuffle(items).forEach(function(it){ tile($(".L", root), "L", it, it.left); });
+    shuffle(items).forEach(function(it){ tile($(".R", root), "R", it, it.right); });
+    upd();
+  }
+  function upd(){ $(".scoreline", root).innerHTML = "Matched <b>"+done+" of "+items.length+"</b> &nbsp;&middot;&nbsp; Misses <b>"+miss+"</b>"; }
+  function tile(parent, side, it, text){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "tile"; b.innerHTML = text;
+    b.addEventListener("click", function(){ click(side, it, b); });
+    parent.appendChild(b);
+  }
+  function click(side, it, node){
+    if(node.classList.contains("done")) return;
+    if(!sel){ sel = {side:side, it:it, node:node}; node.classList.add("sel"); return; }
+    if(sel.side === side){ sel.node.classList.remove("sel"); sel = {side:side, it:it, node:node}; node.classList.add("sel"); return; }
+    var a = sel; sel = null; a.node.classList.remove("sel");
+    if(a.it.id === it.id){
+      a.node.classList.add("done"); node.classList.add("done"); done++; upd();
+      if(done === items.length){
+        $(".mbanner", root).innerHTML = '<p class="banner">'+verdictFor(Math.round(items.length/(items.length+miss)*100)).t+' &mdash; '+
+          (miss === 0 ? "a clean round." : miss + (miss === 1 ? " miss." : " misses."))+' Press <b>New round</b> for another set.</p>';
+      }
+    } else {
+      miss++; upd();
+      [a.node, node].forEach(function(x){ x.classList.add("bad"); setTimeout(function(){ x.classList.remove("bad"); }, 400); });
+    }
+  }
+  return {round:round, ensure:function(){ if(!started) round(); }};
+}
+
+/* ================================================================ quiz */
+function makeQuiz(root, gen, opts){
+  opts = opts || {};
+  var qs = [], qi = 0, score = 0, missed = [], answered = false, started = false;
+  function start(keys){
+    qs = keys ? questionsByKeys(keys) : gen();
+    qi = 0; score = 0; missed = []; started = true; render();
+  }
+  function shell(){
+    if(!$(".dots", root)){ root.innerHTML = '<div class="quizWrap"><div class="dots"></div><div class="qbody"></div></div>'; }
+    return $(".qbody", root);
+  }
+  function dots(){
+    var d = $(".dots", root); d.innerHTML = "";
+    qs.forEach(function(q, i){
+      var s = document.createElement("i");
+      if(q.got === true) s.className = "ok"; else if(q.got === false) s.className = "no"; else if(i === qi) s.className = "on";
+      d.appendChild(s);
+    });
+  }
+  function tagFor(q){
+    var t = q.ap ? "Application" : (q.kind === "tf" ? "True or false" : (q.kind === "id" ? "Identification" : "Multiple choice"));
+    return '<span class="qtag">'+t+'</span>' + (SEC_TITLES[q.sec] ? '<span class="qtag sec">'+SEC_TITLES[q.sec]+'</span>' : '')
+;
+  }
+  function render(){
+    var body = shell(); dots();
+    if(qi >= qs.length){ results(); return; }
+    var q = qs[qi]; answered = false;
+    body.innerHTML =
+      '<div class="qcard card-corners">'+CORNERS+
+        '<div class="qnum">Question '+(qi+1)+' of '+qs.length+(opts.showTopic ? ' &middot; '+TOPIC_NAMES[q.tp] : '')+'</div>'+
+        '<div style="text-align:center;margin-top:10px">'+tagFor(q)+'</div>'+
+        '<p class="qtext">'+q.text+'</p>'+
+        '<div class="opts'+(q.kind === "tf" ? " two" : "")+'"></div><p class="feedback"></p>'+
+        '<div class="qfoot"><button class="btn primary next" type="button" hidden>Next &rsaquo;</button></div>'+
+      '</div>';
+    var wrap = $(".opts", body);
+    q.opts.forEach(function(o, i){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "opt " + (o.cls || "");
+      b.innerHTML = '<span class="k">'+(i+1)+'</span>' + o.html;
+      b.addEventListener("click", function(){ answer(o, b); });
+      wrap.appendChild(b);
+    });
+    $(".next", body).addEventListener("click", function(){ qi++; render(); });
+  }
+  function answer(o, node){
+    if(answered) return;
+    answered = true;
+    var q = qs[qi], body = $(".qbody", root); q.got = o.ok;
+    $$(".opt", body).forEach(function(b, i){ b.disabled = true; if(q.opts[i].ok) b.classList.add("correct"); });
+    if(o.ok){ score++; $(".feedback", body).innerHTML = "<b>Correct.</b> " + q.explain; }
+    else { node.classList.add("wrong"); missed.push(q); $(".feedback", body).innerHTML = "<b>Not this one.</b> " + q.explain; }
+    dots();
+    var nb = $(".next", body); nb.hidden = false; nb.textContent = (qi === qs.length-1) ? "See results" : "Next"; nb.focus();
+  }
+  function results(){
+    var body = $(".qbody", root);
+    /* a narrow combination of settings can match nothing — say so rather than showing 0/0 */
+    if(!qs.length){
+      body.innerHTML = '<div class="result card-corners">'+CORNERS+
+        '<p class="qtext" style="margin:10px 0 0">No questions match those settings. Try a wider combination.</p>'+
+        (opts.onSetup ? '<div class="toolbar" style="margin:26px 0 0"><button class="btn primary setupbtn" type="button">Change settings</button></div>' : '')+'</div>';
+      if($(".setupbtn", body)) $(".setupbtn", body).addEventListener("click", opts.onSetup);
+      return;
+    }
+    var pct = Math.round(score / qs.length * 100), v = verdictFor(pct);
+    var html = '<div class="result card-corners">'+CORNERS+'<div class="big">'+score+'/'+qs.length+'</div><div class="rsub">'+pct+' percent</div>'+
+      '<h3 style="font-family:var(--serif);font-weight:400;font-size:26px;margin:16px 0 0">'+v.t+'</h3><p class="verdict">'+v.a+'</p>';
+    if(opts.showTopic){
+      /* the breakdown follows the study guide, section by section */
+      var rows = "";
+      GUIDE.sections.forEach(function(s){ s.items.forEach(function(it){
+        var mine = qs.filter(function(q){ return q.sec === it.id; }); if(!mine.length) return;
+        var ok = mine.filter(function(q){ return q.got; }).length;
+        rows += '<tr><td class="sm"><span class="secch">'+s.h+'</span>'+it.t+'</td><td class="num">'+ok+' / '+mine.length+'</td></tr>';
+      }); });
+      html += '<div class="tblwrap" style="max-width:600px;margin:22px auto 0"><table class="tbl n0"><tbody>'+rows+'</tbody></table></div>';
+    }
+    /* an identification miss already reads "term — meaning", so it gets no second line */
+    if(missed.length){ html += '<div class="misslist">' + missed.map(function(q){ return '<div><span class="g">'+q.miss+'</span>'+(q.kind === "id" ? '' : '<span class="t">'+q.explain+'</span>')+'</div>'; }).join("") + '</div>'; }
+    html += '<div class="toolbar" style="margin:26px 0 0"><button class="btn primary again" type="button">'+(opts.againLabel || "New quiz")+'</button>'+
+            (missed.length ? '<button class="btn missed" type="button">Practice the misses</button>' : '')+
+            (opts.onSetup ? '<button class="btn setupbtn" type="button">Change settings</button>' : '')+'</div></div>';
+    body.innerHTML = html;
+    $(".again", body).addEventListener("click", function(){ start(null); });
+    if($(".missed", body)) $(".missed", body).addEventListener("click", function(){ start(missed.map(function(q){ return q.key; })); });
+    if($(".setupbtn", body)) $(".setupbtn", body).addEventListener("click", opts.onSetup);
+    dots();
+  }
+  return {
+    start:start,
+    ensure:function(){ if(!started) start(null); },
+    reset:function(){ started = false; qs = []; root.innerHTML = ""; },
+    keys:function(e){
+      var body = $(".qbody", root); if(!body) return false;
+      if(/^[1-4]$/.test(e.key)){ var b = $$(".opt", body)[parseInt(e.key,10)-1]; if(b && !b.disabled){ b.click(); return true; } }
+      else if(e.key === "Enter"){ var nb = $(".next", body); if(nb && !nb.hidden){ nb.click(); return true; } }
+      return false;
+    }
+  };
+}
+
+/* ================================================================ small helpers */
+function segWire(sel, attr, fn){
+  var seg = $(sel); if(!seg) return;
+  seg.addEventListener("click", function(e){
+    var b = e.target.closest ? e.target.closest("button["+attr+"]") : null;
+    if(!b) return;
+    $$("button", seg).forEach(function(x){ x.setAttribute("aria-pressed", String(x === b)); });
+    fn(b.getAttribute(attr));
+  });
+}
+function divider(){ return '<div class="divider"><span>&#9670;</span></div>'; }
+function getJSON(k, dflt){ try{ var v = store.get(k); return v ? JSON.parse(v) : dflt; }catch(e){ return dflt; } }
+function li(x){ return "<li>"+x+"</li>"; }
+
+/* ================================================================ guide */
+function renderGuide(){
+  var done = getJSON("guide", {}), total = 0;
+  GUIDE.sections.forEach(function(s){ total += s.items.length; });
+  var html =
+    '<div class="handout card-corners">'+CORNERS+
+      '<div class="hcourse">'+COURSE.code+' &middot; '+COURSE.term+'</div>'+
+      '<h2>'+COURSE.exam+'</h2><p class="hscope">'+COURSE.scope+'</p>'+
+      '<ul class="hrules">'+COURSE.rules.map(li).join("")+'</ul>'+
+    '</div>'+
+    '<p class="note">'+COURSE.about+'</p>'+
+    '<div class="gprog"><span class="count" id="gCount"></span><div class="bar"><i id="gBar" style="width:0"></i></div></div>';
+  GUIDE.sections.forEach(function(s){
+    html += '<div class="gsec"><h2>'+s.h+'</h2>'+divider();
+    s.items.forEach(function(it){
+      html += '<div class="gitem'+(done[it.id] ? " ok" : "")+'" data-gi="'+it.id+'">'+
+        '<input type="checkbox" aria-label="I can explain '+strip(it.t)+'" data-g="'+it.id+'"'+(done[it.id] ? " checked" : "")+'>'+
+        '<div><div class="gt">'+it.t+'</div>'+
+          '<div class="gs">'+it.short+'</div>'+
+          '<div class="gsub">'+it.subs.map(function(sb){ return '<button class="btn" type="button" data-go="'+s.tp+'/notes" data-a="'+sb[1]+'">'+sb[0]+'</button>'; }).join("")+'</div></div>'+
+        '<button class="btn" type="button" data-go="'+s.tp+'/notes" data-a="'+it.a+'">Study it</button></div>';
+    });
+    html += '</div>';
+  });
+  html += '<div class="gsec"><div class="toolbar">'+
+      '<button class="btn primary" type="button" data-go="exam/mock">Practice exam</button>'+
+      '<button class="btn" type="button" id="gPrint">Print this list</button>'+
+    '</div></div>';
+  $("#guideRoot").innerHTML = html;
+  function progress(){
+    var d = getJSON("guide", {}), n = Object.keys(d).filter(function(k){ return d[k]; }).length;
+    $("#gCount").innerHTML = "Ready on <b>"+n+" of "+total+"</b>";
+    $("#gBar").style.width = (n/total*100) + "%";
+  }
+  $$("#guideRoot input[data-g]").forEach(function(cb){
+    cb.addEventListener("change", function(){
+      var d = getJSON("guide", {}); d[cb.getAttribute("data-g")] = cb.checked; store.set("guide", JSON.stringify(d));
+      cb.closest(".gitem").classList.toggle("ok", cb.checked); progress();
+    });
+  });
+  $$("#guideRoot [data-go]").forEach(function(b){
+    b.addEventListener("click", function(){ goTo(b.getAttribute("data-go"), b.getAttribute("data-a")); });
+  });
+  $("#gPrint").addEventListener("click", function(){ window.print(); });
+  progress();
+}
+function goTo(path, anchor){
+  var parts = path.split("/"), t = parts[0], m = parts[1];
+  currentMode[t] = m;
+  showTopic(t);
+  if(!anchor){ window.scrollTo({top:$(".topics").offsetTop - 8, behavior:"smooth"}); return; }
+  setTimeout(function(){
+    var el = document.getElementById(anchor);
+    if(!el) return;
+    el.scrollIntoView({behavior:"smooth", block:"start"});
+    el.classList.add("flashhit"); setTimeout(function(){ el.classList.remove("flashhit"); }, 1800);
+  }, 60);
+}
+
+/* ================================================================ chapter notes */
+function renderNotes(tp){
+  var c = CH[tp];
+  $("#"+tp+"Notes").innerHTML = '<div class="secnav">'+c.notes.map(function(s){ return '<a href="#'+s.id+'" data-a="'+s.id+'">'+strip(s.h).replace(/“|”/g,"").replace(/^Figure [\d.]+ · /, "")+'</a>'; }).join("")+'</div>'+
+    c.notes.map(function(s){ return '<div class="note-sec" id="'+s.id+'"><h2>'+s.h+'</h2>'+divider()+s.body+'</div>'; }).join("");
+  $$("#"+tp+"Notes .secnav a").forEach(function(a){
+    a.addEventListener("click", function(e){ e.preventDefault(); var el = document.getElementById(a.getAttribute("data-a")); if(el) el.scrollIntoView({behavior:"smooth", block:"start"}); });
+  });
+}
+
+/* ================================================================ practice exam */
+var mockCfg = getJSON("mockcfg", {n:25, types:"all", topic:"all"});
+function mockGen(){ return mockQuestions({n:mockCfg.n, types:mockCfg.types, topics:mockCfg.topic === "all" ? [] : [mockCfg.topic]}); }
+function startMock(keys){
+  engines.mock = makeQuiz($("#mockExam"), mockGen, {showTopic:true, againLabel:"New practice exam", onSetup:renderMockSetup});
+  engines.mock.start(keys || null);
+}
+/* the one-button exam: 50 questions, all sixteen study-guide sections covered */
+function startFifty(){
+  engines.mock = makeQuiz($("#mockExam"), function(){ return finalFifty(50); }, {showTopic:true, againLabel:"Another fifty", onSetup:renderMockSetup});
+  engines.mock.start(null);
+}
+function renderMockSetup(){
+  var root = $("#mockExam");
+  function seg(id, attr, val, list){
+    return '<div class="seg" id="'+id+'">'+list.map(function(o){ return '<button type="button" '+attr+'="'+o[0]+'" aria-pressed="'+(String(o[0]) === String(val))+'">'+o[1]+'</button>'; }).join("")+'</div>';
+  }
+  root.innerHTML = '<div class="quizWrap"><div class="qcard card-corners">'+CORNERS+
+    '<div class="qnum">Practice exam</div><p class="qtext">Set it up, then answer across the chapters. Each run is drawn fresh.</p>'+
+    '<div class="fifty"><button class="btn primary" type="button" id="mxFifty">The 50 &mdash; every section of the guide</button>'+
+      '<p>Fifty questions, at least two from every part of the chapter &mdash; so nothing in the notes is skipped. Drawn fresh each time.</p></div>'+
+    '<div class="setup">'+
+      '<p class="orline">or set one up yourself</p>'+
+      '<div class="row"><span class="label">Length</span><br>'+seg("mxN","data-n",mockCfg.n,[[15,"15"],[25,"25"],[40,"40"],[60,"60"]])+'</div>'+
+      '<div class="row"><span class="label">Question types</span><br>'+seg("mxT","data-t",mockCfg.types,[["all","Everything"],["mc","Multiple choice"],["tf","True / false"],["ap","Application"]])+'</div>'+
+      '<div class="row"><span class="label">Part</span><br>'+seg("mxP","data-p",mockCfg.topic,[["all","All three"]].concat(CHAPTERS.map(function(tp){ return [tp, CH[tp].title]; })))+'</div>'+
+      '<div class="row" style="margin-top:22px"><button class="btn primary" type="button" id="mxStart">Start</button></div>'+
+    '</div></div></div>';
+  segWire("#mxN","data-n",function(v){ mockCfg.n = parseInt(v,10); store.set("mockcfg", JSON.stringify(mockCfg)); });
+  segWire("#mxT","data-t",function(v){ mockCfg.types = v; store.set("mockcfg", JSON.stringify(mockCfg)); });
+  segWire("#mxP","data-p",function(v){ mockCfg.topic = v; store.set("mockcfg", JSON.stringify(mockCfg)); });
+  $("#mxStart").addEventListener("click", function(){ startMock(null); });
+  $("#mxFifty").addEventListener("click", startFifty);
+  engines.mock = null;
+}
+
+/* ================================================================ wiring */
+var engines = {};
+CHAPTERS.forEach(function(tp){
+  var seg = $('.seg[data-decks="'+tp+'"]'), cur = CH[tp].decks[0].id;
+  seg.innerHTML = CH[tp].decks.map(function(d, i){ return '<button type="button" data-deck="'+d.id+'" aria-pressed="'+(i === 0)+'">'+d.label+'</button>'; }).join("");
+  engines[tp+"Cards"] = makeCards($("#"+tp+"Cards")); engines[tp+"Cards"].load(deckFor(tp, cur));
+  segWire('.seg[data-decks="'+tp+'"]', "data-deck", function(v){ cur = v; engines[tp+"Cards"].load(deckFor(tp, v)); });
+  $('[data-shuffle="'+tp+'"]').addEventListener("click", function(){ engines[tp+"Cards"].load(deckFor(tp, cur)); });
+  engines[tp+"Match"] = makeMatch($("#"+tp+"Match"), function(){ return matchRound(tp, 6); });
+  engines[tp+"Quiz"]  = makeQuiz($("#"+tp+"Quiz"), function(){ return topicQuestions(tp, null, 10); });
+  renderNotes(tp);
+});
+renderGuide();
+
+var ON_SHOW = {"exam/mock":function(){ if(!engines.mock) renderMockSetup(); }};
+var KEYS = {"exam/mock":function(e){ return engines.mock ? engines.mock.keys(e) : false; }};
+CHAPTERS.forEach(function(tp){
+  ON_SHOW[tp+"/match"] = function(){ engines[tp+"Match"].ensure(); };
+  ON_SHOW[tp+"/quiz"]  = function(){ engines[tp+"Quiz"].ensure(); };
+  KEYS[tp+"/cards"] = function(e){ return engines[tp+"Cards"].keys(e); };
+  KEYS[tp+"/quiz"]  = function(e){ return engines[tp+"Quiz"].keys(e); };
+});
+var TOPICS = ["guide","s1","s2","s3","exam"];
+var currentTopic = "guide", currentMode = {guide:"overview", s1:"notes", s2:"notes", s3:"notes", exam:"mock"};
+function showMode(topic, mode){
+  currentMode[topic] = mode;
+  $$('.seg[data-modes="'+topic+'"] button').forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-mode") === mode)); });
+  $$('#topic-'+topic+' .panel').forEach(function(p){ p.hidden = (p.getAttribute("data-panel") !== topic+"/"+mode); });
+  var id = topic+"/"+mode;
+  if(ON_SHOW[id]) ON_SHOW[id]();
+  store.set("mode."+topic, mode);
+}
+function showTopic(id){
+  currentTopic = id;
+  $$(".topic-btn").forEach(function(b){ b.setAttribute("aria-selected", String(b.getAttribute("data-topic") === id)); });
+  $$(".topic").forEach(function(s){ s.hidden = (s.id !== "topic-"+id); });
+  showMode(id, currentMode[id]);
+  store.set("topic", id);
+}
+$$(".topic-btn").forEach(function(b){
+  b.addEventListener("click", function(){ showTopic(b.getAttribute("data-topic")); window.scrollTo({top:$(".topics").offsetTop - 8, behavior:"smooth"}); });
+});
+$$(".seg[data-modes]").forEach(function(seg){
+  seg.addEventListener("click", function(e){
+    var b = e.target.closest ? e.target.closest("button[data-mode]") : null;
+    if(b) showMode(seg.getAttribute("data-modes"), b.getAttribute("data-mode"));
+  });
+});
+document.addEventListener("keydown", function(e){
+  var t = e.target, tag = (t && t.tagName) || "";
+  if(/INPUT|TEXTAREA|SELECT/.test(tag)) return;
+  if(tag === "BUTTON" && (e.key === " " || e.key === "Enter")) return;
+  var h = KEYS[currentTopic+"/"+currentMode[currentTopic]];
+  if(h && h(e)) e.preventDefault();
+});
+
+/* ---- come back to where you were ---- */
+(function(){
+  var t = store.get("topic");
+  TOPICS.forEach(function(k){ var m = store.get("mode."+k); if(m && $('.seg[data-modes="'+k+'"] button[data-mode="'+m+'"]')) currentMode[k] = m; });
+  showTopic(t && TOPICS.indexOf(t) >= 0 ? t : "guide");
+})();
+
+/* ---- offline copy: the service worker keeps the page on the phone ---- */
+if("serviceWorker" in navigator && /^https?:/.test(location.protocol)){
+  navigator.serviceWorker.register("sw.js").catch(function(){});
+}
+
+})();
+</script>
+</body>
+</html>

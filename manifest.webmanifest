@@ -1,0 +1,13 @@
+{
+  "name": "Old Testament — 1 Samuel",
+  "short_name": "1 Samuel",
+  "description": "Samuel, Saul and David: notes, flashcards, matching, quizzes and a practice quiz.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f1e8",
+  "theme_color": "#f5f1e8",
+  "icons": [
+    { "src": "icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

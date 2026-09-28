@@ -1,0 +1,103 @@
+<div class="wrap">
+
+  <header>
+    <svg class="emblem" viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg>
+    <p class="eyebrow">Study Guide</p>
+    <h1>Old Testament</h1>
+    <p class="sub">1 Samuel &middot; Samuel, the last judge &middot; Saul, the first king &middot; David, the king after God&rsquo;s heart</p>
+    <svg class="orn" viewBox="0 0 320 44" aria-hidden="true"><use href="#flourish"/></svg>
+  </header>
+
+  <nav class="topics" role="tablist" aria-label="Parts of the chapter">
+    <button class="topic-btn" role="tab" data-topic="guide" aria-selected="true">Guide</button>
+    <button class="topic-btn" role="tab" data-topic="s1" aria-selected="false">Samuel</button>
+    <button class="topic-btn" role="tab" data-topic="s2" aria-selected="false">Saul</button>
+    <button class="topic-btn" role="tab" data-topic="s3" aria-selected="false">David &amp; Saul</button>
+    <button class="topic-btn" role="tab" data-topic="exam" aria-selected="false">Practice Quiz</button>
+  </nav>
+
+  <main>
+
+    <!-- ================= GUIDE ================= -->
+    <section class="topic" id="topic-guide">
+      <p class="intro">The chapter in three parts, the way your notes lay it out. Check an item off once you can tell it without looking; <b>Study it</b> jumps to the notes, the small buttons to each subsection. <mark>Green</mark> marks what is most likely to be asked.</p>
+      <div class="modes"><div class="seg" data-modes="guide">
+        <button type="button" data-mode="overview" aria-pressed="true">The review list</button>
+      </div></div>
+      <div class="panel" data-panel="guide/overview"><div id="guideRoot"></div></div>
+    </section>
+
+    <!-- ================= SAMUEL ================= -->
+    <section class="topic" id="topic-s1" hidden>
+      <p class="intro">1 Samuel 1&ndash;7: the dates, Hannah and the birth of Samuel, Eli&rsquo;s corrupt sons and God&rsquo;s call in the night, the ark lost to the Philistines and Dagon falling before it, and the revival at Mizpah.</p>
+      <div class="modes"><div class="seg" data-modes="s1">
+        <button type="button" data-mode="notes" aria-pressed="true">Notes</button>
+        <button type="button" data-mode="cards" aria-pressed="false">Flashcards</button>
+        <button type="button" data-mode="match" aria-pressed="false">Match</button>
+        <button type="button" data-mode="quiz" aria-pressed="false">Quiz</button>
+      </div></div>
+      <div class="panel" data-panel="s1/notes"><div id="s1Notes"></div></div>
+      <div class="panel" data-panel="s1/cards" hidden>
+        <p class="hint">Front: the name or the question. Back: the answer and where it sits in the notes. Space flips, arrows move.</p>
+        <div class="toolbar"><span class="label">Deck</span><div class="seg" data-decks="s1"></div><button class="btn" type="button" data-shuffle="s1">Shuffle deck</button></div>
+        <div id="s1Cards"></div>
+      </div>
+      <div class="panel" data-panel="s1/match" hidden><p class="hint">Tap a name, then the line that goes with it.</p><div id="s1Match"></div></div>
+      <div class="panel" data-panel="s1/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s1Quiz"></div></div>
+    </section>
+
+    <!-- ================= SAUL ================= -->
+    <section class="topic" id="topic-s2" hidden>
+      <p class="intro">1 Samuel 8&ndash;15: why Israel asked for a king it did not need, Saul&rsquo;s small kingdom and its enemies, the lost donkeys and the three namings, and the two acts of disobedience that cost him the throne.</p>
+      <div class="modes"><div class="seg" data-modes="s2">
+        <button type="button" data-mode="notes" aria-pressed="true">Notes</button>
+        <button type="button" data-mode="cards" aria-pressed="false">Flashcards</button>
+        <button type="button" data-mode="match" aria-pressed="false">Match</button>
+        <button type="button" data-mode="quiz" aria-pressed="false">Quiz</button>
+      </div></div>
+      <div class="panel" data-panel="s2/notes"><div id="s2Notes"></div></div>
+      <div class="panel" data-panel="s2/cards" hidden>
+        <p class="hint">Front: the name or the question. Back: the answer and where it sits in the notes. Space flips, arrows move.</p>
+        <div class="toolbar"><span class="label">Deck</span><div class="seg" data-decks="s2"></div><button class="btn" type="button" data-shuffle="s2">Shuffle deck</button></div>
+        <div id="s2Cards"></div>
+      </div>
+      <div class="panel" data-panel="s2/match" hidden><p class="hint">Tap a name, then the line that goes with it.</p><div id="s2Match"></div></div>
+      <div class="panel" data-panel="s2/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s2Quiz"></div></div>
+    </section>
+
+    <!-- ================= DAVID AND SAUL ================= -->
+    <section class="topic" id="topic-s3" hidden>
+      <p class="intro">1 Samuel 16&ndash;31: David anointed at Bethlehem, the Spirit leaving Saul, Goliath and the dig at Gath, Saul&rsquo;s jealousy and Jonathan&rsquo;s loyalty, the medium, and Saul&rsquo;s death.</p>
+      <div class="modes"><div class="seg" data-modes="s3">
+        <button type="button" data-mode="notes" aria-pressed="true">Notes</button>
+        <button type="button" data-mode="cards" aria-pressed="false">Flashcards</button>
+        <button type="button" data-mode="match" aria-pressed="false">Match</button>
+        <button type="button" data-mode="quiz" aria-pressed="false">Quiz</button>
+      </div></div>
+      <div class="panel" data-panel="s3/notes"><div id="s3Notes"></div></div>
+      <div class="panel" data-panel="s3/cards" hidden>
+        <p class="hint">Front: the name or the question. Back: the answer and where it sits in the notes. Space flips, arrows move.</p>
+        <div class="toolbar"><span class="label">Deck</span><div class="seg" data-decks="s3"></div><button class="btn" type="button" data-shuffle="s3">Shuffle deck</button></div>
+        <div id="s3Cards"></div>
+      </div>
+      <div class="panel" data-panel="s3/match" hidden><p class="hint">Tap a name, then the line that goes with it.</p><div id="s3Match"></div></div>
+      <div class="panel" data-panel="s3/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s3Quiz"></div></div>
+    </section>
+
+    <!-- ================= PRACTICE EXAM ================= -->
+    <section class="topic" id="topic-exam" hidden>
+      <p class="intro">Questions from all three parts of the chapter &mdash; names, places, numbers, the order of events, and application questions that describe a scene and ask which one it is. Reshuffled each run, with the reason behind every answer.</p>
+      <div class="modes"><div class="seg" data-modes="exam">
+        <button type="button" data-mode="mock" aria-pressed="true">Practice quiz</button>
+      </div></div>
+      <div class="panel" data-panel="exam/mock"><div id="mockExam"></div></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Built from your Old Testament class notes on 1 Samuel. &ldquo;Man looks on the outward appearance, but the Lord looks on the heart&rdquo; &mdash; 1 Samuel 16:7.</p>
+    <span class="keys">Flashcards <kbd>&larr;</kbd> <kbd>&rarr;</kbd> <kbd>Space</kbd> &nbsp;&middot;&nbsp; Quizzes <kbd>1</kbd>&ndash;<kbd>4</kbd> <kbd>Enter</kbd></span>
+  </footer>
+
+</div>
