@@ -10,7 +10,7 @@ var store = {
   set:function(k,v){ try{ localStorage.setItem("ot."+k, v); }catch(e){} }
 };
 var CORNERS = ['tl','tr','bl','br'].map(function(c){ return '<svg class="c '+c+'" aria-hidden="true"><use href="#corner"/></svg>'; }).join('');
-var CHAPTERS = ["s1","s2","s3"];
+var CHAPTERS = ["s1","s2","s3","s4"];
 var TOPIC_NAMES = {};
 CHAPTERS.forEach(function(tp){ TOPIC_NAMES[tp] = CH[tp].title+" · "+CH[tp].ref; });
 /* Every question and card carries the id of the study-guide section it belongs to */

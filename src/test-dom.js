@@ -27,7 +27,7 @@ const key = k => d.dispatchEvent(new w.KeyboardEvent('keydown', { key: k, bubble
 const topic = t => click($('.topic-btn[data-topic="' + t + '"]'));
 const mode = (t, m) => click($('.seg[data-modes="' + t + '"] button[data-mode="' + m + '"]'));
 const panel = p => $('[data-panel="' + p + '"]');
-const tps = ['s1', 's2', 's3'];
+const tps = ['s1', 's2', 's3', 's4'];
 
 function answerQuiz(root, label) {
   let guard = 0;
@@ -47,15 +47,15 @@ head('landing');
 ok(errors.length === 0, 'no errors while loading', errors.join(' || '));
 ok(visible($('#topic-guide')) && !visible($('#topic-s1')), 'opens on the Guide');
 const items = $$('#guideRoot .gitem');
-ok(items.length === 12, 'guide shows the twelve parts of the chapter', items.length);
-ok(/0 of 12/.test($('#gCount').textContent), 'progress starts at 0 of 12', $('#gCount').textContent);
-ok(!!$('#guideRoot .handout') && $$('#guideRoot .handout .hrules li').length === 4 && /1 Samuel/.test($('#guideRoot .handout h2').textContent), 'the course header with the four study notes');
+ok(items.length === 17, 'guide shows all seventeen parts', items.length);
+ok(/0 of 17/.test($('#gCount').textContent), 'progress starts at 0 of 17', $('#gCount').textContent);
+ok(!!$('#guideRoot .handout') && $$('#guideRoot .handout .hrules li').length === 5 && /1 and 2 Samuel/.test($('#guideRoot .handout h2').textContent), 'the course header with the five study notes');
 ok($$('#guideRoot .gsub .btn').length >= 20, 'subsection buttons');
-ok($$('#guideRoot .gsec h2').length === 3, 'three groups on the guide');
+ok($$('#guideRoot .gsec h2').length === 4, 'four groups on the guide');
 
 head('guide checkboxes and jumps');
 const cb = $('#guideRoot input[data-g="g3-goliath"]'); cb.checked = true; cb.dispatchEvent(new w.Event('change', { bubbles: true }));
-ok(/1 of 12/.test($('#gCount').textContent), 'checking an item moves the progress', $('#gCount').textContent);
+ok(/1 of 17/.test($('#gCount').textContent), 'checking an item moves the progress', $('#gCount').textContent);
 ok(/":true/.test(w.localStorage.getItem('ot.guide') || ''), 'the check is saved on the device under ot.');
 click($('#gPrint')); ok(w.__printed === 1, 'print button prints');
 click($('#guideRoot .gitem[data-gi="g2-fall"] > button[data-go]'));
@@ -87,7 +87,7 @@ Object.keys(modes).forEach(t => {
 ok(errors.length === 0, 'no errors after visiting every mode', errors.join(' || '));
 
 head('notes');
-const want = { s1: 4, s2: 4, s3: 4 };
+const want = { s1: 4, s2: 4, s3: 4, s4: 5 };
 tps.forEach(t => {
   topic(t); mode(t, 'notes');
   ok($$('#' + t + 'Notes .note-sec').length === want[t], t + ': ' + want[t] + ' note sections rendered', $$('#' + t + 'Notes .note-sec').length);
@@ -155,7 +155,7 @@ click($('#mxStart'));
 ok($$('#mockExam .dots i').length === 15, 'fifteen-question exam', $$('#mockExam .dots i').length);
 const mres = answerQuiz($('#mockExam'), 'exam');
 const secTbl = mres && mres.querySelectorAll('.tbl')[0];
-ok(secTbl && secTbl.querySelectorAll('tr').length >= 4 && secTbl.querySelectorAll('tr').length <= 12 && secTbl.querySelectorAll('.secch').length === secTbl.querySelectorAll('tr').length, 'results break down by outline section', secTbl && secTbl.querySelectorAll('tr').length);
+ok(secTbl && secTbl.querySelectorAll('tr').length >= 4 && secTbl.querySelectorAll('tr').length <= 17 && secTbl.querySelectorAll('.secch').length === secTbl.querySelectorAll('tr').length, 'results break down by outline section', secTbl && secTbl.querySelectorAll('tr').length);
 click(mres.querySelector('.setupbtn')); ok(!!$('#mxStart'), 'change settings returns to setup');
 click($('#mxT button[data-t="ap"]')); click($('#mxN button[data-n="15"]')); click($('#mxStart'));
 ok($$('#mockExam .dots i').length === 15 && $('#mockExam .qtag').textContent === 'Application', 'application-only exam', $$('#mockExam .dots i').length);
@@ -173,13 +173,16 @@ ok(fifty.querySelectorAll('.dots i').length === 50, 'fifty questions', fifty.que
 const fRes = answerQuiz(fifty, 'the fifty');
 ok(!!fRes, 'the fifty reaches results');
 const fSec = fRes.querySelectorAll('.tbl')[0];
-ok(fSec && fSec.querySelectorAll('tr').length === 12, 'the results list all twelve parts', fSec && fSec.querySelectorAll('tr').length);
+ok(fSec && fSec.querySelectorAll('tr').length === 17, 'the results list all seventeen parts', fSec && fSec.querySelectorAll('tr').length);
 ok(Array.from(fSec.querySelectorAll('.num')).every(td => parseInt(td.textContent.split('/')[1], 10) >= 2), 'every section got at least two questions');
 
 head('remembers where you were');
 topic('s3'); mode('s3', 'cards');
 ok(w.localStorage.getItem('ot.topic') === 's3' && w.localStorage.getItem('ot.mode.s3') === 'cards', 'topic and mode saved');
-ok($$('.topic-btn').length === 5, 'five tabs');
+ok($$('.topic-btn').length === 6, 'six tabs');
+topic('s4');
+ok(/Bathsheba/.test($('#s4Notes').textContent) && $$('#s4Notes .note-sec').length === 5 && $$('#s4Notes .exam-tip').length === 2, 'the 2 Samuel chapter renders, with both history boxes');
+click($('#guideRoot .gitem[data-gi="g4-promise"] > button[data-go]'));
 
 head('errors');
 ok(errors.length === 0, 'no runtime errors anywhere', errors.join(' || '));

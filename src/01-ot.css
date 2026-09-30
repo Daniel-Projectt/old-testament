@@ -167,3 +167,6 @@ header .eyebrow{color:#9a7a44}
 /* when an option bar wraps on a phone, every row fills the width */
 .seg{justify-content:center}
 .seg button{flex:1 1 auto;border-bottom:1px solid var(--line);margin-bottom:-1px}
+
+/* bold words inside a list in the tip box stay words, not labels */
+.exam-tip li b{display:inline;font-family:inherit;font-size:inherit;letter-spacing:0;text-transform:none;color:inherit;font-weight:600;margin:0}

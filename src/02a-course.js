@@ -4,10 +4,11 @@
    chapter, so everything here stays inside the notes.                         */
 var COURSE = {
  code:"Old Testament Literature", term:"Cedarville University",
- exam:"1 Samuel &mdash; Samuel, Saul and David",
- scope:"Your class notes on the chapter: the last judge, the first king, and the shepherd God chose instead. The quiz is on this chapter.",
+ exam:"1 and 2 Samuel &mdash; Samuel, Saul and David",
+ scope:"Your class notes on 1 Samuel &mdash; the last judge, the first king, and the shepherd God chose instead &mdash; and your textbook on 2 Samuel, David&rsquo;s kingdom.",
  rules:[
-  "<b>1 Samuel 1&ndash;7</b> is Samuel, <b>8&ndash;15</b> is Saul, <b>16&ndash;31</b> is the new king, David.",
+  "<b>1 Samuel 1&ndash;7</b> is Samuel, <b>8&ndash;15</b> is Saul, <b>16&ndash;31</b> is the new king, David. <b>2 Samuel</b> is David&rsquo;s kingdom: <b>1&ndash;10</b> he builds it, <b>11&ndash;19</b> his sin and its consequences, <b>20&ndash;24</b> his last years.",
+  "<b>2 Samuel 7</b> is the high point: God promises David a <b>house</b> &mdash; a throne forever &mdash; the promise that leads to the Messiah.",
   "<b>1 Samuel 15</b> raises the important questions &mdash; Saul, the Amalekites, and why obedience is better than sacrifice.",
   "Know the <b>dates and numbers</b>: 1070&ndash;970 BC, Samuel 20 years, Saul 40, David king near 1010; 30,000 dead at the ark&rsquo;s capture; Goliath nine feet tall.",
   "Know <b>who fought whom</b>: the Philistines were the main threat; Saul also fought the Ammonites, Amalekites, Edomites and the kings of Zobah."],
@@ -57,5 +58,22 @@ var GUIDE = {sections:[
    subs:[["Saul’s attempts", "s3-attempts"], ["Jonathan", "s3-jonathan"], ["The outlaw years", "s3-outlaw"]]},
   {id:"g3-end", t:"The medium, the Amalekites and Saul’s death", a:"s3-end",
    short:"Samuel dead and God silent, Saul consults a medium, and Samuel appears. David is kept out of the battle and defeats the Amalekites. Jonathan dies; Saul falls on his own sword. One day: the war, the king and his heirs.",
-   subs:[["The medium", "s3-medium"], ["The last battle", "s3-death"], ["Saul, summed up", "s3-verdict"]]}]}
+   subs:[["The medium", "s3-medium"], ["The last battle", "s3-death"], ["Saul, summed up", "s3-verdict"]]}]},
+
+ {h:"David’s kingdom · 2 Samuel (textbook, pp. 132–140)", tp:"s4", items:[
+  {id:"g4-rise", t:"David mourns Saul; the long road to the throne", a:"s4-rise",
+   short:"David mourns and executes the Amalekite who claims he killed Saul. Judah crowns David; the north follows Ish-bosheth. Joab murders Abner; two men kill Ish-bosheth; David executes them. David reigns 1010–970 BC: 7 years over Judah, 33 over all.",
+   subs:[["David mourns", "s4-mourn"], ["Two kings", "s4-divided"], ["Two murders", "s4-murders"]]},
+  {id:"g4-kingdom", t:"All Israel: Jerusalem, the Philistines, the ark", a:"s4-kingdom",
+   short:"All 12 tribes anoint David. Three ways he secures the kingdom: Jerusalem as capital (neutral, defensible, 12 acres), the Philistines subdued, the ark brought to Jerusalem. Eilat Mazar’s tenth-century palace. Wars won; kindness to Jonathan’s son.",
+   subs:[["Three ways", "s4-three"], ["Why Jerusalem", "s4-jerusalem"], ["The maps", "s4-maps"], ["After the promise", "s4-prosper"]]},
+  {id:"g4-promise", t:"God’s promise to David (2 Samuel 7)", a:"s4-promise",
+   short:"David wants to build God a house; God promises David a house — a royal line and a throne forever (7:16). David’s son will build the temple. The rest of the Bible reads it as the Messiah from David’s family, uniting the Testaments in Jesus.",
+   subs:[["The house", "s4-house"], ["Why it matters", "s4-meaning"]]},
+  {id:"g4-sin", t:"David’s sin and its consequences (2 Samuel 11–19)", a:"s4-sin",
+   short:"Bathsheba, Uriah’s death, marriage. Nathan’s parable; two punishments — the child dies, David’s wives taken in broad daylight. Amnon and Tamar, Absalom kills Amnon, revolts, and dies at Joab’s hand. Sin, punishment, and God’s forgiveness.",
+   subs:[["Bathsheba and Uriah", "s4-bathsheba"], ["What he broke", "s4-laws"], ["Nathan", "s4-nathan"], ["Amnon and Absalom", "s4-family"]]},
+  {id:"g4-last", t:"David’s last years; the conclusion (2 Samuel 20–24)", a:"s4-last",
+   short:"Sheba’s rebellion; Joab rescues David again. David praises God. The census, the plague, and the threshing floor. Conclusion: Abraham’s promises basically fulfilled, the leadership crisis solved, a great new era.",
+   subs:[["Turmoil", "s4-turmoil"], ["The census", "s4-census"], ["Conclusion", "s4-conclusion"]]}]}
 ]};

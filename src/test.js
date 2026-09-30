@@ -18,7 +18,7 @@ vm.createContext(sandbox);
 vm.runInContext(src, sandbox);
 const A = sandbox.module.exports;
 console.log('script parsed and loaded, exports: ' + Object.keys(A).length);
-const tps = ['s1', 's2', 's3'];
+const tps = ['s1', 's2', 's3', 's4'];
 const body = tp => A.CH[tp].notes.map(n => n.body).join(' ');
 const allBodies = tps.map(body).join(' ');
 const anchorExists = id => tps.some(tp => A.CH[tp].notes.some(n => n.id === id)) || allBodies.includes('id="' + id + '"');
@@ -26,13 +26,15 @@ const strip = s => String(s).replace(/<[^>]+>/g, '');
 
 // ---------- 1. the course and its guide ----------
 head('the course and the parts of the chapter');
-ok(/Old Testament/.test(A.COURSE.code) && /Cedarville/.test(A.COURSE.term) && /1 Samuel/.test(A.COURSE.exam), 'course, place and chapter');
-ok(A.COURSE.rules.length === 4 && /1&ndash;7/.test(A.COURSE.rules[0]) && /1 Samuel 15/.test(A.COURSE.rules[1]), 'the four study notes: how the book divides, chapter 15, numbers, enemies');
-ok(A.GUIDE.sections.length === 3 && A.GUIDE.sections.map(s => s.tp).join() === tps.join(), 'three parts, in order');
+ok(/Old Testament/.test(A.COURSE.code) && /Cedarville/.test(A.COURSE.term) && /1 and 2 Samuel/.test(A.COURSE.exam), 'course, place and chapters');
+ok(A.COURSE.rules.length === 5 && /1&ndash;7/.test(A.COURSE.rules[0]) && /2 Samuel/.test(A.COURSE.rules[0]) && /2 Samuel 7/.test(A.COURSE.rules[1]) && /1 Samuel 15/.test(A.COURSE.rules[2]), 'the study notes: how the books divide, 2 Samuel 7, chapter 15, numbers, enemies');
+ok(/2 Samuel/.test(A.COURSE.exam), 'the header names 2 Samuel');
+ok(A.GUIDE.sections.length === 4 && A.GUIDE.sections.map(s => s.tp).join() === tps.join(), 'four parts, in order');
 const OUTLINES = {
   s1: ['The time and the man', 'Hannah and Samuel’s birth', 'Eli’s sons and God’s call', 'The ark lost and returned; Mizpah'],
   s2: ['Israel asks for a king', 'Saul’s kingdom and enemies', 'Saul chosen: the donkeys and three namings', 'Saul’s disobedience (1 Samuel 13–15)'],
-  s3: ['David anointed; the Spirit leaves Saul', 'David and Goliath', 'Saul’s jealousy and David in flight', 'The medium, the Amalekites and Saul’s death'] };
+  s3: ['David anointed; the Spirit leaves Saul', 'David and Goliath', 'Saul’s jealousy and David in flight', 'The medium, the Amalekites and Saul’s death'],
+  s4: ['David mourns Saul; the long road to the throne', 'All Israel: Jerusalem, the Philistines, the ark', 'God’s promise to David (2 Samuel 7)', 'David’s sin and its consequences (2 Samuel 11–19)', 'David’s last years; the conclusion (2 Samuel 20–24)'] };
 A.GUIDE.sections.forEach(s => {
   ok(JSON.stringify(s.items.map(i => i.t)) === JSON.stringify(OUTLINES[s.tp]), 'guide items follow the notes for ' + s.tp, s.items.map(i => i.t).join(' | '));
   s.items.forEach(it => {
@@ -42,10 +44,19 @@ A.GUIDE.sections.forEach(s => {
   });
 });
 const items = A.GUIDE.sections.flatMap(s => s.items);
-ok(items.length === 12 && new Set(items.map(i => i.id)).size === 12, 'twelve sections, unique ids', items.length);
-ok(Object.keys(A.SEC_CHAPTER).length === 12, 'the engine knows all twelve');
+ok(items.length === 17 && new Set(items.map(i => i.id)).size === 17, 'seventeen sections, unique ids', items.length);
+ok(Object.keys(A.SEC_CHAPTER).length === 17, 'the engine knows all seventeen');
 
 // ---------- 2. the lessons ----------
+head('2 Samuel, from the textbook');
+['Amalekite', 'executed', 'lament', 'Ish-bosheth', 'man of shame', 'Abner', 'Joab', 'royal harem', 'decapitate', '1010–970 BC', 'Cherethites and Perethites', 'Ittai',
+ 'all 12 tribes', 'Jebusite', '12 acres', 'Eilat Mazar', 'Hebron', 'Mahanaim', 'Ziklag', 'Hadadezer', 'Jonathan',
+ 'Nathan', 'ark sits in a tent', 'forever', 'Messiah', 'Psalm 110', 'Matthew 1–2', 'heir, covenant, land',
+ 'Bathsheba', 'Uriah', 'Dt 17:17', 'Ex 20:13–14', 'parable', 'broad daylight', 'Solomon', 'Amnon', 'Tamar', 'Absalom', 'Hushai', 'lest the army desert him',
+ 'Sheba', 'census', 'plague', 'threshing floor', 'leadership crisis', 'great new era'].forEach(v => ok(strip(body('s4')).includes(v), '2 Samuel notes include: ' + v));
+ok(!/rich man|only lamb|Amasa/.test(JSON.stringify(A.CH.s4) + JSON.stringify(A.QB.filter(q => q.tp === 's4'))), 'nothing beyond the textbook pages (no names the book did not give)');
+ok(A.QB.filter(q => q.tp === 's4').length >= 60, 'plenty of 2 Samuel questions', A.QB.filter(q => q.tp === 's4').length);
+
 head('lessons');
 const noteIds = [];
 tps.forEach(tp => {
@@ -154,7 +165,7 @@ for (let r = 0; r < 100; r++) {
   const n = [15, 25, 40, 60][r % 4];
   const mx = A.mockQuestions({ n: n, types: 'all' });
   ok(mx.length === n, 'exam of ' + n, mx.length);
-  ok(new Set(mx.map(q => q.tp)).size === 3, 'exam spans all three parts', [...new Set(mx.map(q => q.tp))].join(','));
+  ok(new Set(mx.map(q => q.tp)).size === 4, 'exam spans all four parts', [...new Set(mx.map(q => q.tp))].join(','));
   ok(A.mockQuestions({ n: 20, types: 'ap' }).every(q => q.ap), 'application-only exam');
   ok(A.mockQuestions({ n: 20, types: 'tf' }).every(q => q.kind === 'tf'), 'true/false-only exam');
   ok(A.mockQuestions({ n: 15, types: 'all', topics: [tp] }).every(q => q.tp === tp), 'one-lesson exam');
@@ -189,8 +200,8 @@ ok(/<b>Correct\.<\/b>/.test(src) && /<b>Not this one\.<\/b>/.test(src), 'answer 
 
 // ---------- 8. markup ----------
 head('markup');
-ok((html.match(/class="topic-btn"/g) || []).length === 5, 'five tabs: guide, three parts, practice quiz');
-['guide', 's1', 's2', 's3', 'exam'].forEach(t => ok(html.includes('data-topic="' + t + '"') && html.includes('id="topic-' + t + '"'), 'tab and section: ' + t));
+ok((html.match(/class="topic-btn"/g) || []).length === 6, 'six tabs: guide, four parts, practice quiz');
+['guide', 's1', 's2', 's3', 's4', 'exam'].forEach(t => ok(html.includes('data-topic="' + t + '"') && html.includes('id="topic-' + t + '"'), 'tab and section: ' + t));
 tps.forEach(tp => ['Notes', 'Cards', 'Match', 'Quiz'].forEach(s => ok(html.includes('id="' + tp + s + '"'), 'root exists: ' + tp + s)));
 ok(/data-topic="guide"\s+aria-selected="true"/.test(html), 'Guide is the default tab');
 ok(html.includes('id="flourish"') && html.includes('id="emblem"') && html.includes('class="emblem"'), 'ornaments and the earth emblem present');

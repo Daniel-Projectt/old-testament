@@ -13,6 +13,7 @@
     <button class="topic-btn" role="tab" data-topic="s1" aria-selected="false">Samuel</button>
     <button class="topic-btn" role="tab" data-topic="s2" aria-selected="false">Saul</button>
     <button class="topic-btn" role="tab" data-topic="s3" aria-selected="false">David &amp; Saul</button>
+    <button class="topic-btn" role="tab" data-topic="s4" aria-selected="false">2 Samuel</button>
     <button class="topic-btn" role="tab" data-topic="exam" aria-selected="false">Practice Quiz</button>
   </nav>
 
@@ -82,6 +83,25 @@
       </div>
       <div class="panel" data-panel="s3/match" hidden><p class="hint">Tap a name, then the line that goes with it.</p><div id="s3Match"></div></div>
       <div class="panel" data-panel="s3/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s3Quiz"></div></div>
+    </section>
+
+    <!-- ================= DAVID'S KINGDOM ================= -->
+    <section class="topic" id="topic-s4" hidden>
+      <p class="intro">2 Samuel, from your textbook (pp. 132&ndash;140): David mourns Saul and wins the throne, makes Jerusalem his capital, receives God&rsquo;s promise of a house forever, falls with Bathsheba and reaps the consequences through Absalom, and ends forgiven.</p>
+      <div class="modes"><div class="seg" data-modes="s4">
+        <button type="button" data-mode="notes" aria-pressed="true">Notes</button>
+        <button type="button" data-mode="cards" aria-pressed="false">Flashcards</button>
+        <button type="button" data-mode="match" aria-pressed="false">Match</button>
+        <button type="button" data-mode="quiz" aria-pressed="false">Quiz</button>
+      </div></div>
+      <div class="panel" data-panel="s4/notes"><div id="s4Notes"></div></div>
+      <div class="panel" data-panel="s4/cards" hidden>
+        <p class="hint">Front: the name or the question. Back: the answer and where it sits in the notes. Space flips, arrows move.</p>
+        <div class="toolbar"><span class="label">Deck</span><div class="seg" data-decks="s4"></div><button class="btn" type="button" data-shuffle="s4">Shuffle deck</button></div>
+        <div id="s4Cards"></div>
+      </div>
+      <div class="panel" data-panel="s4/match" hidden><p class="hint">Tap a name, then the line that goes with it.</p><div id="s4Match"></div></div>
+      <div class="panel" data-panel="s4/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s4Quiz"></div></div>
     </section>
 
     <!-- ================= PRACTICE EXAM ================= -->
