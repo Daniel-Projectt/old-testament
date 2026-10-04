@@ -4,7 +4,7 @@
     <svg class="emblem" viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg>
     <p class="eyebrow">Study Guide</p>
     <h1>Old Testament</h1>
-    <p class="sub">1 Samuel &middot; Samuel, the last judge &middot; Saul, the first king &middot; David, the king after God&rsquo;s heart</p>
+    <p class="sub">1 Samuel &middot; 2 Samuel &middot; 1 and 2 Kings &middot; from the last judge to losing the land</p>
     <svg class="orn" viewBox="0 0 320 44" aria-hidden="true"><use href="#flourish"/></svg>
   </header>
 
@@ -14,6 +14,7 @@
     <button class="topic-btn" role="tab" data-topic="s2" aria-selected="false">Saul</button>
     <button class="topic-btn" role="tab" data-topic="s3" aria-selected="false">David &amp; Saul</button>
     <button class="topic-btn" role="tab" data-topic="s4" aria-selected="false">2 Samuel</button>
+    <button class="topic-btn" role="tab" data-topic="s5" aria-selected="false">1 Kings</button>
     <button class="topic-btn" role="tab" data-topic="exam" aria-selected="false">Practice Quiz</button>
   </nav>
 
@@ -102,6 +103,25 @@
       </div>
       <div class="panel" data-panel="s4/match" hidden><p class="hint">Tap a name, then the line that goes with it.</p><div id="s4Match"></div></div>
       <div class="panel" data-panel="s4/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s4Quiz"></div></div>
+    </section>
+
+    <!-- ================= LOSING THE LAND ================= -->
+    <section class="topic" id="topic-s5" hidden>
+      <p class="intro">1 and 2 Kings, from your textbook (pp. 141&ndash;151): the four signs of Israel&rsquo;s illness, the five themes and the key dates, Solomon&rsquo;s wisdom, temple and fall, the kingdom split, and the two lists of kings.</p>
+      <div class="modes"><div class="seg" data-modes="s5">
+        <button type="button" data-mode="notes" aria-pressed="true">Notes</button>
+        <button type="button" data-mode="cards" aria-pressed="false">Flashcards</button>
+        <button type="button" data-mode="match" aria-pressed="false">Match</button>
+        <button type="button" data-mode="quiz" aria-pressed="false">Quiz</button>
+      </div></div>
+      <div class="panel" data-panel="s5/notes"><div id="s5Notes"></div></div>
+      <div class="panel" data-panel="s5/cards" hidden>
+        <p class="hint">Front: the name or the question. Back: the answer and where it sits in the notes. Space flips, arrows move.</p>
+        <div class="toolbar"><span class="label">Deck</span><div class="seg" data-decks="s5"></div><button class="btn" type="button" data-shuffle="s5">Shuffle deck</button></div>
+        <div id="s5Cards"></div>
+      </div>
+      <div class="panel" data-panel="s5/match" hidden><p class="hint">Tap a name, then the line that goes with it.</p><div id="s5Match"></div></div>
+      <div class="panel" data-panel="s5/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s5Quiz"></div></div>
     </section>
 
     <!-- ================= PRACTICE EXAM ================= -->

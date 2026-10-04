@@ -4,8 +4,8 @@
    chapter, so everything here stays inside the notes.                         */
 var COURSE = {
  code:"Old Testament Literature", term:"Cedarville University",
- exam:"1 and 2 Samuel &mdash; Samuel, Saul and David",
- scope:"Your class notes on 1 Samuel &mdash; the last judge, the first king, and the shepherd God chose instead &mdash; and your textbook on 2 Samuel, David&rsquo;s kingdom.",
+ exam:"1 and 2 Samuel &middot; 1 and 2 Kings &mdash; Samuel, Saul, David and Solomon",
+ scope:"Your class notes on 1 Samuel &mdash; the last judge, the first king, and the shepherd God chose instead &mdash; and your textbook on 2 Samuel, David&rsquo;s kingdom, and 1 and 2 Kings, losing the land.",
  rules:[
   "<b>1 Samuel 1&ndash;7</b> is Samuel, <b>8&ndash;15</b> is Saul, <b>16&ndash;31</b> is the new king, David. <b>2 Samuel</b> is David&rsquo;s kingdom: <b>1&ndash;10</b> he builds it, <b>11&ndash;19</b> his sin and its consequences, <b>20&ndash;24</b> his last years.",
   "<b>2 Samuel 7</b> is the high point: God promises David a <b>house</b> &mdash; a throne forever &mdash; the promise that leads to the Messiah.",
@@ -75,5 +75,25 @@ var GUIDE = {sections:[
    subs:[["Bathsheba and Uriah", "s4-bathsheba"], ["What he broke", "s4-laws"], ["Nathan", "s4-nathan"], ["Amnon and Absalom", "s4-family"]]},
   {id:"g4-last", t:"David’s last years; the conclusion (2 Samuel 20–24)", a:"s4-last",
    short:"Sheba’s rebellion; Joab rescues David again. David praises God. The census, the plague, and the threshing floor. Conclusion: Abraham’s promises basically fulfilled, the leadership crisis solved, a great new era.",
-   subs:[["Turmoil", "s4-turmoil"], ["The census", "s4-census"], ["Conclusion", "s4-conclusion"]]}]}
+   subs:[["Turmoil", "s4-turmoil"], ["The census", "s4-census"], ["Conclusion", "s4-conclusion"]]}]},
+
+ {h:"Losing the land · 1 and 2 Kings (textbook, pp. 141–151)", tp:"s5", items:[
+  {id:"g5-intro", t:"The story of 1 and 2 Kings: Israel dies as a nation", a:"s5-intro",
+   short:"From David’s death, Israel slides to idolatry, division, destruction and exile. Four signs of illness: Solomon’s idols, the split, Assyria destroys the north, Babylon conquers the south. Elijah and Elisha lead the prophets; Assyria and Babylon do God’s work (2 Kings 17:23).",
+   subs:[["At a glance", "s5-box"], ["Four signs", "s5-signs"], ["The characters", "s5-cast"]]},
+  {id:"g5-themes", t:"Five themes from Deuteronomy; the key dates", a:"s5-themes",
+   short:"Obey the covenant (even kings, Dt 17:14–20); God rules history; prophets preach repentance; the temple, the one place of worship; God forgives if they repent (Dt 30). David dies about 970 BC; Solomon reigns 40 years; the north falls 722, the south 587.",
+   subs:[["The five themes", "s5-five"], ["The dates", "s5-dates"]]},
+  {id:"g5-throne", t:"Solomon takes the throne (1 Kings 1–4)", a:"s5-throne",
+   short:"David’s counsel and death. Solomon removes Adonijah (Abishag), Joab (sanctuary) and Shimei. He asks for wisdom; God adds riches and fame. History box: Siamun and Gezer, the casemate wall, six-chambered gates, foreign wives, gold, and weary taxpayers.",
+   subs:[["David’s last counsel", "s5-david"], ["Rivals removed", "s5-rivals"], ["Wisdom", "s5-wisdom"]]},
+  {id:"g5-temple", t:"The temple (1 Kings 5–9)", a:"s5-temple",
+   short:"Hiram’s cedar, 30,000 workers, seven years, begun about 966 BC; 30 by 90 by 45 feet, cedar and gold inside. The ark and the cloud of glory. Five themes, Israel at its midpoint. Solomon prays for forgiveness, with Deuteronomy 27–28 and 30 in mind.",
+   subs:[["Building it", "s5-build"], ["The drawing", "s5-drawing"], ["Five themes", "s5-meaning"], ["The prayer", "s5-prayer"]]},
+  {id:"g5-fall", t:"Solomon’s fall and the kingdom split (1 Kings 9–14)", a:"s5-fall",
+   short:"A 13-year palace and great wealth. 700 wives and 300 concubines break Dt 17:17; he worships their gods. Ahijah promises Jeroboam ten tribes. Rehoboam threatens the people; all but Judah and Benjamin follow Jeroboam. Two kings, two capitals, two religions.",
+   subs:[["Riches", "s5-wealth"], ["What erodes him", "s5-wives"], ["Jeroboam and Ahijah", "s5-jeroboam"], ["Summed up", "s5-verdict"], ["The split", "s5-split"]]},
+  {id:"g5-kings", t:"The kings of Israel (north) and Judah (south)", a:"s5-kings",
+   short:"North: several dynasties and many usurpers, Jeroboam I (930) to Hoshea (722); Zimri seven days; Jehu anointed by God. South: the Davidic dynasty, Rehoboam (930) to Zedekiah (587); Athaliah, Ahab’s daughter. All dates approximate.",
+   subs:[["The north", "s5-north"], ["The south", "s5-south"]]}]}
 ]};
