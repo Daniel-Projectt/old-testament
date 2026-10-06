@@ -139,8 +139,8 @@ CHAPTERS.forEach(function(tp){
   KEYS[tp+"/cards"] = function(e){ return engines[tp+"Cards"].keys(e); };
   KEYS[tp+"/quiz"]  = function(e){ return engines[tp+"Quiz"].keys(e); };
 });
-var TOPICS = ["guide","s1","s2","s3","s4","s5","exam"];
-var currentTopic = "guide", currentMode = {guide:"overview", s1:"notes", s2:"notes", s3:"notes", s4:"notes", s5:"notes", exam:"mock"};
+var TOPICS = ["guide","s1","s2","s3","s4","s5","s6","exam"];
+var currentTopic = "guide", currentMode = {guide:"overview", s1:"notes", s2:"notes", s3:"notes", s4:"notes", s5:"notes", s6:"notes", exam:"mock"};
 function showMode(topic, mode){
   currentMode[topic] = mode;
   $$('.seg[data-modes="'+topic+'"] button').forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-mode") === mode)); });

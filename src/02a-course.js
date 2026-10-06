@@ -95,5 +95,25 @@ var GUIDE = {sections:[
    subs:[["Riches", "s5-wealth"], ["What erodes him", "s5-wives"], ["Jeroboam and Ahijah", "s5-jeroboam"], ["Summed up", "s5-verdict"], ["The split", "s5-split"]]},
   {id:"g5-kings", t:"The kings of Israel (north) and Judah (south)", a:"s5-kings",
    short:"North: several dynasties and many usurpers, Jeroboam I (930) to Hoshea (722); Zimri seven days; Jehu anointed by God. South: the Davidic dynasty, Rehoboam (930) to Zedekiah (587); Athaliah, Ahab’s daughter. All dates approximate.",
-   subs:[["The north", "s5-north"], ["The south", "s5-south"]]}]}
+   subs:[["The north", "s5-north"], ["The south", "s5-south"]]}]},
+
+ {h:"The two kingdoms fall · 1 Kings 16 – 2 Kings 25 (textbook, pp. 156–171)", tp:"s6", items:[
+  {id:"g6-elijah", t:"Omri, Ahab and Elijah (1 Kings 16–19)", a:"s6-elijah",
+   short:"Omri: able by secular history, condemned for Jeroboam’s religion. Ahab keeps that religion, marries Jezebel of Tyre and spreads Baal worship. Elijah: the drought, the widow, fire on Mount Carmel against 450 prophets of Baal, then flight, the cave and three tasks.",
+   subs:[["Omri and Ahab", "s6-omri"], ["The drought", "s6-drought"], ["Mount Carmel", "s6-carmel"], ["Three tasks", "s6-cave"]]},
+  {id:"g6-ahab", t:"Ahab’s end: Syria, the field and Micaiah (1 Kings 20–22)", a:"s6-ahab",
+   short:"Ahab defeats Ben-Hadad but spares him, like Saul. Jezebel has a field’s owner executed; Elijah’s sentence; Ahab repents and it is postponed. Four hundred false prophets promise victory; Micaiah foretells Ahab’s death, and he dies disguised in battle.",
+   subs:[["Syria", "s6-syria"], ["The field", "s6-field"], ["Micaiah", "s6-micaiah"], ["Two kings", "s6-two"]]},
+  {id:"g6-elisha", t:"Elisha and Jehu’s revolt (2 Kings 1–10)", a:"s6-elisha",
+   short:"Elijah goes up in a chariot of fire; Elisha receives a double portion. His miracles: oil, ax head, Naaman, Hazael, Jehu. In 841 BC Jehu kills Joram, Ahaziah and Jezebel and the priests of Baal — a lukewarm follower. Mesha’s stele, the stone at Dan, the Shalmaneser stele.",
+   subs:[["Elijah to Elisha", "s6-double"], ["Miracles", "s6-miracles"], ["Jehu", "s6-jehu"]]},
+  {id:"g6-north", t:"The fall of northern Israel (2 Kings 11–17)", a:"s6-north",
+   short:"No king leaves the sins of Jeroboam. Menahem pays Tiglath-pileser III; Pekah refuses and part of the north is deported; under Hoshea, Shalmaneser V besieges Samaria and Sargon takes it in 722 BC. Cause: idolatry, ignoring covenant and prophets, pagan rites. Ahaz becomes Assyria’s vassal.",
+   subs:[["After Jehu", "s6-jeroboam2"], ["Last kings", "s6-last"], ["Why it fell", "s6-why"], ["Judah meanwhile", "s6-judah8"]]},
+  {id:"g6-reform", t:"Hezekiah, Manasseh and Josiah (2 Kings 18–23)", a:"s6-reform",
+   short:"Hezekiah: faith like David’s; in 701 BC he prays, Isaiah answers, 185,000 Assyrians die; his mistake is showing Babylon’s envoys everything. Manasseh: 55 years of idolatry. Josiah: the Book of the Law, Huldah, covenant renewal, Passover; killed by Egypt in 609 BC.",
+   subs:[["Hezekiah", "s6-hezekiah"], ["Manasseh", "s6-manasseh"], ["Josiah", "s6-josiah"], ["Josiah’s death", "s6-jdeath"]]},
+  {id:"g6-fall", t:"The fall of Jerusalem and the conclusion (2 Kings 23–25)", a:"s6-fall",
+   short:"Jehoahaz, Jehoiakim, Jehoiachin, Zedekiah. Nebuchadnezzar takes Judah in 605 BC (Daniel), exiles Jehoiachin and Ezekiel in 597, destroys Jerusalem and the temple in 587. Cyrus takes Babylon in 539. Jehoiachin honored after 37 years: the promises to Abraham and David remain.",
+   subs:[["Last four kings", "s6-four"], ["587 BC", "s6-587"], ["Hope", "s6-hope"], ["Conclusion", "s6-conclusion"]]}]}
 ]};

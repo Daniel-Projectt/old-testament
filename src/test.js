@@ -18,7 +18,7 @@ vm.createContext(sandbox);
 vm.runInContext(src, sandbox);
 const A = sandbox.module.exports;
 console.log('script parsed and loaded, exports: ' + Object.keys(A).length);
-const tps = ['s1', 's2', 's3', 's4', 's5'];
+const tps = ['s1', 's2', 's3', 's4', 's5', 's6'];
 const body = tp => A.CH[tp].notes.map(n => n.body).join(' ');
 const allBodies = tps.map(body).join(' ');
 const anchorExists = id => tps.some(tp => A.CH[tp].notes.some(n => n.id === id)) || allBodies.includes('id="' + id + '"');
@@ -29,13 +29,14 @@ head('the course and the parts of the chapter');
 ok(/Old Testament/.test(A.COURSE.code) && /Cedarville/.test(A.COURSE.term) && /1 and 2 Samuel/.test(A.COURSE.exam), 'course, place and chapters');
 ok(A.COURSE.rules.length === 5 && /1&ndash;7/.test(A.COURSE.rules[0]) && /2 Samuel/.test(A.COURSE.rules[0]) && /2 Samuel 7/.test(A.COURSE.rules[1]) && /1 Samuel 15/.test(A.COURSE.rules[2]), 'the study notes: how the books divide, 2 Samuel 7, chapter 15, numbers, enemies');
 ok(/2 Samuel/.test(A.COURSE.exam), 'the header names 2 Samuel');
-ok(A.GUIDE.sections.length === 5 && A.GUIDE.sections.map(s => s.tp).join() === tps.join(), 'five parts, in order');
+ok(A.GUIDE.sections.length === 6 && A.GUIDE.sections.map(s => s.tp).join() === tps.join(), 'six parts, in order');
 const OUTLINES = {
   s1: ['The time and the man', 'Hannah and Samuel’s birth', 'Eli’s sons and God’s call', 'The ark lost and returned; Mizpah'],
   s2: ['Israel asks for a king', 'Saul’s kingdom and enemies', 'Saul chosen: the donkeys and three namings', 'Saul’s disobedience (1 Samuel 13–15)'],
   s3: ['David anointed; the Spirit leaves Saul', 'David and Goliath', 'Saul’s jealousy and David in flight', 'The medium, the Amalekites and Saul’s death'],
   s4: ['David mourns Saul; the long road to the throne', 'All Israel: Jerusalem, the Philistines, the ark', 'God’s promise to David (2 Samuel 7)', 'David’s sin and its consequences (2 Samuel 11–19)', 'David’s last years; the conclusion (2 Samuel 20–24)'],
-  s5: ['The story of 1 and 2 Kings: Israel dies as a nation', 'Five themes from Deuteronomy; the key dates', 'Solomon takes the throne (1 Kings 1–4)', 'The temple (1 Kings 5–9)', 'Solomon’s fall and the kingdom split (1 Kings 9–14)', 'The kings of Israel (north) and Judah (south)'] };
+  s5: ['The story of 1 and 2 Kings: Israel dies as a nation', 'Five themes from Deuteronomy; the key dates', 'Solomon takes the throne (1 Kings 1–4)', 'The temple (1 Kings 5–9)', 'Solomon’s fall and the kingdom split (1 Kings 9–14)', 'The kings of Israel (north) and Judah (south)'],
+  s6: ['Omri, Ahab and Elijah (1 Kings 16–19)', 'Ahab’s end: Syria, the field and Micaiah (1 Kings 20–22)', 'Elisha and Jehu’s revolt (2 Kings 1–10)', 'The fall of northern Israel (2 Kings 11–17)', 'Hezekiah, Manasseh and Josiah (2 Kings 18–23)', 'The fall of Jerusalem and the conclusion (2 Kings 23–25)'] };
 A.GUIDE.sections.forEach(s => {
   ok(JSON.stringify(s.items.map(i => i.t)) === JSON.stringify(OUTLINES[s.tp]), 'guide items follow the notes for ' + s.tp, s.items.map(i => i.t).join(' | '));
   s.items.forEach(it => {
@@ -45,8 +46,8 @@ A.GUIDE.sections.forEach(s => {
   });
 });
 const items = A.GUIDE.sections.flatMap(s => s.items);
-ok(items.length === 23 && new Set(items.map(i => i.id)).size === 23, 'twenty-three sections, unique ids', items.length);
-ok(Object.keys(A.SEC_CHAPTER).length === 23, 'the engine knows all twenty-three');
+ok(items.length === 29 && new Set(items.map(i => i.id)).size === 29, 'twenty-nine sections, unique ids', items.length);
+ok(Object.keys(A.SEC_CHAPTER).length === 29, 'the engine knows all twenty-nine');
 
 // ---------- 2. the lessons ----------
 head('2 Samuel, from the textbook');
@@ -72,6 +73,18 @@ ok(A.KINGS_SOUTH.length === 26 && A.KINGS_SOUTH[0].join() === 'Rehoboam,930–91
 ok(A.KINGS_NORTH.filter(k => /usurper/.test(k[0])).length === 7, 'seven northern usurpers, as on the chart');
 ok(!/Rehoboam’s mother|Jezebel was|Naboth|Carmel|Shunammite|Queen of Sheba/.test(JSON.stringify(A.CH.s5)), 'the notes stay inside the textbook pages');
 ok(A.QB.filter(q => q.tp === 's5').length >= 60, 'plenty of 1 and 2 Kings questions', A.QB.filter(q => q.tp === 's5').length);
+
+head('1 and 2 Kings part two, from the textbook');
+['Jeroboam’s illegitimate religion', 'Jezebel of Tyre', 'Qarqar in 853 BC', '2,000 chariots', 'Arameans', 'no rain', 'widow', 'Dt 18:14–22', 'troubler of Israel', 'Mount Carmel', '450 prophets of Baal', 'soaked with water three times', 'the Lord is God', 'cave', 'Hazael', 'Jehu', 'Elisha',
+ 'Ben-Hadad', 'Saul', '12 tribes', 'dogs will lick up their blood', 'postpones', 'Four hundred false prophets', 'Micaiah', 'disguises himself', 'high places',
+ 'chariot of fire', 'double portion', 'ax head float', 'Naaman', '841 BC', 'Joram', 'Ahaziah', 'priests of Baal', 'Seven decades', 'Mesha of Moab', 'Chemosh', 'Athaliah', 'Jehoiada', 'house of David', 'Shalmaneser III stele', 'Jeroboam II', 'Uzziah',
+ 'sins of the house of Jeroboam', 'Menahem', '740 BC', 'Tiglath-pileser III', 'Pekahiah', 'Pekah', 'Leviticus 26', 'Hoshea', 'Shalmaneser V', 'Sargon', '722 BC', 'Idolatry', 'Pagan religious rites', 'Lord of history', 'Joash', 'Amaziah', 'Ahaz', 'Rezin of Damascus', 'Immanuel', 'vassal', 'Ashurbanipal',
+ 'Hezekiah', '701 BC', 'Isaiah', 'God’s honor', 'Sennacherib', '185,000', 'shows them everything', 'Manasseh', '55 years', 'eight-year-old', 'the Book of the Law', 'Huldah', 'covenant renewal', 'Jeroboam’s old altar', 'Passover', 'greatest reformer', '612 BC', '609 BC',
+ 'Jehoahaz', 'Jehoiakim', 'Jehoiachin', 'Zedekiah', 'political suicide', 'eyes gouged out', 'looted and burned', 'Neco II', 'Nebuchadnezzar', 'Carchemish', '605 BC', 'Daniel', '597 BC', 'Ezekiel', '587 BC', 'a remnant remained', 'Cyrus', '539 BC', 'Tyre', 'Edomites and Philistines', 'Thirty-seven years', 'eternal kingdom', 'Promise, fulfillment, despair and hope'].forEach(v => ok(strip(body('s6')).includes(v), 'Kings part two notes include: ' + v));
+ok((body('s6').match(/class="exam-tip"/g) || []).length === 4, 'the four history boxes of pages 156–171');
+ok(!/<div class="exam-tip">(?:(?!<\/div>)[\s\S])*<\/b>(?:(?!<\/div>)[\s\S])*<b>/.test(body('s6')), 'inside a history box only the label uses <b>');
+ok(!/Naboth’s vineyard|still small voice|Shunammite woman|Gehazi|Rabshakeh|Josiah’s mother/.test(JSON.stringify(A.CH.s6) + JSON.stringify(A.QB.filter(q => q.tp === 's6'))), 'nothing beyond the textbook pages');
+ok(A.QB.filter(q => q.tp === 's6').length >= 85, 'plenty of questions on the second half of Kings', A.QB.filter(q => q.tp === 's6').length);
 
 head('lessons');
 const noteIds = [];
@@ -181,7 +194,7 @@ for (let r = 0; r < 100; r++) {
   const n = [15, 25, 40, 60][r % 4];
   const mx = A.mockQuestions({ n: n, types: 'all' });
   ok(mx.length === n, 'exam of ' + n, mx.length);
-  ok(new Set(mx.map(q => q.tp)).size === 5, 'exam spans all five parts', [...new Set(mx.map(q => q.tp))].join(','));
+  ok(new Set(mx.map(q => q.tp)).size === 6, 'exam spans all six parts', [...new Set(mx.map(q => q.tp))].join(','));
   ok(A.mockQuestions({ n: 20, types: 'ap' }).every(q => q.ap), 'application-only exam');
   ok(A.mockQuestions({ n: 20, types: 'tf' }).every(q => q.kind === 'tf'), 'true/false-only exam');
   ok(A.mockQuestions({ n: 15, types: 'all', topics: [tp] }).every(q => q.tp === tp), 'one-lesson exam');
@@ -192,7 +205,7 @@ for (let r = 0; r < 40; r++) {
   ok(new Set(f.map(q => q.key)).size === 50, 'no repeated question in the fifty');
   const covered = new Set(f.map(q => q.sec));
   ok(covered.size === secs.length, 'the fifty covers every section of every outline', covered.size + '/' + secs.length);
-  secs.forEach(s => ok(f.filter(q => q.sec === s).length >= 2, 'at least two on ' + A.SEC_TITLES[s], f.filter(q => q.sec === s).length));
+  secs.forEach(s => ok(f.filter(q => q.sec === s).length >= 1, 'at least one on ' + A.SEC_TITLES[s], f.filter(q => q.sec === s).length));
   const means = f.map(q => A.meaningOf(q));
   let clash = 0;
   for (let x = 0; x < means.length; x++) for (let y = x + 1; y < means.length; y++) if (A.sameThing(means[x], means[y])) clash++;
@@ -216,8 +229,8 @@ ok(/<b>Correct\.<\/b>/.test(src) && /<b>Not this one\.<\/b>/.test(src), 'answer 
 
 // ---------- 8. markup ----------
 head('markup');
-ok((html.match(/class="topic-btn"/g) || []).length === 7, 'seven tabs: guide, five parts, practice quiz');
-['guide', 's1', 's2', 's3', 's4', 's5', 'exam'].forEach(t => ok(html.includes('data-topic="' + t + '"') && html.includes('id="topic-' + t + '"'), 'tab and section: ' + t));
+ok((html.match(/class="topic-btn"/g) || []).length === 8, 'eight tabs: guide, six parts, practice quiz');
+['guide', 's1', 's2', 's3', 's4', 's5', 's6', 'exam'].forEach(t => ok(html.includes('data-topic="' + t + '"') && html.includes('id="topic-' + t + '"'), 'tab and section: ' + t));
 tps.forEach(tp => ['Notes', 'Cards', 'Match', 'Quiz'].forEach(s => ok(html.includes('id="' + tp + s + '"'), 'root exists: ' + tp + s)));
 ok(/data-topic="guide"\s+aria-selected="true"/.test(html), 'Guide is the default tab');
 ok(html.includes('id="flourish"') && html.includes('id="emblem"') && html.includes('class="emblem"'), 'ornaments and the earth emblem present');
