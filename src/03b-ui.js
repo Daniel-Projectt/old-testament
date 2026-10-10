@@ -6,7 +6,8 @@ if(typeof window === "undefined"){
     fromBank:fromBank, fromPair:fromPair, topicQuestions:topicQuestions, mockQuestions:mockQuestions, questionsByKeys:questionsByKeys,
     deckFor:deckFor, matchRound:matchRound, verdictFor:verdictFor,
     MID_ST:MID_ST, MID_BOOKS:MID_BOOKS, MID_DATES:MID_DATES, MID_TERMS:MID_TERMS, MID_WHICH:MID_WHICH,
-    midPlain:midPlain, midBlanks:midBlanks, midBook:midBook, midWhichQuestion:midWhichQuestion, midWhichRound:midWhichRound};
+    midPlain:midPlain, midBlanks:midBlanks, midBook:midBook, midWhichQuestion:midWhichQuestion, midWhichRound:midWhichRound,
+    MID_QB:MID_QB, MID_PAIRS:MID_PAIRS, MID_QNAMES:MID_QNAMES, midFromBank:midFromBank, midQuiz:midQuiz, midByKeys:midByKeys, midMatchRound:midMatchRound};
   return;
 }
 
@@ -97,7 +98,7 @@ function makeQuiz(root, gen, opts){
   opts = opts || {};
   var qs = [], qi = 0, score = 0, missed = [], answered = false, started = false;
   function start(keys){
-    qs = keys ? questionsByKeys(keys) : gen();
+    qs = keys ? (opts.byKeys || questionsByKeys)(keys) : gen();
     qi = 0; score = 0; missed = []; started = true; render();
   }
   function shell(){

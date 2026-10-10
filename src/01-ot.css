@@ -196,3 +196,6 @@ header .eyebrow{color:#9a7a44}
 .blank{display:inline-block;min-width:74px;padding:0 8px;margin:0 2px;border:0;border-bottom:1.5px solid var(--gold);background:var(--rose-wash);font:inherit;color:var(--ink);cursor:pointer;border-radius:2px 2px 0 0;line-height:1.5}
 .blank.on{background:transparent;font-weight:600;min-width:0}
 @media (max-width:560px){ .mbody{padding-left:16px} .mst summary{font-size:15px} .blank{min-width:56px} }
+.mqgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:14px 0}
+.mqgrid .btn{width:100%;text-align:center}
+.mqn{display:inline-block;margin-left:6px;font-size:10px;color:var(--gold);border:1px solid var(--gold-soft);border-radius:8px;padding:0 6px}

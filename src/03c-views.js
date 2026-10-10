@@ -220,7 +220,28 @@ function renderMidWhich(){
   }
   start();
 }
-renderMidStatements(); renderMidBooks(); renderMidBlanks(); renderMidWhich();
+/* the midterm quizzes: the whole midterm, or one book at a time */
+var midEngine = null;
+function renderMidQuizSetup(){
+  midEngine = null;
+  var count = function(k){ return MID_QB.filter(function(b){ return b.bk === k; }).length; };
+  $("#midQuiz").innerHTML =
+    '<div class="note-sec"><div class="point"><b>The point</b><p>Questions written from the slides, in the kinds he says he may ask: <mark>multiple choice</mark>, <mark>true or false</mark> and <mark>fill in the blank</mark>. Every answer comes with the reason and the place in the text.</p></div>'+
+    '<div class="mqgrid"><button class="btn primary" type="button" data-mq="all" data-n="25">The whole midterm &middot; 25 questions</button>'+
+    '<button class="btn" type="button" data-mq="all" data-n="50">The long one &middot; 50 questions</button></div>'+
+    '<h3 class="sub">One book at a time</h3><div class="mqgrid">'+
+    ["int","gen","exo","lev","num","deu","jos","jdg","sam","kgs"].map(function(k){ return '<button class="btn" type="button" data-mq="'+k+'" data-n="10">'+MID_QNAMES[k]+' <span class="mqn">'+count(k)+'</span></button>'; }).join("")+
+    '</div><p class="hint">Each book quiz draws 10 from that book&rsquo;s questions; the number shows how many it has.</p></div>';
+  $$("#midQuiz [data-mq]").forEach(function(b){ b.addEventListener("click", function(){
+    var k = b.getAttribute("data-mq"), n = parseInt(b.getAttribute("data-n"), 10);
+    midEngine = makeQuiz($("#midQuiz"), function(){ return midQuiz(n, k === "all" ? null : k); }, {byKeys:midByKeys, againLabel:"Another quiz", onSetup:renderMidQuizSetup});
+    $("#midQuiz").innerHTML = ""; midEngine.start(null);
+  }); });
+}
+KEYS["mid/quiz"] = function(e){ return midEngine ? midEngine.keys(e) : false; };
+var midMatch = makeMatch($("#midMatch"), function(){ return midMatchRound(null, 6); });
+ON_SHOW["mid/match"] = function(){ midMatch.ensure(); };
+renderMidStatements(); renderMidBooks(); renderMidBlanks(); renderMidWhich(); renderMidQuizSetup();
 
 var TOPICS = ["mid","guide","s1","s2","s3","s4","s5","s6","exam"];
 var currentTopic = "mid", currentMode = {mid:"st", guide:"overview", s1:"notes", s2:"notes", s3:"notes", s4:"notes", s5:"notes", s6:"notes", exam:"mock"};

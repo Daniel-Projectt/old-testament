@@ -297,6 +297,39 @@ head('the midterm');
     ok(q.opts.map(idx).join() === q.opts.map(idx).sort((a, b) => a - b).join(), 'books are listed in Bible order');
   });
   ok(new Set(A.midWhichRound(15).map(q => q.idx)).size === 15, 'a round never repeats an item');
+  // ---- the quizzes
+  const Q = A.MID_QB, bks = ['int', 'gen', 'exo', 'lev', 'num', 'deu', 'jos', 'jdg', 'sam', 'kgs'];
+  ok(Q.length >= 170 && new Set(Q.map(q => q.q)).size === Q.length, 'the quiz bank: no question twice', Q.length);
+  bks.forEach(k => ok(Q.filter(q => q.bk === k).length >= 10, A.MID_QNAMES[k] + ' has at least ten questions', Q.filter(q => q.bk === k).length));
+  ok(Q.every(q => bks.includes(q.bk) && (q.t === 'mc' || q.t === 'tf') && q.q.length > 15 && q.e && q.e.length > 15), 'every question has a book, a kind and a reason');
+  Q.filter(q => q.t === 'mc').forEach(q => {
+    ok(q.w.length === 3 && new Set(q.w.concat([q.a])).size === 4, 'four different choices: ' + q.q.slice(0, 50));
+    const lens = q.w.map(w => w.length), mx = Math.max(...lens);
+    ok(q.a.length <= mx * 2.2 + 8, 'the right answer is not the long one: ' + q.q.slice(0, 50), q.a.length + ' vs ' + mx);
+    ok(!/all of the above|none of the above/i.test(q.w.join(' ') + q.a), 'no “all of the above”');
+  });
+  const tf = Q.filter(q => q.t === 'tf'), tr = tf.filter(q => q.a === true).length;
+  ok(tf.length >= 30 && tr / tf.length > 0.4 && tr / tf.length < 0.6, 'true/false is balanced', tr + ' of ' + tf.length);
+  bks.forEach(k => { const m = Q.filter(q => q.bk === k && q.t === 'tf'); ok(m.some(q => q.a) && m.some(q => !q.a), A.MID_QNAMES[k] + ' has both a true and a false'); });
+  ok(Q.filter(q => /^Fill in/.test(q.q)).length >= 3, 'some fill-in-the-blank questions');
+  // spot-check the key against the slides
+  const ans = re => { const q = Q.find(q => re.test(q.q)); return q ? q.a : undefined; };
+  ok(ans(/date are you asked to remember for the exodus/) === '1446 BC' && ans(/exiled the Northern Kingdom, and when/) === 'Assyria, 722 BC' && ans(/first king of the Northern Kingdom\?/) === 'Jeroboam'
+    && ans(/ideal pattern of a judge/) === 'Othniel' && ans(/Where is the Davidic covenant/) === '2 Samuel 7' && ans(/counted it to him as righteousness/) === 'Genesis 15:6'
+    && ans(/Holiness Code\?/) === 'Leviticus 17–27' && ans(/law of the king/) === 'Deuteronomy 17:14–20' && ans(/What stops in Joshua 5:12/) === 'The manna' && ans(/Babylon exiled the Northern Kingdom/) === false
+    && ans(/Samson is presented as the ideal/) === false && ans(/Rehoboam was the first king of the Northern/) === false && ans(/Joshua is the “second Moses”/) === false, 'the answer key matches the slides');
+  for (let r = 0; r < 30; r++) {
+    const all = A.midQuiz(25);
+    ok(all.length === 25 && new Set(all.map(q => q.key)).size === 25 && new Set(all.map(q => q.bk)).size === 10, 'the whole-midterm quiz: 25 different questions, every book present');
+    all.forEach(q => ok(q.opts.filter(o => o.ok).length === 1 && (q.kind === 'tf' ? q.opts.length === 2 : q.opts.length === 4), 'exactly one right choice'));
+    bks.forEach(k => { const b = A.midQuiz(10, k); ok(b.length === 10 && b.every(q => q.bk === k) && new Set(b.map(q => q.key)).size === 10, 'a book quiz stays in its book'); });
+  }
+  ok(A.midQuiz(50).length === 50, 'the long one has fifty');
+  const back = A.midByKeys(['mid:0', 'mid:5']); ok(back.length === 2 && back.every(q => /^mid:(0|5)$/.test(q.key)), 'missed questions can be practiced again');
+  // ---- matching
+  ok(A.MID_PAIRS.length === 5 && A.MID_PAIRS.every(s => s.pairs.length >= 8 && new Set(s.pairs.map(p => p[0])).size === s.pairs.length && new Set(s.pairs.map(p => p[1])).size === s.pairs.length), 'five matching sets, nothing repeated inside a set');
+  for (let r = 0; r < 30; r++) { const m = A.midMatchRound(null, 6); ok(m.items.length === 6 && new Set(m.items.map(i => i.right)).size === 6 && m.leftTitle && m.rightTitle, 'a matching round has six pairs'); }
+  ok(A.MID_PAIRS[1].pairs.some(p => p[0] === '1446 BC' && p[1] === 'The exodus') && A.MID_PAIRS[3].pairs.length === 9, 'the dates and the nine books are matching sets');
   ok(/id="topic-mid"/.test(html) && html.indexOf('data-topic="mid"') < html.indexOf('data-topic="guide"') && /open paper Bible/.test(html), 'the Midterm tab comes first and says the exam is open Bible');
 }
 ['guide', 's1', 's2', 's3', 's4', 's5', 's6', 'exam'].forEach(t => ok(html.includes('data-topic="' + t + '"') && html.includes('id="topic-' + t + '"'), 'tab and section: ' + t));

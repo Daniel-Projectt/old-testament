@@ -69,6 +69,20 @@ ok(visible($('#topic-mid')) && !visible($('#topic-guide')) && !visible($('#topic
   }
   ok(n === 15 && /of 15/.test($('#midWhich .qtext').textContent) && $('#mwAgain'), 'a round is fifteen questions and ends with a score', n);
   click($('#mwAgain')); ok($$('#midWhich .opt').length === 4, 'another round starts');
+  mode('mid', 'quiz');
+  ok(visible($('#midQuiz')) && $$('#midQuiz [data-mq]').length === 12, 'quizzes: the whole midterm, the long one, and ten by book');
+  click($('#midQuiz [data-mq="jdg"]'));
+  ok($$('#midQuiz .dots i').length === 10 && $('#midQuiz .qtext'), 'a book quiz has ten questions');
+  let res = answerQuiz($('#midQuiz'), 'judges quiz');
+  ok(res && /\/10/.test(res.textContent) && $('#midQuiz .setupbtn'), 'it ends with a score and a way back');
+  if ($('#midQuiz .missed')) { click($('#midQuiz .missed')); ok($$('#midQuiz .dots i').length >= 1 && $('#midQuiz .qtext'), 'the misses can be practiced'); answerQuiz($('#midQuiz'), 'misses'); }
+  click($('#midQuiz .setupbtn')); ok($$('#midQuiz [data-mq]').length === 12, 'back to the list of quizzes');
+  click($('#midQuiz [data-mq="all"][data-n="25"]'));
+  ok($$('#midQuiz .dots i').length === 25, 'the whole midterm has twenty-five');
+  key('1'); ok($$('#midQuiz .opt.correct').length === 1, 'number keys answer'); key('Enter');
+  res = answerQuiz($('#midQuiz'), 'whole midterm'); ok(res && /\/25/.test(res.textContent), 'and it is scored out of 25');
+  mode('mid', 'match');
+  ok(visible($('#midMatch')) && $$('#midMatch .L .tile').length === 6 && $$('#midMatch .R .tile').length === 6, 'match: six pairs');
   topic('guide'); ok(visible($('#topic-guide')) && !visible($('#topic-mid')), 'the Guide still opens');
 }
 const items = $$('#guideRoot .gitem');
