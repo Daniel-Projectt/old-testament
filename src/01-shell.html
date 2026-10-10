@@ -4,12 +4,13 @@
     <svg class="emblem" viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg>
     <p class="eyebrow">Study Guide</p>
     <h1>Old Testament</h1>
-    <p class="sub">1 Samuel &middot; 2 Samuel &middot; 1 and 2 Kings &middot; from the last judge to losing the land</p>
+    <p class="sub">Genesis through 2 Kings &middot; the midterm, from &ldquo;the beginning&rdquo; to the exile</p>
     <svg class="orn" viewBox="0 0 320 44" aria-hidden="true"><use href="#flourish"/></svg>
   </header>
 
   <nav class="topics" role="tablist" aria-label="Parts of the chapter">
-    <button class="topic-btn" role="tab" data-topic="guide" aria-selected="true">Guide</button>
+    <button class="topic-btn" role="tab" data-topic="mid" aria-selected="true">Midterm</button>
+    <button class="topic-btn" role="tab" data-topic="guide" aria-selected="false">Guide</button>
     <button class="topic-btn" role="tab" data-topic="s1" aria-selected="false">Samuel</button>
     <button class="topic-btn" role="tab" data-topic="s2" aria-selected="false">Saul</button>
     <button class="topic-btn" role="tab" data-topic="s3" aria-selected="false">David &amp; Saul</button>
@@ -21,8 +22,23 @@
 
   <main>
 
+    <!-- ================= MIDTERM ================= -->
+    <section class="topic" id="topic-mid">
+      <p class="intro">Your professor&rsquo;s study guide for the midterm, answered from his class slides: the summary statements for Genesis through 2 Kings, where each one is in the text, and why it matters. The exam is <b>open paper Bible</b>, so the references are worth knowing.</p>
+      <div class="modes"><div class="seg" data-modes="mid">
+        <button type="button" data-mode="st" aria-pressed="true">The statements</button>
+        <button type="button" data-mode="books" aria-pressed="false">The nine books</button>
+        <button type="button" data-mode="blanks" aria-pressed="false">Fill in the blanks</button>
+        <button type="button" data-mode="which" aria-pressed="false">Which book?</button>
+      </div></div>
+      <div class="panel" data-panel="mid/st"><div id="midSt"></div></div>
+      <div class="panel" data-panel="mid/books" hidden><div id="midBooks"></div></div>
+      <div class="panel" data-panel="mid/blanks" hidden><div id="midBlanks"></div></div>
+      <div class="panel" data-panel="mid/which" hidden><div id="midWhich"></div></div>
+    </section>
+
     <!-- ================= GUIDE ================= -->
-    <section class="topic" id="topic-guide">
+    <section class="topic" id="topic-guide" hidden>
       <p class="intro">The chapter in three parts, the way your notes lay it out. Check an item off once you can tell it without looking; <b>Study it</b> jumps to the notes, the small buttons to each subsection. <mark>Green</mark> marks what is most likely to be asked.</p>
       <div class="modes"><div class="seg" data-modes="guide">
         <button type="button" data-mode="overview" aria-pressed="true">The review list</button>

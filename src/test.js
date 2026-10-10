@@ -229,10 +229,79 @@ ok(/<b>Correct\.<\/b>/.test(src) && /<b>Not this one\.<\/b>/.test(src), 'answer 
 
 // ---------- 8. markup ----------
 head('markup');
-ok((html.match(/class="topic-btn"/g) || []).length === 8, 'eight tabs: guide, six parts, practice quiz');
+ok((html.match(/class="topic-btn"/g) || []).length === 9, 'nine tabs: midterm, guide, six parts, practice quiz');
+
+head('the midterm');
+{
+  const S = A.MID_ST, plain = S.map(s => A.midPlain(s.t)), x = s => String(s).replace(/<[^>]+>/g, '');
+  ok(S.length === 30 && new Set(S.map(s => s.id)).size === 30, 'thirty statements (the guide prints number 12 twice)', S.length);
+  ok(S.map(s => s.n).join() === '1,2,3,4,5,6,7,8,9,10,11,12,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29', 'numbered as the study guide numbers them');
+  ok(S.filter(s => s.grp === 't').length === 17 && S.filter(s => s.grp === 'f').length === 13 && S.findIndex(s => s.grp === 'f') === 17, 'seventeen on the Torah, thirteen on the Former Prophets, in his order');
+  // his wording, word for word
+  const guide = ['The horizon of the Pentateuch reaches from “the beginning” to the “end of days” kingdom ruled by the Lion of Judah, the seed of Abraham, the seed of the woman.',
+    'Yahweh created mankind and blessed them on the land.', 'Sin issued in death and exile from the good land.', 'Yahweh has promised the defeat of the serpent through the seed of the woman.',
+    'Yahweh promised blessing to Abraham’s descendants on the land and blessing to the nations through Abraham’s seed.',
+    'Abraham believed and God credited it to him as righteousness. His life shows what it means to walk by faith.',
+    'The stories of Genesis should be read with the backdrop of the Abrahamic covenant.',
+    'Yahweh is the God who redeemed His people from Egypt in accordance with the promises He made to Abraham, Isaac, and Jacob.',
+    'The law came because of disobedience, but also as protection.', 'The tabernacle was the means for restoring mankind’s lost fellowship with God.',
+    'The Mosaic Covenant was a temporary covenant governing the relationship between Yahweh and Israel until the New Covenant would come. (Deuteronomy 30)',
+    'The Pentateuch contrasts the life of faith and obedience before the law with lack of faith and disobedience after the law.',
+    'In Leviticus, the holy God gave instructions that enabled Him to live among His chosen people and enabled His people to have fellowship with Him.',
+    'Failure to obey by faith in the wilderness brought death, but the Lord’s desire to bless Israel was not frustrated. (Numbers)',
+    'Salvation would come at the hands of an end-of-days king who would crush His enemies.',
+    'Moses exhorted Israel to be faithful to the Lord and to the Mosaic Covenant so that she might go in and possess the Land. (Deuteronomy)',
+    'The solution to humanity’s plight of wandering in the wilderness is his promised rest and blessing brought by the hands of an end-of-days king from the line of Judah who will rule over a people whose hearts have been prepared to believe in Him.',
+    'Yahweh gave the land of Canaan to Israel through holy war in accordance with His promise to Abraham.', 'Israel dwelt in part of the land according to her faithful obedience to Yahweh.',
+    'The failure of Israel during the period of the Judges demonstrated Israel’s need for a righteous human king.',
+    'The people’s demand for a king like the nations was a rejection of God’s rule over them.',
+    'Saul was rejected as king because he failed to listen to the words of the Lord through the prophet.',
+    'David’s actions—particularly his treatment of Saul—demonstrated that he was a man after God’s own heart.', 'God promised to establish an eternal kingdom for David’s seed.',
+    'Samuel and Kings paint a picture of the future King in the likeness of David (the warrior king) and Solomon (the wise king).',
+    'Though Solomon ruled wisely and built the temple, his heart was not wholly devoted to the Lord and the kingdom was torn apart',
+    'Solomon’s descent into false worship showed he was not the seed David had been promised.',
+    'Jeroboam, the first king of Israel—the Northern Kingdom—immediately plunged the nation into idolatry at Bethel and Dan.',
+    'Despite the long line of disobedient kings, the Lord patiently preserved Judah—the Southern Kingdom—because of the promises God made to David.',
+    'Israel was exiled from the land by Assyria in 722 b.c.; Judah was exiled from the land by Babylon in 587/6 b.c. Both failed to believe and therefore remain allegiant to Yahweh.'];
+  guide.forEach((g, i) => ok(plain[i] === g, 'statement ' + S[i].n + ' is word for word', plain[i]));
+  // the blanks he uses on his own review slides
+  const prof = { m1: 'kingdom,Lion,seed,Abraham,seed,woman', m2: 'created,blessed,land', m3: 'death,exile', m4: 'serpent,seed', m5: 'blessing,descendants,blessing,seed', m6: 'believed,righteousness,faith',
+    m8: 'redeemed,Abraham,Isaac,Jacob', m9: 'law,disobedience,protection', m10: 'tabernacle,fellowship', m11: 'Mosaic,Covenant,New,Covenant,30', m12: 'faith,obedience,lack,of,faith,disobedience',
+    m12b: 'Leviticus,holy', m13: 'obey,faith,bless', m15: 'exhorted,Mosaic,Covenant', m17: 'land,war,promise', m18: 'obedience', m19: 'failure,king' };
+  S.forEach(s => { const b = A.midBlanks(s.t); ok(b.length >= 1 && b.length <= 6, s.id + ': one to six blanks', b.length);
+    if (prof[s.id]) ok(s.p === 1 && b.join() === prof[s.id], s.id + ': the blanks are his', b.join()); else ok(!s.p, s.id + ': blanks marked as mine'); });
+  S.forEach(s => ok(s.where.length >= 1 && s.where.every(w => w.length > 20) && s.why.length > 60 && s.bk, s.id + ': has where, why and a book'));
+  const all = x(S.map(s => s.where.join(' ') + ' ' + s.why).join(' '));
+  ['Genesis 49', 'Numbers 24', 'Deuteronomy 32–33', 'Genesis 3:15', 'Genesis 12:1–3', 'Genesis 15:6', '50:20', 'Exodus 6:2–8', '1446 BC', 'Exodus 32', 'Hebrews 8:2', 'Deuteronomy 30:6', 'Numbers 13–14', 'Numbers 20',
+   'Nadab and Abihu', '19:2', 'Balaam', '24:17', '17:14–20', '18:15–22', '1406 BC', '21:43–45', 'Rahab', '21:25', 'Othniel', 'Samson', '13:1–15', '15:1–35', '2 Samuel 7', '2:1–10', '8:61', '11:4', '13:1–2', '23:15–16', 'Jehoiachin', '2 Kings 17', 'Dempster', 'Sailhamer'].forEach(k => ok(all.includes(k), 'the answers cite ' + k));
+  // stay inside the slides: names the slides never give
+  ok(!/Achan|Caleb’s daughter|Delilah|Bathsheba|Nathan|Absalom|Naboth|Jezebel|Nebuchadnezzar|Sennacherib|Goliath|Boaz|Eglon|Sisera|Barak/.test(all + A.MID_WHICH.map(w => w[0]).join(' ')), 'no names the slides do not give');
+  const B = A.MID_BOOKS;
+  ok(B.map(b => b.n).join() === 'Genesis,Exodus,Leviticus,Numbers,Deuteronomy,Joshua,Judges,Samuel,Kings', 'nine books in the order of the Hebrew Bible');
+  ok(B.every(b => b.parts.length >= 2 && b.parts.every(p => p[0] && /\d/.test(p[1])) && b.more.length >= 2), 'every book has its structure');
+  const str = k => A.midBook(k).parts.map(p => p[1]).join(' | ');
+  ok(str('gen') === '1–11 | 12–50' && str('exo') === '1:1–15:21 | 15:22–18:27 | 19–40' && str('lev') === '1–7 | 8–10 | 11–16 | 17–27' && str('num') === '1–10 | 11–25 | 26–36' && str('jos') === '1–12 | 13–21 | 22–24'
+    && str('jdg') === '1:1–3:6 | 3:7–16:31 | 17–21' && str('sam') === '1 Sam 1–7 | 1 Sam 8–15 | 1 Sam 16–2 Sam 20 | 2 Sam 21–24' && str('kgs') === '1 Kgs 1–11 | 1 Kgs 12–2 Kgs 17 | 2 Kgs 18–25'
+    && str('deu') === '1:1–4:43 | 4:44–28:68 | 29:1–30:20 | 31:1–32:47 | 32:48–34:12', 'the structures match the slides');
+  ok(A.MID_DATES.filter(d => d[2]).map(d => d[0]).join() === '1446 BC,722 BC,587/6 BC' && A.MID_DATES.length === 8, 'his three dates lead the list');
+  ok(A.MID_TERMS.length >= 15 && A.MID_TERMS.filter(t => !t[2]).map(t => t[0]).join() === 'Canon,Jehovah,Imago Dei', 'the terms; three the slides only list are marked');
+  const W = A.MID_WHICH, keys = new Set(B.map(b => b.k));
+  ok(W.length >= 65 && W.every(w => keys.has(w[1])) && new Set(W.map(w => w[0])).size === W.length, 'which-book items: each has a real book, none twice', W.length);
+  B.forEach(b => ok(W.filter(w => w[1] === b.k).length >= 6, b.n + ' has at least six items'));
+  ok(W.some(w => w[0] === 'The ten plagues' && w[1] === 'exo'), 'his own example: the ten plagues are in Exodus');
+  ok(W.every(w => !new RegExp('\\b' + A.midBook(w[1]).n + '\\b').test(w[0])), 'no item names its own book');
+  for (let r = 0; r < 40; r++) A.midWhichRound(15).forEach(q => {
+    ok(q.opts.length === 4 && new Set(q.opts).size === 4 && q.opts.includes(q.answer), 'a which-book question has four books, one right');
+    const idx = k => B.findIndex(b => b.k === k);
+    ok(q.opts.every(k => Math.abs(idx(k) - idx(q.answer)) <= 4), 'the wrong books are neighbours', q.opts.join());
+    ok(q.opts.map(idx).join() === q.opts.map(idx).sort((a, b) => a - b).join(), 'books are listed in Bible order');
+  });
+  ok(new Set(A.midWhichRound(15).map(q => q.idx)).size === 15, 'a round never repeats an item');
+  ok(/id="topic-mid"/.test(html) && html.indexOf('data-topic="mid"') < html.indexOf('data-topic="guide"') && /open paper Bible/.test(html), 'the Midterm tab comes first and says the exam is open Bible');
+}
 ['guide', 's1', 's2', 's3', 's4', 's5', 's6', 'exam'].forEach(t => ok(html.includes('data-topic="' + t + '"') && html.includes('id="topic-' + t + '"'), 'tab and section: ' + t));
 tps.forEach(tp => ['Notes', 'Cards', 'Match', 'Quiz'].forEach(s => ok(html.includes('id="' + tp + s + '"'), 'root exists: ' + tp + s)));
-ok(/data-topic="guide"\s+aria-selected="true"/.test(html), 'Guide is the default tab');
+ok(/data-topic="mid"\s+aria-selected="true"/.test(html) && /data-topic="guide"\s+aria-selected="false"/.test(html), 'Midterm is the default tab');
 ok(html.includes('id="flourish"') && html.includes('id="emblem"') && html.includes('class="emblem"'), 'ornaments and the earth emblem present');
 ok(/--gold:#557a55/.test(html) && /--rose-wash:#eef4e7/.test(html), 'the sage green palette is in force');
 ok(html.indexOf('--gold:#557a55') > html.indexOf('--gold:#9a7a44'), 'the green override comes after the gold base, so it wins');

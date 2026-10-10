@@ -173,3 +173,26 @@ header .eyebrow{color:#9a7a44}
 
 /* king lists: coregency rows are quieter */
 .tbl tr.co td{color:var(--muted);font-size:.92em}
+
+/* ---- the midterm tab ---- */
+.mst{border:1px solid var(--line);border-radius:3px;background:var(--surface);margin:8px 0}
+.mst[open]{border-color:var(--gold-soft)}
+.mst summary{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;cursor:pointer;list-style:none;font-size:15.5px;line-height:1.5}
+.mst summary::-webkit-details-marker{display:none}
+.mnum{flex:0 0 auto;min-width:26px;font-family:var(--sans);font-size:11px;letter-spacing:.08em;color:var(--gold);border:1px solid var(--gold-soft);border-radius:2px;text-align:center;padding:2px 4px;margin-top:2px}
+.mtxt{flex:1 1 auto}
+.mbk{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-top:5px}
+.mbody{padding:2px 16px 14px 52px;border-top:1px solid var(--line)}
+.mbody h4{font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:14px 0 6px}
+.mbody ul{margin:0;padding-left:18px} .mbody li{margin:5px 0;font-size:15px;line-height:1.55} .mbody p{margin:0;font-size:15px;line-height:1.6}
+.mnote{font-style:italic;color:var(--ink-soft);margin-top:10px!important}
+.mses{font-style:italic;color:var(--ink-soft);margin:0 0 8px}
+.mfind{font-size:14.5px;line-height:1.6;background:var(--surface-2);border:1px solid var(--line);border-radius:3px;padding:10px 14px}
+.mfind b{display:block;font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.mown{color:var(--ink-soft);font-style:italic;font-size:13px}
+.tbl tr.mkey td{font-weight:600}
+.blist{list-style:none;margin:0;padding:0}
+.bline{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--line);font-size:15.5px;line-height:1.9}
+.blank{display:inline-block;min-width:74px;padding:0 8px;margin:0 2px;border:0;border-bottom:1.5px solid var(--gold);background:var(--rose-wash);font:inherit;color:var(--ink);cursor:pointer;border-radius:2px 2px 0 0;line-height:1.5}
+.blank.on{background:transparent;font-weight:600;min-width:0}
+@media (max-width:560px){ .mbody{padding-left:16px} .mst summary{font-size:15px} .blank{min-width:56px} }

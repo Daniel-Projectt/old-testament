@@ -139,8 +139,91 @@ CHAPTERS.forEach(function(tp){
   KEYS[tp+"/cards"] = function(e){ return engines[tp+"Cards"].keys(e); };
   KEYS[tp+"/quiz"]  = function(e){ return engines[tp+"Quiz"].keys(e); };
 });
-var TOPICS = ["guide","s1","s2","s3","s4","s5","s6","exam"];
-var currentTopic = "guide", currentMode = {guide:"overview", s1:"notes", s2:"notes", s3:"notes", s4:"notes", s5:"notes", s6:"notes", exam:"mock"};
+/* ================================================================ the midterm tab */
+function midGroup(g){ return MID_ST.filter(function(s){ return s.grp === g; }); }
+function renderMidStatements(){
+  function one(s){
+    return '<details class="mst" id="'+s.id+'"><summary><span class="mnum">'+s.n+'</span><span class="mtxt">'+midPlain(s.t)+'<span class="mbk">'+s.bk+'</span></span></summary>'+
+      '<div class="mbody">'+(s.note ? '<p class="mnote">'+s.note+'</p>' : '')+
+      '<h4>Where it is in the text</h4><ul>'+s.where.map(li).join("")+'</ul>'+
+      '<h4>Why it matters</h4><p>'+s.why+'</p></div></details>';
+  }
+  $("#midSt").innerHTML =
+    '<div class="note-sec"><div class="point"><b>The point</b><p>The test covers the class discussion of <mark>Genesis through 2 Kings</mark>. For each statement, be able to show <mark>where it is in the biblical text</mark> and <mark>why it is important</mark>. He is not asking you to memorize them word for word.</p>'+
+    '<p class="able"><b>How to use this</b>Tap a statement to open it. Say the &ldquo;where&rdquo; and the &ldquo;why&rdquo; aloud first, then check.</p></div>'+
+    '<div class="toolbar" style="justify-content:center"><button class="btn" type="button" id="midOpenAll">Open all</button><button class="btn" type="button" id="midCloseAll">Close all</button></div>'+
+    '<h3 class="sub">Summary statements on the Torah / Pentateuch</h3>'+midGroup("t").map(one).join("")+
+    '<h3 class="sub">Summary statements on the Former Prophets</h3>'+midGroup("f").map(one).join("")+'</div>';
+  $("#midOpenAll").addEventListener("click", function(){ $$("#midSt details").forEach(function(d){ d.open = true; }); });
+  $("#midCloseAll").addEventListener("click", function(){ $$("#midSt details").forEach(function(d){ d.open = false; }); });
+}
+function renderMidBooks(){
+  $("#midBooks").innerHTML =
+    '<div class="note-sec"><div class="point"><b>The point</b><p>Know the <mark>structure of each book</mark> and what it adds to the story, and be able to say <mark>in which book</mark> a person, theme or event appears. The class follows the order of the Hebrew Bible, so this is the Pentateuch plus Joshua, Judges, Samuel and Kings.</p></div>'+
+    '<h3 class="sub">The dates</h3><div class="tblwrap"><table class="tbl n0"><tbody>'+
+      MID_DATES.map(function(d){ return '<tr'+(d[2] ? ' class="mkey"' : '')+'><td class="head">'+d[0]+'</td><td class="sm">'+d[1]+'</td></tr>'; }).join("")+'</tbody></table></div>'+
+    '<p class="hint">The first three are the ones he lists as the important dates. The rest are on the slides.</p>'+
+    '<h3 class="sub">The Hebrew Bible</h3><p><b>Torah</b> (Pentateuch): Genesis, Exodus, Leviticus, Numbers, Deuteronomy. <b>Prophets</b>: the Former Prophets (Joshua, Judges, Samuel, Kings) and the Latter Prophets (Isaiah, Jeremiah, Ezekiel, The Twelve). <b>Writings</b>: Psalms, Job, Proverbs, Ruth, Song of Solomon, Ecclesiastes, Lamentations, Esther, Daniel, Ezra-Nehemiah, Chronicles.</p>'+
+    '<p>The Former Prophets in one line: <b>into the land → 800+ years in the land → exile</b>.</p>'+
+    MID_BOOKS.map(function(B){
+      var sts = MID_ST.filter(function(s){ return s.bk.indexOf(B.n) >= 0; }).map(function(s){ return s.n; });
+      return '<h3 class="sub">'+B.n+'</h3><p class="mses">'+B.ses+'</p>'+
+        '<div class="tblwrap"><table class="tbl n0"><tbody>'+B.parts.map(function(p){ return '<tr><td class="sm">'+p[0]+'</td><td class="head">'+p[1]+'</td></tr>'; }).join("")+'</tbody></table></div>'+
+        '<ul>'+B.more.map(li).join("")+'</ul>'+
+        '<p class="mfind"><b>Found in '+B.n+'</b>'+MID_WHICH.filter(function(w){ return w[1] === B.k; }).map(function(w){ return w[0]; }).join(" · ")+'</p>'+
+        (sts.length ? '<p class="hint">Statements: '+sts.join(", ")+'</p>' : '');
+    }).join("")+
+    '<h3 class="sub">Terms to know</h3><div class="tblwrap"><table class="tbl n0"><tbody>'+
+      MID_TERMS.map(function(t){ return '<tr><td class="head">'+t[0]+'</td><td class="sm">'+t[1]+(t[2] ? '' : ' <span class="mown">(listed on the slides without a definition)</span>')+'</td></tr>'; }).join("")+'</tbody></table></div></div>';
+}
+function renderMidBlanks(){
+  function line(s){
+    var html = s.t.replace(/\{([^}]+)\}/g, function(_, w){ return '<button type="button" class="blank" data-w="'+w+'" aria-label="blank">&nbsp;</button>'; });
+    return '<li class="bline"><span class="mnum">'+s.n+'</span><span>'+html+'</span></li>';
+  }
+  $("#midBlanks").innerHTML =
+    '<div class="note-sec"><div class="point"><b>The point</b><p>Your professor reviews with these statements as <mark>fill-in-the-blank</mark> slides. Say the missing word, then tap the blank to check. Up to statement 19 these are the very words he leaves out on his slides.</p></div>'+
+    '<div class="toolbar" style="justify-content:center"><button class="btn" type="button" id="blShow">Show all</button><button class="btn" type="button" id="blHide">Hide all</button></div>'+
+    '<p class="scoreline" id="blCount"></p>'+
+    '<ul class="blist">'+MID_ST.map(line).join("")+'</ul></div>';
+  function count(){ $("#blCount").innerHTML = "Opened <b>"+$$("#midBlanks .blank.on").length+" of "+$$("#midBlanks .blank").length+"</b>"; }
+  function set(b, on){ b.classList.toggle("on", on); b.innerHTML = on ? b.getAttribute("data-w") : "&nbsp;"; }
+  $$("#midBlanks .blank").forEach(function(b){ b.addEventListener("click", function(){ set(b, !b.classList.contains("on")); count(); }); });
+  $("#blShow").addEventListener("click", function(){ $$("#midBlanks .blank").forEach(function(b){ set(b, true); }); count(); });
+  $("#blHide").addEventListener("click", function(){ $$("#midBlanks .blank").forEach(function(b){ set(b, false); }); count(); });
+  count();
+}
+function renderMidWhich(){
+  var root = $("#midWhich"), qs = [], qi = 0, score = 0, missed = [];
+  function start(){ qs = midWhichRound(15); qi = 0; score = 0; missed = []; show(); }
+  function show(){
+    if(qi >= qs.length){
+      root.innerHTML = '<div class="qcard card-corners">'+CORNERS+'<div class="qnum">Result</div><p class="qtext">'+score+' of '+qs.length+'</p>'+
+        (missed.length ? '<p class="feedback">Look again at: '+missed.map(function(q){ return q.text+' <b>('+midBook(q.answer).n+')</b>'; }).join("; ")+'.</p>' : '<p class="feedback">A clean round.</p>')+
+        '<div class="qfoot"><button class="btn primary" type="button" id="mwAgain">Another round</button></div></div>';
+      $("#mwAgain").addEventListener("click", start); return;
+    }
+    var q = qs[qi];
+    root.innerHTML = '<div class="qcard card-corners">'+CORNERS+'<div class="qnum">Question '+(qi+1)+' of '+qs.length+'</div>'+
+      '<div style="text-align:center;margin-top:10px"><span class="qtag">In which book?</span></div><p class="qtext">'+q.text+'</p>'+
+      '<div class="opts">'+q.opts.map(function(k, i){ return '<button type="button" class="opt" data-k="'+k+'"><span class="k">'+(i+1)+'</span>'+midBook(k).n+'</button>'; }).join("")+'</div>'+
+      '<p class="feedback"></p><div class="qfoot"><button class="btn primary next" type="button" hidden>Next &rsaquo;</button></div></div>';
+    $$(".opt", root).forEach(function(b){ b.addEventListener("click", function(){
+      if($(".opt[disabled]", root)) return;
+      var right = b.getAttribute("data-k") === q.answer;
+      $$(".opt", root).forEach(function(x){ x.disabled = true; if(x.getAttribute("data-k") === q.answer) x.classList.add("correct"); });
+      if(right) score++; else { b.classList.add("wrong"); missed.push(q); }
+      $(".feedback", root).innerHTML = (right ? "<b>Correct.</b> " : "<b>Not this one.</b> ")+"It is in <b>"+midBook(q.answer).n+"</b>: "+midBook(q.answer).ses.toLowerCase().replace(/^./, function(c){ return c.toUpperCase(); })+".";
+      var nb = $(".next", root); nb.hidden = false; nb.textContent = qi === qs.length - 1 ? "See results" : "Next";
+    }); });
+    $(".next", root).addEventListener("click", function(){ qi++; show(); });
+  }
+  start();
+}
+renderMidStatements(); renderMidBooks(); renderMidBlanks(); renderMidWhich();
+
+var TOPICS = ["mid","guide","s1","s2","s3","s4","s5","s6","exam"];
+var currentTopic = "mid", currentMode = {mid:"st", guide:"overview", s1:"notes", s2:"notes", s3:"notes", s4:"notes", s5:"notes", s6:"notes", exam:"mock"};
 function showMode(topic, mode){
   currentMode[topic] = mode;
   $$('.seg[data-modes="'+topic+'"] button').forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-mode") === mode)); });
@@ -177,7 +260,9 @@ document.addEventListener("keydown", function(e){
 (function(){
   var t = store.get("topic");
   TOPICS.forEach(function(k){ var m = store.get("mode."+k); if(m && $('.seg[data-modes="'+k+'"] button[data-mode="'+m+'"]')) currentMode[k] = m; });
-  showTopic(t && TOPICS.indexOf(t) >= 0 ? t : "guide");
+  /* the midterm tab is new: show it once even to a phone that remembers another tab */
+  if(!store.get("seenMid")){ t = "mid"; store.set("seenMid", "1"); }
+  showTopic(t && TOPICS.indexOf(t) >= 0 ? t : "mid");
 })();
 
 /* ---- offline copy: the service worker keeps the page on the phone ---- */

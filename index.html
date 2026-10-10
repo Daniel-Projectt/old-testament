@@ -459,6 +459,29 @@ header .eyebrow{color:#9a7a44}
 
 /* king lists: coregency rows are quieter */
 .tbl tr.co td{color:var(--muted);font-size:.92em}
+
+/* ---- the midterm tab ---- */
+.mst{border:1px solid var(--line);border-radius:3px;background:var(--surface);margin:8px 0}
+.mst[open]{border-color:var(--gold-soft)}
+.mst summary{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;cursor:pointer;list-style:none;font-size:15.5px;line-height:1.5}
+.mst summary::-webkit-details-marker{display:none}
+.mnum{flex:0 0 auto;min-width:26px;font-family:var(--sans);font-size:11px;letter-spacing:.08em;color:var(--gold);border:1px solid var(--gold-soft);border-radius:2px;text-align:center;padding:2px 4px;margin-top:2px}
+.mtxt{flex:1 1 auto}
+.mbk{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-top:5px}
+.mbody{padding:2px 16px 14px 52px;border-top:1px solid var(--line)}
+.mbody h4{font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:14px 0 6px}
+.mbody ul{margin:0;padding-left:18px} .mbody li{margin:5px 0;font-size:15px;line-height:1.55} .mbody p{margin:0;font-size:15px;line-height:1.6}
+.mnote{font-style:italic;color:var(--ink-soft);margin-top:10px!important}
+.mses{font-style:italic;color:var(--ink-soft);margin:0 0 8px}
+.mfind{font-size:14.5px;line-height:1.6;background:var(--surface-2);border:1px solid var(--line);border-radius:3px;padding:10px 14px}
+.mfind b{display:block;font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.mown{color:var(--ink-soft);font-style:italic;font-size:13px}
+.tbl tr.mkey td{font-weight:600}
+.blist{list-style:none;margin:0;padding:0}
+.bline{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--line);font-size:15.5px;line-height:1.9}
+.blank{display:inline-block;min-width:74px;padding:0 8px;margin:0 2px;border:0;border-bottom:1.5px solid var(--gold);background:var(--rose-wash);font:inherit;color:var(--ink);cursor:pointer;border-radius:2px 2px 0 0;line-height:1.5}
+.blank.on{background:transparent;font-weight:600;min-width:0}
+@media (max-width:560px){ .mbody{padding-left:16px} .mst summary{font-size:15px} .blank{min-width:56px} }
 </style>
 </head>
 <body>
@@ -528,12 +551,13 @@ header .eyebrow{color:#9a7a44}
     <svg class="emblem" viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg>
     <p class="eyebrow">Study Guide</p>
     <h1>Old Testament</h1>
-    <p class="sub">1 Samuel &middot; 2 Samuel &middot; 1 and 2 Kings &middot; from the last judge to losing the land</p>
+    <p class="sub">Genesis through 2 Kings &middot; the midterm, from &ldquo;the beginning&rdquo; to the exile</p>
     <svg class="orn" viewBox="0 0 320 44" aria-hidden="true"><use href="#flourish"/></svg>
   </header>
 
   <nav class="topics" role="tablist" aria-label="Parts of the chapter">
-    <button class="topic-btn" role="tab" data-topic="guide" aria-selected="true">Guide</button>
+    <button class="topic-btn" role="tab" data-topic="mid" aria-selected="true">Midterm</button>
+    <button class="topic-btn" role="tab" data-topic="guide" aria-selected="false">Guide</button>
     <button class="topic-btn" role="tab" data-topic="s1" aria-selected="false">Samuel</button>
     <button class="topic-btn" role="tab" data-topic="s2" aria-selected="false">Saul</button>
     <button class="topic-btn" role="tab" data-topic="s3" aria-selected="false">David &amp; Saul</button>
@@ -545,8 +569,23 @@ header .eyebrow{color:#9a7a44}
 
   <main>
 
+    <!-- ================= MIDTERM ================= -->
+    <section class="topic" id="topic-mid">
+      <p class="intro">Your professor&rsquo;s study guide for the midterm, answered from his class slides: the summary statements for Genesis through 2 Kings, where each one is in the text, and why it matters. The exam is <b>open paper Bible</b>, so the references are worth knowing.</p>
+      <div class="modes"><div class="seg" data-modes="mid">
+        <button type="button" data-mode="st" aria-pressed="true">The statements</button>
+        <button type="button" data-mode="books" aria-pressed="false">The nine books</button>
+        <button type="button" data-mode="blanks" aria-pressed="false">Fill in the blanks</button>
+        <button type="button" data-mode="which" aria-pressed="false">Which book?</button>
+      </div></div>
+      <div class="panel" data-panel="mid/st"><div id="midSt"></div></div>
+      <div class="panel" data-panel="mid/books" hidden><div id="midBooks"></div></div>
+      <div class="panel" data-panel="mid/blanks" hidden><div id="midBlanks"></div></div>
+      <div class="panel" data-panel="mid/which" hidden><div id="midWhich"></div></div>
+    </section>
+
     <!-- ================= GUIDE ================= -->
-    <section class="topic" id="topic-guide">
+    <section class="topic" id="topic-guide" hidden>
       <p class="intro">The chapter in three parts, the way your notes lay it out. Check an item off once you can tell it without looking; <b>Study it</b> jumps to the notes, the small buttons to each subsection. <mark>Green</mark> marks what is most likely to be asked.</p>
       <div class="modes"><div class="seg" data-modes="guide">
         <button type="button" data-mode="overview" aria-pressed="true">The review list</button>
@@ -2107,6 +2146,322 @@ QB = QB.concat([
  {tp:"s6",sec:"g6-fall",ap:true,t:"mc",q:"A reader asks what God gave Israel in the middle of losing the land. What does the conclusion answer?",a:"A pledge of an eternal kingdom",w:["A new temple in Babylon","A treaty with Persia","A second exodus from Egypt"],e:"2 Samuel 7:1–17 — the promise to David."}
 ]);
 
+/* ================================================================ the midterm
+   Built 10-oct from the professor's "OT midterm exam study guide" (the summary statements, Genesis
+   through 2 Kings) answered with his own class slides (sessions 1-14 and the Joshua handout).
+   - MID_ST: the statements in his order and his wording. Words in {braces} are fill-in blanks;
+     p:1 means those are the very words HE blanks on his review slides. The guide prints the
+     number 12 twice, so the second one is labelled "12" too and marked Leviticus.
+   - where: where the slides show it in the text.  why: why it matters, summed up from the slides.
+   Stay inside the slides: nothing here should name a person or detail the slides do not give.     */
+var MID_BOOKS = [
+ {k:"gen", n:"Genesis", ses:"Creation, Fall, and the Genesis of the Gospel · Father Abraham",
+  parts:[["Introduction (the Primeval History)", "1–11"], ["The Narrative of the Patriarchs", "12–50"]],
+  more:["Inside 1–11: the land and the blessing (1–2), the exile (3), life in exile (4), Noah (6–9), Babel (11:1–9), with poems and genealogies between them.",
+        "Inside 12–50: Abraham (12–25), Isaac and Jacob (26–36), Joseph and Judah (37–50).",
+        "Abraham entered Canaan about 2092 BC; Jacob’s family entered Egypt about 1876 BC."]},
+ {k:"exo", n:"Exodus", ses:"Leaving Egypt · The Covenant at Sinai",
+  parts:[["Egypt", "1:1–15:21"], ["Wilderness", "15:22–18:27"], ["Sinai", "19–40"]],
+  more:["Egypt: the oppression (1), the preparation of Moses (2), the call of Moses (3:1–4:31), the deliverance (5:1–15:21).",
+        "Sinai: the covenant (19–24), then the tabernacle (25–40): plans (25–31), the golden calf (32), restoration (33–34), finishing it (35–40).",
+        "Israel is at Sinai from Exodus 19:1–2 until Numbers 10:11."]},
+ {k:"lev", n:"Leviticus", ses:"In the Presence of Yahweh",
+  parts:[["Sacrificial laws", "1–7"], ["Priestly narrative", "8–10"], ["Laws to protect ritual cleanness", "11–16"], ["Holiness Code", "17–27"]],
+  more:["Chapter 16 is Yom Kippur, the Day of Atonement.", "Key verse: “You shall be holy, for I the LORD your God am holy” (19:2)."]},
+ {k:"num", n:"Numbers", ses:"Wandering in the Wilderness",
+  parts:[["Obedience: the first generation, a census", "1–10"], ["Disobedience: the first generation dies, the second is born", "11–25"], ["Obedience: the second generation, a census", "26–36"]],
+  more:["Unbelief of the people: Numbers 13–14. Unbelief of the leadership: Numbers 20.", "Balaam and Balak: Numbers 22–24."]},
+ {k:"deu", n:"Deuteronomy", ses:"On the Plains of Moab",
+  parts:[["Speech 1 · the past", "1:1–4:43"], ["Speech 2 · the present", "4:44–28:68"], ["Speech 3 · the future", "29:1–30:20"], ["Speech 4 · the future", "31:1–32:47"], ["Blessing · the future", "32:48–34:12"]],
+  more:["The title means “second law”; in Hebrew the book is called “These are the Words.”",
+        "One key text in each part: 4:5–6, 6:4–9, 30:11–14, 32:44–47, 34:9.",
+        "The offices: priests and judges (17:8–13), the king (17:14–20), the prophet (18:15–22)."]},
+ {k:"jos", n:"Joshua", ses:"Entering the Land",
+  parts:[["Conquest of the land", "1–12"], ["Distribution of the land", "13–21"], ["Farewells: how do they stay in the land?", "22–24"]],
+  more:["The conquest begins at Jericho about 1406 BC.", "A tale of two cities: Jericho (6) and Ai (7–8)."]},
+ {k:"jdg", n:"Judges", ses:"No King in Israel",
+  parts:[["Introduction: incomplete obedience becomes a snare", "1:1–3:6"], ["The Book of Deliverers: cycles of failure", "3:7–16:31"], ["Internal strife: idolatry and immorality", "17–21"]],
+  more:["The cycle: sin, servitude, supplication, salvation, security.", "The judges, in order: Othniel, Ehud, Deborah, Gideon, Jephthah, Samson."]},
+ {k:"sam", n:"Samuel", ses:"The Rise of the Monarchy · David and Solomon",
+  parts:[["Samuel: prophet and judge", "1 Sam 1–7"], ["Saul: a king like the nations", "1 Sam 8–15"], ["David: God’s king", "1 Sam 16–2 Sam 20"], ["Appendix", "2 Sam 21–24"]],
+  more:["Three poems hold the book together: Hannah’s song (1 Sam 2:1–10), the Davidic covenant (2 Sam 7), David’s songs (2 Sam 22–23).",
+        "Samuel’s judgeship: Hannah and the birth of Samuel (1:1–2:11), the wickedness of Eli’s house (2:12–36), the call of Samuel (3), the ark narrative (4:1–7:1), repentance and remembrance (7:2–17)."]},
+ {k:"kgs", n:"Kings", ses:"The Path to Exile",
+  parts:[["Solomon", "1 Kgs 1–11"], ["Judah and Israel, the divided kingdom", "1 Kgs 12–2 Kgs 17"], ["Judah alone", "2 Kgs 18–25"]],
+  more:["Solomon: kingdom established (1–3), wisdom (3–4), temple (5–9), wealth and glory (10), fall (11).",
+        "Judah alone: Hezekiah (18–20), Manasseh (21:1–18), Amon (21:19–26), Josiah (22:1–23:30), the last kings (23:31–25:7), exile to Babylon (25:8–21), epilogue: hope? (25:22–30).",
+        "Four dates frame the book: David dies 970 BC, Israel exiled 722 BC, Judah exiled 586 BC, Jehoiachin released 561 BC."]}
+];
+
+var MID_ST = [
+ {id:"m1", n:"1", grp:"t", bk:"The whole Pentateuch", p:1,
+  t:"The horizon of the Pentateuch reaches from “the beginning” to the “end of days” {kingdom} ruled by the {Lion} of Judah, the {seed} of {Abraham}, the {seed} of the {woman}.",
+  where:["<b>Genesis 1:1</b>: “In the beginning.”",
+   "<b>Genesis 49</b>: Jacob’s poem to his sons, “in the last days.” Judah is a lion’s cub; “the scepter shall not depart from Judah … until Shiloh comes” (49:8–10).",
+   "<b>Numbers 24</b>: Balaam’s poem before Balak. The lion again (24:9), and “a star shall come out of Jacob, and a scepter shall rise out of Israel” (24:17).",
+   "<b>Deuteronomy 32–33</b>: Moses’ poems to Israel; “Hear, O LORD, the voice of Judah” (33:7)."],
+  why:"The Pentateuch is <b>one book, not five</b>. Each long stretch of narrative ends in a poem, and all three poems look to the same coming king from Judah. So the Torah is finally about a king and his kingdom, not only about law."},
+ {id:"m2", n:"2", grp:"t", bk:"Genesis", p:1,
+  t:"Yahweh {created} mankind and {blessed} them on the {land}.",
+  where:["<b>Genesis 1:1–2:3</b>: the earth is “formless and void”; God forms it (days 1–3) and fills it (days 4–6), from a barren wilderness (Jer 4:23) to a land ready for humanity.",
+   "<b>Genesis 1:26–28</b>: humanity, male and female, made in God’s image and blessed: be fruitful, multiply, fill the earth.",
+   "<b>Genesis 2</b>: the name changes from “God” (Elohim) to “the LORD God” (Yahweh Elohim). The garden is a special place of fellowship and worship where everything they needed was provided."],
+  why:"It sets the themes the whole story follows: Yahweh, the God of the covenant, is the Creator; and then <b>rest, land, seed, blessing and cursing</b>."},
+ {id:"m3", n:"3", grp:"t", bk:"Genesis", p:1,
+  t:"Sin issued in {death} and {exile} from the good land.",
+  where:["<b>Genesis 3</b>: central to the story of the Fall is the idea of wisdom.",
+   "The man and the woman are exiled from the place of God’s perfect provision, doomed to serve the ground and kept from the blessings of the Garden.",
+   "<b>Genesis 4–11</b>: life in exile, Noah (6–9), Babel (11:1–9); de-creation and re-creation."],
+  why:"Losing the good land because of sin is the pattern of the whole story. It returns at the end, when Israel (722 BC) and Judah (587/6 BC) are exiled from their land."},
+ {id:"m4", n:"4", grp:"t", bk:"Genesis", p:1,
+  t:"Yahweh has promised the defeat of the {serpent} through the {seed} of the woman.",
+  where:["<b>Genesis 3:15</b>: “the seed of the woman.”"],
+  why:"It is the first promise of rescue. From here the story follows the <b>seed</b>: Abraham’s seed, the king from Judah, David’s seed."},
+ {id:"m5", n:"5", grp:"t", bk:"Genesis", p:1,
+  t:"Yahweh promised {blessing} to Abraham’s {descendants} on the land and {blessing} to the nations through Abraham’s {seed}.",
+  where:["<b>Genesis 12:1–3, 7</b>: a land, a great nation, a great name; “in you all the families of the earth shall be blessed”; “to your seed I will give this land.”",
+   "<b>Genesis 13:14–17</b>: all the land you see, to you and your seed forever.",
+   "<b>Genesis 15:1–6</b>: seed like the stars.",
+   "<b>Genesis 17:3–8</b>: the name Abraham; kings shall come from you; an everlasting covenant.",
+   "<b>Genesis 22:15–18</b>: “your seed shall possess the gate of his enemies, and in your seed shall all the nations of the earth be blessed.”"],
+  why:"Three words sum up the Abrahamic covenant: <b>land, seed, blessing</b>. The seed is both a people and one person; the blessing is on Israel and on the nations."},
+ {id:"m6", n:"6", grp:"t", bk:"Genesis", p:1,
+  t:"Abraham {believed} and God credited it to him as {righteousness}. His life shows what it means to walk by {faith}.",
+  where:["<b>Genesis 15:6</b>: “he believed the LORD, and he counted it to him as righteousness.” The slides add: he believed <i>in the promised seed</i>.",
+   "Faith appears again in <b>Exodus 4:31</b> and <b>Exodus 14:31</b>, when Israel believes."],
+  why:"Abraham is counted righteous by faith, long before the law is given. That is the life the Pentateuch holds up (see statement 12)."},
+ {id:"m7", n:"7", grp:"t", bk:"Genesis",
+  t:"The stories of Genesis should be read with the backdrop of the {Abrahamic} {covenant}.",
+  where:["The promise is repeated to <b>Isaac</b> (26:3–5) and to <b>Jacob</b> (28:1–4; 35:9–12, where he is named Israel and told kings will come from him).",
+   "<b>Genesis 37–50</b>: the story of the twelve becomes mainly the story of two sons, Joseph and Judah. The guiding principle is 50:20; Joseph’s hope in the promises is 50:24.",
+   "<b>Exodus 1:7</b> picks it up: Israel was fruitful and multiplied."],
+  why:"Each story is asking the same question: what is happening to the land, the seed and the blessing?"},
+ {id:"m8", n:"8", grp:"t", bk:"Exodus", p:1,
+  t:"Yahweh is the God who {redeemed} His people from Egypt in accordance with the promises He made to {Abraham}, {Isaac}, and {Jacob}.",
+  where:["<b>Exodus 2:23–25</b>: God heard their groaning and remembered His covenant with Abraham, Isaac and Jacob.",
+   "<b>Exodus 3:1–4:31</b>: the call of Moses at Horeb (= Sinai), his four objections, and the name Yahweh.",
+   "<b>Exodus 6:2–8</b>: “I am Yahweh … I will redeem you with an outstretched arm … I will bring you into the land that I swore to give to Abraham, to Isaac, and to Jacob.”",
+   "<b>Exodus 9:14–16</b>: the purpose of the plagues: “that you may know that there is none like me” and “that my name may be proclaimed in all the earth.”",
+   "<b>Exodus 14:30–31</b>: Israel feared the LORD and believed. <b>Exodus 15:1–18</b>: the song, with Yahweh as the Warrior King."],
+  why:"The exodus is God keeping His word to the fathers, and it shows who He is: the God who sees, the Deliverer and Redeemer. <b>Remember the date: 1446 BC.</b>"},
+ {id:"m9", n:"9", grp:"t", bk:"Exodus", p:1,
+  t:"The {law} came because of {disobedience}, but also as {protection}.",
+  where:["<b>Exodus 15:22–18:27</b> (the wilderness): Yahweh gave statutes and commands; more stringent regulations were on the way as their trust in Yahweh waned. A pattern of God’s provision, but also testing.",
+   "<b>Exodus 19–24</b>: the covenant at Sinai. “All that the LORD has spoken we will do!” (19:8; 24:3). The Ten Commandments (20) and the Covenant Code (21 on).",
+   "<b>Exodus 32</b>: the people break the covenant they made in chapter 24 (the golden calf). The Lord responds with grace, but also with another covenant (34:10–11).",
+   "<b>Jeremiah 7:22–23</b> and <b>Galatians 3:15–29</b>."],
+  why:"Laws keep being added as Israel’s trust fades. The law answers disobedience, and it also guards the people."},
+ {id:"m10", n:"10", grp:"t", bk:"Exodus", p:1,
+  t:"The {tabernacle} was the means for restoring mankind’s lost {fellowship} with God.",
+  where:["<b>Exodus 25–40</b>: plans (25–31), golden calf (32), restoration (33–34), finishing the tabernacle (35–40).",
+   "The tabernacle is told like the creation and the garden: the Spirit (Gen 1:2 / Ex 31:3), gold (Gen 2:12 / Ex 25:3), jewels (Gen 2:12 / Ex 25:7), cherubim (Gen 3:24 / Ex 25:18), rest and Sabbath (Gen 2:1–3 / Ex 31:12–18), inspection and blessing (Gen 1:28, 31 / Ex 39:43), and then a fall (Genesis 3 / the golden calf, Exodus 32).",
+   "<b>Exodus 34:6–7</b>: who Yahweh is."],
+  why:"What was lost in the garden begins to be restored: God living with His people. The line runs <b>garden → tabernacle → temple → the true tabernacle (Hebrews 8:2; 9:11–12) → the new heavens and new earth (Revelation 22)</b>."},
+ {id:"m11", n:"11", grp:"t", bk:"Exodus · Deuteronomy", p:1,
+  t:"The {Mosaic} {Covenant} was a temporary covenant governing the relationship between Yahweh and Israel until the {New} {Covenant} would come. (Deuteronomy {30})",
+  where:["<b>Exodus 19–24</b> and <b>34</b>: the covenant made, broken and made again.",
+   "<b>Deuteronomy 30:6</b>: the LORD will circumcise the heart; this is the Pentateuch’s teaching about the New Covenant.",
+   "<b>Galatians 3:15–29</b>; “you are not under law but under grace” (Romans 6:14); “the Law is not of faith” (Galatians 3:12)."],
+  why:"Keep the covenants apart: the <b>Abrahamic</b> (promise: land, seed, blessing), the <b>Mosaic</b> (temporary, between Yahweh and Israel), and the <b>New</b> (a changed heart). The law still stands as a source of wisdom (Deuteronomy 4:6)."},
+ {id:"m12", n:"12", grp:"t", bk:"The whole Pentateuch", p:1,
+  t:"The Pentateuch contrasts the life of {faith} and {obedience} before the law with {lack} {of} {faith} and {disobedience} after the law.",
+  where:["<b>Before the law</b>: Abraham believed (Genesis 15:6) and “obeyed my voice and kept my charge, my commandments, my statutes, and my laws” (Genesis 26:5).",
+   "<b>After the law</b>: the golden calf (Exodus 32); the unbelief of the people (Numbers 13–14); the unbelief of the leadership (Numbers 20)."],
+  why:"Having the law did not produce faith. What is needed is a heart prepared to believe (Deuteronomy 30:6)."},
+ {id:"m12b", n:"12", grp:"t", bk:"Leviticus", p:1, note:"The study guide prints the number 12 twice. This is the second one.",
+  t:"In {Leviticus}, the {holy} God gave instructions that enabled Him to live among His chosen people and enabled His people to have fellowship with Him.",
+  where:["<b>Leviticus 1–7</b>: the sacrifices. Two categories (voluntary, obligatory) and five offerings: burnt, grain, fellowship, sin, guilt.",
+   "<b>Leviticus 8–10</b>: the glory of the LORD appears and fire consumes the offering (9:22–24); Nadab and Abihu offer strange fire and die (10:1–3): “By those who come near Me I will be treated as holy.”",
+   "<b>Leviticus 11–16</b>: impurity means being restricted from worship in the community. Chapter 16 is the Day of Atonement.",
+   "<b>Leviticus 17–27</b>: the Holiness Code. “You shall be holy, for I the LORD your God am holy” (19:2; also 11:45; 20:26)."],
+  why:"A holy God is now living in the middle of the camp. God is “wholly other,” so there must be a sanctified (set apart) God, a sanctified people and a sanctified tent."},
+ {id:"m13", n:"13", grp:"t", bk:"Numbers", p:1,
+  t:"Failure to {obey} by {faith} in the wilderness brought death, but the Lord’s desire to {bless} Israel was not frustrated. (Numbers)",
+  where:["<b>Numbers 1–10</b>: first acts of obedience; the law was having its intended results, blessing and order.",
+   "<b>Numbers 11–25</b>: persistent disobedience as faith waned. The people’s unbelief (13–14) and the leadership’s (20). The first generation dies.",
+   "<b>Numbers 14:18</b> repeats Exodus 34:6–7: merciful and gracious, but He will by no means clear the guilty.",
+   "<b>Numbers 22–24</b>: Balaam. Three attempts to thwart God’s plan are turned into blessing, just as in Exodus 1."],
+  why:"A whole generation dies, yet the promise stands: the Lord was faithful and will bring about His promises to Abraham. The second generation is counted and goes on."},
+ {id:"m14", n:"14", grp:"t", bk:"Numbers",
+  t:"Salvation would come at the hands of an {end-of-days} {king} who would {crush} His enemies.",
+  where:["<b>Numbers 24:9</b>: he crouches like a lion; “blessed are those who bless you” (echoing Genesis 49:9 and Genesis 12:3).",
+   "<b>Numbers 24:17–18</b>: a star out of Jacob and a scepter out of Israel shall crush the forehead of Moab; Edom shall be a possession."],
+  why:"Balaam’s poem ties the lion of Judah (Genesis 49) to the promise to Abraham (Genesis 12). The hope of the Pentateuch is a person, a king."},
+ {id:"m15", n:"15", grp:"t", bk:"Deuteronomy", p:1,
+  t:"Moses {exhorted} Israel to be faithful to the Lord and to the {Mosaic} {Covenant} so that she might go in and possess the Land. (Deuteronomy)",
+  where:["On the plains of Moab: four speeches and a blessing, moving from past (1:1–4:43) to present (4:44–28:68) to future (29–34).",
+   "Key texts: 4:5–6; 6:4–9; 30:11–14; 32:44–47; 34:9.",
+   "The offices: priests and judges (17:8–13), the king (17:14–20), the prophet (18:15–22)."],
+  why:"Deuteronomy is “both the conclusion of the Pentateuchal narrative and the definitive commentary” on what comes before it (Thomas Mann). Its words become the measure for the rest of the story: allegiance, worship, king, prophet."},
+ {id:"m16", n:"16", grp:"t", bk:"The whole Pentateuch",
+  t:"The solution to humanity’s plight of wandering in the wilderness is his promised {rest} and blessing brought by the hands of an end-of-days king from the line of {Judah} who will rule over a people whose {hearts} have been prepared to believe in Him.",
+  where:["The <b>heart</b>: plagued with evil (Genesis 6:5; 8:21); tested with the manna (Deuteronomy 8:2); Deuteronomy 10; and <b>Deuteronomy 30:6</b> above all.",
+   "The <b>king from Judah</b>: Genesis 49:8–10; Numbers 24:17."],
+  why:"This is the conclusion about the whole Pentateuch: its hope is a king <i>and</i> a people with changed hearts, the New Covenant (Deuteronomy 30:6)."},
+
+ {id:"m17", n:"17", grp:"f", bk:"Joshua", p:1,
+  t:"Yahweh gave the {land} of Canaan to Israel through holy {war} in accordance with His {promise} to Abraham.",
+  where:["<b>Joshua 1–12</b>: the conquest, beginning at Jericho about 1406 BC. Jericho (6) and Ai (7–8).",
+   "<b>Joshua 2:9–11</b>: Rahab confesses faith with words taken from Exodus 15:13–15.",
+   "<b>Joshua 21:43–45</b>: the LORD gave Israel all the land He had sworn to their fathers; “not one of the good promises … failed.”",
+   "Joshua is like Moses: two spies, crossing the Jordan on dry ground, circumcision before the conquest, “take off your sandals,” the javelin held up at Ai, called “servant of Yahweh.”"],
+  why:"The land promise to Abraham is being kept. Joshua is like Moses, but he is <b>not</b> the “second Moses” the Pentateuch expects (Deuteronomy 18); he must carefully follow the book of Moses."},
+ {id:"m18", n:"18", grp:"f", bk:"Joshua", p:1,
+  t:"Israel dwelt in part of the land according to her faithful {obedience} to Yahweh.",
+  where:["They conquered the land and ran the people out … <b>except</b>: 11:22; 15:63; 16:10; 17:12–13; 17:17–18; 19:47.",
+   "<b>Jericho and Ai</b>: when they violate the ban, Yahweh’s presence is not with them and they are defeated at Ai (ch. 7).",
+   "<b>Joshua 22–24</b>, the farewells: how do they stay in the land? The possibility of apostasy against the eventuality of apostasy."],
+  why:"“The Conquest was not to be understood as the final fulfillment of God’s promises. A future fulfillment still awaited God’s people” (Sailhamer). By the end, “a minor shadow portends a coming canopy of darkness” (Dempster)."},
+ {id:"m19", n:"19", grp:"f", bk:"Judges", p:1,
+  t:"The {failure} of Israel during the period of the Judges demonstrated Israel’s need for a righteous human {king}.",
+  where:["<b>Judges 1:1–3:6</b>: incomplete obedience becomes a snare.",
+   "<b>Judges 3:7–16:31</b>: the cycle, five words: <b>sin</b> (“did what was evil in the eyes of the Lord”), <b>servitude</b> (oppressors: Moabites, Midianites, Philistines), <b>supplication</b> (crying out, as in Egypt), <b>salvation</b> (a judge, by the Spirit), <b>security</b> (“rest”).",
+   "The judges go downhill: <b>Othniel</b> is the ideal pattern; <b>Samson</b> is a shadow of what a judge should be.",
+   "<b>Judges 17–21</b>: idolatry and immorality. “In those days there was no king in Israel; everyone did what was right in his own eyes” (17:6; 18:1; 19:1; 21:25)."],
+  why:"The book ends asking for a king. In class the statement was fuller: Israel needed “to acknowledge Yahweh as King and to await a righteous human king.”"},
+ {id:"m20", n:"20", grp:"f", bk:"Samuel",
+  t:"The people’s demand for a king like the {nations} was a {rejection} of God’s rule over them.",
+  where:["<b>1 Samuel 8–15</b>: Saul, “a king like the nations.”",
+   "Deuteronomy had already said what a king should be (17:14–20)."],
+  why:"Wanting a king was not the problem; Judges showed they needed one. Wanting one <i>like the nations</i> was a rejection of God as their king."},
+ {id:"m21", n:"21", grp:"f", bk:"Samuel",
+  t:"Saul was rejected as king because he failed to {listen} to the words of the Lord through the {prophet}.",
+  where:["<b>First offense, 1 Samuel 13:1–15</b>: “you have not kept the commandment of Yahweh your God” (v. 13).",
+   "<b>Second offense, 1 Samuel 15:1–35</b>: “to obey is better than sacrifice” (v. 22); “because you have rejected the word of the LORD, He has also rejected you from being king” (v. 23)."],
+  why:"A king in Israel stands under God’s word, which comes through the prophet. Saul would not listen; David does (statement 22)."},
+ {id:"m22", n:"22", grp:"f", bk:"Samuel",
+  t:"David’s actions—particularly his treatment of {Saul}—demonstrated that he was a man after God’s own {heart}.",
+  where:["David respects the king as God’s anointed one.",
+   "David fights for the Lord and for Saul’s kingdom in God’s strength (1 Samuel 17:45–47).",
+   "David listens to God’s word through the prophet.",
+   "David mourns the deaths of Saul and Jonathan (2 Samuel 1).",
+   "Selection (1 Samuel 16), confirmation (17), recognition (18); and the refrain “the LORD was with him” (16:18; 17:37; 18:12, 14, 28; 2 Samuel 5:10; 7:9)."],
+  why:"David is the opposite of Saul: he waits, he listens, and the Lord is with him. He lives out Hannah’s words, “not by might shall a man prevail” (1 Samuel 2:9)."},
+ {id:"m23", n:"23", grp:"f", bk:"Samuel",
+  t:"God promised to establish an {eternal} kingdom for David’s {seed}.",
+  where:["<b>2 Samuel 7</b>, the Davidic covenant (also 1 Chronicles 17).",
+   "It is the center of the book’s three poems: Hannah’s song (1 Samuel 2:1–10), the Davidic covenant, David’s songs (2 Samuel 22–23).",
+   "Hannah’s song is the “table of contents”: He brings low, He also exalts, and “He will give strength to His king, and will exalt the horn of His anointed” (2:10)."],
+  why:"This promise is the nucleus of the prophets’ message of hope (Isaiah 9:1–7; 11; Jeremiah 23:5–6; Ezekiel 34:23–24; Hosea 3:5; Zechariah 12:7–8; Daniel 7:13–14) and it is taken up in Luke 1:32–33. <b>The seed is the Messiah.</b>"},
+ {id:"m24", n:"24", grp:"f", bk:"Samuel · Kings",
+  t:"Samuel and Kings paint a picture of the future King in the likeness of David (the {warrior} king) and Solomon (the {wise} king).",
+  where:["<b>David</b>, the warrior king: 1 Samuel 16–2 Samuel 20.",
+   "<b>Solomon</b>, the wise king: 1 Kings 3:6–14; 4:29–34; 10:7–9, 23–24.",
+   "Solomon’s reign at its best: the throne established (2:24, 45), an abundant kingdom in safety (4:20–21, 25), rest on every side (5:4), the temple completed (7:51).",
+   "Wisdom and the seed of David: Isaiah 11; 1 Corinthians 1:30; Colossians 2:1–3."],
+  why:"Neither man is the promised king, but together they sketch him: one who defeats his enemies and one who rules in wisdom."},
+ {id:"m25", n:"25", grp:"f", bk:"Kings",
+  t:"Though Solomon ruled wisely and built the {temple}, his heart was not {wholly} {devoted} to the Lord and the kingdom was {torn} apart",
+  where:["<b>1 Kings 1–11</b>: kingdom established (1–3), wisdom (3–4), temple (5–9), wealth and glory (10), fall (11).",
+   "<b>1 Kings 8:61</b>: “Let your heart therefore be wholly devoted to the LORD.” <b>1 Kings 11:4</b>: “his wives turned his heart away after other gods; and his heart was not wholly devoted.”",
+   "<b>1 Kings 11:9–13</b>: the kingdom is torn."],
+  why:"Compare 8:61 with 11:4: the king who prayed those words did not keep them. David’s charge had been to walk by the Torah of Moses (1 Kings 2:2–4)."},
+ {id:"m26", n:"26", grp:"f", bk:"Kings",
+  t:"Solomon’s descent into false {worship} showed he was not the {seed} David had been promised.",
+  where:["Is Solomon the son 2 Samuel 7 envisioned? “Kind of.” But his kingdom does not make it past the first generation.",
+   "<b>1 Kings 11:4</b> and <b>11:9–13</b>.",
+   "There is no support that Solomon established the everlasting kingdom."],
+  why:"So the promise of 2 Samuel 7 is still open. The prophets read it as a promise of a future king: the seed is the Messiah."},
+ {id:"m27", n:"27", grp:"f", bk:"Kings",
+  t:"Jeroboam, the first king of Israel—the {Northern} Kingdom—immediately plunged the nation into idolatry at {Bethel} and {Dan}.",
+  where:["<b>1 Kings 12</b>: the kingdom divides. <b>Israel</b> (north): Jeroboam, of Ephraim; capital Samaria; worship at Bethel and Dan. <b>Judah</b> (south): Rehoboam, of Judah; capital Jerusalem; worship at the temple in Jerusalem.",
+   "Prophecy and fulfillment: <b>1 Kings 13:1–2</b> is fulfilled in <b>2 Kings 23:15–16</b>."],
+  why:"It breaks Deuteronomy’s rule of one place of worship (Deuteronomy 12; 1 Kings 8). The north starts in idolatry and never leaves it."},
+ {id:"m28", n:"28", grp:"f", bk:"Kings",
+  t:"Despite the long line of disobedient kings, the Lord patiently preserved {Judah}—the Southern Kingdom—because of the promises God made to {David}.",
+  where:["<b>2 Kings 18–25</b>: Judah alone. Hezekiah (18–20), Manasseh (21:1–18), Amon (21:19–26), Josiah (22:1–23:30).",
+   "<b>Josiah</b>: “Where is Torah?” Even Josiah’s strict adherence to Torah does not turn the Lord’s anger from Judah.",
+   "<b>Elijah and Elisha</b> (in the north) preserve faith during a corrupt generation, and so there is hope for the future.",
+   "<b>2 Kings 25:22–30</b>, the epilogue: Jehoiachin is released (561 BC). Hope?"],
+  why:"Judah outlasts Israel by well over a century, and the reason is the promise of 2 Samuel 7. Even in exile the line of David is still alive."},
+ {id:"m29", n:"29", grp:"f", bk:"Kings",
+  t:"Israel was exiled from the land by {Assyria} in {722} b.c.; Judah was exiled from the land by {Babylon} in {587/6} b.c. Both failed to {believe} and therefore remain allegiant to Yahweh.",
+  where:["<b>2 Kings 17</b>: the exile of Israel, the Northern Kingdom.",
+   "<b>2 Kings 25:8–21</b>: the exile of Judah to Babylon.",
+   "The Former Prophets as a whole: <b>into the land → 800+ years in the land → exile</b> (Joshua, Judges, Samuel, Kings)."],
+  why:"This is the “Deuteronomic History”: “the working out in history of the blessings and cursing of Deuteronomy in the life of the Israelite nation” (Dempster). The story ends where Genesis 3 began, in exile from the good land, waiting for the king."}
+];
+
+/* the dates he asks for, then the ones that are only on the slides */
+var MID_DATES = [
+ ["1446 BC", "The exodus. He asks you to remember this one.", 1],
+ ["722 BC", "The exile of the Northern Kingdom, Israel, by Assyria.", 1],
+ ["587/6 BC", "The exile of the Southern Kingdom, Judah, by Babylon.", 1],
+ ["about 1406 BC", "The conquest begins at Jericho.", 0],
+ ["970 BC", "The death of David.", 0],
+ ["561 BC", "The release of Jehoiachin.", 0],
+ ["about 2092 BC", "Abraham entered Canaan.", 0],
+ ["about 1876 BC", "Jacob’s family entered Egypt.", 0]
+];
+/* [term, meaning, 1 = the slide gives this meaning; 0 = the slide only lists the word] */
+var MID_TERMS = [
+ ["torah", "A general word for instruction, teaching or law.", 1],
+ ["the Torah", "The book of Moses, Genesis through Deuteronomy.", 1],
+ ["Pentateuch", "The same five books, Genesis through Deuteronomy.", 1],
+ ["Tanak", "The Hebrew Bible in its three parts: Torah, Prophets, Writings.", 1],
+ ["Former Prophets", "Joshua, Judges, Samuel, Kings.", 1],
+ ["Latter Prophets", "Isaiah, Jeremiah, Ezekiel, The Twelve.", 1],
+ ["Masoretic Text (MT)", "The Hebrew text of the Old Testament.", 1],
+ ["Septuagint (LXX)", "The Greek translation of the Old Testament.", 1],
+ ["Canon", "The books recognized as Scripture.", 0],
+ ["Elohim", "“God,” the name used in Genesis 1.", 1],
+ ["Yahweh (YHWH)", "God’s name, “the LORD”; why it matters is in Exodus 3.", 1],
+ ["Adonai", "“Lord”; said aloud in place of the name Yahweh.", 1],
+ ["Jehovah", "Another way of writing the name Yahweh.", 0],
+ ["El Shaddai", "“God Almighty” (Exodus 6:3).", 1],
+ ["Imago Dei", "The image of God (Genesis 1:26–27).", 0],
+ ["Yom Kippur", "The Day of Atonement (Leviticus 16).", 1],
+ ["Deuteronomic History", "Joshua through Kings: the blessings and cursings of Deuteronomy worked out in Israel’s history.", 1]
+];
+
+/* "In which book?" He says: be able to identify persons, themes and events by the book they appear in.
+   Every line is on the slides or the Joshua handout.                                             */
+var MID_WHICH = [
+ ["Creation in six days and the pattern of rest", "gen"], ["The seed of the woman", "gen"], ["Noah", "gen"], ["Babel", "gen"],
+ ["“He believed the LORD, and he counted it to him as righteousness”", "gen"], ["Jacob is renamed Israel", "gen"],
+ ["Joseph and Judah", "gen"], ["Jacob’s poem: Judah is a lion’s cub", "gen"], ["The garden in Eden", "gen"],
+ ["The ten plagues", "exo"], ["The call of Moses at Horeb", "exo"], ["God gives His name, Yahweh", "exo"], ["The crossing of the Red Sea", "exo"],
+ ["The Ten Commandments", "exo"], ["The Covenant Code", "exo"], ["The golden calf", "exo"], ["The plans for the tabernacle", "exo"],
+ ["The first Passover", "exo"], ["The manna begins", "exo"], ["Moses holds up his staff in the battle with the Amalekites", "exo"],
+ ["The five offerings: burnt, grain, fellowship, sin, guilt", "lev"], ["Nadab and Abihu offer strange fire", "lev"], ["The Day of Atonement", "lev"],
+ ["The Holiness Code", "lev"], ["Laws to protect ritual cleanness", "lev"], ["“You shall be holy, for I the LORD your God am holy”", "lev"],
+ ["Two censuses, one for each generation", "num"], ["Twelve spies, and only Joshua and Caleb believe", "num"], ["Balaam and Balak", "num"],
+ ["“A star shall come out of Jacob, and a scepter shall rise out of Israel”", "num"], ["The first generation dies in the wilderness", "num"], ["Harlotry at Shittim", "num"],
+ ["Moses’ speeches on the plains of Moab", "deu"], ["The law of the king", "deu"], ["The promise of a prophet like Moses", "deu"],
+ ["The LORD will circumcise the heart", "deu"], ["The name means “second law”", "deu"], ["Moses’ final blessing", "deu"],
+ ["Rahab hides two spies under stalks of flax", "jos"], ["The crossing of the Jordan on dry ground", "jos"], ["The fall of Jericho", "jos"], ["The defeat at Ai", "jos"],
+ ["The land is divided among the tribes", "jos"], ["The manna ceases", "jos"], ["The captain of the hosts of Yahweh: “take off your sandals”", "jos"], ["A scarlet cord in the window", "jos"],
+ ["Othniel", "jdg"], ["Ehud", "jdg"], ["Deborah", "jdg"], ["Gideon", "jdg"], ["Jephthah", "jdg"], ["Samson", "jdg"],
+ ["“Everyone did what was right in his own eyes”", "jdg"], ["The cycle: sin, servitude, supplication, salvation, security", "jdg"],
+ ["Hannah’s song", "sam"], ["The wickedness of Eli’s house", "sam"], ["The ark narrative", "sam"], ["“To obey is better than sacrifice”", "sam"],
+ ["Saul is rejected as king", "sam"], ["“Saul has slain his thousands; and David his ten thousands”", "sam"], ["The Davidic covenant", "sam"], ["David mourns Saul and Jonathan", "sam"],
+ ["Solomon’s wisdom", "kgs"], ["Solomon builds the temple", "kgs"], ["Idolatry at Bethel and Dan", "kgs"], ["Rehoboam and Jeroboam", "kgs"],
+ ["Elijah during the reign of Ahab", "kgs"], ["Elisha receives a double portion", "kgs"], ["Jehu, one of the few reformers", "kgs"],
+ ["Hezekiah, Manasseh, Josiah", "kgs"], ["The exile to Babylon", "kgs"], ["The release of Jehoiachin", "kgs"]
+];
+
+/* ---- helpers (pure, so the tests can run them) ---- */
+function midPlain(t){ return String(t).replace(/[{}]/g, ""); }
+function midBlanks(t){ var out = [], m, re = /\{([^}]+)\}/g; while((m = re.exec(t))) out.push(m[1]); return out; }
+function midBook(k){ for(var i = 0; i < MID_BOOKS.length; i++) if(MID_BOOKS[i].k === k) return MID_BOOKS[i]; return null; }
+/* the wrong choices are the books that sit nearest in order, so the question does not answer itself */
+function midWhichQuestion(idx){
+  var it = MID_WHICH[idx], at = 0, i;
+  for(i = 0; i < MID_BOOKS.length; i++) if(MID_BOOKS[i].k === it[1]) at = i;
+  var near = [];
+  for(i = 0; i < MID_BOOKS.length; i++) if(i !== at) near.push({k:MID_BOOKS[i].k, d:Math.abs(i - at) + Math.random() * 0.5});
+  near.sort(function(a, b){ return a.d - b.d; });
+  var opts = [it[1]].concat(near.slice(0, 4).sort(function(){ return Math.random() - 0.5; }).slice(0, 3).map(function(x){ return x.k; }));
+  opts.sort(function(a, b){ var ia = 0, ib = 0; MID_BOOKS.forEach(function(B, j){ if(B.k === a) ia = j; if(B.k === b) ib = j; }); return ia - ib; });
+  return {idx:idx, text:it[0], answer:it[1], opts:opts};
+}
+function midWhichRound(n){
+  var order = [], i;
+  for(i = 0; i < MID_WHICH.length; i++) order.push(i);
+  order.sort(function(){ return Math.random() - 0.5; });
+  return order.slice(0, n || 15).map(midWhichQuestion);
+}
+
 /* ================================================================ helpers */
 function $(s,r){ return (r||document).querySelector(s); }
 function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
@@ -2329,7 +2684,9 @@ if(typeof window === "undefined"){
     QB:QB, PAIRSETS:PAIRSETS, VERDICTS:VERDICTS, CHAPTERS:CHAPTERS, TOPIC_NAMES:TOPIC_NAMES, SEC_TITLES:SEC_TITLES, SEC_CHAPTER:SEC_CHAPTER,
     finalFifty:finalFifty, meaningOf:meaningOf, sameThing:sameThing,
     fromBank:fromBank, fromPair:fromPair, topicQuestions:topicQuestions, mockQuestions:mockQuestions, questionsByKeys:questionsByKeys,
-    deckFor:deckFor, matchRound:matchRound, verdictFor:verdictFor};
+    deckFor:deckFor, matchRound:matchRound, verdictFor:verdictFor,
+    MID_ST:MID_ST, MID_BOOKS:MID_BOOKS, MID_DATES:MID_DATES, MID_TERMS:MID_TERMS, MID_WHICH:MID_WHICH,
+    midPlain:midPlain, midBlanks:midBlanks, midBook:midBook, midWhichQuestion:midWhichQuestion, midWhichRound:midWhichRound};
   return;
 }
 
@@ -2660,8 +3017,91 @@ CHAPTERS.forEach(function(tp){
   KEYS[tp+"/cards"] = function(e){ return engines[tp+"Cards"].keys(e); };
   KEYS[tp+"/quiz"]  = function(e){ return engines[tp+"Quiz"].keys(e); };
 });
-var TOPICS = ["guide","s1","s2","s3","s4","s5","s6","exam"];
-var currentTopic = "guide", currentMode = {guide:"overview", s1:"notes", s2:"notes", s3:"notes", s4:"notes", s5:"notes", s6:"notes", exam:"mock"};
+/* ================================================================ the midterm tab */
+function midGroup(g){ return MID_ST.filter(function(s){ return s.grp === g; }); }
+function renderMidStatements(){
+  function one(s){
+    return '<details class="mst" id="'+s.id+'"><summary><span class="mnum">'+s.n+'</span><span class="mtxt">'+midPlain(s.t)+'<span class="mbk">'+s.bk+'</span></span></summary>'+
+      '<div class="mbody">'+(s.note ? '<p class="mnote">'+s.note+'</p>' : '')+
+      '<h4>Where it is in the text</h4><ul>'+s.where.map(li).join("")+'</ul>'+
+      '<h4>Why it matters</h4><p>'+s.why+'</p></div></details>';
+  }
+  $("#midSt").innerHTML =
+    '<div class="note-sec"><div class="point"><b>The point</b><p>The test covers the class discussion of <mark>Genesis through 2 Kings</mark>. For each statement, be able to show <mark>where it is in the biblical text</mark> and <mark>why it is important</mark>. He is not asking you to memorize them word for word.</p>'+
+    '<p class="able"><b>How to use this</b>Tap a statement to open it. Say the &ldquo;where&rdquo; and the &ldquo;why&rdquo; aloud first, then check.</p></div>'+
+    '<div class="toolbar" style="justify-content:center"><button class="btn" type="button" id="midOpenAll">Open all</button><button class="btn" type="button" id="midCloseAll">Close all</button></div>'+
+    '<h3 class="sub">Summary statements on the Torah / Pentateuch</h3>'+midGroup("t").map(one).join("")+
+    '<h3 class="sub">Summary statements on the Former Prophets</h3>'+midGroup("f").map(one).join("")+'</div>';
+  $("#midOpenAll").addEventListener("click", function(){ $$("#midSt details").forEach(function(d){ d.open = true; }); });
+  $("#midCloseAll").addEventListener("click", function(){ $$("#midSt details").forEach(function(d){ d.open = false; }); });
+}
+function renderMidBooks(){
+  $("#midBooks").innerHTML =
+    '<div class="note-sec"><div class="point"><b>The point</b><p>Know the <mark>structure of each book</mark> and what it adds to the story, and be able to say <mark>in which book</mark> a person, theme or event appears. The class follows the order of the Hebrew Bible, so this is the Pentateuch plus Joshua, Judges, Samuel and Kings.</p></div>'+
+    '<h3 class="sub">The dates</h3><div class="tblwrap"><table class="tbl n0"><tbody>'+
+      MID_DATES.map(function(d){ return '<tr'+(d[2] ? ' class="mkey"' : '')+'><td class="head">'+d[0]+'</td><td class="sm">'+d[1]+'</td></tr>'; }).join("")+'</tbody></table></div>'+
+    '<p class="hint">The first three are the ones he lists as the important dates. The rest are on the slides.</p>'+
+    '<h3 class="sub">The Hebrew Bible</h3><p><b>Torah</b> (Pentateuch): Genesis, Exodus, Leviticus, Numbers, Deuteronomy. <b>Prophets</b>: the Former Prophets (Joshua, Judges, Samuel, Kings) and the Latter Prophets (Isaiah, Jeremiah, Ezekiel, The Twelve). <b>Writings</b>: Psalms, Job, Proverbs, Ruth, Song of Solomon, Ecclesiastes, Lamentations, Esther, Daniel, Ezra-Nehemiah, Chronicles.</p>'+
+    '<p>The Former Prophets in one line: <b>into the land → 800+ years in the land → exile</b>.</p>'+
+    MID_BOOKS.map(function(B){
+      var sts = MID_ST.filter(function(s){ return s.bk.indexOf(B.n) >= 0; }).map(function(s){ return s.n; });
+      return '<h3 class="sub">'+B.n+'</h3><p class="mses">'+B.ses+'</p>'+
+        '<div class="tblwrap"><table class="tbl n0"><tbody>'+B.parts.map(function(p){ return '<tr><td class="sm">'+p[0]+'</td><td class="head">'+p[1]+'</td></tr>'; }).join("")+'</tbody></table></div>'+
+        '<ul>'+B.more.map(li).join("")+'</ul>'+
+        '<p class="mfind"><b>Found in '+B.n+'</b>'+MID_WHICH.filter(function(w){ return w[1] === B.k; }).map(function(w){ return w[0]; }).join(" · ")+'</p>'+
+        (sts.length ? '<p class="hint">Statements: '+sts.join(", ")+'</p>' : '');
+    }).join("")+
+    '<h3 class="sub">Terms to know</h3><div class="tblwrap"><table class="tbl n0"><tbody>'+
+      MID_TERMS.map(function(t){ return '<tr><td class="head">'+t[0]+'</td><td class="sm">'+t[1]+(t[2] ? '' : ' <span class="mown">(listed on the slides without a definition)</span>')+'</td></tr>'; }).join("")+'</tbody></table></div></div>';
+}
+function renderMidBlanks(){
+  function line(s){
+    var html = s.t.replace(/\{([^}]+)\}/g, function(_, w){ return '<button type="button" class="blank" data-w="'+w+'" aria-label="blank">&nbsp;</button>'; });
+    return '<li class="bline"><span class="mnum">'+s.n+'</span><span>'+html+'</span></li>';
+  }
+  $("#midBlanks").innerHTML =
+    '<div class="note-sec"><div class="point"><b>The point</b><p>Your professor reviews with these statements as <mark>fill-in-the-blank</mark> slides. Say the missing word, then tap the blank to check. Up to statement 19 these are the very words he leaves out on his slides.</p></div>'+
+    '<div class="toolbar" style="justify-content:center"><button class="btn" type="button" id="blShow">Show all</button><button class="btn" type="button" id="blHide">Hide all</button></div>'+
+    '<p class="scoreline" id="blCount"></p>'+
+    '<ul class="blist">'+MID_ST.map(line).join("")+'</ul></div>';
+  function count(){ $("#blCount").innerHTML = "Opened <b>"+$$("#midBlanks .blank.on").length+" of "+$$("#midBlanks .blank").length+"</b>"; }
+  function set(b, on){ b.classList.toggle("on", on); b.innerHTML = on ? b.getAttribute("data-w") : "&nbsp;"; }
+  $$("#midBlanks .blank").forEach(function(b){ b.addEventListener("click", function(){ set(b, !b.classList.contains("on")); count(); }); });
+  $("#blShow").addEventListener("click", function(){ $$("#midBlanks .blank").forEach(function(b){ set(b, true); }); count(); });
+  $("#blHide").addEventListener("click", function(){ $$("#midBlanks .blank").forEach(function(b){ set(b, false); }); count(); });
+  count();
+}
+function renderMidWhich(){
+  var root = $("#midWhich"), qs = [], qi = 0, score = 0, missed = [];
+  function start(){ qs = midWhichRound(15); qi = 0; score = 0; missed = []; show(); }
+  function show(){
+    if(qi >= qs.length){
+      root.innerHTML = '<div class="qcard card-corners">'+CORNERS+'<div class="qnum">Result</div><p class="qtext">'+score+' of '+qs.length+'</p>'+
+        (missed.length ? '<p class="feedback">Look again at: '+missed.map(function(q){ return q.text+' <b>('+midBook(q.answer).n+')</b>'; }).join("; ")+'.</p>' : '<p class="feedback">A clean round.</p>')+
+        '<div class="qfoot"><button class="btn primary" type="button" id="mwAgain">Another round</button></div></div>';
+      $("#mwAgain").addEventListener("click", start); return;
+    }
+    var q = qs[qi];
+    root.innerHTML = '<div class="qcard card-corners">'+CORNERS+'<div class="qnum">Question '+(qi+1)+' of '+qs.length+'</div>'+
+      '<div style="text-align:center;margin-top:10px"><span class="qtag">In which book?</span></div><p class="qtext">'+q.text+'</p>'+
+      '<div class="opts">'+q.opts.map(function(k, i){ return '<button type="button" class="opt" data-k="'+k+'"><span class="k">'+(i+1)+'</span>'+midBook(k).n+'</button>'; }).join("")+'</div>'+
+      '<p class="feedback"></p><div class="qfoot"><button class="btn primary next" type="button" hidden>Next &rsaquo;</button></div></div>';
+    $$(".opt", root).forEach(function(b){ b.addEventListener("click", function(){
+      if($(".opt[disabled]", root)) return;
+      var right = b.getAttribute("data-k") === q.answer;
+      $$(".opt", root).forEach(function(x){ x.disabled = true; if(x.getAttribute("data-k") === q.answer) x.classList.add("correct"); });
+      if(right) score++; else { b.classList.add("wrong"); missed.push(q); }
+      $(".feedback", root).innerHTML = (right ? "<b>Correct.</b> " : "<b>Not this one.</b> ")+"It is in <b>"+midBook(q.answer).n+"</b>: "+midBook(q.answer).ses.toLowerCase().replace(/^./, function(c){ return c.toUpperCase(); })+".";
+      var nb = $(".next", root); nb.hidden = false; nb.textContent = qi === qs.length - 1 ? "See results" : "Next";
+    }); });
+    $(".next", root).addEventListener("click", function(){ qi++; show(); });
+  }
+  start();
+}
+renderMidStatements(); renderMidBooks(); renderMidBlanks(); renderMidWhich();
+
+var TOPICS = ["mid","guide","s1","s2","s3","s4","s5","s6","exam"];
+var currentTopic = "mid", currentMode = {mid:"st", guide:"overview", s1:"notes", s2:"notes", s3:"notes", s4:"notes", s5:"notes", s6:"notes", exam:"mock"};
 function showMode(topic, mode){
   currentMode[topic] = mode;
   $$('.seg[data-modes="'+topic+'"] button').forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-mode") === mode)); });
@@ -2698,7 +3138,9 @@ document.addEventListener("keydown", function(e){
 (function(){
   var t = store.get("topic");
   TOPICS.forEach(function(k){ var m = store.get("mode."+k); if(m && $('.seg[data-modes="'+k+'"] button[data-mode="'+m+'"]')) currentMode[k] = m; });
-  showTopic(t && TOPICS.indexOf(t) >= 0 ? t : "guide");
+  /* the midterm tab is new: show it once even to a phone that remembers another tab */
+  if(!store.get("seenMid")){ t = "mid"; store.set("seenMid", "1"); }
+  showTopic(t && TOPICS.indexOf(t) >= 0 ? t : "mid");
 })();
 
 /* ---- offline copy: the service worker keeps the page on the phone ---- */

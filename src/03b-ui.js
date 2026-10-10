@@ -4,7 +4,9 @@ if(typeof window === "undefined"){
     QB:QB, PAIRSETS:PAIRSETS, VERDICTS:VERDICTS, CHAPTERS:CHAPTERS, TOPIC_NAMES:TOPIC_NAMES, SEC_TITLES:SEC_TITLES, SEC_CHAPTER:SEC_CHAPTER,
     finalFifty:finalFifty, meaningOf:meaningOf, sameThing:sameThing,
     fromBank:fromBank, fromPair:fromPair, topicQuestions:topicQuestions, mockQuestions:mockQuestions, questionsByKeys:questionsByKeys,
-    deckFor:deckFor, matchRound:matchRound, verdictFor:verdictFor};
+    deckFor:deckFor, matchRound:matchRound, verdictFor:verdictFor,
+    MID_ST:MID_ST, MID_BOOKS:MID_BOOKS, MID_DATES:MID_DATES, MID_TERMS:MID_TERMS, MID_WHICH:MID_WHICH,
+    midPlain:midPlain, midBlanks:midBlanks, midBook:midBook, midWhichQuestion:midWhichQuestion, midWhichRound:midWhichRound};
   return;
 }
 

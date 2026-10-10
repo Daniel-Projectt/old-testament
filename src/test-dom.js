@@ -45,7 +45,32 @@ function answerQuiz(root, label) {
 
 head('landing');
 ok(errors.length === 0, 'no errors while loading', errors.join(' || '));
-ok(visible($('#topic-guide')) && !visible($('#topic-s1')), 'opens on the Guide');
+ok(visible($('#topic-mid')) && !visible($('#topic-guide')) && !visible($('#topic-s1')), 'opens on the Midterm');
+{
+  ok($$('#midSt details.mst').length === 30 && $$('#midSt details[open]').length === 0, 'thirty statements, all closed at first');
+  click($('#midOpenAll')); ok($$('#midSt details[open]').length === 30, 'open all'); click($('#midCloseAll')); ok($$('#midSt details[open]').length === 0, 'close all');
+  ok($$('#midSt .mbody h4').length === 60 && /Genesis 49/.test($('#m1').textContent) && /2 Samuel 7/.test($('#m23').textContent) && /printed? the number 12 twice|prints the number 12 twice/.test($('#m12b').textContent), 'each has where and why; the double 12 is explained');
+  mode('mid', 'books');
+  ok(visible($('#midBooks')) && $$('#midBooks h3.sub').length === 12 && $$('#midBooks .mfind').length === 9 && /1446 BC/.test($('#midBooks').textContent) && /The ten plagues/.test($('#midBooks').textContent), 'nine books with structure, dates and terms');
+  mode('mid', 'blanks');
+  const bl = $$('#midBlanks .blank');
+  ok(visible($('#midBlanks')) && bl.length > 70 && $$('#midBlanks .bline').length === 30 && bl.every(b => b.textContent.trim() === ''), 'thirty lines, every blank hidden', bl.length);
+  ok(!/Lion|serpent|Assyria/.test($('#midBlanks .blist').textContent), 'the answers are not readable before tapping');
+  click(bl[1]); ok(bl[1].textContent === 'Lion' && bl[1].classList.contains('on') && /Opened 1 of/.test($('#blCount').textContent), 'tapping a blank shows the word');
+  click(bl[1]); ok(bl[1].textContent.trim() === '', 'tapping again hides it');
+  click($('#blShow')); ok($$('#midBlanks .blank.on').length === bl.length && /Assyria/.test($('#midBlanks .blist').textContent), 'show all'); click($('#blHide')); ok($$('#midBlanks .blank.on').length === 0, 'hide all');
+  mode('mid', 'which');
+  let n = 0, guard = 0;
+  while (guard++ < 40 && $('#midWhich .opt')) {
+    const os = $$('#midWhich .opt'); ok(os.length === 4, 'which book: four choices');
+    click(os[Math.floor(Math.random() * 4)]);
+    ok($$('#midWhich .opt.correct').length === 1 && /^(Correct|Not this one)\./.test($('#midWhich .feedback').textContent), 'which book: the right one is shown, with plain feedback');
+    click($('#midWhich .next')); n++;
+  }
+  ok(n === 15 && /of 15/.test($('#midWhich .qtext').textContent) && $('#mwAgain'), 'a round is fifteen questions and ends with a score', n);
+  click($('#mwAgain')); ok($$('#midWhich .opt').length === 4, 'another round starts');
+  topic('guide'); ok(visible($('#topic-guide')) && !visible($('#topic-mid')), 'the Guide still opens');
+}
 const items = $$('#guideRoot .gitem');
 ok(items.length === 29, 'guide shows all twenty-nine parts', items.length);
 ok(/0 of 29/.test($('#gCount').textContent), 'progress starts at 0 of 29', $('#gCount').textContent);
@@ -179,7 +204,7 @@ ok(Array.from(fSec.querySelectorAll('.num')).every(td => parseInt(td.textContent
 head('remembers where you were');
 topic('s3'); mode('s3', 'cards');
 ok(w.localStorage.getItem('ot.topic') === 's3' && w.localStorage.getItem('ot.mode.s3') === 'cards', 'topic and mode saved');
-ok($$('.topic-btn').length === 8, 'eight tabs');
+ok($$('.topic-btn').length === 9, 'nine tabs');
 topic('s6');
 ok(/Mount Carmel/.test($('#s6Notes').textContent) && $$('#s6Notes .note-sec').length === 6 && $$('#s6Notes .exam-tip').length === 4, 'the second half of Kings renders, with its four history boxes');
 topic('s4');
