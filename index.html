@@ -554,7 +554,7 @@ header .eyebrow{color:#9a7a44}
     <svg class="emblem" viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg>
     <p class="eyebrow">Study Guide</p>
     <h1>Old Testament</h1>
-    <p class="sub">Genesis through 2 Kings &middot; the midterm, from &ldquo;the beginning&rdquo; to the exile</p>
+    <p class="sub">Genesis through 2 Kings, then Isaiah &middot; from &ldquo;the beginning&rdquo; to the prophets</p>
     <svg class="orn" viewBox="0 0 320 44" aria-hidden="true"><use href="#flourish"/></svg>
   </header>
 
@@ -567,6 +567,7 @@ header .eyebrow{color:#9a7a44}
     <button class="topic-btn" role="tab" data-topic="s4" aria-selected="false">2 Samuel</button>
     <button class="topic-btn" role="tab" data-topic="s5" aria-selected="false">1 Kings</button>
     <button class="topic-btn" role="tab" data-topic="s6" aria-selected="false">2 Kings</button>
+    <button class="topic-btn" role="tab" data-topic="s7" aria-selected="false">Isaiah</button>
     <button class="topic-btn" role="tab" data-topic="exam" aria-selected="false">Practice Quiz</button>
   </nav>
 
@@ -714,6 +715,25 @@ header .eyebrow{color:#9a7a44}
       <div class="panel" data-panel="s6/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s6Quiz"></div></div>
     </section>
 
+    <!-- ================= ISAIAH ================= -->
+    <section class="topic" id="topic-s7" hidden>
+      <p class="intro">Isaiah, from your textbook (pp. 179&ndash;195): who wrote it, Isaiah&rsquo;s kings and the Syro-Ephraimitic Crisis, the book&rsquo;s six parts from &ldquo;Sin and the Messiah&rdquo; to &ldquo;Future glory,&rdquo; the servant songs, and why Isaiah opens the Latter Prophets. Green is what you highlighted.</p>
+      <div class="modes"><div class="seg" data-modes="s7">
+        <button type="button" data-mode="notes" aria-pressed="true">Notes</button>
+        <button type="button" data-mode="cards" aria-pressed="false">Flashcards</button>
+        <button type="button" data-mode="match" aria-pressed="false">Match</button>
+        <button type="button" data-mode="quiz" aria-pressed="false">Quiz</button>
+      </div></div>
+      <div class="panel" data-panel="s7/notes"><div id="s7Notes"></div></div>
+      <div class="panel" data-panel="s7/cards" hidden>
+        <p class="hint">Front: the name or the question. Back: the answer and where it sits in the notes. Space flips, arrows move.</p>
+        <div class="toolbar"><span class="label">Deck</span><div class="seg" data-decks="s7"></div><button class="btn" type="button" data-shuffle="s7">Shuffle deck</button></div>
+        <div id="s7Cards"></div>
+      </div>
+      <div class="panel" data-panel="s7/match" hidden><p class="hint">Tap a name, then the line that goes with it.</p><div id="s7Match"></div></div>
+      <div class="panel" data-panel="s7/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s7Quiz"></div></div>
+    </section>
+
     <!-- ================= PRACTICE EXAM ================= -->
     <section class="topic" id="topic-exam" hidden>
       <p class="intro">Questions from all three parts of the chapter &mdash; names, places, numbers, the order of events, and application questions that describe a scene and ask which one it is. Reshuffled each run, with the reason behind every answer.</p>
@@ -740,8 +760,8 @@ header .eyebrow{color:#9a7a44}
    chapter, so everything here stays inside the notes.                         */
 var COURSE = {
  code:"Old Testament Literature", term:"Cedarville University",
- exam:"1 and 2 Samuel &middot; 1 and 2 Kings &mdash; Samuel, Saul, David and Solomon",
- scope:"Your class notes on 1 Samuel &mdash; the last judge, the first king, and the shepherd God chose instead &mdash; and your textbook on 2 Samuel, David&rsquo;s kingdom, and 1 and 2 Kings, losing the land.",
+ exam:"1 and 2 Samuel &middot; 1 and 2 Kings &middot; Isaiah &mdash; Samuel, Saul, David, Solomon and the prophet of sin and salvation",
+ scope:"Your class notes on 1 Samuel &mdash; the last judge, the first king, and the shepherd God chose instead &mdash; and your textbook on 2 Samuel, David&rsquo;s kingdom, and 1 and 2 Kings, losing the land; then Isaiah, the first of the Latter Prophets.",
  rules:[
   "<b>1 Samuel 1&ndash;7</b> is Samuel, <b>8&ndash;15</b> is Saul, <b>16&ndash;31</b> is the new king, David. <b>2 Samuel</b> is David&rsquo;s kingdom: <b>1&ndash;10</b> he builds it, <b>11&ndash;19</b> his sin and its consequences, <b>20&ndash;24</b> his last years.",
   "<b>2 Samuel 7</b> is the high point: God promises David a <b>house</b> &mdash; a throne forever &mdash; the promise that leads to the Messiah.",
@@ -851,7 +871,30 @@ var GUIDE = {sections:[
    subs:[["Hezekiah", "s6-hezekiah"], ["Manasseh", "s6-manasseh"], ["Josiah", "s6-josiah"], ["Josiah’s death", "s6-jdeath"]]},
   {id:"g6-fall", t:"The fall of Jerusalem and the conclusion (2 Kings 23–25)", a:"s6-fall",
    short:"Jehoahaz, Jehoiakim, Jehoiachin, Zedekiah. Nebuchadnezzar takes Judah in 605 BC (Daniel), exiles Jehoiachin and Ezekiel in 597, destroys Jerusalem and the temple in 587. Cyrus takes Babylon in 539. Jehoiachin honored after 37 years: the promises to Abraham and David remain.",
-   subs:[["Last four kings", "s6-four"], ["587 BC", "s6-587"], ["Hope", "s6-hope"], ["Conclusion", "s6-conclusion"]]}]}
+   subs:[["Last four kings", "s6-four"], ["587 BC", "s6-587"], ["Hope", "s6-hope"], ["Conclusion", "s6-conclusion"]]}]},
+
+ {h:"Isaiah · Prophet of sin and salvation (textbook, pp. 179–195)", tp:"s7", items:[
+  {id:"g7-intro", t:"Isaiah’s day and the book’s unity", a:"s7-intro",
+   short:"Isaiah lives in the days of 2 Kings 16–20; his words address about 742–538 BC. The authorship debate (since the 1800s): two authors, or one? The book operates as a unity. Ministry 740–687 BC under Jotham, Ahaz, Hezekiah; the Syro-Ephraimitic Crisis; Immanuel and the two sons.",
+   subs:[["At a glance", "s7-chart"], ["Isaiah and the kings", "s7-life"], ["Who wrote Isaiah?", "s7-author"], ["Signs for Judah", "s7-signs"]]},
+  {id:"g7-messiah", t:"Sin and the Messiah (Isaiah 1–12)", a:"s7-messiah",
+   short:"Israel like a rebellious child, like Sodom and Gomorrah; every level guilty. Three courses of action: a day of judgment that leaves a remnant, warning through prophets (Isaiah’s call in ch. 6), and a righteous son of David — the virgin-born son of 7:14 (Matthew 1:22–23).",
+   subs:[["Israel’s sin", "s7-sin"], ["A day of judgment", "s7-first"], ["Warning, and Isaiah’s call", "s7-second"], ["A son of David", "s7-third"], ["The map", "s7-war"]]},
+  {id:"g7-nations", t:"Sin and the nations (Isaiah 13–27)", a:"s7-nations",
+   short:"All are accountable to God, and he loves all nations. Pride brings judgment: Babylon first, then Assyria (crushed in Judah; gone by 612 BC), Moab, Damascus, Egypt and Cush. Yet Egypt and Assyria will worship Yahweh together. The final day includes the whole world; death swallowed up.",
+   subs:[["Babylon, then Assyria", "s7-babylon"], ["Moab, Syria, Egypt and Cush", "s7-neighbors"], ["The final day", "s7-world"]]},
+  {id:"g7-fall", t:"Sin and the fall of Israel (Isaiah 28–35)", a:"s7-fall",
+   short:"Israel and Judah refuse to repent; their only real ally is the Lord. Six woes. The north, led by drunkards, falls in 722 BC. Jerusalem’s “covenant with death” is its pro-Egypt alliance; trusting Pharaoh brings disgrace. Judah repeats Samaria’s mistakes; a remnant returns rejoicing.",
+   subs:[["Six woes", "s7-woes"], ["Covenant with death", "s7-death"], ["The remnant", "s7-remnant"]]},
+  {id:"g7-reprieve", t:"Jerusalem’s reprieve (Isaiah 36–39)", a:"s7-reprieve",
+   short:"701 BC: Sennacherib takes every fortified city but Jerusalem; 185,000 Assyrians die. The reprieve gives time to repent and proves Isaiah right. 37:35 was misread as unconditional. The box: Siloam tunnel, the clay prism, 15 more years, Merodach-Baladan’s envoys, Manasseh. Chapters 38–39 turn toward Babylon.",
+   subs:[["701 BC", "s7-siege"], ["A promise misread", "s7-misread"], ["The turn toward Babylon", "s7-transition"]]},
+  {id:"g7-servant", t:"Salvation and the servant of God (Isaiah 40–55)", a:"s7-servant",
+   short:"Comfort for an exiled people from two ideas: renewal after the Day of the Lord, and the servant. First, Cyrus of Persia, named in 44:28 and 45:1, takes Babylon in 539 BC. Second, the servant: Duhm’s four songs, ending in 52:13–53:12, where he suffers for the nation. The New Testament reads them as Christ.",
+   subs:[["Comfort", "s7-comfort"], ["A nation from the east", "s7-cyrus"], ["The servant songs", "s7-songs"], ["In the New Testament", "s7-nt"], ["40–55 mirrors 1–12", "s7-parallel"]]},
+  {id:"g7-glory", t:"Future glory for God’s people (Isaiah 56–66); the conclusion", a:"s7-glory",
+   short:"Swift salvation for Israel and redemption for all nations: the obedient of any race climb the holy mountain. Healing by mourning and confession; good news, a radiant bride, a new heaven and earth. One last call to decide. Isaiah is the perfect book to begin the Latter Prophets, for three reasons.",
+   subs:[["All nations", "s7-mountain"], ["Repentance or rebellion", "s7-choice"], ["New heavens and earth", "s7-new"], ["Conclusion", "s7-conclusion"]]}]}
 ]};
 
 /* ================================================================ Samuel, 1 Samuel 1–7
@@ -2737,6 +2780,398 @@ function midMatchRound(setIdx, n){
   return {items:items, leftTitle:s.left, rightTitle:s.right, name:s.name};
 }
 
+/* ================================================================ Isaiah: prophet of sin and salvation
+   From her textbook, Old Testament Survey, chapter 8, pp. 179–195 (photos): the chart, the
+   authorship debate, the two "For Greater Historical Understanding" boxes, the two maps, the
+   book's six parts (1–12, 13–27, 28–35, 36–39, 40–55, 56–66) and the conclusion. Green marks are
+   the lines she highlighted, plus a few dates a quiz is likely to ask.                         */
+CH.s7 = {n:7, title:"Prophet of sin and salvation", short:"Isaiah", ref:"Isaiah 1–66",
+ notes:[
+  {id:"s7-intro", h:"Isaiah’s day and the book’s unity", body:
+   '<div class="point"><b>The point</b><p>Isaiah lived in the difficult days of <b>2 Kings 16–20</b>, while Assyria grew in power, conquered Samaria and threatened Jerusalem. <mark>All told, his life and words address Israel’s history from about <b>742 to 538 BC</b>.</mark> Scholars debate who wrote the book, but <mark>both sides acknowledge that Isaiah presents a <b>unified message</b></mark>.</p><p class="able"><b>Be able to</b> give the chart’s plot in one breath, the arguments for two authors and the answers to them, Isaiah’s dates and kings, and what each of the three signs meant.</p></div>'+
+   '<h3 class="sub" id="s7-chart">At a glance</h3>'+
+   '<div class="tblwrap"><table class="tbl n0">'+
+   '<tr><th>Plot</th><td>Israel’s sin causes Yahweh to send <b>Assyria</b> to punish the people. God delivers Jerusalem from destruction and defeats the Assyrians, giving the people a <b>second chance</b>. God then comforts Judah yet threatens a future <b>Babylonian</b> invasion. God ultimately redeems persons from many nations through the work of the coming <b>son of David</b>.</td></tr>'+
+   '<tr><th>Major characters</th><td>Isaiah, Yahweh, Ahaz, Hezekiah, Israel’s Remnant, Assyria and Babylon</td></tr>'+
+   '<tr><th>Major events</th><td>Isaiah’s call, Ahaz’s fear of Samaria and Syria, Assyria’s invasion of Israel, God’s deliverance of Jerusalem, God’s comforting of Israel, Babylon’s future invasion of Judah, and God’s final judgment and restoration</td></tr></table></div>'+
+   '<h3 class="sub" id="s7-life">Isaiah and the kings</h3>'+
+   '<ul><li>Isaiah <b>confronts King Ahaz</b> for making an alliance with Assyria (7:1–14).</li>'+
+   '<li>He <b>counsels Hezekiah</b> to trust Yahweh to repel the Assyrians (37:21–35).</li>'+
+   '<li>He <b>anticipates the Babylonian invasion</b> (39:5–8) and <b>predicts the rise of Persia</b> (44:28–45:7).</li></ul>'+
+   '<h3 class="sub" id="s7-author">Who wrote Isaiah?</h3>'+
+   '<ul><li>Partly because of the book’s incredible theological and historical scope, scholars debate whether Isaiah wrote the entire prophecy. Some questioned it earlier, but <mark>intensive discussion began in the <b>nineteenth century</b></mark>.</li></ul>'+
+   '<div class="tblwrap"><table class="tbl n0"><tr><th>Argument for two (or more) authors</th><th>The answer given</th></tr>'+
+   '<tr><td>Chapters 1–39 focus on the <b>Assyrian</b> threat; 40–66 emphasize the <b>Babylonian</b> conquest.</td><td>Assyria and Babylon are mentioned in <b>both halves</b>.</td></tr>'+
+   '<tr><td>Jerusalem is intact in 1–39 but destroyed in 40–66.</td><td>Jerusalem is threatened and intact in both 1–39 and 40–66.</td></tr>'+
+   '<tr><td><b>Cyrus</b>, who rules Persia and lets the Jews return home after 539 BC, is named in 44:28 and 45:1.</td><td>Isaiah <b>predicts</b> Israel’s future in these texts.</td></tr>'+
+   '<tr><td>The first half stresses sin and punishment; the second promises restoration.</td><td>Sin, punishment and restoration are common prophetic themes, so they are not unusual in any part.</td></tr></table></div>'+
+   '<ul><li>These reasons led some to suggest two (or more) authors: <b>one who lived about 740–700 BC</b> and <b>one about 550–500 BC</b>.</li>'+
+   '<li><mark>Your textbook basically accepts the arguments for the <b>unity of Isaiah</b> and tries to supplement them with other evidence.</mark></li>'+
+   '<li>Recently scholars from a variety of viewpoints have noted the many ways the book operates <mark><b>as a unity</b></mark>. They disagree whether this unity comes from one author or from many persons supplementing Isaiah’s work.</li>'+
+   '<li>As with the Pentateuch, first-time readers should be aware of the issue, but beginning students ought to master the basics of prophetic literature first.</li></ul>'+
+   '<div class="exam-tip"><b>For greater historical understanding</b><ul>'+
+   '<li><mark>Isaiah ministered during an era of <strong>international fear and uncertainty</strong>, from <strong>740 BC to 687 BC</strong>.</mark> A court prophet to <strong>Jotham (740–731 BC)</strong>, <strong>Ahaz (731–715 BC)</strong> and <strong>Hezekiah (715–687 BC)</strong>, he spoke God’s words to both king and people.</li>'+
+   '<li>He received his call in a vision in the year of <strong>King Uzziah’s death (c. 740 BC)</strong>. Uzziah was strong and Judah prosperous; Jotham walked with the Lord as Uzziah had, but <strong>Ahaz did not</strong>, and Judah became weak.</li>'+
+   '<li><mark><strong>Assyria</strong> gained in power beginning with <strong>Tiglath-pileser III’s reign (745–727 BC)</strong>.</mark> Its armies were known for violence and cruelty; its economy depended on tribute and plunder.</li>'+
+   '<li>Northern Israel was strong under <strong>Jeroboam II (782–753 BC)</strong>, then declined rapidly through short-lived reigns and usurpers.</li>'+
+   '<li><mark>In 740 BC <strong>Pekah, son of Remaliah</strong>, became king of Israel and made an alliance with <strong>Rezin, king of Damascus</strong>, to foment rebellion and attack Assyria.</mark> They threatened to attack Judah if Ahaz did not join. Pekah had earlier killed <strong>120,000</strong> men of Judah (2 Ch 28:9).</li>'+
+   '<li><mark>Ahaz sought help from the threats of these two kings in what is called the <strong>Syro-Ephraimitic Crisis (735–734 BC)</strong>.</mark></li>'+
+   '<li>Ahaz did not turn to the Lord. He sent tribute to Assyria to attack Rezin and Pekah, and Judah became a <strong>vassal</strong> (servant nation) to Assyria. <mark>Tiglath-pileser conquered Rezin of Syria (<strong>732 BC</strong>) and supported the overthrow of Pekah by <strong>Hoshea</strong> as king of Samaria.</mark> Hoshea later rebelled and appealed to Egypt.</li>'+
+   '<li>Assyria, led by <strong>Shalmaneser V</strong>, carried the northern tribes into captivity in <strong>722 BC</strong>. Israelites were settled near <mark><strong>Haran</strong></mark> (where Abraham had lived) and in modern-day Iran.</li>'+
+   '<li>Assyria moved tribes from <strong>southern Arabia</strong> into Samaria: the nucleus of the <strong>Samaritans</strong>. The Jews hated them as pagans even though they had assimilated a form of Yahweh worship.</li></ul></div>'+
+   '<h3 class="sub" id="s7-signs">Signs for Judah</h3>'+
+   '<ul><li>During the crisis Isaiah told Ahaz to ask the Lord for a sign, but <b>Ahaz refused</b>. <mark>So God promised to send <b>“Immanuel”</b> as a sign: “God with us.”</mark></li>'+
+   '<li><mark>Isaiah’s two sons were signs to Judah: <b>Maher-Shalal-Hash-Baz</b> (“spoil speeds, prey hastens”) and <b>Shear-Jashub</b> (“a remnant shall return”).</mark></li>'+
+   '<li><mark>Isaiah lived <b>naked and barefoot for three years</b> to show what life in exile would be like</mark> (20:1–6).</li></ul>'},
+
+  {id:"s7-messiah", h:"Sin and the Messiah (Isaiah 1–12)", body:
+   '<div class="point"><b>The point</b><p>Israel has broken its covenant, yet Yahweh intends to restore righteousness to Jerusalem and to the nations. <mark>To do it he takes <b>three courses of action</b>: a <b>day of judgment</b>, <b>warning</b> through prophets, and a <b>righteous son of David</b>.</mark> <mark>Each part of this three-pronged strategy receives major treatment in the other prophetic books and in the rest of the whole Bible.</mark></p><p class="able"><b>Be able to</b> name the three courses of action in order, tell Isaiah’s call in chapter 6 step by step, and explain the Immanuel promise to Ahaz.</p></div>'+
+   '<h3 class="sub" id="s7-sin">Israel’s sin</h3>'+
+   '<ul><li>Like Elijah, Elisha and Micaiah, Isaiah knows Israel has broken its covenant. <mark>Israel acts like a <b>rebellious child</b> or a stupid animal: they do not obey the Lord, their Maker</mark> (1:2–3), and model evil, corruption and injustice (1:4).</li>'+
+   '<li><mark>God’s people have become like <b>Sodom and Gomorrah</b></mark> (1:10), despite the Lord’s constant attempts to change them (1:5–9, 18–20).</li>'+
+   '<li><mark><b>Every level of society</b> — rich, poor, rulers or servants — shares the guilt</mark> (1:23).</li>'+
+   '<li><mark>Yahweh intends to restore righteousness to Jerusalem</mark> (1:24–31) <mark>and to nations outside Israel</mark> (2:1–4).</li></ul>'+
+   '<h3 class="sub" id="s7-first">First: a day of judgment</h3>'+
+   '<ul><li><mark>First, God will send <b>a day of judgment</b> to cleanse the people.</mark> This “Day of the Lord” will remove sin from the land (2:6–22).</li>'+
+   '<li>Whether called <b>“the last days”</b> (2:2), <b>“that day”</b> (2:11) or <b>“the Day of the Lord”</b> (2:12), it is the same event. Israel will be devastated (3:1–4:1), its rulers’ pride and injustice addressed (5:8–13), its population deported (5:26–30).</li>'+
+   '<li>Harsh as they seem, these actions come only <b>after Israel has had time to repent</b>, and they lead ultimately to restoration (4:2–6).</li>'+
+   '<li><mark>The “day” will purify Israel, leaving a righteous minority called <b>“the remnant”</b> (4:3) to begin anew.</mark> Other prophets share these convictions.</li></ul>'+
+   '<h3 class="sub" id="s7-second">Second: warning, and Isaiah’s call</h3>'+
+   '<ul><li><mark><b>Warning always precedes punishment</b> in the Old Testament</mark>, so Yahweh chooses and guides prophets, who remind the people of their covenant obligations. Isaiah 1–5 are messages from King Uzziah’s reign.</li></ul>'+
+   '<ol><li>When <b>Uzziah dies (c. 740 BC)</b>, God appears to Isaiah in a vision, seated on a throne. Angels declare, <mark><b>“Holy, holy, holy is the Lord of hosts; the whole earth is full of his glory”</b></mark> (6:3).</li>'+
+   '<li>Sensing God’s purity and greatness, Isaiah realizes his own <b>smallness and sinfulness</b> (6:4–5).</li>'+
+   '<li>When he confesses his sin, <b>God forgives him</b> and explains the next stage of his ministry (6:6–7).</li>'+
+   '<li>He must preach against the nation’s sin (6:9–10), but <b>not expect to convince them</b> to reform (6:11–13). He will preach until only a small portion of Israel remains (6:13).</li></ol>'+
+   '<p><mark>He does not relish his task, but he agrees to do as God commands (6:8, 11), and carries it out faithfully to the end of his life.</mark></p>'+
+   '<h3 class="sub" id="s7-third">Third: a righteous son of David</h3>'+
+   '<ul><li>Yahweh’s third action develops from the promise made to David in <b>2 Samuel 7:1–17</b>. <mark>Eventually, a righteous “son” of David will arise, lead the people to serve God, and end the people’s punishment.</mark></li>'+
+   '<li>It first emerges when Isaiah tells <b>Ahaz</b>, a rebellious Davidic descendant, that <b>“the virgin shall conceive and give birth to a son”</b> whose presence will mean God is with the people (7:14).</li>'+
+   '<li>God offers it as a <b>pledge of protection</b>: Ahaz fears Israel and Syria will invade, replace him with another king, and force an alliance against Assyria. Ahaz need not fear or trust Assyria; he must <b>trust Yahweh</b> (7:1–9). Sadly, he refuses.</li>'+
+   '<li><mark>God’s covenant with David will be kept no matter what the historical circumstances.</mark> <b>Matthew 1:22–23</b> applies this promise of a virgin-born son to Jesus’ birth.</li>'+
+   '<li>After Assyria punishes Israel (8:1–9:1), a person from David’s family will <b>rule in wisdom, power and peace</b> (9:2–7), begin an era of unprecedented peace (11:1–9), and gather Israel’s exiles, the remnant (11:10–16). <b>Gentiles</b> will be included (11:10–11).</li>'+
+   '<li>As Israel nears destruction, the prophets say only this individual can save the nation; after it, they look to him to rebuild Israel. The New Testament teaches that <b>Jesus fulfills</b> these predictions and will judge the world on the day of Yahweh.</li></ul>'+
+   '<h3 class="sub" id="s7-war">The map: the Syro-Ephraimite War</h3>'+
+   '<ul><li>2 Kings 16:5–16; Isaiah 7; 2 Chronicles 28:5–21.</li>'+
+   '<li><b>Pekah, son of Remaliah</b>, king of Israel. <b>Damascus and Israel besiege Jerusalem</b>, and <b>Isaiah urges Ahaz to remain steadfast</b>.</li>'+
+   '<li>The <b>Philistines</b> raid towns in Judah; the <b>Edomites</b> attack Judah and take prisoners.</li>'+
+   '<li><b>Rezin, king of Aram</b>, drives out the men of Judah and recovers <b>Elath</b> for Aram.</li></ul>'},
+
+  {id:"s7-nations", h:"Sin and the nations (Isaiah 13–27)", body:
+   '<div class="point"><b>The point</b><p>Yahweh rules all nations. <mark>Isaiah 13–27 once more reminds us that <b>all individuals and countries are accountable to God</b> and that <b>Yahweh loves all nations</b>.</mark> Time after time, <b>pride</b> that leads to idolatry and oppression is the reason for his displeasure. <mark>The final day of Yahweh will include <b>the entire world</b></mark>, and it brings salvation, even the defeat of death.</p><p class="able"><b>Be able to</b> say why Babylon and Assyria fall, name the surprising promises for Cush, Egypt and Assyria, and tell what Isaiah 25–26 say about death.</p></div>'+
+   '<h3 class="sub" id="s7-babylon">Babylon, then Assyria (Isaiah 13–14)</h3>'+
+   '<ul><li>Most of the nations judged — Moab, Edom, Syria, Philistia — are Israel’s traditional neighboring enemies. Others — Egypt, Assyria, Babylon — are its most consistently powerful enemies.</li>'+
+   '<li><mark>God announces <b>Babylon’s fate first, followed by Assyria’s</b> (chaps. 13–14).</mark> Babylon kept a high profile from its great law-giving king <b>Hammurabi (1792–1750 BC)</b> until Persia conquered it in <b>539 BC</b>. In Isaiah’s day it kept trying to break free of Assyria (720–708 BC), and Assyria conquered it in 729, 708 and 689 BC.</li>'+
+   '<li><mark>Babylon’s most famous deed in Scripture was <b>destroying Jerusalem in 587 BC</b>.</mark></li>'+
+   '<li>Isaiah predicts northern Israel’s exile (14:3) and Babylon’s ultimate defeat (13:17–22). <mark>Babylon’s <b>oppression</b> of Israel and other nations (14:3–8) and its <b>pride</b> (14:13–15) lead to its destruction.</mark> Its worst mistreatment came in the era of its greatest influence (c. 605–539 BC).</li>'+
+   '<li>Assyria receives shorter treatment (14:24–27). <mark>This mighty conqueror will be <b>crushed in Judah</b> (14:25).</mark> Isaiah already said that after Assyria smashes Israel (8:1–10), Assyria will be judged by God (10:5–34): <mark>Yahweh sent Assyria to punish sinful countries, yet the punisher turned into an arrogant and cruel destroyer (10:7).</mark></li>'+
+   '<li><mark>Assyria ceases to be a military power after <b>Babylon defeats them in 612 BC</b></mark>, so Isaiah’s prediction comes true.</li></ul>'+
+   '<h3 class="sub" id="s7-neighbors">Moab, Syria, Egypt and Cush</h3>'+
+   '<ul><li><b>Moab</b> is terribly proud (16:6) and will be decimated “in three years” (16:14).</li>'+
+   '<li><mark><b>Syria</b>, Israel’s constant foe in 1 and 2 Kings, will fall. <b>Damascus</b> “will become a heap of ruins” (17:1).</mark> Northern Israel, which trusted Syria instead of Yahweh (7:1–9), will fall too (17:4–14). Trust in the armies of allies is very temporary security.</li>'+
+   '<li><b>Ethiopia (Cush) and Egypt</b> will share Syria’s fate; they are linked because <b>an Ethiopian ruler led Egypt</b> in Isaiah’s lifetime. Isaiah walks naked and barefoot for three years: they will go naked and barefoot into exile (20:1–6) — a warning not to hope Egypt and Cush will defeat Assyria (20:5–6).</li>'+
+   '<li>Yet Yahweh has special plans for them. <mark>After the Day of the Lord, <b>Ethiopians will worship God in Jerusalem</b> (18:1–7). Even more incredibly, <b>Egypt and Assyria will worship Yahweh together</b> (19:19–23).</mark> Israel, Assyria and Egypt will be <b>equals</b> (19:24), all God’s people (19:25). God rules history so salvation can reach all races.</li>'+
+   '<li>Further messages against Babylon (21:1–10), Judah (chap. 22), Edom (21:11–12), Arabia (21:13–17) and Tyre (chap. 23): judgment administered chiefly by <b>the Assyrians</b>, a reminder that an even greater judgment looms.</li></ul>'+
+   '<h3 class="sub" id="s7-world">The final day of Yahweh (Isaiah 24–27)</h3>'+
+   '<ul><li><mark>Isaiah now summarizes the results of the final day of Yahweh. This day will include <b>the entire world</b>.</mark> Distress for all people (24:1–3); the earth dries up and withers (24:4–16); a time of terror (24:17–18); the disobedient punished (24:21–23).</li>'+
+   '<li><mark>Yet <b>Yahweh will save the just and restore Israel</b>.</mark> Isaiah praises God for saving “the poor” and “the needy” (25:4), for restoring Jerusalem in peace (26:1–15), and for gathering the exiles from the defeat of 722 BC (27:12–13).</li>'+
+   '<li><mark>Clearly the Day of the Lord will ultimately save all who believe in Yahweh. <b>Salvation can only emerge after sin has been purged</b> from the land.</mark> It will benefit the nations too, since only punishment will lead them to accept Yahweh’s rule (19:19–25).</li>'+
+   '<li>This salvation includes the defeat of humanity’s most common enemy, <b>death</b>: God “will swallow up death forever” (25:8 ESV) and “wipe away tears from all faces”; “the dead shall live; their bodies shall rise” (26:19 ESV).</li>'+
+   '<li><b>Paul</b> uses this passage in <b>1 Corinthians 15</b>; <b>John</b> uses its images for a new Jerusalem in <b>Revelation 21:1–8</b>.</li></ul>'},
+
+  {id:"s7-fall", h:"Sin and the fall of Israel (Isaiah 28–35)", body:
+   '<div class="point"><b>The point</b><p>Time is running out, and Yahweh’s patience begins to fade. <mark>Despite offers of forgiveness, Israel and Judah continue to refuse to repent.</mark> Judah looks to Egypt for help, <mark>but their <b>only real ally now is the Lord</b>.</mark> <mark><b>Six times</b></mark> Yahweh warns of “woes” to come.</p><p class="able"><b>Be able to</b> explain the “covenant with death”, say why trusting Pharaoh fails, and list what the returning remnant will see in chapter 35.</p></div>'+
+   '<h3 class="sub" id="s7-woes">Six woes; the north on the brink</h3>'+
+   '<ul><li>The six woes: <b>28:1; 29:1, 15; 30:1; 31:1; 33:1</b>. Failure to repent will bring judgment (chap. 34), though punishment will eventually work to the faithful ones’ advantage (chap. 35).</li>'+
+   '<li>Northern Israel teeters on the brink (28:1–4). <b>Led by drunkards</b>, the nation has no future; the priests have no respect for God’s word and teach improperly (28:9–10). Destruction occurs in <b>722 BC</b>.</li></ul>'+
+   '<h3 class="sub" id="s7-death">Jerusalem’s “covenant with death”</h3>'+
+   '<ul><li>Jerusalem acts no better. <mark>Its leaders have made a <b>“covenant with death”</b> (28:15, 18), which probably refers to their <b>pro-Egypt alliance</b>.</mark> They think this great killer can kill Assyria; God rejects the notion. Lies, injustice and improper alliances will be swept away on the Day of the Lord (28:14–22).</li>'+
+   '<li>Jerusalem will be encircled (29:5). God will deliver them temporarily (29:5–10), but <b>they honor the Lord with their mouths, not their hearts</b> (29:13). They commit sins they believe God cannot see (29:15). Such <b>“stubborn children”</b> will not escape discipline (30:1).</li>'+
+   '<li><mark>Isaiah particularly denounces Israel’s reliance on <b>Egypt</b>.</mark> Trusting in Pharaoh can only lead to <b>disgrace</b> (30:1–5). <b>God alone</b> can defeat Assyria (31:1–9). Only the <b>righteous king</b> introduced in chapters 1–12 can lead the nation back to God (32:1–8).</li>'+
+   '<li>Jerusalem should repent, for <b>Yahweh wants to forgive them</b> (30:18) and give the covenant blessings of Leviticus 26 and Deuteronomy 27–28 (30:19–26).</li></ul>'+
+   '<h3 class="sub" id="s7-remnant">Judah repeats Samaria’s mistakes</h3>'+
+   '<ul><li><mark>Unfortunately, Judah seems determined to repeat <b>Samaria’s mistakes</b>.</mark> So Judah will be judged with the other sinful nations (chaps. 33–34). God will destroy the heavens and defeat the world’s peoples (34:1–15); nothing will remain except a <b>small remnant</b> of land and people (34:16–17).</li>'+
+   '<li>These few survivors will <b>return to Jerusalem</b>, rejoicing in the Lord’s salvation (35:10). God will strengthen the weak (35:3), encourage the fearful (35:4), open blind eyes (35:5) and heal lame limbs (35:6).</li>'+
+   '<li>It is tragic that <b>only judgment</b> can make such blessings possible.</li></ul>'},
+
+  {id:"s7-reprieve", h:"Jerusalem’s reprieve (Isaiah 36–39)", body:
+   '<div class="point"><b>The point</b><p><mark>By Isaiah 36, <b>Samaria has already fallen</b>.</mark> In <b>701 BC</b> Assyria conquers all Judah’s fortified cities; only Jerusalem remains, under siege. As in 2 Kings, the story shows God’s mercy and Hezekiah’s good leadership. <mark><b>Jerusalem’s deliverance allows the people time to repent</b></mark>, and <mark>chapters 36–38 <b>validate Isaiah’s earlier predictions about Assyria</b>.</mark></p><p class="able"><b>Be able to</b> tell the story of 701 BC and the 185,000, explain how Jeremiah’s generation misread 37:35, and tell Hezekiah’s illness, the 15 years, the Babylonian envoys and Manasseh.</p></div>'+
+   '<h3 class="sub" id="s7-siege">701 BC: Assyria at the gates</h3>'+
+   '<ul><li>Assyria attacks and conquers all Judah’s fortified cities (36:1); only Jerusalem remains, under siege (36:2–3). The story is already told in <b>2 Kings 18–19</b>, so the reader knows what follows. <mark>What is important is to observe how this material fits into Isaiah’s overall message.</mark></li>'+
+   '<li>The Assyrians promise to destroy the city (36:4–22); Isaiah reassures Hezekiah (37:1–13) and denounces the enemy (37:21–35).</li>'+
+   '<li>As promised in 10:5–34 and 14:24–27, <b>Yahweh defeats Assyria’s army</b> (37:36–37) and sends Assyria’s arrogant king <b>Sennacherib</b> home to die. Punishment will keep overtaking Assyria until <b>Babylon crushes it in 612 BC</b>.</li></ul>'+
+   '<p><b>The map — Sennacherib’s campaign against Judah</b> (2 Kings 18:3–19:37; Isaiah 36–39; 2 Chronicles 32):</p>'+
+   '<ul><li>Sennacherib removes <b>Sidqia, king of Ashkelon</b>, then subdues Joppa, Bene-berak, Azor and Beth-dagon.</li>'+
+   '<li><b>Tirhakah</b> leads Egyptian forces to intervene at Hezekiah’s request; Sennacherib <b>defeats the Egyptian expedition</b> and captures Timnah and Ekron.</li>'+
+   '<li>He <b>besieges Lachish and Libnah</b>, and his chief military officer, the Rabshakeh, is sent to Jerusalem to demand the surrender of the city.</li>'+
+   '<li>In a <b>miraculous intervention</b>, the Assyrian army is defeated and the siege is lifted.</li></ul>'+
+   '<h3 class="sub" id="s7-misread">A promise misread</h3>'+
+   '<ul><li>Yahweh tells Hezekiah, <b>“I will defend this city and save it, for my sake and for David my servant’s sake”</b> (37:35).</li>'+
+   '<li>In the next century, in <b>Jeremiah’s</b> time, the people claim this promise is <b>unconditional</b>: Jerusalem will never be conquered, no matter what they do (see Jr 7:1–15). That twists Isaiah’s words.</li>'+
+   '<li><mark>He speaks about a specific situation, the <b>Sennacherib crisis</b>. He offers hope to a <b>faithful king, Hezekiah</b>. He extends <b>no comfort</b> to those who disregard God’s word.</mark></li></ul>'+
+   '<div class="exam-tip"><b>For greater historical understanding</b><ul>'+
+   '<li><mark>Unlike his father, Ahaz, <strong>Hezekiah welcomed Isaiah’s ministry</strong>.</mark> He rejected Ahaz’s policy of serving the Assyrians, refused to send tribute, and prepared for war.</li>'+
+   '<li>He brought water from the <strong>Gihon spring</strong> into Jerusalem through a water tunnel (2 Kg 20:20). <mark>The <strong>“Siloam Tunnel Inscription”</strong></mark>, found near the end of the tunnel and written in early Hebrew script, dates to Hezekiah’s time.</li>'+
+   '<li><mark><strong>Sennacherib</strong></mark>, son of <strong>Sargon II</strong>, attacked Judah in <strong>702–701 BC</strong> and conquered all its fortified cities except Jerusalem.</li>'+
+   '<li>God heeded Hezekiah’s humble prayers and sent an angel to destroy the Assyrian army: <strong>185,000 in one night</strong> (2 Kg 19:35). In his Annals, on a <strong>clay prism found at Nineveh</strong>, Sennacherib does not claim to have conquered Hezekiah — only that he shut him up in Jerusalem <strong>“like a bird in a cage.”</strong></li>'+
+   '<li>Later Hezekiah fell ill with a large infected boil; Isaiah told him he would die, and he cried out to God in tears. <mark>God relented and promised through Isaiah to give Hezekiah <strong>15 more years</strong> of life.</mark></li>'+
+   '<li>In those 15 years: <mark>(1) a son, <strong>Manasseh</strong>, who grew up to be the <strong>longest reigning and most wicked king of the Davidic line</strong>; (2) ambassadors from a Babylonian king, <strong>Merodach-Baladan II</strong>.</mark></li>'+
+   '<li>Merodach-Baladan was king of Babylon 722–709 BC, until Sargon II overcame him. He kept rebelling, and about <strong>703–700 BC</strong> sent envoys to entice Hezekiah into the fight against Assyria. Hezekiah showed them everything in his treasury and the temple’s. <mark>Isaiah denounced this: all the Babylonians had seen, they would one day carry off.</mark> Hezekiah was not distressed, because the judgment would not affect him (2 Kg 20:12–19).</li>'+
+   '<li>Manasseh, son of Hezekiah’s old age, became king in <strong>687 BC</strong>. Tradition says he had Isaiah put into a <strong>hollow log and sawn in half</strong>. He worshiped Assyrian idols and set up an altar to an Assyrian god in the temple, as Ahaz had. Taken to <strong>Nineveh in chains</strong>, <mark>he repented in prison; God forgave him and returned him to the throne of Judah.</mark> But he could not turn the people from their idolatry.</li></ul></div>'+
+   '<h3 class="sub" id="s7-transition">Chapters 38–39: the turn toward Babylon</h3>'+
+   '<ul><li><mark>Chapters 38–39 provide a <b>transition</b> to the next major section of the book.</mark> God loves and heals Hezekiah (38:1–22) just as he loves and defends Israel (37:35–38).</li>'+
+   '<li>When Hezekiah shows the envoys his kingdom, the issue of southern Israel’s future emerges again: <b>Babylon will rule Jerusalem someday</b> (39:1–8).</li>'+
+   '<li>The book has offered virtually no hope that the people will repent in any sustained way, so <b>judgment may fall at any time</b>.</li></ul>'},
+
+  {id:"s7-servant", h:"Salvation and the servant of God (Isaiah 40–55)", body:
+   '<div class="point"><b>The point</b><p><mark>Isaiah 1–39 constantly warns Israel and Judah to repent or face defeat.</mark> It never describes the actual destruction of Samaria or Jerusalem; chapters 40–66 present both as exiled and offer comfort. <mark>Comfort emerges from two ideas: the <b>renewal of the nation after the Day of the Lord</b> and the work of a <b>“servant of the Lord”</b> who leads the people to serve God.</mark></p><p class="able"><b>Be able to</b> tell the two ways salvation will come, list the four servant songs with what each says, and show how the New Testament reads them.</p></div>'+
+   '<h3 class="sub" id="s7-comfort">“Comfort” (Isaiah 40)</h3>'+
+   '<ul><li>Isaiah 40 speaks as if the day of Yahweh has already passed. God tells the prophet to <b>“comfort”</b> Israel: they have received from the Lord’s hand <b>double for all their sins</b> (40:1–2 NIV).</li>'+
+   '<li>Yahweh promises a <b>smooth highway</b> for the exiles who will return home (40:3–5). Isaiah questions it: the nation has been reduced to faded grass and ruined flowers (40:6–7). Still, he hopes in God (40:8).</li>'+
+   '<li>Based on Yahweh’s power and goodness (40:9–11): <b>“They will soar on wings like eagles; they will run and not be weary, they will walk and not faint”</b> (40:31).</li></ul>'+
+   '<h3 class="sub" id="s7-cyrus">First: a nation from the east</h3>'+
+   '<ul><li><mark>First, God will send a nation <b>“from the east”</b> to punish Babylon (41:1–4).</mark> This agrees with earlier statements about Babylon’s future (13:1–14:23; 21:1–10).</li>'+
+   '<li><mark>Persia becomes the foe from the east. Led by <b>Cyrus the Great</b>, Persia overwhelms Babylon in <b>539 BC</b>.</mark> The prophecy even names Cyrus, in <b>44:28 and 45:1</b>.</li>'+
+   '<li><mark>Babylon’s demise will signal a new and better day for Israel (41:8–10).</mark></li></ul>'+
+   '<h3 class="sub" id="s7-songs">Second: the servant of God</h3>'+
+   '<ul><li><mark>Second, a <b>“servant of God”</b> will arise to bring the nation back to God</mark>: a <b>spiritual counterpart to Cyrus’s political activity</b>.</li>'+
+   '<li>Who is the servant? At first the text calls <b>Israel</b> God’s servant (41:8). As the prophecy unfolds, the servant passages seem to describe <b>an individual</b>.</li>'+
+   '<li><mark><b>Bernhard Duhm</b> notes at least <b>four major “servant songs,”</b> or poems, in Isaiah 40–55.</mark> Each adds to the servant’s portrait:</li></ul>'+
+   '<div class="tblwrap"><table class="tbl n0"><tr><th>Song</th><th>The servant</th></tr>'+
+   '<tr><td><b>42:1–7</b></td><td><mark>Chosen and empowered by God (42:1), humble (42:2), an encourager (42:3–4), a <b>“light to the Gentiles”</b> (42:6), a healer of the blind (42:7)</mark> — needed, since Israel is spiritually blind (42:18–22).</td></tr>'+
+   '<tr><td><b>49:1–7</b></td><td><mark>Speaks God’s word (49:2), restores Israel to God (49:5), reaches out to the Gentiles (49:6).</mark></td></tr>'+
+   '<tr><td><b>50:4–9</b></td><td>Preaches God’s word, sustains the weary (50:4), <b>suffers unjustly</b> (50:6), trusts Yahweh’s salvation (50:8–9).</td></tr>'+
+   '<tr><td><b>52:13–53:12</b></td><td><mark>Bears the nation’s sicknesses, sorrows and sins (53:4–6); despite great affliction <b>never opens his mouth</b> (53:7–9); God puts him to death (53:10), yet promises he will have offspring and “divide spoils” (53:10–12).</mark></td></tr></table></div>'+
+   '<ul><li>Between the songs come texts that promise Israel a bright future but note its continuing stubbornness (chaps. 43–48).</li>'+
+   '<li><mark>The last two songs reveal that the servant will turn Israel by <b>suffering for the nation</b>.</mark> This leads to glory for Jerusalem (chap. 54). All who are thirsty for spiritual water can now come to God and drink (chap. 55).</li></ul>'+
+   '<h3 class="sub" id="s7-nt">The servant in the New Testament</h3>'+
+   '<ul><li>The New Testament writers say the servant songs are <b>pictures of Christ’s life, death and resurrection</b>.</li>'+
+   '<li><b>Matthew 12:15–21</b>: Jesus’ humility fulfills Isaiah 42:1–4. <b>Paul</b> partly bases his ministry to the Gentiles on 49:6.</li>'+
+   '<li>The early church believed 50:4–9 and 52:13–53:12 describe <b>Christ’s death</b>. <b>Philip</b> explains this to the <b>Ethiopian eunuch</b> (Ac 8:32–33). <b>Luke</b> quotes 53:12 to explain why Jesus dies <b>alongside thieves</b> (Lk 22:37).</li>'+
+   '<li><mark>Clearly early believers used these texts as the <b>foundation for their teachings on the cross</b>.</mark></li></ul>'+
+   '<h3 class="sub" id="s7-parallel">How 40–55 mirrors 1–12</h3>'+
+   '<ul><li><mark>Israel’s salvation in chapters 40–55 <b>parallels</b> its sources for redemption in chapters 1–12.</mark> There, the cleansing day of Yahweh and the coming <b>Davidic king</b>; here, the Day of the Lord and the work of the <b>servant</b>.</li>'+
+   '<li>Hope seems <b>more certain</b> in 40–55, since the defeats of <b>722 BC and 587 BC</b> lie in the past.</li>'+
+   '<li><mark>Punishment has already eliminated many wicked people, which paves the way for a better nation led by a better leader.</mark></li></ul>'},
+
+  {id:"s7-glory", h:"Future glory for God’s people (Isaiah 56–66); the conclusion", body:
+   '<div class="point"><b>The point</b><p>Isaiah keeps offering hope to the end. <mark>This hope is based on Yahweh’s promise of <b>swift salvation for Israel</b> (56:1) and on the Lord’s pledge to <b>redeem people from all nations</b> (56:3, 6–8).</mark> <mark>As in 19:19–25, salvation and hope exist for all who will respond to God’s offer of forgiveness.</mark> The book closes with a last call to decision, and <mark>Isaiah is a perfect book to begin the <b>Latter Prophets</b></mark>.</p><p class="able"><b>Be able to</b> say who may climb God’s “holy mountain”, how the people will be healed, what the new heavens and earth bring, and the textbook’s three reasons Isaiah begins the Latter Prophets.</p></div>'+
+   '<h3 class="sub" id="s7-mountain">Salvation for all nations</h3>'+
+   '<ul><li><b>Regardless of race</b>, those who obey God will ascend God’s <b>“holy mountain”</b> (56:7).</li>'+
+   '<li>Whoever disobeys can only expect punishment (56:9–57:13).</li></ul>'+
+   '<h3 class="sub" id="s7-choice">Repentance or rebellion</h3>'+
+   '<ul><li>God declares healing for the <b>“contrite and lowly in spirit”</b> (57:15), but announces, <b>“There is no peace … for the wicked”</b> (57:21).</li>'+
+   '<li>The people will be healed by <b>mourning and fasting</b> for their sin (58:1–14) and by <b>confessing</b> their injustice, dishonesty and treachery (59:1–15).</li>'+
+   '<li>Then Yahweh “will come to Zion” (59:20), place his Spirit in the people (59:21) and glorify Jerusalem (60:1–22). God will be the city’s <b>“everlasting light”</b> (60:21), and the people will multiply (60:22). Jerusalem will never again appear empty and forsaken.</li>'+
+   '<li><mark>To the weary and discouraged, the Lord pledges <b>good news, healing, freedom, comfort and joy</b> (61:1–3).</mark> <mark>The pitiful remnant will look like a <b>radiant bride</b> (61:10). Again using wedding imagery, Yahweh promises to make devastated Jerusalem a beautiful city once more (62:1–12).</mark></li></ul>'+
+   '<h3 class="sub" id="s7-new">New heavens and a new earth</h3>'+
+   '<ul><li><mark>As in 2:6–22, the day of judgment will eliminate Israel’s wicked enemies and evil citizens (63:1–6).</mark> <mark>Then the righteous remnant of believers will praise God’s deeds and rebuild the nation (63:7–64:12).</mark></li>'+
+   '<li><mark>Yahweh will respond by <b>forgetting Israel’s sinful past</b> (65:1–10)</mark>, while those who reject the Lord will be destroyed (65:11–12) and his “servants” receive amazing blessings (65:13–16).</li>'+
+   '<li><mark>The faithful will enjoy life in a <b>recreated heaven and Earth</b> (65:17).</mark> <mark>The time of perfect peace introduced in 11:1–9 will actually occur (65:20–25).</mark> Sin, which has marred creation since <b>Genesis 3:1–20</b>, will lose its power.</li>'+
+   '<li>One last call to decision: Yahweh will bless Jerusalem (66:1–2); those who refuse forgiveness will suffer punishment (66:3–4) that will <b>last forever</b> (66:24). Better to become citizens of the <b>“new earth”</b> (66:22). <mark>Any other decision is foolish with salvation so accessible.</mark></li></ul>'+
+   '<h3 class="sub" id="s7-conclusion">Conclusion</h3>'+
+   '<p><mark>Isaiah is a perfect book to begin the Latter Prophets, for three reasons:</mark></p>'+
+   '<ol><li><mark>It unfolds during the <b>crisis years of Hezekiah’s reign</b>, which lets Isaiah discuss why northern Israel falls to Assyria.</mark></li>'+
+   '<li><mark>It explores extensively Israel’s <b>sin, punishment and restoration</b>, so prophecy’s major themes are introduced.</mark></li>'+
+   '<li><mark>Its careful analysis of Israel’s sin produces a <b>solid rationale for the nation’s judgment</b>.</mark></li></ol>'+
+   '<p>Isaiah answers many “why” questions, yet more explanation is needed. <mark>In particular, <b>the destruction of Jerusalem itself</b> demands attention.</mark></p>'}
+ ],
+ decks:[
+  {id:"terms", label:"People, places & terms", cards:[
+   ["Immanuel","“God with us” — the sign promised to Ahaz after he refused to ask","g7-intro"],
+   ["Maher-Shalal-Hash-Baz","Isaiah’s son: “spoil speeds, prey hastens”","g7-intro"],
+   ["Shear-Jashub","Isaiah’s son: “a remnant shall return”","g7-intro"],
+   ["Pekah, son of Remaliah","King of Israel from 740 BC; allied with Rezin against Assyria","g7-intro"],
+   ["Rezin","King of Damascus (Syria); conquered by Tiglath-pileser in 732 BC","g7-intro"],
+   ["Tiglath-pileser III","Assyrian king (745–727 BC) whose reign began Assyria’s rise","g7-intro"],
+   ["Syro-Ephraimitic Crisis","735–734 BC: Israel and Syria press Ahaz, and he turns to Assyria","g7-intro"],
+   ["Vassal","A servant nation — what Judah became to Assyria under Ahaz","g7-intro"],
+   ["Samaritans","Settlers from southern Arabia in Samaria, with a form of Yahweh worship","g7-intro"],
+   ["Haran","Where Abraham had lived; northern exiles were settled near it","g7-intro"],
+   ["The Day of the Lord","Also “the last days” and “that day”: judgment that cleanses the land","g7-messiah"],
+   ["The remnant","The righteous minority left once the day purifies Israel (4:3)","g7-messiah"],
+   ["“Holy, holy, holy”","What the angels cry in Isaiah’s vision of the throne (6:3)","g7-messiah"],
+   ["Three courses of action","A day of judgment, warning through prophets, a righteous son of David","g7-messiah"],
+   ["Hammurabi","Babylon’s great law-giving king, 1792–1750 BC","g7-nations"],
+   ["Pride","Time after time, the reason for Yahweh’s displeasure with the nations","g7-nations"],
+   ["Damascus","“Will become a heap of ruins” (17:1)","g7-nations"],
+   ["Cush","Ethiopia — an Ethiopian ruler led Egypt in Isaiah’s day","g7-nations"],
+   ["Isaiah 19:19–25","Egypt and Assyria worship Yahweh together; Israel, Assyria and Egypt equals","g7-nations"],
+   ["“Swallow up death forever”","Isaiah 25:8 — used by Paul in 1 Corinthians 15","g7-nations"],
+   ["The six woes","28:1; 29:1, 15; 30:1; 31:1; 33:1","g7-fall"],
+   ["“Covenant with death”","Jerusalem’s pro-Egypt alliance (28:15, 18)","g7-fall"],
+   ["“Stubborn children”","Judah, who will not escape discipline (30:1)","g7-fall"],
+   ["Sennacherib","Assyrian king, son of Sargon II; attacked Judah 702–701 BC","g7-reprieve"],
+   ["Siloam Tunnel Inscription","Early Hebrew, found near the end of Hezekiah’s water tunnel","g7-reprieve"],
+   ["Gihon","The spring Hezekiah’s tunnel brought into Jerusalem","g7-reprieve"],
+   ["“Like a bird in a cage”","Sennacherib’s boast about Hezekiah, on a clay prism from Nineveh","g7-reprieve"],
+   ["Merodach-Baladan II","Babylonian king whose envoys Hezekiah showed his treasury","g7-reprieve"],
+   ["Manasseh","Longest-reigning, most wicked Davidic king; repented in prison","g7-reprieve"],
+   ["Tirhakah","Led Egyptian forces to intervene at Hezekiah’s request","g7-reprieve"],
+   ["Cyrus the Great","Persian king named in 44:28 and 45:1; took Babylon in 539 BC","g7-servant"],
+   ["Bernhard Duhm","Scholar who noted at least four servant songs in Isaiah 40–55","g7-servant"],
+   ["A light to the Gentiles","What the servant is in the first song (42:6)","g7-servant"],
+   ["The Ethiopian eunuch","Philip explained Isaiah 53 to him (Ac 8:32–33)","g7-servant"],
+   ["The holy mountain","Where all who obey may go up, regardless of race (56:7)","g7-glory"],
+   ["“No peace … for the wicked”","Isaiah 57:21, set against healing for the contrite","g7-glory"],
+   ["A radiant bride","How the pitiful remnant will look (61:10)","g7-glory"],
+   ["The new earth","Where Isaiah urges Israel to become citizens (66:22)","g7-glory"],
+   ["The Latter Prophets","The part of the Bible Isaiah is a perfect book to begin","g7-glory"]]},
+  {id:"outline", label:"Outline & dates", cards:[
+   ["Isaiah 1–12","Sin and the Messiah","g7-messiah"],
+   ["Isaiah 13–27","Sin and the nations","g7-nations"],
+   ["Isaiah 28–35","Sin and the fall of Israel","g7-fall"],
+   ["Isaiah 36–39","Jerusalem’s reprieve","g7-reprieve"],
+   ["Isaiah 40–55","Salvation and the servant of God","g7-servant"],
+   ["Isaiah 56–66","Future glory for God’s people","g7-glory"],
+   ["742–538 BC","The span of Israel’s history Isaiah’s life and words address","g7-intro"],
+   ["740–687 BC","Isaiah’s ministry, from Uzziah’s death to the end of Hezekiah’s reign","g7-intro"],
+   ["c. 740–700 and c. 550–500 BC","When the two supposed authors of Isaiah lived","g7-intro"],
+   ["735–734 BC","The Syro-Ephraimitic Crisis","g7-intro"],
+   ["722 BC","Shalmaneser V carries the north into captivity","g7-fall"],
+   ["701 BC","Assyria takes Judah’s fortified cities; only Jerusalem is left","g7-reprieve"],
+   ["612 BC","Babylon defeats Assyria; it ceases to be a military power","g7-nations"],
+   ["587 BC","Babylon destroys Jerusalem","g7-nations"],
+   ["539 BC","Persia under Cyrus overwhelms Babylon","g7-servant"],
+   ["Isaiah 52:13–53:12","The fourth song: the servant bears the nation’s sins","g7-servant"]]}
+ ]
+};
+
+QB = QB.concat([
+ {tp:"s7",sec:"g7-intro",t:"mc",q:"What span of Israel’s history do Isaiah’s life and words address?",a:"About 742 to 538 BC",w:["About 930 to 722 BC","About 740 to 687 BC","About 605 to 539 BC"],e:"740–687 BC is his ministry; his words reach as far as the rise of Persia (44:28–45:7)."},
+ {tp:"s7",sec:"g7-intro",t:"mc",q:"Which chapters of 2 Kings describe the difficult days Isaiah lived in?",a:"2 Kings 16–20",w:["2 Kings 1–10","2 Kings 11–15","2 Kings 23–25"],e:"The book’s first verse places him there, while Assyria grows, takes Samaria and threatens Jerusalem."},
+ {tp:"s7",sec:"g7-intro",t:"mc",q:"When did intensive debate over who wrote Isaiah begin?",a:"In the nineteenth century",w:["In the first century","In the sixteenth century","In the twentieth century"],e:"Some commentators questioned the authorship earlier, but intensive discussion began in the 1800s."},
+ {tp:"s7",sec:"g7-intro",t:"mc",q:"Which was NOT an argument for two or more authors of Isaiah?",a:"Isaiah never names a foreign king",w:["Chapters 1–39 focus on Assyria, 40–66 on Babylon","Jerusalem is intact in 1–39 but destroyed in 40–66","Cyrus of Persia is named in 44:28 and 45:1"],e:"Cyrus is named outright — that was one of the main arguments for a second author."},
+ {tp:"s7",sec:"g7-intro",t:"mc",q:"When did the two supposed authors of Isaiah live?",a:"About 740–700 BC and 550–500 BC",w:["About 930–880 BC and 740–700 BC","About 740–700 BC and 605–587 BC","About 1010–970 BC and 550–500 BC"],e:"One in Isaiah’s own day, one after Cyrus let the Jews return home (after 539 BC)."},
+ {tp:"s7",sec:"g7-intro",t:"mc",q:"How did experts answer the claim that the halves deal with different empires?",a:"Assyria and Babylon appear in both halves",w:["Babylon appears only in the first half","Assyria disappears after chapter 12","The second half never names an empire"],e:"They also noted that Jerusalem is threatened and intact in both 1–39 and 40–66."},
+ {tp:"s7",sec:"g7-intro",t:"mc",q:"What position does your textbook take on who wrote Isaiah?",a:"It accepts the unity arguments and adds evidence",w:["It accepts two authors and argues for a third","It leaves the whole question to each reader","It argues the book was finished after the exile"],e:"“This book basically accepts these arguments for the unity of Isaiah and tries to supplement them.”"},
+ {tp:"s7",sec:"g7-intro",t:"tf",q:"Scholars on both sides of the authorship debate acknowledge that Isaiah presents a unified message.",a:true,e:"True — they disagree whether the unity comes from one author or many, but agree on that."},
+ {tp:"s7",sec:"g7-intro",t:"mc",q:"Which kings did Isaiah serve as a court prophet?",a:"Jotham, Ahaz and Hezekiah",w:["Uzziah, Jotham and Ahaz","Ahaz, Hezekiah and Manasseh","Pekah, Hoshea and Ahaz"],e:"Jotham (740–731), Ahaz (731–715), Hezekiah (715–687 BC). His call came the year Uzziah died."},
+ {tp:"s7",sec:"g7-intro",t:"mc",q:"Whose reign began Assyria’s rise in power?",a:"Tiglath-pileser III",w:["Shalmaneser V","Sennacherib","Sargon II"],e:"Tiglath-pileser III reigned 745–727 BC; his armies were known for violence and cruelty."},
+ {tp:"s7",sec:"g7-intro",t:"mc",q:"What was the Syro-Ephraimitic Crisis (735–734 BC)?",a:"Israel and Syria pressing Ahaz to join them",w:["Assyria pressing Hezekiah to surrender the city","Egypt and Cush pressing Judah to rebel","Edom and Moab pressing Jotham for tribute"],e:"Pekah of Israel and Rezin of Damascus wanted Judah against Assyria; Ahaz turned to Assyria instead of the Lord."},
+ {tp:"s7",sec:"g7-intro",t:"mc",q:"What did Judah become when Ahaz paid Assyria to attack Rezin and Pekah?",a:"A vassal of Assyria",w:["An ally of Egypt","A province of Syria","A partner of Israel"],e:"A vassal is a servant nation — contrary to what Ahaz had planned."},
+ {tp:"s7",sec:"g7-intro",t:"mc",q:"Who were the Samaritans, according to the textbook?",a:"Settlers from southern Arabia with a form of Yahweh worship",w:["Northern Israelites who stayed in the land after 722 BC","Exiles from Judah who came home early from Babylon","Philistines who moved inland after David’s wars"],e:"Assyria moved them into Samaria; the Jews hated them as pagans anyway."},
+ {tp:"s7",sec:"g7-intro",t:"mc",q:"What did the name Shear-Jashub mean?",a:"A remnant shall return",w:["Spoil speeds, prey hastens","God is with us","The Lord has heard"],e:"Maher-Shalal-Hash-Baz meant “spoil speeds, prey hastens”; Immanuel means “God with us.”"},
+ {tp:"s7",sec:"g7-intro",t:"tf",q:"Ahaz asked the Lord for a sign, and God answered by promising Immanuel.",a:false,e:"False — Ahaz refused to ask, and God gave the sign anyway."},
+ {tp:"s7",sec:"g7-intro",t:"mc",q:"How many men of Judah had Pekah killed in battle (2 Ch 28:9)?",a:"120,000",w:["185,000","30,000","450"],e:"185,000 is the Assyrian army struck down at Jerusalem in Hezekiah’s day."},
+ {tp:"s7",sec:"g7-intro",t:"mc",q:"Where were many of the northern exiles settled after 722 BC?",a:"Near Haran and in modern-day Iran",w:["Near Nineveh and in modern-day Egypt","In Babylon and along the Euphrates","In Damascus and along the coast"],e:"Haran is where Abraham had lived; Assyria’s policy was to relocate conquered peoples."},
+ {tp:"s7",sec:"g7-intro",ap:true,t:"mc",q:"A prophet walks naked and barefoot for three years to show what exile will be like. Who, and about whom?",a:"Isaiah, about Egypt and Cush",w:["Elijah, about Ahab and Jezebel","Elisha, about Syria and Naaman","Micaiah, about Israel and Syria"],e:"20:1–6 — a warning not to hope that Egypt and Cush would defeat Assyria."},
+
+ {tp:"s7",sec:"g7-messiah",t:"mc",q:"What does Isaiah 1:2–3 compare Israel to?",a:"A rebellious child or a stupid animal",w:["A faithless wife or a broken cistern","A barren fig tree or a dry riverbed","A wandering sheep or a lost coin"],e:"They do not obey the Lord, their Maker, and model evil, corruption and injustice (1:4)."},
+ {tp:"s7",sec:"g7-messiah",t:"mc",q:"Which cities does Isaiah 1:10 compare God’s people to?",a:"Sodom and Gomorrah",w:["Nineveh and Babylon","Tyre and Sidon","Samaria and Bethel"],e:"This immorality has occurred despite the Lord’s constant attempts to change them."},
+ {tp:"s7",sec:"g7-messiah",t:"tf",q:"In Isaiah 1, only Israel’s rulers are held guilty; the poor are excused.",a:false,e:"False — every level of society, rich, poor, rulers or servants, shares the guilt (1:23)."},
+ {tp:"s7",sec:"g7-messiah",t:"mc",q:"What is the first of Yahweh’s three courses of action?",a:"A day of judgment to cleanse the people",w:["A prophet to warn the people","A son of David to rule the people","A foreign empire to carry the people off"],e:"The “Day of the Lord” will remove sin from the land (2:6–22)."},
+ {tp:"s7",sec:"g7-messiah",t:"mc",q:"What is Yahweh’s second course of action?",a:"Warning through prophets",w:["A day of judgment","A son of David","A new law at Sinai"],e:"Warning always precedes punishment in the Old Testament, so Yahweh chooses and guides prophets."},
+ {tp:"s7",sec:"g7-messiah",t:"mc",q:"Which three phrases in Isaiah 2 name one and the same event?",a:"“The last days,” “that day,” “the Day of the Lord”",w:["“The new day,” “the great day,” “the Lord’s rest”","“The end,” “the harvest,” “the great feast”","“The exile,” “the return,” “the rebuilding”"],e:"2:2, 2:11 and 2:12 — the day that will remove sin from the land."},
+ {tp:"s7",sec:"g7-messiah",t:"mc",q:"What does the Day of the Lord leave behind (4:3)?",a:"A righteous minority called the remnant",w:["A new king who rules from Samaria","A rebuilt temple in a cleansed city","A scattered people with no future"],e:"The day will purify Israel, leaving the remnant to begin anew."},
+ {tp:"s7",sec:"g7-messiah",t:"mc",q:"In Isaiah’s vision, what do the angels around the throne declare (6:3)?",a:"“Holy, holy, holy is the Lord of hosts”",w:["“Glory to God in the highest heaven”","“Comfort, comfort my people, says God”","“The Lord is one, the Lord alone”"],e:"“The whole earth is full of his glory.” Isaiah then senses his own smallness and sinfulness."},
+ {tp:"s7",sec:"g7-messiah",t:"mc",q:"Put Isaiah’s call (Isaiah 6) in order.",a:"Vision, sense of sin, forgiveness, commission",w:["Commission, vision, forgiveness, sense of sin","Sense of sin, vision, commission, forgiveness","Forgiveness, vision, sense of sin, commission"],e:"6:3, 6:4–5, 6:6–7, then the next stage of his ministry (6:9–13)."},
+ {tp:"s7",sec:"g7-messiah",t:"mc",q:"What was Isaiah told to expect from his preaching (6:9–13)?",a:"The people would not reform",w:["The people would repent at once","The king would make him his adviser","The nations would come to listen"],e:"He was to preach until only a small portion of Israel remained (6:13)."},
+ {tp:"s7",sec:"g7-messiah",t:"tf",q:"Isaiah relished his task of preaching judgment, which is why he volunteered.",a:false,e:"False — he did not relish it, but agreed to do as God commanded (6:8, 11) and stayed faithful to the end."},
+ {tp:"s7",sec:"g7-messiah",t:"mc",q:"Yahweh’s third course of action grows out of which promise?",a:"The promise to David in 2 Samuel 7",w:["The promise to Abraham in Genesis 12","The covenant at Sinai in Exodus 19","The blessing of Moses in Deuteronomy 33"],e:"2 Samuel 7:1–17: a righteous son of David will arise and end the people’s punishment."},
+ {tp:"s7",sec:"g7-messiah",t:"mc",q:"Why does God give Ahaz the promise of a virgin-born son (7:14)?",a:"As a pledge of protection from Israel and Syria",w:["As a reward for Ahaz’s trust in Assyria","As a sign that Ahaz’s line would end","As a warning that Egypt would invade"],e:"Ahaz need not fear or trust Assyria — he must trust Yahweh (7:1–9). Sadly, he refuses."},
+ {tp:"s7",sec:"g7-messiah",t:"mc",q:"Which New Testament passage applies Isaiah 7:14 to Jesus’ birth?",a:"Matthew 1:22–23",w:["Matthew 12:15–21","Luke 22:37","Acts 8:32–33"],e:"It shows the permanence of the Davidic covenant; the other three apply the servant songs."},
+ {tp:"s7",sec:"g7-messiah",t:"mc",q:"What will the coming son of David do, according to Isaiah 9 and 11?",a:"Rule in wisdom, power and peace, and gather the remnant",w:["Rebuild Jerusalem’s walls and drive the Assyrians out","Restore the ark and the tabernacle to Shiloh again","Unite Judah and Egypt in a treaty against Babylon"],e:"9:2–7; 11:1–16. Gentiles will be included in the great gathering (11:10–11)."},
+ {tp:"s7",sec:"g7-messiah",ap:true,t:"mc",q:"A pastor says the Bible follows three steps: judgment, warning, and a coming Savior. Where in Isaiah is that pattern laid out?",a:"Isaiah 1–12",w:["Isaiah 13–27","Isaiah 36–39","Isaiah 56–66"],e:"Each part of the three-pronged strategy in 1–12 gets major treatment in the other prophets and the whole Bible."},
+ {tp:"s7",sec:"g7-messiah",t:"mc",q:"On the map of the Syro-Ephraimite War, who recovers Elath?",a:"Rezin, for Aram",w:["Pekah, for Israel","Ahaz, for Judah","The Edomites, for Edom"],e:"Rezin, king of Aram, drives out the men of Judah. The Edomites attack Judah and take prisoners."},
+ {tp:"s7",sec:"g7-messiah",t:"tf",q:"On the map, Damascus and Israel besiege Jerusalem while Isaiah urges Ahaz to remain steadfast.",a:true,e:"True — and the Philistines raid towns in Judah at the same time (2 Kgs 16; Isa 7; 2 Chr 28)."},
+
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"What does Isaiah 13–27 once more remind us of?",a:"All are accountable to God, and he loves all nations",w:["Only Israel is accountable, since only Israel has the law","God loves Israel alone and judges every other nation","The nations are judged only for how they treat Israel"],e:"All individuals and countries are accountable to God, and Yahweh loves all nations."},
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"Time after time, what sin is given for Yahweh’s displeasure with the nations?",a:"Pride that leads to idolatry and oppression",w:["Greed that leads to theft, debt and ruin","Fear that leads to foreign alliances and war","Laziness that leads to famine and decay"],e:"Pride is the root; idolatry and oppression grow from it."},
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"Whose fate does God announce first in Isaiah 13–14?",a:"Babylon’s, then Assyria’s",w:["Assyria’s, then Babylon’s","Egypt’s, then Cush’s","Moab’s, then Edom’s"],e:"Babylon first (13:1–14:23), then Assyria in a shorter word (14:24–27)."},
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"When did Hammurabi, Babylon’s great law-giver, reign?",a:"1792–1750 BC",w:["1446–1406 BC","1010–970 BC","745–727 BC"],e:"From his time until Persia conquered them in 539 BC, the Babylonians kept a high profile."},
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"According to the textbook, what is Babylon’s most famous deed in Scripture?",a:"Destroying Jerusalem in 587 BC",w:["Conquering Assyria in 612 BC","Defeating Egypt at Carchemish","Exiling the north in 722 BC"],e:"Assyria, not Babylon, exiled the north in 722 BC."},
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"What leads to Babylon’s destruction (14:3–15)?",a:"Its oppression and its pride",w:["Its alliance with Egypt","Its worship of Baal","Its defeat by Assyria"],e:"Oppression of Israel and other nations (14:3–8) and pride (14:13–15)."},
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"Where does Isaiah say the mighty Assyrian conqueror will be crushed (14:25)?",a:"In Judah",w:["In Egypt","In Babylon","In Samaria"],e:"Not a new theme: after Assyria smashes Israel (8:1–10), it will be judged (10:5–34)."},
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"Why is Assyria itself judged in Isaiah 10?",a:"The punisher became an arrogant, cruel destroyer",w:["It refused to punish the sinful nations","It made a treaty with Judah and broke it","It honored Yahweh with its lips alone"],e:"Yahweh had sent Assyria to punish sinful countries (10:5–7)."},
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"When does Assyria cease to be a military power?",a:"After Babylon defeats it in 612 BC",w:["After Persia defeats it in 539 BC","After Egypt defeats it in 609 BC","After Judah defeats it in 701 BC"],e:"So Isaiah’s prediction comes true."},
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"What does Isaiah say Damascus will become (17:1)?",a:"A heap of ruins",w:["A city of refuge","A desert for jackals","A vassal of Egypt"],e:"Syria, Israel’s constant foe in 1 and 2 Kings, will fall — and northern Israel, which trusted it, too."},
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"Why are Ethiopia (Cush) and Egypt linked in Isaiah?",a:"An Ethiopian ruler led Egypt in Isaiah’s day",w:["Both were founded by the sons of Noah","Both joined Assyria in attacking Judah","Both were ruled at once by Hammurabi"],e:"So they will share Syria’s fate (20:1–6)."},
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"What surprising promise does Isaiah 19:19–25 make?",a:"Egypt and Assyria will worship Yahweh together",w:["Egypt and Assyria will destroy each other","Babylon will rebuild the temple in Jerusalem","Moab and Edom will be ruled by Judah’s king"],e:"Israel, Assyria and Egypt will be equals — all God’s people (19:24–25)."},
+ {tp:"s7",sec:"g7-nations",t:"tf",q:"After the Day of the Lord, Ethiopians will worship God in Jerusalem.",a:true,e:"True — 18:1–7. God rules history so salvation can reach all races."},
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"Who chiefly carries out the judgments on Edom, Arabia and Tyre (chs. 21–23)?",a:"The Assyrians",w:["The Babylonians","The Egyptians","The Persians"],e:"They are reminders that an even greater judgment looms on the horizon."},
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"What does Isaiah 24 say the final day of Yahweh will include?",a:"The entire world",w:["Only the land of Israel","Only Assyria and Babylon","Only Judah’s neighbors"],e:"A day of distress for all people (24:1–3), when the earth dries up and withers."},
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"Which enemy does Isaiah 25:8 say God will swallow up forever?",a:"Death",w:["Assyria","Babylon","Pride"],e:"“He will swallow up death forever” — humanity’s most common enemy."},
+ {tp:"s7",sec:"g7-nations",t:"mc",q:"Where does the New Testament use Isaiah 25–26 on the defeat of death?",a:"1 Corinthians 15 and Revelation 21",w:["Matthew 1 and Luke 22","Acts 8 and Matthew 12","Romans 6 and Galatians 3"],e:"Paul on the resurrection; John’s description of a new Jerusalem (Rev 21:1–8)."},
+ {tp:"s7",sec:"g7-nations",t:"tf",q:"According to Isaiah 24–27, salvation can emerge before sin has been purged from the land.",a:false,e:"False — the Day of the Lord saves all who believe, but only once the land is cleansed of sin."},
+ {tp:"s7",sec:"g7-nations",ap:true,t:"mc",q:"A missionary asks where Isaiah shows that people who trust Yahweh are saved whatever their nation. Best answer?",a:"Egypt and Assyria worshiping together (19:19–25)",w:["Hezekiah’s illness and healing (38:1–22)","Isaiah’s vision of the throne (6:1–8)","Babylon’s envoys in Jerusalem (39:1–8)"],e:"Those who trust in Yahweh find salvation, regardless of their nationality."},
+
+ {tp:"s7",sec:"g7-fall",t:"mc",q:"According to the textbook, who is Judah’s only real ally in Isaiah 28–35?",a:"The Lord",w:["Egypt","Assyria","Babylon"],e:"Judah looks to Egypt for help, but their only real ally now is the Lord."},
+ {tp:"s7",sec:"g7-fall",t:"mc",q:"How many times does Yahweh warn of “woes” in Isaiah 28–33?",a:"Six",w:["Three","Seven","Ten"],e:"28:1; 29:1, 15; 30:1; 31:1; 33:1."},
+ {tp:"s7",sec:"g7-fall",t:"mc",q:"Who leads northern Israel in Isaiah 28:1–4?",a:"Drunkards",w:["Children","Foreigners","Prophets"],e:"The priests have no respect for God’s word and teach improperly (28:9–10); destruction comes in 722 BC."},
+ {tp:"s7",sec:"g7-fall",t:"mc",q:"What does Jerusalem’s “covenant with death” (28:15, 18) probably refer to?",a:"Its pro-Egypt alliance",w:["Its treaty with Babylon","Its idols in the temple","Its tribute to Assyria"],e:"They think this great killer can kill Assyria; God rejects the notion."},
+ {tp:"s7",sec:"g7-fall",t:"mc",q:"What does Isaiah 29:13 say about how the people honor the Lord?",a:"With their mouths, not their hearts",w:["With their hearts, not their gifts","With sacrifices, not with prayer","With their hands, not their feet"],e:"God will deliver them temporarily (29:5–10), but their worship is hollow."},
+ {tp:"s7",sec:"g7-fall",t:"mc",q:"What does Isaiah call Judah in 30:1?",a:"“Stubborn children”",w:["“A faithless bride”","“A barren vine”","“Wandering sheep”"],e:"They will not escape discipline; they commit sins they believe God cannot see (29:15)."},
+ {tp:"s7",sec:"g7-fall",t:"mc",q:"What does trusting Pharaoh lead to (30:1–5)?",a:"Disgrace",w:["Victory","Peace","Wealth"],e:"Isaiah particularly denounces Israel’s reliance on Egypt; God alone can defeat Assyria (31:1–9)."},
+ {tp:"s7",sec:"g7-fall",t:"tf",q:"In Isaiah 30:18, Yahweh wants to forgive Jerusalem and give it the covenant blessings.",a:true,e:"True — the blessings outlined in Leviticus 26 and Deuteronomy 27–28 (30:19–26)."},
+ {tp:"s7",sec:"g7-fall",t:"mc",q:"Who alone can lead the nation back to God (32:1–8)?",a:"The righteous king of Isaiah 1–12",w:["The prophet who follows Isaiah","The high priest in the temple","The pharaoh as Judah’s ally"],e:"Only the righteous king introduced in chapters 1–12."},
+ {tp:"s7",sec:"g7-fall",t:"mc",q:"Whose mistakes does Judah seem determined to repeat (chs. 33–34)?",a:"Samaria’s",w:["Egypt’s","Babylon’s","Edom’s"],e:"So Judah will be judged along with the other sinful nations."},
+ {tp:"s7",sec:"g7-fall",t:"mc",q:"What will be left after God defeats the world’s peoples (34:16–17)?",a:"A small remnant of land and people",w:["A great city with a new temple","An empty land with no survivors","A mighty army to rule the nations"],e:"These few survivors will return to Jerusalem, rejoicing in the Lord’s salvation (35:10)."},
+ {tp:"s7",sec:"g7-fall",t:"mc",q:"Which blessing is NOT promised in Isaiah 35:3–6?",a:"Kings restored",w:["The weak strengthened","Blind eyes opened","Lame limbs healed"],e:"The fearful are also encouraged (35:4). Tragically, only judgment makes such blessings possible."},
+ {tp:"s7",sec:"g7-fall",ap:true,t:"mc",q:"Under threat, a leader signs a treaty with a strong neighbor instead of turning to God. Which part of Isaiah addresses exactly that?",a:"Isaiah 28–35, the woes on trusting Egypt",w:["Isaiah 40–55, the songs of the servant","Isaiah 56–66, the new heavens and earth","Isaiah 13–27, the oracles on Babylon"],e:"Their “covenant with death” — the pro-Egypt alliance — will be swept away."},
+
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"By Isaiah 36, what has already happened?",a:"Samaria has fallen",w:["Jerusalem has fallen","Babylon has fallen","Hezekiah has died"],e:"In 701 BC Assyria takes all Judah’s fortified cities; only Jerusalem remains, under siege."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"In what year does Assyria take Judah’s fortified cities (36:1)?",a:"701 BC",w:["722 BC","735 BC","612 BC"],e:"The history box dates Sennacherib’s attack 702–701 BC."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"Where else is the story of Isaiah 36–39 told?",a:"2 Kings 18–19",w:["1 Kings 18–19","2 Samuel 11–12","2 Kings 24–25"],e:"So the reader knows what will follow; what matters is how it fits Isaiah’s message."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"What does Jerusalem’s deliverance give the people?",a:"Time to repent",w:["Freedom from Babylon","A new king","Victory over Egypt"],e:"It shows God’s mercy and Hezekiah’s good leadership."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"What do chapters 36–38 validate?",a:"Isaiah’s earlier predictions about Assyria",w:["Jeremiah’s later warnings about Babylon","Elijah’s earlier words against Ahab","Moses’ blessing on the tribe of Judah"],e:"As promised in 10:5–34 and 14:24–27, Yahweh defeats Assyria’s army (37:36–37)."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"How many Assyrian soldiers did the angel strike down in one night?",a:"185,000",w:["120,000","30,000","450"],e:"2 Kings 19:35. Sennacherib lifted the siege and went home to die."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"How did Jeremiah’s generation misread “I will defend this city … for David my servant’s sake” (37:35)?",a:"As a promise that Jerusalem could never fall",w:["As a promise for Jeremiah and no one else","As a curse on the house of David forever","As a command to seek an alliance with Egypt"],e:"Jeremiah 7:1–15. Isaiah spoke about one situation, the Sennacherib crisis, to a faithful king."},
+ {tp:"s7",sec:"g7-reprieve",t:"tf",q:"Isaiah’s promise to defend Jerusalem offered comfort even to those who disregarded God’s word.",a:false,e:"False — it gave hope to a faithful king, Hezekiah, in a specific crisis, and none to the disobedient."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"Unlike his father, how did Hezekiah treat Isaiah’s ministry?",a:"He welcomed it",w:["He ignored it","He banned it","He mocked it"],e:"He rejected Ahaz’s policy of serving Assyria, refused tribute, and prepared for war."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"What does the Siloam Tunnel Inscription confirm?",a:"Hezekiah’s tunnel from the Gihon spring",w:["Solomon’s pool fed by the Jordan River","Ahaz’s aqueduct from the Dead Sea","David’s shaft into the Jebusite city"],e:"2 Kings 20:20. Written in early Hebrew script, it dates to Hezekiah’s time."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"Who was Sennacherib’s father?",a:"Sargon II",w:["Tiglath-pileser III","Shalmaneser V","Merodach-Baladan II"],e:"Sennacherib attacked Judah in 702–701 BC."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"What does Sennacherib claim on the clay prism found at Nineveh?",a:"He shut Hezekiah up “like a bird in a cage”",w:["He burned Jerusalem and took Hezekiah captive","He was paid off by Egypt to leave Judah alone","He made Hezekiah king over all of Syria"],e:"He does not claim to have destroyed or conquered Hezekiah."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"How many more years did God promise Hezekiah when he cried out in his illness?",a:"15",w:["10","40","7"],e:"Isaiah first told him he would die of a large infected boil; God relented."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"Which two events came in Hezekiah’s added 15 years?",a:"Manasseh’s birth and the Babylonian envoys",w:["Josiah’s birth and the Assyrian siege","Manasseh’s exile and the fall of Samaria","The Siloam tunnel and the battle of Qarqar"],e:"Manasseh grew up to be the longest reigning and most wicked king of David’s line."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"Why did Merodach-Baladan II send envoys to Hezekiah (c. 703–700 BC)?",a:"To draw him into the fight against Assyria",w:["To demand tribute for the king of Babylon","To ask for his help against the Egyptians","To bring him gifts for the new temple"],e:"Hezekiah showed them everything; Isaiah said Babylon would one day carry it all off."},
+ {tp:"s7",sec:"g7-reprieve",t:"tf",q:"Hezekiah was deeply distressed by Isaiah’s judgment about the Babylonian envoys.",a:false,e:"False — he was not troubled, because it would not come in his own lifetime (2 Kg 20:12–19)."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"What does tradition say Manasseh did to Isaiah?",a:"Had him put in a hollow log and sawn in half",w:["Had him thrown into a cistern full of mud","Had him stoned at the gate of the temple","Had him exiled to Egypt for the rest of his life"],e:"Manasseh also set up an altar to an Assyrian god in the temple, as Ahaz had."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"What happened after Manasseh was taken to Nineveh in chains?",a:"He repented, and God returned him to the throne",w:["He died in prison, and his son took the throne","He escaped to Egypt and raised an army there","He was made governor of the province of Samaria"],e:"Yet he was unable to turn the people from their idolatry."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"What role do Isaiah 38–39 play in the book?",a:"A transition to the next major section",w:["The conclusion of the whole prophecy","The first of the four servant songs","The account of Isaiah’s own call"],e:"Babylon will rule Jerusalem someday (39:1–8) — the setting of chapters 40–66."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"On the map of Sennacherib’s campaign, who led Egyptian forces to intervene at Hezekiah’s request?",a:"Tirhakah",w:["Neco II","Sidqia","Siamun"],e:"Sennacherib defeated the Egyptian expedition. Sidqia was the king of Ashkelon he removed."},
+ {tp:"s7",sec:"g7-reprieve",t:"mc",q:"Which two cities does Sennacherib besiege on the map?",a:"Lachish and Libnah",w:["Samaria and Bethel","Gath and Ashdod","Hebron and Arad"],e:"He also captures Timnah and Ekron, then sends his chief officer to demand Jerusalem’s surrender."},
+ {tp:"s7",sec:"g7-reprieve",ap:true,t:"mc",q:"A friend says God promised Jerusalem would never fall, so sin does not matter. What does the textbook answer?",a:"The promise was for Hezekiah’s crisis, not the disobedient",w:["The promise was for Solomon’s temple, not the city","The promise was for the north, never for Judah","The promise was for Babylon’s day, not Assyria’s"],e:"That reading twists Isaiah’s words, as Jeremiah 7:1–15 shows."},
+
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"What does Isaiah 1–39 never describe?",a:"The actual destruction of Samaria or Jerusalem",w:["Any warning to Israel or to Judah","Any king of Assyria or of Babylon","Any promise of a son of David"],e:"Chapter 39 predicts Babylon will rule Jerusalem, yet never depicts it; 40–66 presents both as exiled."},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"From which two ideas does comfort emerge in Isaiah 40–66?",a:"The nation renewed after the Day of the Lord, and the servant’s work",w:["The temple rebuilt by Cyrus, and the priesthood restored to Zion","An alliance with Persia, and the return of the ark to Jerusalem","A new law given at Sinai, and a wise king like Solomon"],e:"A “servant of the Lord” who leads the people to serve God."},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"What does God tell the prophet to do in Isaiah 40:1–2?",a:"Comfort Israel, who has paid double for her sins",w:["Warn Israel, who will soon be taken into exile","Rebuke Babylon, who has spared the temple","Anoint Cyrus, who will rebuild the city walls"],e:"As if the day of Yahweh has already passed; then a smooth highway for the exiles (40:3–5)."},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"Which promise closes Isaiah 40 (40:31)?",a:"They will soar on wings like eagles",w:["They will dwell in the house of the Lord","They will lie down in green pastures","They will see the Lord on his throne"],e:"“They will run and not be weary, they will walk and not faint.”"},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"How will God first bring salvation, according to Isaiah 41:1–4?",a:"A nation “from the east” will punish Babylon",w:["A king from Egypt will defeat the Assyrians","A prophet from Judah will convert Babylon","An army from the north will rebuild Zion"],e:"Persia, led by Cyrus the Great, overwhelms Babylon in 539 BC."},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"Where does Isaiah name Cyrus?",a:"44:28 and 45:1",w:["7:14 and 9:6","40:1 and 40:31","53:4 and 53:12"],e:"Babylon’s demise will signal a new and better day for Israel (41:8–10)."},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"How does the textbook describe the servant compared with Cyrus?",a:"A spiritual counterpart to Cyrus’s political work",w:["A military rival to Cyrus’s growing empire","A Persian official serving in Cyrus’s court","A later king who undoes Cyrus’s decree"],e:"Cyrus frees the nation politically; the servant brings it back to God."},
+ {tp:"s7",sec:"g7-servant",t:"tf",q:"In Isaiah 41:8 the servant is Israel, but as the prophecy unfolds the servant passages seem to describe an individual.",a:true,e:"True — at first the text calls the nation God’s servant; later one person comes into view."},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"Who noted at least four servant songs in Isaiah 40–55?",a:"Bernhard Duhm",w:["Aren Maeir","Eilat Mazar","John Bright"],e:"Each song adds something to the servant’s portrait."},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"In the first song (42:1–7), what is the servant to the nations?",a:"A light to the Gentiles",w:["A wall around the Gentiles","A judge over the Gentiles","A king above the Gentiles"],e:"He is also chosen, humble, an encourager, and a healer of the blind."},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"In 49:1–7, what does the servant do?",a:"Speaks God’s word, restores Israel, reaches the Gentiles",w:["Builds the temple, crowns the king, defeats Babylon","Leads the exodus, divides the sea, gives the law","Anoints Cyrus, frees the exiles, rebuilds the walls"],e:"49:2, 49:5 and 49:6. Paul partly bases his ministry to the Gentiles on 49:6."},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"How will the servant turn Israel back, according to the last two songs?",a:"By suffering for the nation",w:["By conquering the nations","By rebuilding the temple","By keeping the whole law"],e:"He suffers unjustly (50:6) and bears the nation’s sicknesses, sorrows and sins (53:4–6)."},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"What does Isaiah 52:13–53:12 say about the servant?",a:"He bears the nation’s sins and is put to death by God",w:["He rules from Jerusalem and never suffers at all","He is the nation of Israel coming home from exile","He leads the Persian armies against the Babylonians"],e:"He never opens his mouth (53:7–9), yet will have offspring and “divide spoils” (53:10–12)."},
+ {tp:"s7",sec:"g7-servant",t:"tf",q:"In the fourth song the servant protests loudly against his unjust treatment.",a:false,e:"False — despite great affliction he never opens his mouth (53:7–9)."},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"Which passage says Jesus’ humility fulfills Isaiah 42:1–4?",a:"Matthew 12:15–21",w:["Matthew 1:22–23","Luke 22:37","Acts 8:32–33"],e:"Matthew 1:22–23 applies Isaiah 7:14 to his birth instead."},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"Who explained Isaiah 53 to the Ethiopian eunuch?",a:"Philip",w:["Paul","Peter","Luke"],e:"Acts 8:32–33. The early church believed the last two songs describe Christ’s death."},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"Why does Luke quote Isaiah 53:12 (Lk 22:37)?",a:"To explain why Jesus dies alongside thieves",w:["To explain why Jesus was born in Bethlehem","To explain why Jesus taught in parables","To explain why Jesus was baptized by John"],e:"Early believers used these texts as the foundation for their teaching on the cross."},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"Isaiah 40–55 parallels 1–12. What takes the place of the coming Davidic king?",a:"The work of the servant",w:["The rise of Cyrus","The fall of Babylon","The return of the ark"],e:"The cleansing day of Yahweh pairs with the Day of the Lord; the king with the servant."},
+ {tp:"s7",sec:"g7-servant",t:"mc",q:"Why does hope seem more certain in Isaiah 40–55 than in 1–12?",a:"The defeats of 722 and 587 BC lie in the past",w:["Assyria has become Israel’s faithful ally","The temple was never damaged by Babylon","Israel has stopped sinning altogether"],e:"Punishment has already eliminated many wicked people, paving the way for a better nation and leader."},
+ {tp:"s7",sec:"g7-servant",ap:true,t:"mc",q:"A reader of Isaiah 53 asks why Christians see Jesus in it. Which answer stays with the textbook?",a:"The New Testament reads the songs as pictures of Christ",w:["The servant is named Jesus in the Hebrew text","Isaiah wrote it after the time of Jesus","The songs describe Cyrus, who stands for Jesus"],e:"Matthew, Paul, Philip and Luke all apply the songs to Christ’s life, death and resurrection."},
+
+ {tp:"s7",sec:"g7-glory",t:"mc",q:"On what is the hope of Isaiah 56–66 based?",a:"Swift salvation for Israel and redemption for all nations",w:["Israel’s strength, with its walls rebuilt by Persia","The temple’s gold, returned from Babylon’s treasury","A lasting treaty of peace between Egypt and Assyria"],e:"56:1 for Israel, and 56:3, 6–8 for people of every nation."},
+ {tp:"s7",sec:"g7-glory",t:"mc",q:"Who may ascend God’s “holy mountain” (56:7)?",a:"Those who obey God, regardless of race",w:["Only priests from the tribe of Levi","Only Israelites born in the land","Only kings descended from David"],e:"Whoever disobeys can only expect punishment (56:9–57:13)."},
+ {tp:"s7",sec:"g7-glory",t:"mc",q:"Isaiah 56–66 echoes which earlier passage on salvation for all who respond?",a:"19:19–25",w:["7:14","28:15","37:35"],e:"In both, salvation and hope exist for all who respond to God’s offer of forgiveness."},
+ {tp:"s7",sec:"g7-glory",t:"mc",q:"What does Isaiah 57:21 say?",a:"“There is no peace … for the wicked”",w:["“Comfort, comfort my people”","“Holy, holy, holy is the Lord”","“The dead shall live”"],e:"Set against healing for the “contrite and lowly in spirit” (57:15)."},
+ {tp:"s7",sec:"g7-glory",t:"mc",q:"How will the people be healed, according to Isaiah 58–59?",a:"By mourning, fasting and confessing their sin",w:["By rebuilding the temple and its altar","By offering more sacrifices at the feasts","By making peace with the king of Persia"],e:"Confessing injustice, dishonesty and treachery (59:1–15); then Yahweh “will come to Zion” (59:20)."},
+ {tp:"s7",sec:"g7-glory",t:"mc",q:"What will God be to Jerusalem in Isaiah 60?",a:"Its “everlasting light”",w:["Its high wall","Its new king","Its only priest"],e:"The people will multiply (60:22); Jerusalem will never again appear empty and forsaken."},
+ {tp:"s7",sec:"g7-glory",t:"mc",q:"What does the Lord pledge the weary and discouraged in Isaiah 61:1–3?",a:"Good news, healing, freedom, comfort and joy",w:["Gold, silver, cattle, land and servants","Kings, armies, walls, gates and towers","Rain, harvests, vineyards, flocks and wine"],e:"The pitiful remnant will look like a radiant bride (61:10)."},
+ {tp:"s7",sec:"g7-glory",t:"mc",q:"What imagery does Isaiah 62 use for devastated Jerusalem?",a:"A wedding: a beautiful city once more",w:["A harvest: a field ready for reaping","A battle: an army coming home in triumph","A flood: a land washed clean again"],e:"62:1–12. The remnant is pictured as a radiant bride (61:10)."},
+ {tp:"s7",sec:"g7-glory",t:"mc",q:"As in Isaiah 2:6–22, what will the day of judgment do in 63:1–6?",a:"Eliminate Israel’s wicked enemies and evil citizens",w:["Destroy every last person in Israel and Judah","Remove the temple and the priesthood for good","Hand the land of Israel over to Persia forever"],e:"After it, the righteous remnant will praise God’s deeds and rebuild (63:7–64:12)."},
+ {tp:"s7",sec:"g7-glory",t:"mc",q:"How does Yahweh respond to the remnant in 65:1–10?",a:"By forgetting Israel’s sinful past",w:["By sending them back into exile","By choosing a new nation instead","By demanding a greater sacrifice"],e:"Those who reject the Lord will be destroyed (65:11–12); his “servants” receive amazing blessings."},
+ {tp:"s7",sec:"g7-glory",t:"mc",q:"Where will the faithful enjoy life (65:17)?",a:"In a recreated heaven and earth",w:["In a rebuilt and humbled Babylon","In the fertile land of Egypt","In Solomon’s restored palace"],e:"The perfect peace of 11:1–9 will actually occur (65:20–25)."},
+ {tp:"s7",sec:"g7-glory",t:"tf",q:"In the new creation, sin — which has marred creation since Genesis 3 — will lose its power.",a:true,e:"True — the perfect peace introduced in Isaiah 11:1–9 will actually happen (65:20–25)."},
+ {tp:"s7",sec:"g7-glory",t:"tf",q:"Isaiah says those who refuse God’s forgiveness will be punished for a limited time.",a:false,e:"False — that punishment will last forever (66:24); far better to become citizens of the “new earth.”"},
+ {tp:"s7",sec:"g7-glory",t:"mc",q:"How does the textbook sum up any choice but accepting God’s offer?",a:"Foolish, with salvation so accessible",w:["Understandable, given Israel’s long history","Forgivable, since judgment is still far off","Harmless, because God forgets every sin"],e:"Isaiah closes with one last call to decision (66:1–24)."},
+ {tp:"s7",sec:"g7-glory",t:"mc",q:"Isaiah is a perfect book to begin which part of the Bible?",a:"The Latter Prophets",w:["The Former Prophets","The Writings","The Torah"],e:"The textbook gives three reasons in its conclusion."},
+ {tp:"s7",sec:"g7-glory",t:"mc",q:"Which is NOT one of the textbook’s reasons Isaiah begins the Latter Prophets?",a:"It tells the fall of Jerusalem in detail",w:["It unfolds in the crisis years of Hezekiah’s reign","It introduces sin, punishment and restoration","It gives a solid rationale for the nation’s judgment"],e:"The opposite: the destruction of Jerusalem itself still demands attention."},
+ {tp:"s7",sec:"g7-glory",ap:true,t:"mc",q:"A student asks what question Isaiah leaves open for the prophets after it. What does the conclusion say?",a:"The destruction of Jerusalem itself",w:["The location of the ark of the covenant","The name of the last king of Assyria","The date of Isaiah’s own call"],e:"Isaiah answers many “why” questions, yet more explanation is needed."}
+]);
+
 /* ================================================================ helpers */
 function $(s,r){ return (r||document).querySelector(s); }
 function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
@@ -2749,7 +3184,7 @@ var store = {
   set:function(k,v){ try{ localStorage.setItem("ot."+k, v); }catch(e){} }
 };
 var CORNERS = ['tl','tr','bl','br'].map(function(c){ return '<svg class="c '+c+'" aria-hidden="true"><use href="#corner"/></svg>'; }).join('');
-var CHAPTERS = ["s1","s2","s3","s4","s5","s6"];
+var CHAPTERS = ["s1","s2","s3","s4","s5","s6","s7"];
 var TOPIC_NAMES = {};
 CHAPTERS.forEach(function(tp){ TOPIC_NAMES[tp] = CH[tp].title+" · "+CH[tp].ref; });
 /* Every question and card carries the id of the study-guide section it belongs to */
@@ -3260,7 +3695,7 @@ function renderMockSetup(){
       '<p class="orline">or set one up yourself</p>'+
       '<div class="row"><span class="label">Length</span><br>'+seg("mxN","data-n",mockCfg.n,[[15,"15"],[25,"25"],[40,"40"],[60,"60"]])+'</div>'+
       '<div class="row"><span class="label">Question types</span><br>'+seg("mxT","data-t",mockCfg.types,[["all","Everything"],["mc","Multiple choice"],["tf","True / false"],["ap","Application"]])+'</div>'+
-      '<div class="row"><span class="label">Part</span><br>'+seg("mxP","data-p",mockCfg.topic,[["all","All three"]].concat(CHAPTERS.map(function(tp){ return [tp, CH[tp].title]; })))+'</div>'+
+      '<div class="row"><span class="label">Part</span><br>'+seg("mxP","data-p",mockCfg.topic,[["all","All parts"]].concat(CHAPTERS.map(function(tp){ return [tp, CH[tp].title]; })))+'</div>'+
       '<div class="row" style="margin-top:22px"><button class="btn primary" type="button" id="mxStart">Start</button></div>'+
     '</div></div></div>';
   segWire("#mxN","data-n",function(v){ mockCfg.n = parseInt(v,10); store.set("mockcfg", JSON.stringify(mockCfg)); });
@@ -3397,8 +3832,8 @@ var midMatch = makeMatch($("#midMatch"), function(){ return midMatchRound(null, 
 ON_SHOW["mid/match"] = function(){ midMatch.ensure(); };
 renderMidStatements(); renderMidBooks(); renderMidBlanks(); renderMidWhich(); renderMidQuizSetup();
 
-var TOPICS = ["mid","guide","s1","s2","s3","s4","s5","s6","exam"];
-var currentTopic = "mid", currentMode = {mid:"st", guide:"overview", s1:"notes", s2:"notes", s3:"notes", s4:"notes", s5:"notes", s6:"notes", exam:"mock"};
+var TOPICS = ["mid","guide","s1","s2","s3","s4","s5","s6","s7","exam"];
+var currentTopic = "mid", currentMode = {mid:"st", guide:"overview", s1:"notes", s2:"notes", s3:"notes", s4:"notes", s5:"notes", s6:"notes", s7:"notes", exam:"mock"};
 function showMode(topic, mode){
   currentMode[topic] = mode;
   $$('.seg[data-modes="'+topic+'"] button').forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-mode") === mode)); });

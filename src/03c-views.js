@@ -106,7 +106,7 @@ function renderMockSetup(){
       '<p class="orline">or set one up yourself</p>'+
       '<div class="row"><span class="label">Length</span><br>'+seg("mxN","data-n",mockCfg.n,[[15,"15"],[25,"25"],[40,"40"],[60,"60"]])+'</div>'+
       '<div class="row"><span class="label">Question types</span><br>'+seg("mxT","data-t",mockCfg.types,[["all","Everything"],["mc","Multiple choice"],["tf","True / false"],["ap","Application"]])+'</div>'+
-      '<div class="row"><span class="label">Part</span><br>'+seg("mxP","data-p",mockCfg.topic,[["all","All three"]].concat(CHAPTERS.map(function(tp){ return [tp, CH[tp].title]; })))+'</div>'+
+      '<div class="row"><span class="label">Part</span><br>'+seg("mxP","data-p",mockCfg.topic,[["all","All parts"]].concat(CHAPTERS.map(function(tp){ return [tp, CH[tp].title]; })))+'</div>'+
       '<div class="row" style="margin-top:22px"><button class="btn primary" type="button" id="mxStart">Start</button></div>'+
     '</div></div></div>';
   segWire("#mxN","data-n",function(v){ mockCfg.n = parseInt(v,10); store.set("mockcfg", JSON.stringify(mockCfg)); });
@@ -243,8 +243,8 @@ var midMatch = makeMatch($("#midMatch"), function(){ return midMatchRound(null, 
 ON_SHOW["mid/match"] = function(){ midMatch.ensure(); };
 renderMidStatements(); renderMidBooks(); renderMidBlanks(); renderMidWhich(); renderMidQuizSetup();
 
-var TOPICS = ["mid","guide","s1","s2","s3","s4","s5","s6","exam"];
-var currentTopic = "mid", currentMode = {mid:"st", guide:"overview", s1:"notes", s2:"notes", s3:"notes", s4:"notes", s5:"notes", s6:"notes", exam:"mock"};
+var TOPICS = ["mid","guide","s1","s2","s3","s4","s5","s6","s7","exam"];
+var currentTopic = "mid", currentMode = {mid:"st", guide:"overview", s1:"notes", s2:"notes", s3:"notes", s4:"notes", s5:"notes", s6:"notes", s7:"notes", exam:"mock"};
 function showMode(topic, mode){
   currentMode[topic] = mode;
   $$('.seg[data-modes="'+topic+'"] button').forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-mode") === mode)); });

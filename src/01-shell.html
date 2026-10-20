@@ -4,7 +4,7 @@
     <svg class="emblem" viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg>
     <p class="eyebrow">Study Guide</p>
     <h1>Old Testament</h1>
-    <p class="sub">Genesis through 2 Kings &middot; the midterm, from &ldquo;the beginning&rdquo; to the exile</p>
+    <p class="sub">Genesis through 2 Kings, then Isaiah &middot; from &ldquo;the beginning&rdquo; to the prophets</p>
     <svg class="orn" viewBox="0 0 320 44" aria-hidden="true"><use href="#flourish"/></svg>
   </header>
 
@@ -17,6 +17,7 @@
     <button class="topic-btn" role="tab" data-topic="s4" aria-selected="false">2 Samuel</button>
     <button class="topic-btn" role="tab" data-topic="s5" aria-selected="false">1 Kings</button>
     <button class="topic-btn" role="tab" data-topic="s6" aria-selected="false">2 Kings</button>
+    <button class="topic-btn" role="tab" data-topic="s7" aria-selected="false">Isaiah</button>
     <button class="topic-btn" role="tab" data-topic="exam" aria-selected="false">Practice Quiz</button>
   </nav>
 
@@ -162,6 +163,25 @@
       </div>
       <div class="panel" data-panel="s6/match" hidden><p class="hint">Tap a name, then the line that goes with it.</p><div id="s6Match"></div></div>
       <div class="panel" data-panel="s6/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s6Quiz"></div></div>
+    </section>
+
+    <!-- ================= ISAIAH ================= -->
+    <section class="topic" id="topic-s7" hidden>
+      <p class="intro">Isaiah, from your textbook (pp. 179&ndash;195): who wrote it, Isaiah&rsquo;s kings and the Syro-Ephraimitic Crisis, the book&rsquo;s six parts from &ldquo;Sin and the Messiah&rdquo; to &ldquo;Future glory,&rdquo; the servant songs, and why Isaiah opens the Latter Prophets. Green is what you highlighted.</p>
+      <div class="modes"><div class="seg" data-modes="s7">
+        <button type="button" data-mode="notes" aria-pressed="true">Notes</button>
+        <button type="button" data-mode="cards" aria-pressed="false">Flashcards</button>
+        <button type="button" data-mode="match" aria-pressed="false">Match</button>
+        <button type="button" data-mode="quiz" aria-pressed="false">Quiz</button>
+      </div></div>
+      <div class="panel" data-panel="s7/notes"><div id="s7Notes"></div></div>
+      <div class="panel" data-panel="s7/cards" hidden>
+        <p class="hint">Front: the name or the question. Back: the answer and where it sits in the notes. Space flips, arrows move.</p>
+        <div class="toolbar"><span class="label">Deck</span><div class="seg" data-decks="s7"></div><button class="btn" type="button" data-shuffle="s7">Shuffle deck</button></div>
+        <div id="s7Cards"></div>
+      </div>
+      <div class="panel" data-panel="s7/match" hidden><p class="hint">Tap a name, then the line that goes with it.</p><div id="s7Match"></div></div>
+      <div class="panel" data-panel="s7/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s7Quiz"></div></div>
     </section>
 
     <!-- ================= PRACTICE EXAM ================= -->

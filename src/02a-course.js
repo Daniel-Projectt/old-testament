@@ -4,8 +4,8 @@
    chapter, so everything here stays inside the notes.                         */
 var COURSE = {
  code:"Old Testament Literature", term:"Cedarville University",
- exam:"1 and 2 Samuel &middot; 1 and 2 Kings &mdash; Samuel, Saul, David and Solomon",
- scope:"Your class notes on 1 Samuel &mdash; the last judge, the first king, and the shepherd God chose instead &mdash; and your textbook on 2 Samuel, David&rsquo;s kingdom, and 1 and 2 Kings, losing the land.",
+ exam:"1 and 2 Samuel &middot; 1 and 2 Kings &middot; Isaiah &mdash; Samuel, Saul, David, Solomon and the prophet of sin and salvation",
+ scope:"Your class notes on 1 Samuel &mdash; the last judge, the first king, and the shepherd God chose instead &mdash; and your textbook on 2 Samuel, David&rsquo;s kingdom, and 1 and 2 Kings, losing the land; then Isaiah, the first of the Latter Prophets.",
  rules:[
   "<b>1 Samuel 1&ndash;7</b> is Samuel, <b>8&ndash;15</b> is Saul, <b>16&ndash;31</b> is the new king, David. <b>2 Samuel</b> is David&rsquo;s kingdom: <b>1&ndash;10</b> he builds it, <b>11&ndash;19</b> his sin and its consequences, <b>20&ndash;24</b> his last years.",
   "<b>2 Samuel 7</b> is the high point: God promises David a <b>house</b> &mdash; a throne forever &mdash; the promise that leads to the Messiah.",
@@ -115,5 +115,28 @@ var GUIDE = {sections:[
    subs:[["Hezekiah", "s6-hezekiah"], ["Manasseh", "s6-manasseh"], ["Josiah", "s6-josiah"], ["Josiah’s death", "s6-jdeath"]]},
   {id:"g6-fall", t:"The fall of Jerusalem and the conclusion (2 Kings 23–25)", a:"s6-fall",
    short:"Jehoahaz, Jehoiakim, Jehoiachin, Zedekiah. Nebuchadnezzar takes Judah in 605 BC (Daniel), exiles Jehoiachin and Ezekiel in 597, destroys Jerusalem and the temple in 587. Cyrus takes Babylon in 539. Jehoiachin honored after 37 years: the promises to Abraham and David remain.",
-   subs:[["Last four kings", "s6-four"], ["587 BC", "s6-587"], ["Hope", "s6-hope"], ["Conclusion", "s6-conclusion"]]}]}
+   subs:[["Last four kings", "s6-four"], ["587 BC", "s6-587"], ["Hope", "s6-hope"], ["Conclusion", "s6-conclusion"]]}]},
+
+ {h:"Isaiah · Prophet of sin and salvation (textbook, pp. 179–195)", tp:"s7", items:[
+  {id:"g7-intro", t:"Isaiah’s day and the book’s unity", a:"s7-intro",
+   short:"Isaiah lives in the days of 2 Kings 16–20; his words address about 742–538 BC. The authorship debate (since the 1800s): two authors, or one? The book operates as a unity. Ministry 740–687 BC under Jotham, Ahaz, Hezekiah; the Syro-Ephraimitic Crisis; Immanuel and the two sons.",
+   subs:[["At a glance", "s7-chart"], ["Isaiah and the kings", "s7-life"], ["Who wrote Isaiah?", "s7-author"], ["Signs for Judah", "s7-signs"]]},
+  {id:"g7-messiah", t:"Sin and the Messiah (Isaiah 1–12)", a:"s7-messiah",
+   short:"Israel like a rebellious child, like Sodom and Gomorrah; every level guilty. Three courses of action: a day of judgment that leaves a remnant, warning through prophets (Isaiah’s call in ch. 6), and a righteous son of David — the virgin-born son of 7:14 (Matthew 1:22–23).",
+   subs:[["Israel’s sin", "s7-sin"], ["A day of judgment", "s7-first"], ["Warning, and Isaiah’s call", "s7-second"], ["A son of David", "s7-third"], ["The map", "s7-war"]]},
+  {id:"g7-nations", t:"Sin and the nations (Isaiah 13–27)", a:"s7-nations",
+   short:"All are accountable to God, and he loves all nations. Pride brings judgment: Babylon first, then Assyria (crushed in Judah; gone by 612 BC), Moab, Damascus, Egypt and Cush. Yet Egypt and Assyria will worship Yahweh together. The final day includes the whole world; death swallowed up.",
+   subs:[["Babylon, then Assyria", "s7-babylon"], ["Moab, Syria, Egypt and Cush", "s7-neighbors"], ["The final day", "s7-world"]]},
+  {id:"g7-fall", t:"Sin and the fall of Israel (Isaiah 28–35)", a:"s7-fall",
+   short:"Israel and Judah refuse to repent; their only real ally is the Lord. Six woes. The north, led by drunkards, falls in 722 BC. Jerusalem’s “covenant with death” is its pro-Egypt alliance; trusting Pharaoh brings disgrace. Judah repeats Samaria’s mistakes; a remnant returns rejoicing.",
+   subs:[["Six woes", "s7-woes"], ["Covenant with death", "s7-death"], ["The remnant", "s7-remnant"]]},
+  {id:"g7-reprieve", t:"Jerusalem’s reprieve (Isaiah 36–39)", a:"s7-reprieve",
+   short:"701 BC: Sennacherib takes every fortified city but Jerusalem; 185,000 Assyrians die. The reprieve gives time to repent and proves Isaiah right. 37:35 was misread as unconditional. The box: Siloam tunnel, the clay prism, 15 more years, Merodach-Baladan’s envoys, Manasseh. Chapters 38–39 turn toward Babylon.",
+   subs:[["701 BC", "s7-siege"], ["A promise misread", "s7-misread"], ["The turn toward Babylon", "s7-transition"]]},
+  {id:"g7-servant", t:"Salvation and the servant of God (Isaiah 40–55)", a:"s7-servant",
+   short:"Comfort for an exiled people from two ideas: renewal after the Day of the Lord, and the servant. First, Cyrus of Persia, named in 44:28 and 45:1, takes Babylon in 539 BC. Second, the servant: Duhm’s four songs, ending in 52:13–53:12, where he suffers for the nation. The New Testament reads them as Christ.",
+   subs:[["Comfort", "s7-comfort"], ["A nation from the east", "s7-cyrus"], ["The servant songs", "s7-songs"], ["In the New Testament", "s7-nt"], ["40–55 mirrors 1–12", "s7-parallel"]]},
+  {id:"g7-glory", t:"Future glory for God’s people (Isaiah 56–66); the conclusion", a:"s7-glory",
+   short:"Swift salvation for Israel and redemption for all nations: the obedient of any race climb the holy mountain. Healing by mourning and confession; good news, a radiant bride, a new heaven and earth. One last call to decide. Isaiah is the perfect book to begin the Latter Prophets, for three reasons.",
+   subs:[["All nations", "s7-mountain"], ["Repentance or rebellion", "s7-choice"], ["New heavens and earth", "s7-new"], ["Conclusion", "s7-conclusion"]]}]}
 ]};
