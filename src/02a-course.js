@@ -4,7 +4,7 @@
    chapter, so everything here stays inside the notes.                         */
 var COURSE = {
  code:"Old Testament Literature", term:"Cedarville University",
- exam:"1 and 2 Samuel &middot; 1 and 2 Kings &middot; Isaiah &mdash; Samuel, Saul, David, Solomon and the prophet of sin and salvation",
+ exam:"1 and 2 Samuel &middot; 1 and 2 Kings &middot; Isaiah &middot; Jeremiah &mdash; Samuel, Saul, David, Solomon and the prophets",
  scope:"Your class notes on 1 Samuel &mdash; the last judge, the first king, and the shepherd God chose instead &mdash; and your textbook on 2 Samuel, David&rsquo;s kingdom, and 1 and 2 Kings, losing the land; then Isaiah, the first of the Latter Prophets.",
  rules:[
   "<b>1 Samuel 1&ndash;7</b> is Samuel, <b>8&ndash;15</b> is Saul, <b>16&ndash;31</b> is the new king, David. <b>2 Samuel</b> is David&rsquo;s kingdom: <b>1&ndash;10</b> he builds it, <b>11&ndash;19</b> his sin and its consequences, <b>20&ndash;24</b> his last years.",
@@ -138,5 +138,28 @@ var GUIDE = {sections:[
    subs:[["Comfort", "s7-comfort"], ["A nation from the east", "s7-cyrus"], ["The servant songs", "s7-songs"], ["In the New Testament", "s7-nt"], ["40–55 mirrors 1–12", "s7-parallel"]]},
   {id:"g7-glory", t:"Future glory for God’s people (Isaiah 56–66); the conclusion", a:"s7-glory",
    short:"Swift salvation for Israel and redemption for all nations: the obedient of any race climb the holy mountain. Healing by mourning and confession; good news, a radiant bride, a new heaven and earth. One last call to decide. Isaiah is the perfect book to begin the Latter Prophets, for three reasons.",
-   subs:[["All nations", "s7-mountain"], ["Repentance or rebellion", "s7-choice"], ["New heavens and earth", "s7-new"], ["Conclusion", "s7-conclusion"]]}]}
+   subs:[["All nations", "s7-mountain"], ["Repentance or rebellion", "s7-choice"], ["New heavens and earth", "s7-new"], ["Conclusion", "s7-conclusion"]]}]},
+
+ {h:"Jeremiah · Prophet of sin and punishment (textbook, pp. 196–219)", tp:"s8", items:[
+  {id:"g8-intro", t:"Jeremiah’s day and the book’s plan", a:"s8-intro",
+   short:"627 BC until after 587 BC, under Josiah, Jehoahaz, Jehoiakim, Jehoiachin and Zedekiah. Israel is caught between Babylon and Egypt, and its politics are chaotic. “Repent” appears 111 times; repentance will be painful. Outline: 1 · 2–29 · 30–33 · 34–51 · 52. The box: Anathoth, Megiddo 609, Baruch’s bulla, Evil-Merodach.",
+   subs:[["At a glance", "s8-chart"], ["The five kings", "s8-kings"], ["The book’s plan", "s8-plan"]]},
+  {id:"g8-call", t:"The call and the three themes (Jeremiah 1)", a:"s8-call",
+   short:"Chapter 1 gives the setting, themes and characters. A small-town priest’s son, too young; God says he was born to prophesy. Three word pairs (1:10): pluck up and break down = sin, destroy and overthrow = punishment, build and plant = restoration. God watching, the boiling pot, four foes, iron and bronze.",
+   subs:[["An unlikely prophet", "s8-who"], ["The three word pairs", "s8-pairs"], ["Authority and enemies", "s8-foes"]]},
+  {id:"g8-lessons", t:"Six lessons and the temple sermon (Jeremiah 2–11)", a:"s8-lessons",
+   short:"Six lessons: broken covenant; time to repent; disaster from the north (Babylon); no righteous left; the Lord will be avenged; tester of metals. The temple sermon (chap. 7): the temple will not save the wicked; don’t pray for them. Anathoth plots to kill him.",
+   subs:[["The six lessons", "s8-six"], ["The temple sermon", "s8-temple"], ["The first plots", "s8-plots"]]},
+  {id:"g8-confessions", t:"The five confessions (Jeremiah 12–20)", a:"s8-confessions",
+   short:"1: confusion about God’s justice (12:1–4). 2: more biting, God like a deceptive brook (15:10–21). 3: no marriage, children, funerals or weddings; they will pay double. 4: after another plot, he prays God will destroy them all. 5: the jar, Pashhur and the stocks, “fire in his bones.” The prophets were real people.",
+   subs:[["First and second", "s8-first"], ["Third and fourth", "s8-third"], ["The final confession", "s8-final"]]},
+  {id:"g8-enemies", t:"Kings, prophets and people (Jeremiah 21–29)", a:"s8-enemies",
+   short:"Zedekiah wants a sign; Jehoiakim’s palace; a righteous son of David; lying prophets; spoiled figs; 70 years; the trial of chapter 26 (Micah, Uriah); the yoke and Hananiah; the letter to the exiles. The box: siege 588, Lachish Letters, fall in 587, Gedaliah murdered, flight to Egypt.",
+   subs:[["Kings and prophets", "s8-kingsprophets"], ["Figs, 70 years, a trial", "s8-people"], ["Preparing for exile", "s8-exile"]]},
+  {id:"g8-restore", t:"Israel’s ultimate restoration (Jeremiah 30–33)", a:"s8-restore",
+   short:"Restore fortunes, bring them back, possess the land. The new covenant (31:31–34): the Mosaic covenant replaced because the people broke it; the law written on hearts; all will know God; sins forgiven; permanent. Luke 22:20; Hebrews 8:8–12. The field in Anathoth; the Messiah (33:15–17).",
+   subs:[["The threefold plan", "s8-plan3"], ["The new covenant", "s8-newcov"], ["The field and the Messiah", "s8-field"]]},
+  {id:"g8-fall", t:"Jerusalem falls, the nations, and the summary (Jeremiah 34–52)", a:"s8-fall",
+   short:"Zedekiah’s fate, slaves freed and retaken, the Rechabites. Jehoiakim burns the scroll; Jeremiah in a cistern. The fall (39): Zedekiah’s sons killed, his eyes gouged. Gedaliah killed; flight to Egypt. Egypt, the small nations and Babylon judged. Chapter 52 = 2 Kings 25; Jehoiachin honored after 37 years.",
+   subs:[["Three episodes", "s8-three"], ["The scroll and the prison", "s8-scroll"], ["The city falls", "s8-capture"], ["The nations", "s8-nations"], ["Jeremiah 52", "s8-summary"], ["Conclusion", "s8-conclusion"]]}]}
 ]};

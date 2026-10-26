@@ -243,8 +243,8 @@ var midMatch = makeMatch($("#midMatch"), function(){ return midMatchRound(null, 
 ON_SHOW["mid/match"] = function(){ midMatch.ensure(); };
 renderMidStatements(); renderMidBooks(); renderMidBlanks(); renderMidWhich(); renderMidQuizSetup();
 
-var TOPICS = ["mid","guide","s1","s2","s3","s4","s5","s6","s7","exam"];
-var currentTopic = "mid", currentMode = {mid:"st", guide:"overview", s1:"notes", s2:"notes", s3:"notes", s4:"notes", s5:"notes", s6:"notes", s7:"notes", exam:"mock"};
+var TOPICS = ["mid","guide","s1","s2","s3","s4","s5","s6","s7","s8","exam"];
+var currentTopic = "mid", currentMode = {mid:"st", guide:"overview", s1:"notes", s2:"notes", s3:"notes", s4:"notes", s5:"notes", s6:"notes", s7:"notes", s8:"notes", exam:"mock"};
 function showMode(topic, mode){
   currentMode[topic] = mode;
   $$('.seg[data-modes="'+topic+'"] button').forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-mode") === mode)); });

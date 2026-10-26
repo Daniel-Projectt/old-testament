@@ -4,7 +4,7 @@
     <svg class="emblem" viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg>
     <p class="eyebrow">Study Guide</p>
     <h1>Old Testament</h1>
-    <p class="sub">Genesis through 2 Kings, then Isaiah &middot; from &ldquo;the beginning&rdquo; to the prophets</p>
+    <p class="sub">Genesis through 2 Kings, then Isaiah and Jeremiah &middot; from &ldquo;the beginning&rdquo; to the prophets</p>
     <svg class="orn" viewBox="0 0 320 44" aria-hidden="true"><use href="#flourish"/></svg>
   </header>
 
@@ -18,6 +18,7 @@
     <button class="topic-btn" role="tab" data-topic="s5" aria-selected="false">1 Kings</button>
     <button class="topic-btn" role="tab" data-topic="s6" aria-selected="false">2 Kings</button>
     <button class="topic-btn" role="tab" data-topic="s7" aria-selected="false">Isaiah</button>
+    <button class="topic-btn" role="tab" data-topic="s8" aria-selected="false">Jeremiah</button>
     <button class="topic-btn" role="tab" data-topic="exam" aria-selected="false">Practice Quiz</button>
   </nav>
 
@@ -182,6 +183,25 @@
       </div>
       <div class="panel" data-panel="s7/match" hidden><p class="hint">Tap a name, then the line that goes with it.</p><div id="s7Match"></div></div>
       <div class="panel" data-panel="s7/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s7Quiz"></div></div>
+    </section>
+
+    <!-- ================= JEREMIAH ================= -->
+    <section class="topic" id="topic-s8" hidden>
+      <p class="intro">Jeremiah, from your textbook (pp. 196&ndash;219): the five kings and Babylon&rsquo;s rise, the call and the three themes, the six lessons and the temple sermon, the five confessions, the new covenant, and the fall of Jerusalem.</p>
+      <div class="modes"><div class="seg" data-modes="s8">
+        <button type="button" data-mode="notes" aria-pressed="true">Notes</button>
+        <button type="button" data-mode="cards" aria-pressed="false">Flashcards</button>
+        <button type="button" data-mode="match" aria-pressed="false">Match</button>
+        <button type="button" data-mode="quiz" aria-pressed="false">Quiz</button>
+      </div></div>
+      <div class="panel" data-panel="s8/notes"><div id="s8Notes"></div></div>
+      <div class="panel" data-panel="s8/cards" hidden>
+        <p class="hint">Front: the name or the question. Back: the answer and where it sits in the notes. Space flips, arrows move.</p>
+        <div class="toolbar"><span class="label">Deck</span><div class="seg" data-decks="s8"></div><button class="btn" type="button" data-shuffle="s8">Shuffle deck</button></div>
+        <div id="s8Cards"></div>
+      </div>
+      <div class="panel" data-panel="s8/match" hidden><p class="hint">Tap a name, then the line that goes with it.</p><div id="s8Match"></div></div>
+      <div class="panel" data-panel="s8/quiz" hidden><p class="hint">Multiple choice, true/false and application questions. Keys <kbd>1</kbd>&ndash;<kbd>4</kbd> answer, <kbd>Enter</kbd> moves on.</p><div id="s8Quiz"></div></div>
     </section>
 
     <!-- ================= PRACTICE EXAM ================= -->
