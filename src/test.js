@@ -18,7 +18,7 @@ vm.createContext(sandbox);
 vm.runInContext(src, sandbox);
 const A = sandbox.module.exports;
 console.log('script parsed and loaded, exports: ' + Object.keys(A).length);
-const tps = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8'];
+const tps = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'];
 const body = tp => A.CH[tp].notes.map(n => n.body).join(' ');
 const allBodies = tps.map(body).join(' ');
 const anchorExists = id => tps.some(tp => A.CH[tp].notes.some(n => n.id === id)) || allBodies.includes('id="' + id + '"');
@@ -29,7 +29,7 @@ head('the course and the parts of the chapter');
 ok(/Old Testament/.test(A.COURSE.code) && /Cedarville/.test(A.COURSE.term) && /1 and 2 Samuel/.test(A.COURSE.exam), 'course, place and chapters');
 ok(A.COURSE.rules.length === 5 && /1&ndash;7/.test(A.COURSE.rules[0]) && /2 Samuel/.test(A.COURSE.rules[0]) && /2 Samuel 7/.test(A.COURSE.rules[1]) && /1 Samuel 15/.test(A.COURSE.rules[2]), 'the study notes: how the books divide, 2 Samuel 7, chapter 15, numbers, enemies');
 ok(/2 Samuel/.test(A.COURSE.exam), 'the header names 2 Samuel');
-ok(A.GUIDE.sections.length === 8 && A.GUIDE.sections.map(s => s.tp).join() === tps.join(), 'eight parts, in order');
+ok(A.GUIDE.sections.length === 9 && A.GUIDE.sections.map(s => s.tp).join() === tps.join(), 'nine parts, in order');
 const OUTLINES = {
   s1: ['The time and the man', 'Hannah and Samuel’s birth', 'Eli’s sons and God’s call', 'The ark lost and returned; Mizpah'],
   s2: ['Israel asks for a king', 'Saul’s kingdom and enemies', 'Saul chosen: the donkeys and three namings', 'Saul’s disobedience (1 Samuel 13–15)'],
@@ -38,7 +38,8 @@ const OUTLINES = {
   s5: ['The story of 1 and 2 Kings: Israel dies as a nation', 'Five themes from Deuteronomy; the key dates', 'Solomon takes the throne (1 Kings 1–4)', 'The temple (1 Kings 5–9)', 'Solomon’s fall and the kingdom split (1 Kings 9–14)', 'The kings of Israel (north) and Judah (south)'],
   s6: ['Omri, Ahab and Elijah (1 Kings 16–19)', 'Ahab’s end: Syria, the field and Micaiah (1 Kings 20–22)', 'Elisha and Jehu’s revolt (2 Kings 1–10)', 'The fall of northern Israel (2 Kings 11–17)', 'Hezekiah, Manasseh and Josiah (2 Kings 18–23)', 'The fall of Jerusalem and the conclusion (2 Kings 23–25)'],
   s7: ['Isaiah’s day and the book’s unity', 'Sin and the Messiah (Isaiah 1–12)', 'Sin and the nations (Isaiah 13–27)', 'Sin and the fall of Israel (Isaiah 28–35)', 'Jerusalem’s reprieve (Isaiah 36–39)', 'Salvation and the servant of God (Isaiah 40–55)', 'Future glory for God’s people (Isaiah 56–66); the conclusion'],
-  s8: ['Jeremiah’s day and the book’s plan', 'The call and the three themes (Jeremiah 1)', 'Six lessons and the temple sermon (Jeremiah 2–11)', 'The five confessions (Jeremiah 12–20)', 'Kings, prophets and people (Jeremiah 21–29)', 'Israel’s ultimate restoration (Jeremiah 30–33)', 'Jerusalem falls, the nations, and the summary (Jeremiah 34–52)'] };
+  s8: ['Jeremiah’s day and the book’s plan', 'The call and the three themes (Jeremiah 1)', 'Six lessons and the temple sermon (Jeremiah 2–11)', 'The five confessions (Jeremiah 12–20)', 'Kings, prophets and people (Jeremiah 21–29)', 'Israel’s ultimate restoration (Jeremiah 30–33)', 'Jerusalem falls, the nations, and the summary (Jeremiah 34–52)'],
+  s9: ['The Twelve as one book', 'Hosea: Israel’s adultery', 'Joel: prophet of apathy and cruelty', 'Amos: prophet of justice', 'Obadiah: prophet of international hatred', 'Jonah: prophet of Israel’s hatred of Assyria', 'Micah: prophet of hope beyond judgment'] };
 A.GUIDE.sections.forEach(s => {
   ok(JSON.stringify(s.items.map(i => i.t)) === JSON.stringify(OUTLINES[s.tp]), 'guide items follow the notes for ' + s.tp, s.items.map(i => i.t).join(' | '));
   s.items.forEach(it => {
@@ -48,8 +49,8 @@ A.GUIDE.sections.forEach(s => {
   });
 });
 const items = A.GUIDE.sections.flatMap(s => s.items);
-ok(items.length === 43 && new Set(items.map(i => i.id)).size === 43, 'forty-three sections, unique ids', items.length);
-ok(Object.keys(A.SEC_CHAPTER).length === 43, 'the engine knows all forty-three');
+ok(items.length === 50 && new Set(items.map(i => i.id)).size === 50, 'fifty sections, unique ids', items.length);
+ok(Object.keys(A.SEC_CHAPTER).length === 50, 'the engine knows all fifty');
 
 // ---------- 2. the lessons ----------
 head('2 Samuel, from the textbook');
@@ -113,6 +114,20 @@ ok(!/<div class="exam-tip">(?:(?!<\/div>)[\s\S])*<\/b>(?:(?!<\/div>)[\s\S])*<b>/
 ok((body('s8').match(/<mark>/g) || []).length >= 15, 'her highlights are marked', (body('s8').match(/<mark>/g) || []).length);
 ok(!/Lamentations|Shaphan|Ebed-melech|Gemariah|Benjamin Gate/.test(JSON.stringify(A.CH.s8) + JSON.stringify(A.QB.filter(q => q.tp === 's8'))), 'Jeremiah stays inside the textbook pages');
 ok(A.QB.filter(q => q.tp === 's8').length >= 100, 'plenty of Jeremiah questions', A.QB.filter(q => q.tp === 's8').length);
+head('The Twelve, from the textbook');
+['single prophecy', 'father, husband, king and judge', 'obedient', 'rebellious', 'intellectually inquisitive', 'God-fearing minority', 'Day of the Lord', 'conversion of the Gentiles', 'not in chronological order',
+ 'Edom’s hatred of Israel', 'Israel’s hatred of Assyria', 'The solution for sin', 'Assyria’s punishment', 'Restoration of the temple', 'Restoration of the Jewish people',
+ '752 to 724 BC', 'Jeroboam II', 'Uzziah', 'Not since Solomon’s time', 'northern Israel', 'Ezekiel 16, 20 and 23', 'Ahaz and Hezekiah', 'Gomer', 'Jezreel', 'Jehu’s massacre at Jezreel', 'Not Pitied', 'Not My People', 'two spurned husbands', 'buy her back', 'more personal humiliation than any other prophet', 'They sow the wind, and they shall reap the whirlwind', 'Egypt and Assyria',
+ '800s', '300s', 'Hazael', 'Mesha', 'locust plague', 'rend your hearts and not your garments', 'pour out my Spirit on all flesh', 'Pentecost', 'Acts 2:14–21', 'roaring lion', 'Israel does not sin alone',
+ '760 to 750 BC', 'earthquake', 'Tiglath-pileser III (745–727)', 'Hamath', 'Eilat', 'By sinning against one another', 'covenant of brotherhood', 'Judah has broken the Sinai covenant', 'sold into slavery for small debts', '“cows”', 'with fishhooks', 'prepare to meet [their] God', 'darkness, not light', 'let justice roll down like waters', 'Locusts', 'ripe fruit', 'go back to Judah', 'no covenant',
+ 'shortest book in the Bible', '587 BC', 'delight in the disaster', 'kill refugees', 'Joab', 'helped Nebuchadnezzar destroy Jerusalem',
+ 'Israel’s hatred of its neighbor', '2 Kings 14:25', 'Battle of Qarqar', 'Urartu', 'Tarshish', 'Spain', '1,000 miles', 'Phoenician', 'opposite direction', 'great fish', 'five words', 'Yahweh forgives them', 'shade plant', 'Should I not pity Nineveh, that great city?', 'few examples of that change actually happening',
+ 'Jotham, Ahaz and Hezekiah', '750 and 687 BC', '701 BC', 'Moresheth-Gath', 'Lachish Reliefs', 'defrauding and coveting', 'level Jerusalem', 'Jeremiah placing chapters 30–33', 'born in Bethlehem', 'he shall be their peace', 'mercy, humility and fellowship with Him', 'righteous remnant', 'wicked majority', 'Thebes (663 BC)', 'Nineveh (612 BC)'].forEach(v => ok(strip(body('s9')).includes(v), 'The Twelve notes include: ' + v));
+ok((body('s9').match(/class="exam-tip"/g) || []).length === 7, 'six history boxes and the missing-pages note');
+ok(!/<div class="exam-tip">(?:(?!<\/div>)[\s\S])*<\/b>(?:(?!<\/div>)[\s\S])*<b>/.test(body('s9')), 'inside a Twelve box only the label uses <b>');
+ok(!/Amaziah|Beeri|Pethuel|Tekoa|Diblaim|Lo-Ruhamah|Lo-Ammi|Elkosh/.test(JSON.stringify(A.CH.s9) + JSON.stringify(A.QB.filter(q => q.tp === 's9'))), 'the Twelve stays inside the textbook pages');
+ok(A.QB.filter(q => q.tp === 's9').length >= 100, 'plenty of questions on the Twelve', A.QB.filter(q => q.tp === 's9').length);
+
 
 
 head('lessons');
@@ -223,7 +238,7 @@ for (let r = 0; r < 100; r++) {
   const n = [15, 25, 40, 60][r % 4];
   const mx = A.mockQuestions({ n: n, types: 'all' });
   ok(mx.length === n, 'exam of ' + n, mx.length);
-  ok(new Set(mx.map(q => q.tp)).size === 8, 'exam spans all eight parts', [...new Set(mx.map(q => q.tp))].join(','));
+  ok(new Set(mx.map(q => q.tp)).size === 9, 'exam spans all nine parts', [...new Set(mx.map(q => q.tp))].join(','));
   ok(A.mockQuestions({ n: 20, types: 'ap' }).every(q => q.ap), 'application-only exam');
   ok(A.mockQuestions({ n: 20, types: 'tf' }).every(q => q.kind === 'tf'), 'true/false-only exam');
   ok(A.mockQuestions({ n: 15, types: 'all', topics: [tp] }).every(q => q.tp === tp), 'one-lesson exam');
@@ -258,7 +273,7 @@ ok(/<b>Correct\.<\/b>/.test(src) && /<b>Not this one\.<\/b>/.test(src), 'answer 
 
 // ---------- 8. markup ----------
 head('markup');
-ok((html.match(/class="topic-btn"/g) || []).length === 11, 'eleven tabs: midterm, guide, eight parts, practice quiz');
+ok((html.match(/class="topic-btn"/g) || []).length === 12, 'twelve tabs: midterm, guide, nine parts, practice quiz');
 
 head('the midterm');
 {
@@ -361,7 +376,7 @@ head('the midterm');
   ok(A.MID_PAIRS[1].pairs.some(p => p[0] === '1446 BC' && p[1] === 'The exodus') && A.MID_PAIRS[3].pairs.length === 9, 'the dates and the nine books are matching sets');
   ok(/id="topic-mid"/.test(html) && html.indexOf('data-topic="mid"') < html.indexOf('data-topic="guide"') && /open paper Bible/.test(html), 'the Midterm tab comes first and says the exam is open Bible');
 }
-['guide', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 'exam'].forEach(t => ok(html.includes('data-topic="' + t + '"') && html.includes('id="topic-' + t + '"'), 'tab and section: ' + t));
+['guide', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 'exam'].forEach(t => ok(html.includes('data-topic="' + t + '"') && html.includes('id="topic-' + t + '"'), 'tab and section: ' + t));
 tps.forEach(tp => ['Notes', 'Cards', 'Match', 'Quiz'].forEach(s => ok(html.includes('id="' + tp + s + '"'), 'root exists: ' + tp + s)));
 ok(/data-topic="mid"\s+aria-selected="true"/.test(html) && /data-topic="guide"\s+aria-selected="false"/.test(html), 'Midterm is the default tab');
 ok(html.includes('id="flourish"') && html.includes('id="emblem"') && html.includes('class="emblem"'), 'ornaments and the earth emblem present');

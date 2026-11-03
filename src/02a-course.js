@@ -4,7 +4,7 @@
    chapter, so everything here stays inside the notes.                         */
 var COURSE = {
  code:"Old Testament Literature", term:"Cedarville University",
- exam:"1 and 2 Samuel &middot; 1 and 2 Kings &middot; Isaiah &middot; Jeremiah &mdash; Samuel, Saul, David, Solomon and the prophets",
+ exam:"1 and 2 Samuel &middot; 1 and 2 Kings &middot; Isaiah &middot; Jeremiah &middot; the Twelve &mdash; Samuel, Saul, David, Solomon and the prophets",
  scope:"Your class notes on 1 Samuel &mdash; the last judge, the first king, and the shepherd God chose instead &mdash; and your textbook on 2 Samuel, David&rsquo;s kingdom, and 1 and 2 Kings, losing the land; then Isaiah, the first of the Latter Prophets.",
  rules:[
   "<b>1 Samuel 1&ndash;7</b> is Samuel, <b>8&ndash;15</b> is Saul, <b>16&ndash;31</b> is the new king, David. <b>2 Samuel</b> is David&rsquo;s kingdom: <b>1&ndash;10</b> he builds it, <b>11&ndash;19</b> his sin and its consequences, <b>20&ndash;24</b> his last years.",
@@ -161,5 +161,28 @@ var GUIDE = {sections:[
    subs:[["The threefold plan", "s8-plan3"], ["The new covenant", "s8-newcov"], ["The field and the Messiah", "s8-field"]]},
   {id:"g8-fall", t:"Jerusalem falls, the nations, and the summary (Jeremiah 34–52)", a:"s8-fall",
    short:"Zedekiah’s fate, slaves freed and retaken, the Rechabites. Jehoiakim burns the scroll; Jeremiah in a cistern. The fall (39): Zedekiah’s sons killed, his eyes gouged. Gedaliah killed; flight to Egypt. Egypt, the small nations and Babylon judged. Chapter 52 = 2 Kings 25; Jehoiachin honored after 37 years.",
-   subs:[["Three episodes", "s8-three"], ["The scroll and the prison", "s8-scroll"], ["The city falls", "s8-capture"], ["The nations", "s8-nations"], ["Jeremiah 52", "s8-summary"], ["Conclusion", "s8-conclusion"]]}]}
+   subs:[["Three episodes", "s8-three"], ["The scroll and the prison", "s8-scroll"], ["The city falls", "s8-capture"], ["The nations", "s8-nations"], ["Jeremiah 52", "s8-summary"], ["Conclusion", "s8-conclusion"]]}]},
+
+ {h:"The Book of the Twelve · Partners in prophecy (textbook, pp. 231–249)", tp:"s9", items:[
+  {id:"g9-intro", t:"The Twelve as one book", a:"s9-intro",
+   short:"The Hebrew Bible counts the twelve small prophets as one prophecy. Six on sin (Hosea–Micah), three on punishment (Nahum, Habakkuk, Zephaniah), three on restoration (Haggai, Zechariah, Malachi). Yahweh as father, husband, king and judge; prophets obedient (Hosea), rebellious (Jonah), inquisitive (Habakkuk). Not in chronological order.",
+   subs:[["At a glance", "s9-chart"], ["One prophecy", "s9-one"], ["The outline", "s9-outline"]]},
+  {id:"g9-hosea", t:"Hosea: Israel’s adultery", a:"s9-hosea",
+   short:"About 752–724 BC, to northern Israel, in rich times under Jeroboam II and Uzziah. God has Hosea marry the unfaithful Gomer: Jezreel, Not Pitied, Not My People. Chapter 2, two spurned husbands; chapter 3, Hosea buys her back as God will buy back Israel. 8:7: sow the wind, reap the whirlwind.",
+   subs:[["Good times, bad worship", "s9-hsetting"], ["Hosea 1–3", "s9-gomer"], ["Hosea 4–14", "s9-detail"]]},
+  {id:"g9-joel", t:"Joel: prophet of apathy and cruelty", a:"s9-joel",
+   short:"Date unknown (800s to 300s; the textbook says the 800s). Israel’s apathy and the nations’ cruelty. After a locust plague: rend your hearts, not your garments; the day of Yahweh. God will pour out His Spirit on all flesh (2:28), fulfilled at Pentecost. The nations will be judged; Israel does not sin alone.",
+   subs:[["The date", "s9-jdate"], ["The locusts", "s9-locust"], ["The Spirit", "s9-spirit"]]},
+  {id:"g9-amos", t:"Amos: prophet of justice", a:"s9-amos",
+   short:"760–750 BC (the earthquake of 1:1), to a contented north. Specific sins, all about justice and love for neighbor. The nations broke the covenant of brotherhood; Judah broke Sinai; Israel sells the needy. The cows of Samaria; the Day of the Lord is darkness; 5:24. Visions: locusts, fire, measuring, ripe fruit. Hope in 9:11–15.",
+   subs:[["Amos’s day", "s9-adate"], ["Amos 1–2", "s9-nations"], ["Amos 3–6", "s9-injustice"], ["The visions", "s9-visions"], ["Future hope", "s9-ahope"]]},
+  {id:"g9-obadiah", t:"Obadiah: prophet of international hatred", a:"s9-obadiah",
+   short:"The shortest book in the Bible, near 587 BC. Edom delights in Jerusalem’s fall, kills refugees and takes plunder, and will be punished for pride and hatred. Edom had been Judah’s vassal since David (Joab) and helped Nebuchadnezzar. Does Israel return the hatred?",
+   subs:[["Edom’s hatred", "s9-edom"]]},
+  {id:"g9-jonah", t:"Jonah: prophet of Israel’s hatred of Assyria", a:"s9-jonah",
+   short:"Main theme: Israel’s hatred of its neighbor. About 800–750 BC (2 Kings 14:25). He flees toward Tarshish (Spain), is swallowed by a great fish, preaches a five-word sermon; Nineveh repents and God forgives; Jonah sulks over a plant. One of the few times hearers repent.",
+   subs:[["Jonah’s day", "s9-jdate2"], ["Running and preaching", "s9-run"], ["What it shows", "s9-jmeaning"]]},
+  {id:"g9-micah", t:"Micah: prophet of hope beyond judgment", a:"s9-micah",
+   short:"Isaiah’s contemporary under Jotham, Ahaz and Hezekiah (750–687 BC); Sennacherib and Lachish (701 BC). Sins: fraud, false prophecy, bribes, fortune-telling. Restoration first: nations come to the temple; a son of David born in Bethlehem (5:2). God requires mercy, humility and fellowship (6:6–8). Nahum begins: Assyria’s punishment.",
+   subs:[["Micah’s day", "s9-mday"], ["Sin and judgment", "s9-msin"], ["The restoration", "s9-mhope"], ["What God requires", "s9-mrequire"], ["Nahum begins", "s9-nahum"]]}]}
 ]};
