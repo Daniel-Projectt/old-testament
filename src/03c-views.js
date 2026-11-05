@@ -90,7 +90,7 @@ function startMock(keys){
 }
 /* the one-button exam: 50 questions, all sixteen study-guide sections covered */
 function startFifty(){
-  engines.mock = makeQuiz($("#mockExam"), function(){ return finalFifty(50); }, {showTopic:true, againLabel:"Another fifty", onSetup:renderMockSetup});
+  engines.mock = makeQuiz($("#mockExam"), function(){ return finalFifty(60); }, {showTopic:true, againLabel:"Another sixty", onSetup:renderMockSetup});
   engines.mock.start(null);
 }
 function renderMockSetup(){
@@ -100,8 +100,8 @@ function renderMockSetup(){
   }
   root.innerHTML = '<div class="quizWrap"><div class="qcard card-corners">'+CORNERS+
     '<div class="qnum">Practice exam</div><p class="qtext">Set it up, then answer across the chapters. Each run is drawn fresh.</p>'+
-    '<div class="fifty"><button class="btn primary" type="button" id="mxFifty">The 50 &mdash; every section of the guide</button>'+
-      '<p>Fifty questions, at least two from every part of the chapter &mdash; so nothing in the notes is skipped. Drawn fresh each time.</p></div>'+
+    '<div class="fifty"><button class="btn primary" type="button" id="mxFifty">The 60 &mdash; every section of the guide</button>'+
+      '<p>Sixty questions, at least one from every part of the guide &mdash; so nothing in the notes is skipped. Drawn fresh each time.</p></div>'+
     '<div class="setup">'+
       '<p class="orline">or set one up yourself</p>'+
       '<div class="row"><span class="label">Length</span><br>'+seg("mxN","data-n",mockCfg.n,[[15,"15"],[25,"25"],[40,"40"],[60,"60"]])+'</div>'+

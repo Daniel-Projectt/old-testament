@@ -39,7 +39,7 @@ const OUTLINES = {
   s6: ['Omri, Ahab and Elijah (1 Kings 16–19)', 'Ahab’s end: Syria, the field and Micaiah (1 Kings 20–22)', 'Elisha and Jehu’s revolt (2 Kings 1–10)', 'The fall of northern Israel (2 Kings 11–17)', 'Hezekiah, Manasseh and Josiah (2 Kings 18–23)', 'The fall of Jerusalem and the conclusion (2 Kings 23–25)'],
   s7: ['Isaiah’s day and the book’s unity', 'Sin and the Messiah (Isaiah 1–12)', 'Sin and the nations (Isaiah 13–27)', 'Sin and the fall of Israel (Isaiah 28–35)', 'Jerusalem’s reprieve (Isaiah 36–39)', 'Salvation and the servant of God (Isaiah 40–55)', 'Future glory for God’s people (Isaiah 56–66); the conclusion'],
   s8: ['Jeremiah’s day and the book’s plan', 'The call and the three themes (Jeremiah 1)', 'Six lessons and the temple sermon (Jeremiah 2–11)', 'The five confessions (Jeremiah 12–20)', 'Kings, prophets and people (Jeremiah 21–29)', 'Israel’s ultimate restoration (Jeremiah 30–33)', 'Jerusalem falls, the nations, and the summary (Jeremiah 34–52)'],
-  s9: ['The Twelve as one book', 'Hosea: Israel’s adultery', 'Joel: prophet of apathy and cruelty', 'Amos: prophet of justice', 'Obadiah: prophet of international hatred', 'Jonah: prophet of Israel’s hatred of Assyria', 'Micah: prophet of hope beyond judgment'] };
+  s9: ['The Twelve as one book', 'Hosea: Israel’s adultery', 'Joel: prophet of apathy and cruelty', 'Amos: prophet of justice', 'Obadiah: prophet of international hatred', 'Jonah: prophet of Israel’s hatred of Assyria', 'Micah: prophet of hope beyond judgment', 'Nahum: prophet of Assyria’s punishment', 'Habakkuk: prophet of faith amid chaos', 'Zephaniah: prophet of universal punishment', 'Haggai: prophet of temple restoration', 'Zechariah: prophet of Jerusalem’s restoration', 'Malachi: prophet of restoration of the people of Israel'] };
 A.GUIDE.sections.forEach(s => {
   ok(JSON.stringify(s.items.map(i => i.t)) === JSON.stringify(OUTLINES[s.tp]), 'guide items follow the notes for ' + s.tp, s.items.map(i => i.t).join(' | '));
   s.items.forEach(it => {
@@ -49,8 +49,8 @@ A.GUIDE.sections.forEach(s => {
   });
 });
 const items = A.GUIDE.sections.flatMap(s => s.items);
-ok(items.length === 50 && new Set(items.map(i => i.id)).size === 50, 'fifty sections, unique ids', items.length);
-ok(Object.keys(A.SEC_CHAPTER).length === 50, 'the engine knows all fifty');
+ok(items.length === 56 && new Set(items.map(i => i.id)).size === 56, 'fifty-six sections, unique ids', items.length);
+ok(Object.keys(A.SEC_CHAPTER).length === 56, 'the engine knows all fifty-six');
 
 // ---------- 2. the lessons ----------
 head('2 Samuel, from the textbook');
@@ -123,7 +123,15 @@ head('The Twelve, from the textbook');
  'shortest book in the Bible', '587 BC', 'delight in the disaster', 'kill refugees', 'Joab', 'helped Nebuchadnezzar destroy Jerusalem',
  'Israel’s hatred of its neighbor', '2 Kings 14:25', 'Battle of Qarqar', 'Urartu', 'Tarshish', 'Spain', '1,000 miles', 'Phoenician', 'opposite direction', 'great fish', 'five words', 'Yahweh forgives them', 'shade plant', 'Should I not pity Nineveh, that great city?', 'few examples of that change actually happening',
  'Jotham, Ahaz and Hezekiah', '750 and 687 BC', '701 BC', 'Moresheth-Gath', 'Lachish Reliefs', 'defrauding and coveting', 'level Jerusalem', 'Jeremiah placing chapters 30–33', 'born in Bethlehem', 'he shall be their peace', 'mercy, humility and fellowship with Him', 'righteous remnant', 'wicked majority', 'Thebes (663 BC)', 'Nineveh (612 BC)'].forEach(v => ok(strip(body('s9')).includes(v), 'The Twelve notes include: ' + v));
-ok((body('s9').match(/class="exam-tip"/g) || []).length === 7, 'six history boxes and the missing-pages note');
+ok((body('s9').match(/class="exam-tip"/g) || []).length === 12, 'twelve history boxes, one per book that has one');
+['between 663 and 612 BC', 'Ashurbanipal', 'civil war', 'Medes', 'Megiddo', 'Nabonidus', 'Nabopolassar', 'personal vindictiveness', 'a stronghold in the day of trouble', 'God stands against Assyria', 'normal human emotions', 'Hitler, Tojo or Stalin', 'Cyaxares', 'Haran',
+ 'same time as Jeremiah', 'Jehoahaz', 'Daniel and his friends', 'paralyze', 'The righteous shall live by his faith', 'Martin Luther, John Calvin and John Wesley', 'bloodshed', 'I stand in awe of your deeds, O LORD', 'Habakkuk adds Israel to the list of the wicked',
+ 'Josiah’s reign (640–609 BC)', 'universal scope', 'Ethiopia', 'much as Micah summarizes sin', 'Bethel and Dan', 'burning the bones of Baal priests', 'Median and Persian', 'remnant', 'from all nations', 'still greater “day”',
+ 'Cyrus', 'gladly serve Persia', 'Isaiah 44:28 and 45:1', 'Joshua', 'Zerubbabel', '538 and 535 BC', '520–516 BC', 'Samaritans', 'Idumea', 'Tattenai', 'Darius', 'God’s house in ruins', 'put God first', 'like nothing', 'The latter glory of this house shall be greater than the former', '966 BC', 'Herod the Great',
+ 'Jerusalem must also be rebuilt', 'Cambyses I', 'eight unusual visions', '1–8 and 9–14', 'very jealous for Jerusalem', 'measuring Jerusalem', 'unwalled city', 'cleansing of the priesthood', 'the faithful city', 'humble and mounted on a donkey', 'Matthew 21:5', 'worthless shepherd', 'Holy to the LORD', 'Jew and Gentile alike',
+ '430 BC', '90 years', 'Eugene Merrill', 'Susa', 'Artaxerxes I', 'Yehud', '50,000 people', 'Tobiah the Ammonite', 'chose Jacob, their father, over Esau', 'crippled, worthless animals', 'covers his garment with violence', 'withholding tithes and offerings', 'messenger of the covenant', 'John the Baptist was this Elijah', 'not God’s ultimate goal',
+ 'Why did the nation perish?', 'Why have hope for the future?', 'Why believe in God?', 'promises to Abraham never end', 'to think, to imagine, and to believe in God'].forEach(v => ok(strip(body('s9')).includes(v), 'The Twelve, Nahum to Malachi, includes: ' + v));
+ok(!/photos stop|Not in your photos|Send pages 250/.test(body('s9')), 'the missing-pages note is gone now that the pages are in');
 ok(!/<div class="exam-tip">(?:(?!<\/div>)[\s\S])*<\/b>(?:(?!<\/div>)[\s\S])*<b>/.test(body('s9')), 'inside a Twelve box only the label uses <b>');
 ok(!/Amaziah|Beeri|Pethuel|Tekoa|Diblaim|Lo-Ruhamah|Lo-Ammi|Elkosh/.test(JSON.stringify(A.CH.s9) + JSON.stringify(A.QB.filter(q => q.tp === 's9'))), 'the Twelve stays inside the textbook pages');
 ok(A.QB.filter(q => q.tp === 's9').length >= 100, 'plenty of questions on the Twelve', A.QB.filter(q => q.tp === 's9').length);
@@ -244,9 +252,9 @@ for (let r = 0; r < 100; r++) {
   ok(A.mockQuestions({ n: 15, types: 'all', topics: [tp] }).every(q => q.tp === tp), 'one-lesson exam');
 }
 for (let r = 0; r < 40; r++) {
-  const f = A.finalFifty(50);
-  ok(f.length === 50, 'the fifty is fifty', f.length);
-  ok(new Set(f.map(q => q.key)).size === 50, 'no repeated question in the fifty');
+  const f = A.finalFifty(60);
+  ok(f.length === 60, 'the sixty is sixty', f.length);
+  ok(new Set(f.map(q => q.key)).size === 60, 'no repeated question in the sixty');
   const covered = new Set(f.map(q => q.sec));
   ok(covered.size === secs.length, 'the fifty covers every section of every outline', covered.size + '/' + secs.length);
   secs.forEach(s => ok(f.filter(q => q.sec === s).length >= 1, 'at least one on ' + A.SEC_TITLES[s], f.filter(q => q.sec === s).length));

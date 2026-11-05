@@ -86,15 +86,15 @@ ok(visible($('#topic-mid')) && !visible($('#topic-guide')) && !visible($('#topic
   topic('guide'); ok(visible($('#topic-guide')) && !visible($('#topic-mid')), 'the Guide still opens');
 }
 const items = $$('#guideRoot .gitem');
-ok(items.length === 50, 'guide shows all fifty parts', items.length);
-ok(/0 of 50/.test($('#gCount').textContent), 'progress starts at 0 of 50', $('#gCount').textContent);
+ok(items.length === 56, 'guide shows all fifty-six parts', items.length);
+ok(/0 of 56/.test($('#gCount').textContent), 'progress starts at 0 of 56', $('#gCount').textContent);
 ok(!!$('#guideRoot .handout') && $$('#guideRoot .handout .hrules li').length === 5 && /1 and 2 Samuel/.test($('#guideRoot .handout h2').textContent), 'the course header with the five study notes');
 ok($$('#guideRoot .gsub .btn').length >= 20, 'subsection buttons');
 ok($$('#guideRoot .gsec h2').length === 9, 'nine groups on the guide');
 
 head('guide checkboxes and jumps');
 const cb = $('#guideRoot input[data-g="g3-goliath"]'); cb.checked = true; cb.dispatchEvent(new w.Event('change', { bubbles: true }));
-ok(/1 of 50/.test($('#gCount').textContent), 'checking an item moves the progress', $('#gCount').textContent);
+ok(/1 of 56/.test($('#gCount').textContent), 'checking an item moves the progress', $('#gCount').textContent);
 ok(/":true/.test(w.localStorage.getItem('ot.guide') || ''), 'the check is saved on the device under ot.');
 click($('#gPrint')); ok(w.__printed === 1, 'print button prints');
 click($('#guideRoot .gitem[data-gi="g2-fall"] > button[data-go]'));
@@ -126,7 +126,7 @@ Object.keys(modes).forEach(t => {
 ok(errors.length === 0, 'no errors after visiting every mode', errors.join(' || '));
 
 head('notes');
-const want = { s1: 4, s2: 4, s3: 4, s4: 5, s5: 6, s6: 6, s7: 7, s8: 7, s9: 7 };
+const want = { s1: 4, s2: 4, s3: 4, s4: 5, s5: 6, s6: 6, s7: 7, s8: 7, s9: 13 };
 tps.forEach(t => {
   topic(t); mode(t, 'notes');
   ok($$('#' + t + 'Notes .note-sec').length === want[t], t + ': ' + want[t] + ' note sections rendered', $$('#' + t + 'Notes .note-sec').length);
@@ -208,11 +208,11 @@ head('the 50 for the exam');
 click(oneRes.querySelector('.setupbtn'));
 click($('#mxFifty'));
 const fifty = $('#mockExam');
-ok(fifty.querySelectorAll('.dots i').length === 50, 'fifty questions', fifty.querySelectorAll('.dots i').length);
+ok(fifty.querySelectorAll('.dots i').length === 60, 'sixty questions', fifty.querySelectorAll('.dots i').length);
 const fRes = answerQuiz(fifty, 'the fifty');
 ok(!!fRes, 'the fifty reaches results');
 const fSec = fRes.querySelectorAll('.tbl')[0];
-ok(fSec && fSec.querySelectorAll('tr').length === 50, 'the results list all fifty parts', fSec && fSec.querySelectorAll('tr').length);
+ok(fSec && fSec.querySelectorAll('tr').length === 56, 'the results list all fifty-six parts', fSec && fSec.querySelectorAll('tr').length);
 ok(Array.from(fSec.querySelectorAll('.num')).every(td => parseInt(td.textContent.split('/')[1], 10) >= 1), 'every section got at least one question');
 
 head('remembers where you were');
@@ -220,7 +220,7 @@ topic('s3'); mode('s3', 'cards');
 ok(w.localStorage.getItem('ot.topic') === 's3' && w.localStorage.getItem('ot.mode.s3') === 'cards', 'topic and mode saved');
 ok($$('.topic-btn').length === 12, 'twelve tabs');
 topic('s9');
-ok(/Moresheth-Gath/.test($('#s9Notes').textContent) && $$('#s9Notes .note-sec').length === 7 && $$('#s9Notes .exam-tip').length === 7, 'the Twelve chapter renders, with its boxes');
+ok(/Moresheth-Gath/.test($('#s9Notes').textContent) && $$('#s9Notes .note-sec').length === 13 && $$('#s9Notes .exam-tip').length === 12, 'the Twelve chapter renders, with its boxes');
 topic('s8');
 ok(/Magor-Missabib/.test($('#s8Notes').textContent) && $$('#s8Notes .note-sec').length === 7 && $$('#s8Notes .exam-tip').length === 3, 'the Jeremiah chapter renders, with its boxes');
 topic('s7');

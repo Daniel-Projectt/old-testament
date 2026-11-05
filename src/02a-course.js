@@ -163,7 +163,7 @@ var GUIDE = {sections:[
    short:"Zedekiah’s fate, slaves freed and retaken, the Rechabites. Jehoiakim burns the scroll; Jeremiah in a cistern. The fall (39): Zedekiah’s sons killed, his eyes gouged. Gedaliah killed; flight to Egypt. Egypt, the small nations and Babylon judged. Chapter 52 = 2 Kings 25; Jehoiachin honored after 37 years.",
    subs:[["Three episodes", "s8-three"], ["The scroll and the prison", "s8-scroll"], ["The city falls", "s8-capture"], ["The nations", "s8-nations"], ["Jeremiah 52", "s8-summary"], ["Conclusion", "s8-conclusion"]]}]},
 
- {h:"The Book of the Twelve · Partners in prophecy (textbook, pp. 231–249)", tp:"s9", items:[
+ {h:"The Book of the Twelve · Partners in prophecy (textbook, pp. 231–266)", tp:"s9", items:[
   {id:"g9-intro", t:"The Twelve as one book", a:"s9-intro",
    short:"The Hebrew Bible counts the twelve small prophets as one prophecy. Six on sin (Hosea–Micah), three on punishment (Nahum, Habakkuk, Zephaniah), three on restoration (Haggai, Zechariah, Malachi). Yahweh as father, husband, king and judge; prophets obedient (Hosea), rebellious (Jonah), inquisitive (Habakkuk). Not in chronological order.",
    subs:[["At a glance", "s9-chart"], ["One prophecy", "s9-one"], ["The outline", "s9-outline"]]},
@@ -183,6 +183,24 @@ var GUIDE = {sections:[
    short:"Main theme: Israel’s hatred of its neighbor. About 800–750 BC (2 Kings 14:25). He flees toward Tarshish (Spain), is swallowed by a great fish, preaches a five-word sermon; Nineveh repents and God forgives; Jonah sulks over a plant. One of the few times hearers repent.",
    subs:[["Jonah’s day", "s9-jdate2"], ["Running and preaching", "s9-run"], ["What it shows", "s9-jmeaning"]]},
   {id:"g9-micah", t:"Micah: prophet of hope beyond judgment", a:"s9-micah",
-   short:"Isaiah’s contemporary under Jotham, Ahaz and Hezekiah (750–687 BC); Sennacherib and Lachish (701 BC). Sins: fraud, false prophecy, bribes, fortune-telling. Restoration first: nations come to the temple; a son of David born in Bethlehem (5:2). God requires mercy, humility and fellowship (6:6–8). Nahum begins: Assyria’s punishment.",
-   subs:[["Micah’s day", "s9-mday"], ["Sin and judgment", "s9-msin"], ["The restoration", "s9-mhope"], ["What God requires", "s9-mrequire"], ["Nahum begins", "s9-nahum"]]}]}
+   short:"Isaiah’s contemporary under Jotham, Ahaz and Hezekiah (750–687 BC); Sennacherib and Lachish (701 BC). Sins: fraud, false prophecy, bribes, fortune-telling. Restoration first: nations come to the temple; a son of David born in Bethlehem (5:2). God requires mercy, humility and fellowship (6:6–8). Punishment separates the righteous remnant from the wicked majority.",
+   subs:[["Micah’s day", "s9-mday"], ["Sin and judgment", "s9-msin"], ["The restoration", "s9-mhope"], ["What God requires", "s9-mrequire"]]},
+  {id:"g9-nahum", t:"Nahum: prophet of Assyria’s punishment", a:"s9-nahum",
+   short:"Between 663 (Thebes) and 612 BC (Nineveh); begins the punishment section. Ashurbanipal, the civil war, Babylon and the Medes take Nineveh; Josiah dies fighting Neco II at Megiddo (609). God punishes Assyria for idolatry and oppression, not vindictiveness (2:13). Critics miss God’s victory over sin and normal emotions.",
+   subs:[["Nahum’s day", "s9-nday"], ["Why God punishes Assyria", "s9-nwhy"], ["Is it right to rejoice?", "s9-nrejoice"], ["How Assyria fell", "s9-nmap"]]},
+  {id:"g9-habakkuk", t:"Habakkuk: prophet of faith amid chaos", a:"s9-habakkuk",
+   short:"Jeremiah’s time, before 605, 597 or 587 BC. Why do the wicked escape? Babylon will punish them. Then who punishes Babylon? “The righteous shall live by his faith” (2:4: Paul, Luther, Calvin, Wesley) and Babylon will pay. Hymn: “I stand in awe of your deeds” (3:2). He adds Israel to the list of the wicked.",
+   subs:[["Habakkuk’s day", "s9-hbday"], ["First question", "s9-hbq1"], ["Second question", "s9-hbq2"], ["The hymn of faith", "s9-hbhymn"]]},
+  {id:"g9-zephaniah", t:"Zephaniah: prophet of universal punishment", a:"s9-zephaniah",
+   short:"Josiah’s reign (640–609 BC). The day of Yahweh is universal: officials, royalty, citizens; Judah, Philistia, Moab, Ammon; Ethiopia and Assyria. He sums up judgment as Micah sums up sin. A righteous remnant from all nations survives. Days of Yahweh: 612 (Nahum), 587 (Habakkuk), 539.",
+   subs:[["Everyone, everywhere", "s9-zall"], ["Will anyone survive?", "s9-zremnant"], ["Days of Yahweh", "s9-zdays"]]},
+  {id:"g9-haggai", t:"Haggai: prophet of temple restoration", a:"s9-haggai",
+   short:"Cyrus’s decree (539; Isaiah 44:28, 45:1); the return under Joshua and Zerubbabel (538–535). Haggai (520–516): hard times because they built their homes and left God’s house in ruins. They obey; Tattenai and Darius. The small temple’s latter glory will be greater (2:9). Three temples: 966 BC, 520–516 BC, Herod.",
+   subs:[["Restoration begins", "s9-hgreturn"], ["Build God’s house first", "s9-hgbuild"], ["Three temples", "s9-hgtemples"]]},
+  {id:"g9-zechariah", t:"Zechariah: prophet of Jerusalem’s restoration", a:"s9-zechariah",
+   short:"Same time as Haggai: the city must be rebuilt too. Hard because of visions, authorship (1–8 vs 9–14) and fulfillment. Chapters 1–8: eight visions (very jealous for Jerusalem; a man measuring it, unwalled; the priesthood cleansed); “the faithful city” (8:3). Chapters 9–14: humble on a donkey (9:9; Palm Sunday); all nations worship.",
+   subs:[["Zechariah’s day", "s9-zcday"], ["Why the book is hard", "s9-zchard"], ["Zechariah 1–8", "s9-zc18"], ["Zechariah 9–14", "s9-zc914"]]},
+  {id:"g9-malachi", t:"Malachi: prophet of restoration of the people of Israel", a:"s9-malachi",
+   short:"About 430 BC (Nehemiah’s day; Merrill, Susa, Artaxerxes I): 90 years of going backward. They doubt God’s love (Jacob over Esau), bring crippled sacrifices, divorce, rob God of tithes. The messenger is Elijah, which Jesus says was John the Baptist. God’s goal: friendship with a holy people. Conclusion: why they perished, why hope, why believe.",
+   subs:[["Going backward", "s9-mlback"], ["What went wrong", "s9-mlsins"], ["The messenger", "s9-mlmessenger"], ["Conclusion", "s9-conclusion"]]}]}
 ]};
